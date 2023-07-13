@@ -1,1 +1,4 @@
-#header{background:red;}
+#header{background:pink;
+    @include mobile{height:40px;}
+    @include desktop{height:60px;}
+}

@@ -1,25 +1,26 @@
+//abstracts
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
 //base
 @import './base/init';
-@import './base/fonts';
 @import './base/normalize';
 @import './base/reset';
-@import './base/color';
 @import './base/typography';
-@import './base/mixin';
-@import './base/form';
-@import './base/table';
-@import './base/components';
-@import './base/keyframes';
 
 //layout
 @import './layout/header';
 @import './layout/navigation';
-@import './layout/aside';
 @import './layout/container';
 @import './layout/footer';
 @import './layout/modal';
 @import './layout/popup';
+@import './layout/forms';
+@import './layout/tables';
+
+//components
+@import './components/buttons';
 
 //page
-@import './page/main/main';
-@import './page/guide/guide';
+@import './pages/guide/guide';
+@import './pages/main/main';

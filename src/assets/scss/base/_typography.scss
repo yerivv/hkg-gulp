@@ -1,8 +1,51 @@
+// Pretendard
 @font-face {
-	font-family:'Noto Sans KR';
-	font-style:normal;
-	font-weight:400;
-	src:local('※'),
-	url('../fonts/NotoSansKR-Regular.woff2') format('woff2'),
-	url('../fonts/NotoSansKR-Regular.woff') format('woff');
+  font-display: swap;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Pretendard-Regular.woff2') format('woff2'),
+        url('../fonts/Pretendard-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Pretendard-Medium.woff2') format('woff2'),
+        url('../fonts/Pretendard-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Pretendard-SemiBold.woff2') format('woff2'),
+        url('../fonts/Pretendard-SemiBold.ttf') format('truetype');
+}
+
+// Anek Gujarati
+@font-face {
+  font-display: swap;
+  font-family: 'Anek Gujarati';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/anek-gujarati-v9-gujarati-300.woff2') format('woff2'),
+        url('../fonts/anek-gujarati-v9-gujarati-300.ttf') format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Anek Gujarati';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/anek-gujarati-v9-gujarati-500.woff2') format('woff2'),
+        url('../fonts/anek-gujarati-v9-gujarati-500.ttf') format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Anek Gujarati';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/anek-gujarati-v9-gujarati-700.woff2') format('woff2'),
+        url('../fonts/anek-gujarati-v9-gujarati-700.ttf') format('truetype');
 }

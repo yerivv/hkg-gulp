@@ -1,0 +1,112 @@
+.app-guide {
+  #container {
+    margin: 60px;
+    text-transform: uppercase;
+  }
+
+  .color-chips {
+    display: flex;
+    gap: 20px;
+  }
+  .color-chip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    padding-left: 13px;
+    border-radius: 12px;
+    background: $bg-pear;
+    box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.15);
+    color: $primary-white;
+    font-family: 'Anek Gujarati';
+    letter-spacing: 0.75px;
+    .hex {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 23px;
+    }
+    .name {
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 17px;
+    }
+    &.hankblue {
+      background: $primary-hankgolf;
+    }
+    &.midnight {
+      background: $primary-midnight;
+    }
+    &.white {
+      background: $primary-white;
+      color: $grayscale-g94;
+    }
+    &.darkblue {
+      background: $secondary-darkblue;
+    }
+    &.skyblue {
+      background: $secondary-skyblue;
+    }
+    &.turquoise {
+      background: $secondary-turquoise;
+    }
+    &.lightgreen {
+      background: $secondary-lightgreen;
+    }
+    &.black {
+      background: $grayscale-black;
+    }
+    &.g33 {
+      background: $grayscale-g33;
+    }
+    &.g94 {
+      background: $grayscale-g94;
+    }
+    &.gd4 {
+      background: $grayscale-gd4;
+      color: $grayscale-g94;
+    }
+    &.gee {
+      background: $grayscale-gee;
+      color: $grayscale-g94;
+    }
+    &.gf4 {
+      background: $grayscale-gf4;
+      color: $grayscale-g94;
+    }
+    &.gf8 {
+      background: $grayscale-gf8;
+      color: $grayscale-g94;
+    }
+    &.sky {
+      background: $bg-sky;
+      color: $grayscale-g94;
+    }
+    &.lightsky {
+      background: $bg-lightsky;
+      color: $grayscale-g94;
+    }
+    &.pear {
+      background: $bg-pear;
+      color: $grayscale-g94;
+    }
+    &.gradation1 {
+      background: $gradation-01;
+    }
+    &.gradation2 {
+      background: $gradation-02;
+    }
+    &.gradation3 {
+      background: $gradation-03;
+    }
+    &.gradation4 {
+      background: $gradation-04;
+    }
+    &.gradation5 {
+      background: $gradation-05;
+    }
+    &.negative {
+      background: $negative-red;
+    }
+  }
+}

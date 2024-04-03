@@ -5,6 +5,6 @@ body{@include mo-min-width;@include text;}
 #app{overflow:hidden;position:relative;}
 
 #container{position:relative;@include float-clear;
-    @include mobile{margin:20px auto;}
-    @include desktop{margin:40px auto;}
+    @include mobile{margin:0 auto;}
+    @include desktop{margin:0 auto;}
 }

@@ -1,0 +1,17 @@
+
+.icon-24 {
+  @include icon-box(24px, 24px);
+}
+
+.back {
+  background-image: url('../../images/common/back.png');
+}
+.search {
+  background-image: url('../../images/common/search.png');
+}
+.share {
+  background-image: url('../../images/common/share.png');
+}
+.menu {
+  background-image: url('../../images/common/menu.png');
+}

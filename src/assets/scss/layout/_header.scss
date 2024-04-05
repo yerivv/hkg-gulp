@@ -5,9 +5,40 @@
 
     .inner {
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 20px;
+        @include desktop {
+            padding: 28px 100px;
+            .page-name {display:none;}
+        }
     }
 
-    .ci-color {
-        fill: #000;
+    h1 {
+        width: 125px;
+        height: 24px;
+        background-image: url('../../images/common/ci.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        text-indent: -999em;
+    }
+    .util {
+        display: flex;
+        gap: 0 16px;
+    }
+
+    .search {
+        display: none;
+        @include desktop{display: block;}
+    }
+
+    .share, .back {
+        @include desktop{display: none;}
+    }
+
+    &.main {
+        .page-name {display:none;}
+        .share {display:none;}
     }
 }

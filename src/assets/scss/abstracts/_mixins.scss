@@ -35,7 +35,7 @@
 }
 
 @mixin desktop{
-    @media screen and (min-width:($pad-breakpoint + 1)) and (max-width:$pc-breakpoint){
+    @media screen and (min-width:($mo-breakpoint + 1)) and (max-width:$pc-breakpoint){
         @content;
     }
 }
@@ -58,3 +58,13 @@
 
 @mixin text-script1($w:500){font-size:11px;line-height:18px;font-weight:$w;}
 @mixin text-script2($w:600){font-size:12px;line-height:20px;font-weight:$w;}
+
+@mixin icon-box($w, $h, $repeat:no-repeat, $size:contain, $position: center){
+    display: inline-flex;
+    width: $w;
+    height: $w;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-indent: -999em;
+}

@@ -4,11 +4,9 @@ body{@include mo-min-width;@include text;}
 
 #app{overflow:hidden;position:relative;}
 
-#container{position:relative;@include float-clear;
-    @include mobile{padding-top:56px;margin:0 auto;}
+#container{position:relative;padding-top:56px;margin:0 auto;@include float-clear;
     @include desktop{
         padding-top: 80px;
-        margin:0 auto;
         background-color: $grayscale-gf8;
     }
 }

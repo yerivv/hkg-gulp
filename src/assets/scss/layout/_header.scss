@@ -1,4 +1,13 @@
-#header{background:pink;
-    @include mobile{height:40px;}
-    @include desktop{height:60px;}
+#header{
+    position:fixed;top:0;left:0;z-index:9;width:100%;
+    @include mobile{height:56px;background: transparent;}
+    @include desktop{height:80px;background-color:$primary-white;}
+
+    .inner {
+        position: relative;
+    }
+
+    .ci-color {
+        fill: #000;
+    }
 }

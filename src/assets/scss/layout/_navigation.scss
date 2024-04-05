@@ -1,1 +1,6 @@
-#navigation{background:skyblue;}
+#navigation{
+  position:fixed;bottom:0;left:0;z-index:9;width:100%;background-color:skyblue;
+  display: none;
+  @include mobile{}
+  @include desktop{bottom:auto;top:0;left:0;width:auto;background: transparent;}
+}

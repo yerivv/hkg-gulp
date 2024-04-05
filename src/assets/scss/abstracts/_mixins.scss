@@ -40,8 +40,21 @@
     }
 }
 
-@mixin text{word-wrap:break-word;font-size:14px;color:$basic-color1;line-height:1.5;font-weight:400;font-family:'Pretendard';}
+@mixin text{word-wrap:break-word;font-size:14px;color:$grayscale-black;line-height:1.5;font-weight:400;font-family:'Pretendard';}
+@mixin text-en {font-weight:300;font-family:'Anek Gujarati';}
 
-@mixin text-head1{font-size:20px;color:$basic-color1;line-height:1.5;font-weight:700;}
+@mixin text-head1{font-size:48px;line-height:58px;font-weight:300;}
+@mixin text-head2{font-size:60px;line-height:56px;font-weight:700;}
 
-@mixin text-body1{font-size:14px;color:$basic-color1;line-height:1.5;font-weight:400;}
+@mixin text-title1($w:600){font-size:24px;line-height:36px;font-weight:$w;}
+@mixin text-title2($w:600){font-size:28px;line-height:40px;font-weight:$w;}
+@mixin text-title3($w:600){font-size:32px;line-height:44px;font-weight:$w;}
+@mixin text-title4($w:600){font-size:40px;line-height:52px;font-weight:$w;}
+
+@mixin text-body1($w:500){font-size:14px;line-height:14px;font-weight:$w;}
+@mixin text-body2($w:500){font-size:14px;line-height:24px;font-weight:$w;}
+@mixin text-body3($w:500){font-size:16px;line-height:26px;font-weight:$w;}
+@mixin text-body4($w:600){font-size:20px;line-height:30px;font-weight:$w;}
+
+@mixin text-script1($w:500){font-size:11px;line-height:18px;font-weight:$w;}
+@mixin text-script2($w:600){font-size:12px;line-height:20px;font-weight:$w;}

@@ -1,7 +1,36 @@
 .app-guide {
   #container {
-    margin: 60px;
+    min-width: 1920px;
     text-transform: uppercase;
+  }
+
+  h1 {
+    padding: 20px;
+    background-color: $grayscale-black;
+    color: $primary-white;
+    @include text-head1;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .guide-section {
+    padding: 60px;
+    border-bottom: 2px solid $primary-hankgolf;
+    h2 {
+      margin-bottom: 46px;
+      @include text-title4;
+    }
+    .group {
+      margin-top: 50px;
+      &:first-child {
+        margin-top: 0;
+      }
+      h3 {
+        margin-bottom: 30px;
+        @include text-body4;
+        color: #595959;
+      }
+    }
   }
 
   .color-chips {
@@ -107,6 +136,133 @@
     }
     &.negative {
       background: $negative-red;
+    }
+  }
+  .typeface-box {
+    display: flex;
+    gap: 40px;
+    .en {
+      @include text-en;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0 40px;
+      width: calc(50% - 20px);
+      padding: 40px;
+      background-color: $grayscale-gf8;
+      border-radius: 12px;
+      text-transform: none;
+      .thumb {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        background-color: $primary-white;
+        box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.15);
+        @include text-title1(500);
+      }
+      .name {
+        @include text-title1(500);
+      }
+      .weight {
+        @include text-body3(400);
+        color: #a9a9a9;
+      }
+      .lang {
+        margin-left: auto;
+        color: $primary-hankgolf;
+      }
+    }
+  }
+  .style-box {
+    text-transform: none;
+    .en {
+      @include text-en;
+    }
+    dl {
+      display: flex;
+      align-items: center;
+      padding: 24px 0;
+      border-top: 1px solid $grayscale-gd4;
+      dt {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        .type {
+          @include text-title1;
+        }
+        .style {
+          @include text-script2(400);
+          color: $grayscale-g94;
+        }
+      }
+      dd {
+        width: calc(100% - 300px);
+        margin-top: 10px;
+      }
+      .head1 {
+        @include text-head1;
+      }
+      .head2 {
+        @include text-head2;
+      }
+      .title1 {
+        @include text-title1;
+        .m {
+          @include text-title1(500);
+        }
+      }
+      .title2 {
+        @include text-title2;
+        .m {
+          @include text-title2(500);
+        }
+      }
+      .title3 {
+        @include text-title3;
+        .m {
+          @include text-title3(500);
+        }
+      }
+      .title4 {
+        @include text-title4;
+      }
+      .body1 {
+        @include text-body1;
+      }
+      .body2 {
+        @include text-body2;
+        .r {
+          @include text-body2(400);
+        }
+      }
+      .body3 {
+        @include text-body3;
+        .r {
+          @include text-body3(400);
+        }
+      }
+      .body4 {
+        @include text-body4;
+      }
+      .script1 {
+        @include text-script1;
+        .r {
+          @include text-script1(400);
+        }
+      }
+      .script2 {
+        @include text-script2;
+        .m {
+          @include text-script2(500);
+        }
+        .r {
+          @include text-script2(400);
+        }
+      }
     }
   }
 }

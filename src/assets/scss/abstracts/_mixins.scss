@@ -68,3 +68,13 @@
     background-position: center;
     text-indent: -999em;
 }
+
+@mixin forms-default {
+    height: 44px;
+    border:1px solid $grayscale-gd4;
+    border-radius:4px;
+    background-color: $primary-white;
+    color: $grayscale-black;
+    text-indent: 16px;
+    outline: 0;
+}

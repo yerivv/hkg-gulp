@@ -1,0 +1,61 @@
+.btns {
+  display: inline-flex;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+  padding: 0 30px;
+  background-color: $primary-white;
+  border: solid 1px transparent;
+  &.large {
+    height: 56px;
+    @include text-body3;
+  }
+
+  &.medium {
+    height: 44px;
+    @include text-body2;
+  }
+
+  &.small {
+    height: 36px;
+    @include text-script2(500);
+  }
+
+  &.midnight {
+    background-color: $primary-midnight;
+    color: $primary-white;
+  }
+  &.midnight-outline {
+    border-color: $primary-midnight;
+    color: $primary-midnight;
+  }
+  &.hank {
+    background-color: $primary-hankblue;
+    color: $primary-white;
+  }
+  &.hank-outline {
+    border-color: $primary-hankblue;
+    color: $primary-hankblue;
+  }
+  &.skyblue {
+    background-color: $secondary-skyblue;
+    color: $primary-white;
+  }
+  &.skyblue-outline {
+    border-color: $secondary-skyblue;
+    color: $secondary-skyblue;
+  }
+  &.negative {
+    background-color: $negative-red;
+    color: $primary-white;
+  }
+  &.negative-outline {
+    border-color: $negative-red;
+    color: $negative-red;
+  }
+  &:disabled {
+    background-color: $grayscale-gd4;
+    color: $grayscale-g94;
+  }
+}

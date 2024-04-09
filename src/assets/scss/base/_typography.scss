@@ -19,7 +19,7 @@
   font-display: swap;
   font-family: 'Pretendard';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   src: url('../fonts/Pretendard-SemiBold.woff2') format('woff2'),
         url('../fonts/Pretendard-SemiBold.ttf') format('truetype');
 }
@@ -48,4 +48,20 @@
   font-weight: 700;
   src: url('../fonts/anek-gujarati-v9-gujarati-700.woff2') format('woff2'),
         url('../fonts/anek-gujarati-v9-gujarati-700.ttf') format('truetype');
+}
+
+.weight-light {
+  font-weight: 300;
+}
+.weight-regular {
+  font-weight: 400;
+}
+.weight-medium {
+  font-weight: 500;
+}
+.weight-semibold {
+  font-weight: 600;
+}
+.weight-bold {
+  font-weight: 700;
 }

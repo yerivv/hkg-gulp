@@ -63,6 +63,9 @@
       line-height: 17px;
     }
     &.hankblue {
+      background: $primary-hankblue;
+    }
+    &.hankgolf {
       background: $primary-hankgolf;
     }
     &.midnight {
@@ -268,10 +271,63 @@
     }
   }
   .buttons {
-    dd {
+    .group-in {
+      display: flex;
+      align-items: center;
+      + .group-in {
+        margin-top: 30px;
+      }
+      h4 {
+        width: 200px;
+      }
       ul {
+        + ul {
+          margin-top: 10px;
+        }
         display: flex;
         gap: 0 10px;
+
+        .btns {
+          width: 144px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .forms {
+    .group {
+      max-width: 720px;
+    }
+    .group-in {
+      + .group-in {
+        margin-top: 30px;
+      }
+      h4 {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .flexs {
+    .box {
+      padding: 20px;
+      border-radius: 10px;
+      background-color: $bg-sky;
+    }
+  }
+
+  .ico-g {
+    .group-in {
+      + .group-in {
+        margin-top: 30px;
+      }
+      h4 {
+        margin-bottom: 15px;
+      }
+      ul {
+        display: flex;
+        gap: 10px;
       }
     }
   }

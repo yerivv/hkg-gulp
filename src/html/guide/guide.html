@@ -9,7 +9,7 @@
     <script src="@@webRoot/js/develop.js"></script>
 </head>
 <body>
-    <div id="app" class="app-guide">
+    <div id="app" class="app-guide" style="overflow:initial">
         <main id="container">
             <h1>HANK GOLF <strong>Web style guide</strong></h1>
             <div class="guide-section colors">
@@ -18,8 +18,12 @@
                     <h3>primary</h3>
                     <ul class="color-chips">
                         <li class="color-chip hankblue">
-                            <p class="hex">#3551a4</p>
+                            <p class="hex">#002394</p>
                             <p class="name">hankblue</p>
+                        </li>
+                        <li class="color-chip hankgolf">
+                            <p class="hex">#3551a4</p>
+                            <p class="name">hankgolf</p>
                         </li>
                         <li class="color-chip midnight">
                             <p class="hex">#092060</p>
@@ -234,66 +238,175 @@
                         </dl>
                     </div>
                 </div>
+                <div class="group">
+                    <h3>weight - ko</h3>
+                    <div class="style-box">
+                        <dl>
+                            <dt>
+                                <span class="type">regular</span>
+                            </dt>
+                            <dd class="weight-regular">한케이 골프</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span class="type">medium</span>
+                            </dt>
+                            <dd class="weight-medium">한케이 골프</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span class="type">semibold</span>
+                            </dt>
+                            <dd class="weight-semibold">한케이 골프</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>weight - en</h3>
+                    <div class="style-box">
+                        <dl>
+                            <dt>
+                                <span class="type">light</span>
+                            </dt>
+                            <dd class="en weight-light">HanK Golf</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span class="type">medium</span>
+                            </dt>
+                            <dd class="en weight-medium">HanK Golf</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span class="type">bold</span>
+                            </dt>
+                            <dd class="en weight-bold">HanK Golf</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
-            
             <div class="guide-section buttons">
                 <h2>05. Buttons</h2>
                 <div class="group">
                     <h3>Standard Buttons</h3>
-                    <dl>
-                        <dt>Large</dt>
-                        <dd>
+                    <div class="group-in">
+                        <h4>Large (h : 52px)</h4>
+                        <div>
                             <ul>
                                 <li><button type="button" class="btns large midnight">button</button></li>
-                                <li><button type="button" class="btns large hank">button</button></li>
-                                <li><button type="button" class="btns large skyblue">button</button></li>
-                                <li><button type="button" class="btns large negative">button</button></li>
-                                <li><button type="button" class="btns large negative" disabled>button</button></li>
-                            </ul>
-                            <ul>
                                 <li><button type="button" class="btns large midnight-outline">button</button></li>
+                                <li><button type="button" class="btns large hank">button</button></li>
                                 <li><button type="button" class="btns large hank-outline">button</button></li>
+                                <li><button type="button" class="btns large skyblue">button</button></li>
                                 <li><button type="button" class="btns large skyblue-outline">button</button></li>
                                 <li><button type="button" class="btns large negative" disabled>button</button></li>
+                                <li><button type="button" class="btns large negative">button</button></li>
                             </ul>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>Medium</dt>
-                        <dd>
+                            <ul>
+                                <li>
+                                    <button type="button" class="btns large midnight">
+                                        <i class="icons search white"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns large midnight-outline">
+                                        <i class="icons search midnight"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns large hank">
+                                        <i class="icons search white"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns large hank-outline">
+                                        <i class="icons search hank"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns large skyblue">
+                                        <i class="icons search white"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns large skyblue-outline">
+                                        <i class="icons search skyblue"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns large negative" disabled>
+                                        <i class="icons search g94"></i>button
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="group-in">
+                        <h4>Medium (h : 44px)</h4>
+                        <div>
                             <ul>
                                 <li><button type="button" class="btns medium midnight">button</button></li>
-                                <li><button type="button" class="btns medium hank">button</button></li>
-                                <li><button type="button" class="btns medium skyblue">button</button></li>
-                                <li><button type="button" class="btns medium negative">button</button></li>
-                                <li><button type="button" class="btns medium negative" disabled>button</button></li>
-                            </ul>
-                            <ul>
                                 <li><button type="button" class="btns medium midnight-outline">button</button></li>
+                                <li><button type="button" class="btns medium hank">button</button></li>
                                 <li><button type="button" class="btns medium hank-outline">button</button></li>
+                                <li><button type="button" class="btns medium skyblue">button</button></li>
                                 <li><button type="button" class="btns medium skyblue-outline">button</button></li>
                                 <li><button type="button" class="btns medium negative" disabled>button</button></li>
-                            </ul>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>Small</dt>
-                        <dd>
-                            <ul>
-                                <li><button type="button" class="btns small midnight">button</button></li>
-                                <li><button type="button" class="btns small hank">button</button></li>
-                                <li><button type="button" class="btns small skyblue">button</button></li>
-                                <li><button type="button" class="btns small negative">button</button></li>
-                                <li><button type="button" class="btns small negative" disabled>button</button></li>
+                                <li><button type="button" class="btns medium negative">button</button></li>
                             </ul>
                             <ul>
-                                <li><button type="button" class="btns small midnight-outline">button</button></li>
-                                <li><button type="button" class="btns small hank-outline">button</button></li>
-                                <li><button type="button" class="btns small skyblue-outline">button</button></li>
-                                <li><button type="button" class="btns small negative" disabled>button</button></li>
+                                <li>
+                                    <button type="button" class="btns medium midnight">
+                                        <i class="icons search white"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns medium midnight-outline">
+                                        <i class="icons search midnight"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns medium hank">
+                                        <i class="icons search white"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns medium hank-outline">
+                                        <i class="icons search hank"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns medium skyblue">
+                                        <i class="icons search white"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns medium skyblue-outline">
+                                        <i class="icons search skyblue"></i>button
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btns medium negative" disabled>
+                                        <i class="icons search g94"></i>button
+                                    </button>
+                                </li>
                             </ul>
-                        </dd>
-                    </dl>
+                        </div>
+                    </div>
+                    
+                    <div class="group-in">
+                        <h4>Small (h : 36px)</h4>
+                        <ul>
+                            <li><button type="button" class="btns small midnight">button</button></li>
+                            <li><button type="button" class="btns small midnight-outline">button</button></li>
+                            <li><button type="button" class="btns small hank">button</button></li>
+                            <li><button type="button" class="btns small hank-outline">button</button></li>
+                            <li><button type="button" class="btns small skyblue">button</button></li>
+                            <li><button type="button" class="btns small skyblue-outline">button</button></li>
+                            <li><button type="button" class="btns small negative" disabled>button</button></li>
+                            <li><button type="button" class="btns small negative">button</button></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="guide-section forms">
@@ -302,9 +415,20 @@
                     <h3>Pulldown</h3>
                     <ul>
                         <li>
-                            <select name="guide-select1" class="select">
-                                <option value="">카테고리</option>
-                            </select>
+                            <div class="custom-select">
+                                <select name="guide-select1">
+                                    <option value="">카테고리</option>
+                                </select>
+                                <i class="icons arrow-up"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="custom-select">
+                                <select name="guide-select1" disabled>
+                                    <option value="">카테고리</option>
+                                </select>
+                                <i class="icons arrow-up"></i>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -324,6 +448,212 @@
                             <input type="text" name="text-field2" placeholder="검색어를 입력하세요." value="검색어를 입력했어요" class="error">
                         </li>
                     </ul>
+                </div>
+                <div class="group">
+                    <h3>Toggle</h3>
+                    <div class="group-in">
+                        <h4>checkbox</h4>
+                        <div>
+                            <label class="checkbox">
+                                <input name="checkbox1" type="checkbox" checked />
+                                <span>기본</span>
+                            </label>
+                            <label class="checkbox">
+                                <input name="checkbox2" type="checkbox" />
+                                <span>기본</span>
+                            </label>
+                            <label class="checkbox large">
+                                <input name="checkbox3" type="checkbox" />
+                                <span>라지</span>
+                            </label>
+                            <label class="checkbox large">
+                                <input name="checkbox4" type="checkbox" />
+                                <span>라지</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="group-in">
+                        <h4>radio</h4>
+                        <div>
+                            <label class="radio">
+                                <input name="radio" type="radio" checked />
+                                <span>기본</span>
+                            </label>
+                            <label class="radio">
+                                <input name="radio" type="radio" />
+                                <span>기본</span>
+                            </label>
+                            <label class="radio large">
+                                <input name="radio" type="radio" />
+                                <span>라지</span>
+                            </label>
+                            <label class="radio large">
+                                <input name="radio" type="radio" />
+                                <span>라지</span>
+                            </label>
+                        </div>
+                        <div class="d-flex flex-wrap flex-col-2 gap-8" style="margin-top:15px">
+                            <label class="toggle-text col col-4">
+                                <input name="radio1" type="radio" checked />
+                                <span class="medium skyblue">18홀</span>
+                            </label>
+                            <label class="toggle-text col col-4">
+                                <input name="radio1" type="radio" />
+                                <span class="medium skyblue">27홀</span>
+                            </label>
+                            <label class="toggle-text col col-4">
+                                <input name="radio1" type="radio" />
+                                <span class="medium skyblue">36홀</span>
+                            </label>
+                            <label class="toggle-text col col-4">
+                                <input name="radio1" type="radio" />
+                                <span class="medium skyblue">36홀</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="group-in">
+                        <h4>toggle</h4>
+                        <div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" />
+                                <span class="slider"></span>
+                            </label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="guide-section ico-g">
+                <h2>05. Iconography</h2>
+                <div class="group">
+                    <h3>LINE ICONS</h3>
+                    <div class="group-in">
+                        <h4>12 x 12</h4>
+                        <ul>
+                            <li>
+                                <i class="i-12 i-back"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group-in">
+                        <h4>16 x 16</h4>
+                        <ul>
+                            <li>
+                                <i class="i-16 i-back">이전</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-search">검색</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-share">공유</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-menu">메뉴</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-close">닫기</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group-in">
+                        <h4>24 x 24</h4>
+                        <ul>
+                            <li>
+                                <i class="i-24 i-back">이전</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-search">검색</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-share">공유</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-menu">메뉴</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-close">닫기</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group-in">
+                        <h4>32 x 32</h4>
+                        <ul>
+                            <li>
+                                <i class="i-32 i-back">이전</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group-in">
+                        <h4>36 x 36</h4>
+                        <ul>
+                            <li>
+                                <i class="i-36 i-back">이전</i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="guide-section flexs">
+                <h2>00. flex box</h2>
+                <div class="group">
+                    <h3>row / col-fill</h3>
+                    <div class="d-flex">
+                        <div class="box col col-fill">box</div>
+                    </div?>
+                </div>
+                <div class="group">
+                    <h3>row / col-auto</h3>
+                    <div class="d-flex">
+                        <div class="box col col-auto">box</div>
+                        <div class="box col col-2">box</div>
+                        <div class="box col col-auto">box</div>
+                    </div?>
+                </div>
+                <div class="group">
+                    <h3>row / col-N</h3>
+                    <div class="d-flex flex-col-2 gap-x-8">
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                    </div>
+                    <div class="d-flex flex-col-3 gap-x-8" style="margin-top:15px;">
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                    </div>
+                    <div class="d-flex flex-col-4 gap-x-8" style="margin-top:15px;">
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                    </div>
+                    <div class="d-flex flex-col-5 gap-x-8" style="margin-top:15px;">
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                    </div>
+                    <div class="d-flex flex-col-6 gap-8" style="margin-top:15px;">
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>row / col-N / wrap</h3>
+                    <div class="d-flex flex-wrap flex-col-2 gap-8">
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                        <div class="box col">box</div>
+                    </div>
                 </div>
             </div>
         </main>

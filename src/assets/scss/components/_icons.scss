@@ -1,17 +1,47 @@
+$icon-sizes: 12, 16, 20, 24, 32, 36, 40;
 
-.icon-24 {
-  @include icon-box(24px, 24px);
+@each $size in $icon-sizes {
+  .i-#{$size} {
+    @include icon-box($size + px, $size + px);
+  }
 }
 
-.back {
-  background-image: url('../../images/common/back.png');
+.icons {
+  // 기본 컬러 black
+  &.white {
+    @include filter-white;
+  }
+  &.midnight {
+    @include filter-midnight;
+  }
+  &.hank {
+    @include filter-hank;
+  }
+  &.skyblue {
+    @include filter-skyblue;
+  }
+  &.g94 {
+    @include filter-g94;
+  }
 }
-.search {
-  background-image: url('../../images/common/search.png');
+
+.i-back {
+  background-image: url('../../images/icon/back.svg');
 }
-.share {
-  background-image: url('../../images/common/share.png');
+.i-search {
+  background-image: url('../../images/icon/search.svg');
 }
-.menu {
-  background-image: url('../../images/common/menu.png');
+.i-share {
+  background-image: url('../../images/icon/share.svg');
 }
+.i-menu {
+  background-image: url('../../images/icon/menu.svg');
+}
+.i-arrow-up {
+  background-image: url('../../images/icon/arrow-up.svg');
+}
+.i-close {
+  background-image: url('../../images/icon/close.svg');
+}
+
+.i-ai-calendar {}

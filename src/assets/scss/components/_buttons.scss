@@ -4,17 +4,25 @@
   justify-content: center;
   align-items: center;
   gap: 0 10px;
-  padding: 0 30px;
   background-color: $primary-white;
   border: solid 1px transparent;
+  .icons {
+    filter: invert(100%) sepia(100%) saturate(25%) hue-rotate(2deg) brightness(106%) contrast(105%)
+  }
   &.large {
-    height: 56px;
+    height: 52px;
     @include text-body3;
+    .icons {
+      @include icon-box(24px, 24px);
+    }
   }
 
   &.medium {
     height: 44px;
     @include text-body2;
+    .icons {
+      @include icon-box(20px, 20px);
+    }
   }
 
   &.small {

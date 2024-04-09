@@ -41,7 +41,7 @@
 }
 
 @mixin text{word-wrap:break-word;font-size:14px;color:$grayscale-black;line-height:1.5;font-weight:400;font-family:'Pretendard';}
-@mixin text-en {font-weight:300;font-family:'Anek Gujarati';}
+@mixin text-en {font-family:'Anek Gujarati';}
 
 @mixin text-head1{font-size:48px;line-height:58px;font-weight:300;}
 @mixin text-head2{font-size:60px;line-height:56px;font-weight:700;}
@@ -70,6 +70,7 @@
 }
 
 @mixin forms-default {
+    width: 100%;
     height: 44px;
     border:1px solid $grayscale-gd4;
     border-radius:4px;
@@ -77,4 +78,23 @@
     color: $grayscale-black;
     text-indent: 16px;
     outline: 0;
+}
+
+@mixin filter-white {
+    filter: invert(100%) sepia(100%) saturate(25%) hue-rotate(2deg) brightness(106%) contrast(105%);
+}
+@mixin filter-midnight {
+    filter: invert(8%) sepia(66%) saturate(4350%) hue-rotate(222deg) brightness(86%) contrast(95%);
+}
+@mixin filter-hank {
+    filter: invert(13%) sepia(61%) saturate(4743%) hue-rotate(224deg) brightness(86%) contrast(113%);
+}
+@mixin filter-skyblue {
+    filter: invert(69%) sepia(6%) saturate(3907%) hue-rotate(184deg) brightness(94%) contrast(95%);
+}
+@mixin filter-g94 {
+    filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(91%) contrast(84%);
+}
+@mixin filter-reset {
+    filter: none;
 }

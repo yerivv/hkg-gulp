@@ -1,3 +1,6 @@
 node_modules
 /dist
 /local
+
+##아래의 확장자 무시
+*.DS_Store

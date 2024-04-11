@@ -305,37 +305,37 @@
                             <ul>
                                 <li>
                                     <button type="button" class="btns large midnight">
-                                        <i class="icons search white"></i>button
+                                        <i class="icons i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large midnight-outline">
-                                        <i class="icons search midnight"></i>button
+                                        <i class="icons i-search midnight"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large hank">
-                                        <i class="icons search white"></i>button
+                                        <i class="icons i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large hank-outline">
-                                        <i class="icons search hank"></i>button
+                                        <i class="icons i-search hank"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large skyblue">
-                                        <i class="icons search white"></i>button
+                                        <i class="icons i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large skyblue-outline">
-                                        <i class="icons search skyblue"></i>button
+                                        <i class="icons i-search skyblue"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large negative" disabled>
-                                        <i class="icons search g94"></i>button
+                                        <i class="icons i-search g94"></i>button
                                     </button>
                                 </li>
                             </ul>
@@ -357,37 +357,37 @@
                             <ul>
                                 <li>
                                     <button type="button" class="btns medium midnight">
-                                        <i class="icons search white"></i>button
+                                        <i class="icons i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium midnight-outline">
-                                        <i class="icons search midnight"></i>button
+                                        <i class="icons i-search midnight"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium hank">
-                                        <i class="icons search white"></i>button
+                                        <i class="icons i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium hank-outline">
-                                        <i class="icons search hank"></i>button
+                                        <i class="icons i-search hank"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium skyblue">
-                                        <i class="icons search white"></i>button
+                                        <i class="icons i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium skyblue-outline">
-                                        <i class="icons search skyblue"></i>button
+                                        <i class="icons i-search skyblue"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium negative" disabled>
-                                        <i class="icons search g94"></i>button
+                                        <i class="icons i-search g94"></i>button
                                     </button>
                                 </li>
                             </ul>
@@ -419,7 +419,7 @@
                                 <select name="guide-select1">
                                     <option value="">카테고리</option>
                                 </select>
-                                <i class="icons arrow-up"></i>
+                                <i class="icons i-arrow-up"></i>
                             </div>
                         </li>
                         <li>
@@ -427,7 +427,7 @@
                                 <select name="guide-select1" disabled>
                                     <option value="">카테고리</option>
                                 </select>
-                                <i class="icons arrow-up"></i>
+                                <i class="icons i-arrow-up"></i>
                             </div>
                         </li>
                     </ul>
@@ -595,6 +595,48 @@
                         </ul>
                     </div>
                 </div>
+                <div class="group">
+                    <h3>ILLUST ICONS</h3>
+                    <div class="group-in">
+                        <h4>20 x 20</h4>
+                        <ul>
+                            <li>
+                                <i class="i-20 i-ai-calendar">달력</i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="group-in">
+                        <h4>24 x 24</h4>
+                        <ul>
+                            <li>
+                                <i class="i-24 i-ai-calendar">달력</i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="guide-section popups">
+                <h2>08. popup</h2>
+                <div class="group">
+                    <h3>full popup</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modal.in('sample');">모달-full</button>
+                </div>
+
+                <div class="group">
+                    <h3>bottom popup</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modal.in('sample-bottom');">모달-bottom</button>
+                </div>
+
+                <div class="group">
+                    <h3>center popup</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modal.in('sample-center');">모달-center</button>
+                </div>
+
+                <div class="group">
+                    <h3>alert popup</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modal.in('sample-alert');">모달-alert</button>
+                </div>
             </div>
             
             <div class="guide-section flexs">
@@ -604,7 +646,7 @@
                     <div class="d-flex">
                         <div class="box col col-fill">box</div>
                     </div?>
-                </div>
+                </div> 
                 <div class="group">
                     <h3>row / col-auto</h3>
                     <div class="d-flex">
@@ -658,7 +700,8 @@
             </div>
         </main>
     </div>
-    
+    @@include('@@webRoot/_include/foot.html')
+    @@include('@@webRoot/_include/modal.html')
     <script>
     </script>
 </body>

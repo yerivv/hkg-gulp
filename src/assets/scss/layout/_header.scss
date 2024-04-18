@@ -1,7 +1,17 @@
 #header{
-    position:fixed;top:0;left:0;z-index:9;width:100%;
-    @include mobile{height:56px;background: transparent;}
-    @include desktop{height:80px;background-color:$primary-white;}
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    @include mobile{
+		height: 56px;
+		background: transparent;
+	}
+    @include desktop{
+		height:80px;
+		background-color:$primary-white;
+	}
 
     .inner {
         position: relative;
@@ -17,28 +27,60 @@
     h1 {
         width: 125px;
         height: 24px;
-        background-image: url('../../images/common/ci.svg');
+        background-image: url($path-common + 'ci.svg');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
-        text-indent: -999em;
+        a {
+			display: block;
+			height: 100%;
+        	text-indent: -999em;
+		}
     }
     .util {
         display: flex;
         gap: 0 16px;
     }
 
-    .search {
+    .i-search {
         display: none;
         @include desktop{display: block;}
     }
 
-    .share, .back {
+    .i-share, .i-back {
         @include desktop{display: none;}
     }
+    
+    .gnb {
+		ul {
+			display: flex;
+			li {
+				width: auto;
+				padding: 0 30px;
+				text-align: center;
+			}
+		}
+		@include mobile{
+			@include blind;
+		}
+	}
 
-    &.main {
+    &.type1 {
         .page-name {display:none;}
         .share {display:none;}
     }
+    
+    &.type2 {
+		h1 {
+			@include mobile{
+				@include blind;
+			}
+		}
+		.page-name {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+	}
 }

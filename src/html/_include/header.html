@@ -6,21 +6,21 @@
     PC : ci + gnb + 검색, 메뉴
 -->
 
-<header id="header" class="@@style">
-    <div class="inner">
-        <h1><a href="#">한케이골프</a></h1>
-        <h2 class="page-name">@@page-name</h2>
-    @@if (typeof style !== 'undefined' && style !== 'main') {
-        <div class="util">
-            <button type="button" class="icon-24 back">이전버튼</button>
-        </div>
-    }
-        <div class="util">
-            @@if (typeof share !== 'undefined' && share == true) {
-                <button type="button" class="icon-24 share">공유</button>
-            }
-            <button type="button" class="icon-24 search">검색</button>
-            <button type="button" class="icon-24 menu">메뉴</button>
-        </div>
-    </div>
-</header>
+	<header id="header" class="@@style">
+			<div class="inner">
+					<h1><a href="#">한케이골프</a></h1>
+					<h2 class="page-name">@@page-name</h2>
+			@@if (typeof style !== 'undefined' && style !== 'main') {
+					<div class="util">
+							<button type="button" class="icon-24 back">이전버튼</button>
+					</div>
+			}
+					<div class="util">
+							@@if (typeof share !== 'undefined' && share == true) {
+									<button type="button" class="icon-24 share">공유</button>
+							}
+							<button type="button" class="icon-24 search">검색</button>
+							<button type="button" class="icon-24 menu">메뉴</button>
+					</div>
+			</div>
+	</header>

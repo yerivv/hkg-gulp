@@ -153,7 +153,8 @@ const compile = {
 		return mode == 'build'
 			? gulp
 					.src(src)
-					.pipe(sass({ outputStyle: 'compressed' }))
+					//.pipe(sass({ outputStyle: 'compressed' }))
+					.pipe(sass({ outputStyle: 'expanded' }))
 					.pipe(
 						autoprefixer({
 							development: [

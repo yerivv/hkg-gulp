@@ -4,7 +4,7 @@ body{@include mo-min-width;@include text;}
 
 #app{overflow:hidden;position:relative;}
 
-#container{position:relative;padding-top:56px;margin:0 auto;@include float-clear;
+#container{position:relative;padding-top:56px;margin:0 auto;
     @include desktop{
         padding-top: 80px;
         background-color: $grayscale-gf8;

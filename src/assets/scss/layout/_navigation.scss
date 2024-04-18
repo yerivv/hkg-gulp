@@ -1,23 +1,23 @@
 #navigation{
-  position:fixed;bottom:0;left:0;z-index:9;width:100%;background-color:skyblue;
-  @include mobile{}
-  @include desktop{bottom:auto;top:36px;left:50%;width:auto;background: transparent;transform: translateX(-50%);}
+	position:fixed;bottom:0;left:0;z-index:9;width:100%;background-color:skyblue;
+	@include mobile{}
+	@include desktop{bottom:auto;top:36px;left:50%;width:auto;background: transparent;transform: translateX(-50%);}
 
-  ul {
-    display: flex;
-    li {
-      width: calc(100% / 3);
-      text-align: center;
-      @include desktop {
-        width: auto;
-        padding: 0 30px;
-      }
-      &.ticket {
-        display: none;
-        @include desktop {
-          display: block;
-        }
-      }
-    }
-  }
+	ul {
+		display: flex;
+		li {
+		width: calc(100% / 3);
+		text-align: center;
+		@include desktop {
+			width: auto;
+			padding: 0 30px;
+		}
+		&.ticket {
+			display: none;
+			@include desktop {
+			display: block;
+			}
+		}
+		}
+	}
 }

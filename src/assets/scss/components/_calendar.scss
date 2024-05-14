@@ -1,0 +1,20 @@
+.hkcalendar{position:relative;width:360px;
+    &-head{padding:0 0 9px;border-bottom:1px solid $grayscale-gee;
+        .th{display:flex;flex-direction:row;justify-content:center;align-items:center;height:20px;@include text-body1;color:$grayscale-g94;
+            &:first-child{color:$negative-red;}
+        }
+    }
+    &-body{padding:20px 0 0;
+        &-caption{margin:0 0 12px;text-align:center;@include text-body3(600);color:$grayscale-black;
+            &-tit{display:inline-block;vertical-align:top;}
+            &-prev{display:inline-block;margin:0 10px 0 0;padding:0 10px;vertical-align:top;cursor:pointer;}
+            &-next{display:inline-block;margin:0 0 0 10px;padding:0 10px;vertical-align:top;cursor:pointer;}
+        }
+    }
+    &-tr{
+        .td{display:flex;flex-direction:row;justify-content:center;align-items:center;height:46px;margin:8px 0 0;@include text-body1;color:$grayscale-black;
+            &.sunday{color:$negative-red;}
+            &.other{color:$grayscale-gd4;}
+        }
+    }
+}

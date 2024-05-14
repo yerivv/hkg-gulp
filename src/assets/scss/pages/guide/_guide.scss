@@ -50,11 +50,11 @@
     background: $bg-pear;
     box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.15);
     color: $primary-white;
-    font-family: 'Anek Gujarati';
+    //font-family: 'Anek Gujarati';
     letter-spacing: 0.75px;
     .hex {
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 23px;
     }
     .name {
@@ -86,6 +86,9 @@
     }
     &.lightgreen {
       background: $secondary-lightgreen;
+    }
+    &.flyblue {
+      background: $secondary-flyblue;
     }
     &.black {
       background: $grayscale-black;
@@ -214,6 +217,18 @@
       .head2 {
         @include text-head2;
       }
+      .head3 {
+        @include text-head3;
+      }
+      .head4 {
+        @include text-head4;
+      }
+      .head5 {
+        @include text-head5;
+      }
+      .head6 {
+        @include text-head6;
+      }
       .title1 {
         @include text-title1;
         .m {
@@ -269,6 +284,21 @@
         }
       }
     }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 52px;
+      border-top: 1px solid #F0F2F5;
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        width: 256px;
+        padding: 24px;
+        .type {@include text-title1;}
+        .summary {margin-left: auto; @include text-script2(500); color: $primary-hankblue;}
+        .option {width: 100%; margin-top: 20px; @include text-script2(400); color: $grayscale-g94;}
+      }
+    }
   }
   .buttons {
     .group-in {
@@ -286,11 +316,19 @@
         }
         display: flex;
         gap: 0 10px;
-
-        .btns {
-          width: 144px;
-          text-transform: uppercase;
+      }
+      &.default {
+        ul {
+          .btns {
+            width: 144px;
+            text-transform: uppercase;
+          }
         }
+      }
+    }
+    .group-in2 {
+      ul {
+        flex-direction: column;
       }
     }
   }
@@ -328,6 +366,10 @@
       ul {
         display: flex;
         gap: 10px;
+        li {
+          line-height: 0;
+          background-color: #FFBFBF;
+        }
       }
     }
   }

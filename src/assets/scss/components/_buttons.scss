@@ -10,14 +10,14 @@
   .icons {
     filter: invert(100%) sepia(100%) saturate(25%) hue-rotate(2deg) brightness(106%) contrast(105%)
   }
+
   &.large {
-    height: 52px;
+    height: 56px;
     @include text-body3;
     .icons {
       @include icon-box(24px, 24px);
     }
   }
-
   &.medium {
     height: 44px;
     @include text-body2;
@@ -25,35 +25,105 @@
       @include icon-box(20px, 20px);
     }
   }
-
   &.small {
     height: 36px;
     @include text-script2(500);
   }
 
+  &[styleType='icon'] {
+    gap: 0;
+    $btn-i-sizes: 16, 24, 28, 36, 44, 52, 72;
+    @each $size in $btn-i-sizes {
+      &.b-#{$size} {
+        width: $size + px; height: $size + px;
+      }
+    }
+    &.square {
+      border-radius: 3px;
+    }
+    &.circle {
+      border-radius: 50%;
+    }
+    &.rhombus {
+      position: relative;
+      background-color: transparent;
+      border-color: transparent;
+      @include text-body2;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: calc(100% - 12px);
+        height: calc(100% - 12px); 
+        border-radius: 16px;
+        border: 1px solid $primary-white;
+      }
+      &.b-52 {
+        &::before {border-radius: 10px}
+      }
+      &.b-36 {
+        &::before {border-radius: 6px}
+      }
+    }
+  }
+
   &.midnight {
     background-color: $primary-midnight;
     color: $primary-white;
+    &.rhombus {
+      &::before {background-color: $primary-midnight;}
+    }
   }
   &.midnight-outline {
     border-color: $primary-midnight;
     color: $primary-midnight;
+    &.rhombus {
+      &::before {border-color: $primary-midnight;}
+    }
   }
   &.hank {
     background-color: $primary-hankblue;
     color: $primary-white;
+    &.rhombus {
+      &::before {background-color: $primary-hankblue;}
+    }
   }
   &.hank-outline {
     border-color: $primary-hankblue;
     color: $primary-hankblue;
+    &.rhombus {
+      &::before {border-color: $primary-hankblue;}
+    }
   }
   &.skyblue {
     background-color: $secondary-skyblue;
     color: $primary-white;
+    &.rhombus {
+      &::before {background-color: $secondary-skyblue;}
+    }
   }
   &.skyblue-outline {
     border-color: $secondary-skyblue;
     color: $secondary-skyblue;
+    &.rhombus {
+      &::before {border-color: $secondary-skyblue;}
+    }
+  }
+  &.flyblue {
+    background-color: $secondary-flyblue;
+    color: $primary-white;
+    &.rhombus {
+      &::before {background-color: $secondary-flyblue;}
+    }
+  }
+  &.flyblue-outline {
+    border-color: $secondary-flyblue;
+    color: $secondary-flyblue;
+    &.rhombus {
+      &::before {border-color: $secondary-flyblue;}
+    }
   }
   &.negative {
     background-color: $negative-red;
@@ -66,5 +136,34 @@
   &:disabled {
     background-color: $grayscale-gd4;
     color: $grayscale-g94;
+  }
+  &.gray94 {
+    background-color: $grayscale-g94;
+  }
+  &.gray94-outline {
+    border-color: $grayscale-g94;
+    &.rhombus {
+      &::before {border-color: $grayscale-g94;}
+    }
+  }
+  &.grayd4 {
+    background-color: $grayscale-gd4;
+    &.rhombus {
+      &::before {background-color: $grayscale-gd4;}
+    }
+  }
+  &.grayd4-outline {
+    border-color: $grayscale-gd4;
+    color: $grayscale-g94;
+    &.rhombus {
+      &::before {border-color: $grayscale-gd4;}
+    }
+  }
+  &.white-outline {
+    background-color: $primary-white;
+    border-color: $grayscale-gd4;
+  }
+  &.transparent {
+    //background-color: transparent;
   }
 }

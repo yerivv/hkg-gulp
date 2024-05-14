@@ -2,73 +2,64 @@
 @mixin pad-min-width{min-width:$pad-width;}
 @mixin pc-min-width{min-width:$pc-width;}
 
-@mixin mo-scroll{overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;}
-
-@mixin float-clear{
-    &:after{content:"";display:block;clear:both;}
-}
-
-@mixin img-cover{background-position:center center;background-repeat:no-repeat;background-size:cover;}
-
-@mixin ellipsis($w){text-overflow:ellipsis;overflow:hidden;max-width:$w;white-space:nowrap;}
-
-@mixin ellipsis-multi($line,$lh){display:-webkit-box;-webkit-line-clamp:$line;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow:hidden;max-height:$line*$lh;white-space:normal;}
-
-@mixin flex-column{display:flex;flex-direction:column;}
-
-@mixin flex-column-reverse{display:flex;flex-direction:column-reverse;}
-
-@mixin flex-row{display:flex;flex-direction:row;}
-
-@mixin flex-row-reverse{display:flex;flex-direction:row-reverse;}
-
 @mixin mobile{
     @media screen and (max-width:$mo-breakpoint){
         @content;
     }
 }
-
 @mixin tablet{
     @media screen and (min-width:($mo-breakpoint + 1)) and (max-width:$pad-breakpoint){
         @content;
     }
 }
-
 @mixin desktop{
     @media screen and (min-width:($mo-breakpoint + 1)) and (max-width:$pc-breakpoint){
         @content;
     }
 }
+@mixin mo-scroll{overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 
-@mixin text{word-wrap:break-word;font-size:14px;color:$grayscale-black;line-height:1.5;font-weight:400;font-family:'Pretendard';}
-@mixin text-en {font-family:'Anek Gujarati';}
+@mixin blind{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
 
-@mixin text-head1{font-size:48px;line-height:58px;font-weight:300;}
-@mixin text-head2{font-size:60px;line-height:56px;font-weight:700;}
+// typography
+@mixin text{
+	color:$grayscale-black;
+	font-family: 'Pretendard';
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 400;
+	word-wrap: break-word;
+}
 
-@mixin text-title1($w:600){font-size:24px;line-height:36px;font-weight:$w;}
-@mixin text-title2($w:600){font-size:28px;line-height:40px;font-weight:$w;}
-@mixin text-title3($w:600){font-size:32px;line-height:44px;font-weight:$w;}
+@mixin text-en {font-family: 'Slik Serif';}
+
+@mixin text-head1($w:600){font-size:48px;line-height:58px;font-weight:$w;} //space?
+@mixin text-head2($w:600){font-size:56px;line-height:70px;font-weight:$w;}
+@mixin text-head3($w:600){font-size:60px;line-height:72px;font-weight:$w;}
+@mixin text-head4($w:600){font-size:72px;line-height:90px;font-weight:$w;}
+@mixin text-head5($w:400){font-size:88px;line-height:100px;font-weight:$w;} //space?
+@mixin text-head6($w:600){font-size:110px;line-height:130px;font-weight:$w;} 
+
+@mixin text-title1($w:600){font-size:24px;line-height:36px;font-weight:$w;} //space?
+@mixin text-title2($w:600){font-size:28px;line-height:40px;font-weight:$w;} //space?
+@mixin text-title3($w:600){font-size:32px;line-height:44px;font-weight:$w;} //space?
 @mixin text-title4($w:600){font-size:40px;line-height:52px;font-weight:$w;}
 
 @mixin text-body1($w:500){font-size:14px;line-height:14px;font-weight:$w;}
 @mixin text-body2($w:500){font-size:14px;line-height:24px;font-weight:$w;}
 @mixin text-body3($w:500){font-size:16px;line-height:26px;font-weight:$w;}
-@mixin text-body4($w:600){font-size:20px;line-height:30px;font-weight:$w;}
+@mixin text-body4($w:600){font-size:20px;line-height:30px;font-weight:$w;} //space?
 
 @mixin text-script1($w:500){font-size:11px;line-height:18px;font-weight:$w;}
 @mixin text-script2($w:600){font-size:12px;line-height:20px;font-weight:$w;}
 
-@mixin icon-box($w, $h, $repeat:no-repeat, $size:contain, $position: center){
-    display: inline-flex;
-    width: $w;
-    height: $w;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    text-indent: -999em;
-}
-
+//forms
 @mixin forms-default {
     width: 100%;
     height: 44px;
@@ -80,29 +71,25 @@
     outline: 0;
 }
 
-@mixin filter-white {
-    filter: invert(100%) sepia(100%) saturate(25%) hue-rotate(2deg) brightness(106%) contrast(105%);
+//icons
+@mixin icon-box($w, $h, $repeat:no-repeat, $size:contain, $position: center){
+    display: inline-flex;
+    width: $w;
+    height: $w;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-indent: -999em;
 }
-@mixin filter-midnight {
-    filter: invert(8%) sepia(66%) saturate(4350%) hue-rotate(222deg) brightness(86%) contrast(95%);
-}
-@mixin filter-hank {
-    filter: invert(13%) sepia(61%) saturate(4743%) hue-rotate(224deg) brightness(86%) contrast(113%);
-}
-@mixin filter-skyblue {
-    filter: invert(69%) sepia(6%) saturate(3907%) hue-rotate(184deg) brightness(94%) contrast(95%);
-}
-@mixin filter-g94 {
-    filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(91%) contrast(84%);
-}
-@mixin filter-reset {
-    filter: none;
-}
+@mixin filter-white {filter: invert(100%) sepia(100%) saturate(25%) hue-rotate(2deg) brightness(106%) contrast(105%);}
+@mixin filter-midnight {filter: invert(8%) sepia(66%) saturate(4350%) hue-rotate(222deg) brightness(86%) contrast(95%);}
+@mixin filter-hank {filter: invert(13%) sepia(61%) saturate(4743%) hue-rotate(224deg) brightness(86%) contrast(113%);}
+@mixin filter-skyblue {filter: invert(69%) sepia(6%) saturate(3907%) hue-rotate(184deg) brightness(94%) contrast(95%);}
+@mixin filter-flyblue {filter: invert(50%) sepia(30%) saturate(1145%) hue-rotate(188deg) brightness(91%) contrast(86%);}
+@mixin filter-g94 {filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(91%) contrast(84%);}
+@mixin filter-gd4 {filter: invert(94%) sepia(1%) saturate(66%) hue-rotate(314deg) brightness(96%) contrast(82%);}
+@mixin filter-reset {filter: none;}
 
-@mixin blind{
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-}
+//ellipsis
+@mixin ellipsis($w){text-overflow:ellipsis;overflow:hidden;max-width:$w;white-space:nowrap;}
+@mixin ellipsis-multi($line,$lh){display:-webkit-box;-webkit-line-clamp:$line;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow:hidden;max-height:$line*$lh;white-space:normal;}

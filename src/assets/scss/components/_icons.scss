@@ -1,4 +1,4 @@
-$icon-sizes: 12, 16, 20, 24, 32, 36, 40;
+$icon-sizes: 12, 16, 20, 24, 28, 32, 36, 40, 48, 60;
 
 @each $size in $icon-sizes {
   .i-#{$size} {
@@ -20,30 +20,36 @@ $icon-sizes: 12, 16, 20, 24, 32, 36, 40;
   &.skyblue {
     @include filter-skyblue;
   }
+  &.flyblue {
+    @include filter-flyblue;
+  }
   &.g94 {
     @include filter-g94;
+  }
+  &.gd4 {
+    @include filter-gd4;
   }
 }
 
 .i-back {
-  background-image: url('../../images/icon/back.svg');
+  background-image: url($path-icon + 'back.svg');
 }
 .i-search {
-  background-image: url('../../images/icon/search.svg');
+  background-image: url($path-icon + 'search.svg');
 }
 .i-share {
-  background-image: url('../../images/icon/share.svg');
+  background-image: url($path-icon + 'share.svg');
 }
 .i-menu {
-  background-image: url('../../images/icon/menu.svg');
+  background-image: url($path-icon + 'menu.svg');
 }
 .i-arrow-up {
-  background-image: url('../../images/icon/arrow-up.svg');
+  background-image: url($path-icon + 'arrow-up.svg');
 }
 .i-close {
-  background-image: url('../../images/icon/close.svg');
+  background-image: url($path-icon + 'close.svg');
 }
 
 .i-ai-calendar {
-  background-image: url('../../images/icon/ia-calendar.svg');
+  background-image: url($path-icon + 'ia-calendar.svg');
 }

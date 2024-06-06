@@ -797,6 +797,39 @@
                         </div>
                     </div>
                     <div class="group-in">
+                        <h4>type1</h4>
+                        <div>
+                            <label for="status-0" class="toggle-text type1">
+                                <input type="checkbox" name="status" id="status-0" />
+                                <span class="small hankblue">예약접수</span>
+                            </label>
+                            <label for="status-1" class="toggle-text type1">
+                                <input type="checkbox" name="status" id="status-1" />
+                                <span class="small hankblue">견적확인</span>
+                            </label>
+                            <label for="status-2" class="toggle-text type1">
+                                <input type="checkbox" name="status" id="status-2" />
+                                <span class="small hankblue">결제진행</span>
+                            </label>
+                            <label for="status-3" class="toggle-text type1">
+                                <input type="checkbox" name="status" id="status-3" />
+                                <span class="small hankblue">결제완료</span>
+                            </label>
+                            <label for="status-4" class="toggle-text type1">
+                                <input type="checkbox" name="status" id="status-4" />
+                                <span class="small hankblue">예약확정</span>
+                            </label>
+                            <label for="status-5" class="toggle-text type1">
+                                <input type="checkbox" name="status" id="status-5" />
+                                <span class="small hankblue">예약불가</span>
+                            </label>
+                            <label for="status-6" class="toggle-text type1">
+                                <input type="checkbox" name="status" id="status-6" />
+                                <span class="small hankblue">예약취소</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="group-in">
                         <h4>toggle</h4>
                         <div>
                             <label class="toggle-switch">
@@ -808,6 +841,81 @@
                                 <span class="slider"></span>
                             </label>
                         </div>
+                    </div>
+                    <div class="group-in">
+                        <h4>EA</h4>
+                        <div class="input-ea">
+                            <div class="ctr">
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-in">
+                        <h4>TITLE EA</h4>
+                        <dl class="input-ea">
+                            <dt>성인</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                        <dl class="input-ea">
+                            <dt>아동</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                        <dl class="input-ea">
+                            <dt>유아</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="group-in">
+                        <h4>EA - type2</h4>
+                        <div class="input-ea type2">
+                            <div class="ctr">
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-in">
+                        <h4>TITLE EA - type2</h4>
+                        <dl class="input-ea type2">
+                            <dt>성인</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                        <dl class="input-ea type2">
+                            <dt>아동</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                        <dl class="input-ea type2">
+                            <dt>유아</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                        
                     </div>
                 </div>
                 <div class="group">

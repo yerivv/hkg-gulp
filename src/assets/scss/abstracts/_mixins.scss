@@ -88,6 +88,7 @@
 @mixin filter-hank {filter: invert(13%) sepia(61%) saturate(4743%) hue-rotate(224deg) brightness(86%) contrast(113%);}
 @mixin filter-skyblue {filter: invert(69%) sepia(6%) saturate(3907%) hue-rotate(184deg) brightness(94%) contrast(95%);}
 @mixin filter-flyblue {filter: invert(50%) sepia(30%) saturate(1145%) hue-rotate(188deg) brightness(91%) contrast(86%);}
+@mixin filter-sky {filter: invert(98%) sepia(74%) saturate(649%) hue-rotate(173deg) brightness(95%) contrast(97%);}
 @mixin filter-g94 {filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(91%) contrast(84%);}
 @mixin filter-gd4 {filter: invert(94%) sepia(1%) saturate(66%) hue-rotate(314deg) brightness(96%) contrast(82%);}
 @mixin filter-reset {filter: none;}

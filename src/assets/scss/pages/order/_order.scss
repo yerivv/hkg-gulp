@@ -1,6 +1,23 @@
-.basket-section {padding-top: 20px;
-    [class^='area-'] {@include sub-section;}
-    .area-fixed{position:fixed;bottom:0;left:50%;width:100%;max-width:$pad-width;min-width:$mo-width;transform:translateX(-50%);padding:0;
+.basket-section {padding-top: 20px; @include sub-section;
+    [class^='area-'] {}
+    .area-sorting {border-top-width: 0;
+        .tab2 {padding: 0;}
+    }
+    .area-basket {
+        .list-button {@include flex-row; justify-content: space-between; align-items: center; padding-top: 20px;padding-bottom: 20px;}
+        .nodata {padding-top: 30px; padding-bottom: 40px;}
+        .basket-list {
+            .item {border-top: 1px solid $grayscale-gee;}
+            .box-prod {padding: 16px 0 20px;
+                .row-prod {margin-top: 10px;}
+            }
+            .box-estimate {padding: 20px 0;border-top: 1px solid $grayscale-gee;}
+        }
+    }
+    .area-best-prod {
+        padding-top:20px;border-top: 1px solid $grayscale-gee;
+    }
+    .area-fixed{position:fixed;bottom:0;left:50%;width:100%;max-width:$pad-width;min-width:$mo-width;transform:translateX(-50%);padding:0;border:none;
         .btn-box{display:flex;gap:0 8px;@include sub-section;padding-top:20px;padding-bottom:20px;background:$primary-white;}
         &.inline{position:absolute;}
     }

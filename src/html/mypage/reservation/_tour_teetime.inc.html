@@ -148,13 +148,20 @@ $(function() {
                 <dl>
                     <dt>인원</dt>
                     <dd>
-                        인원
+                        <div class="input-ea">
+                            <div class="ctr">
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-44 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </div>
+                        </div>
                     </dd>
                 </dl>
                 <dl>
                     <dt>비용</dt>
-                    <dd>
-                        인원
+                    <dd class="price">
+                        <div class="krw"><strong>180,000</strong>KRW</div>
+                        <div class="local">3,327,171.90 VND</div>
                     </dd>
                 </dl>
                 <div class="btn-box">

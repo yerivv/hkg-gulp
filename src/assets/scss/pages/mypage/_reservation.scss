@@ -259,6 +259,14 @@
                                 .small {color: $grayscale-g94; @include text-script2(400);}
                             }
                         }
+                        .group-data3 {
+                            .price {@include flex-row; justify-content: space-between; align-items: center; gap: 0 4px;
+                                .krw {font-weight: 400;
+                                    strong {@include text-body4(600); padding-right: 4px;}
+                                }
+                                .local {color: $grayscale-g94;@include text-script2(500);}
+                            }
+                        }
                     }
                 }
                 // 예약자 정보

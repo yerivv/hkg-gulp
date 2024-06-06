@@ -69,7 +69,7 @@ $card-sizes: 'small', 'large', 'big';
         }
     }
 }
-$card-colors: 'turquoise', 'flyblue', 'gd4', 'gradation';
+$card-colors: 'turquoise', 'flyblue', 'gd4', 'gradation', 'negative';
 @each $card in $card-colors {
     .card{
         &.#{$card}{
@@ -84,6 +84,9 @@ $card-colors: 'turquoise', 'flyblue', 'gd4', 'gradation';
             }
             @if($card == 'gradation') {
                 background:$gradation-06;
+            }
+            @if($card == 'negative') {
+                background:$negative-red;
             }
         }
     }
@@ -108,5 +111,26 @@ $box-colors: 'white', 'gf8', 'lightsky', 'white-b';
                 border-color:$grayscale-gee;
             }
         }
+    }
+}
+
+.input-ea{
+    .ctr{@include flex-row;gap:0 8px;
+        input{text-indent:0;text-align:center;color:$grayscale-black;font-weight:500;border-color:$grayscale-gf8;background:$grayscale-gf8;}
+        .btns{flex-basis:44px;min-width:44px;}
+    }
+    &.type2 {
+        .ctr {gap:0;
+            input{height:28px;border-color:transparent;background:$primary-white;}
+            .btns{flex-basis:28px;min-width:28px;}
+        }
+    }
+}
+dl.input-ea{
+    dt{padding:10px 0 0;@include text-body2(500);}
+    dd.ctr{padding:10px 0 0;}
+    &.type2 {@include flex-row; justify-content:flex-end; align-items: center; gap:0 8px;
+        dt{padding:0;color:$grayscale-g94;@include text-script2(500);}
+        dd.ctr{width:108px;padding:0;}
     }
 }

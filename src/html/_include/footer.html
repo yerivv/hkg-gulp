@@ -1,3 +1,71 @@
 <footer id="footer">
-    footer
+    <div class="head">
+        로고
+    </div>
+    <div class="body">
+        <ul class="company">
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">인재채용</a></li>
+            <li><a href="#">마케팅제휴</a></li>
+        </ul>
+        <ul class="policy">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">국외여행약관</a></li>
+            <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+            <li><a href="#">지사별 대표번호</a></li>
+            <li><a href="#">해외여행자보험</a></li>
+        </ul>
+    </div>
+    <div class="foot">
+        <div class="biz">
+            <button type="button" onclick="footInfo(this)">
+                <span>한케이골프 사업자정보</span>
+                <span styletype="icon" class="btns circle b-24 white-outline">
+                    <i class="icons i-12 i-arrow-down g94">열고닫기</i>
+                </span>
+            </button>
+        </div>
+        <p class="copy">Copyright ⓒ 2024 한케이골프 All rights reserved.</p>
+
+        <div class="detail">
+            <div class="golf">
+                <div class="biz">(주)한케이골프</div>
+                <div class="info">
+                    <p>
+                        대표자 : 전대만
+                        사업자번호 : 114-86-48971
+                        통신판매업 신고번호 : 제2016-안양동안-0351호
+                    </p>
+                    <p>주소 : 14057 경기 안양시 동안구 벌말로 126 평촌오비즈타워 34층 3402,3405~3407호 (주)한케이골프</p>
+                </div>
+            </div>
+            <div class="tour">
+                <div class="biz">HK투어</div>
+                <div class="info">
+                    <p>
+                        대표자 : 전대만
+                        사업자번호 : 114-86-48971
+                        통신판매업 신고번호 : 제2016-안양동안-0351호
+                    </p>
+                    <p>주소 : 14057 경기 안양시 동안구 벌말로 126 평촌오비즈타워 34층 3402,3405~3407호 (주)한케이골프</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+
+<script>
+const footInfo = (obj) => {
+	const btn = obj.querySelector('.icons');
+	const fInfo = document.querySelector('#footer .detail');
+	if(fInfo.classList.contains('open')) {
+        btn.classList.remove('i-arrow-up');
+        btn.classList.add('i-arrow-down');
+		fInfo.classList.remove('open');
+	} else {
+        btn.classList.remove('i-arrow-down');
+        btn.classList.add('i-arrow-up');
+		fInfo.classList.add('open');
+	}
+}
+</script>

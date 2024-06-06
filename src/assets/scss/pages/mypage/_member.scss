@@ -1,0 +1,172 @@
+$path-inquiry: '../../imgs/front/mypage/';
+
+.member-section {
+    // 비밀번호 확인
+    &.pwd-section {
+        .section-summary {
+            margin-bottom: 30px;
+        }
+    }
+
+    // 회원권 관리
+    &.membership-section {
+        background-color: $grayscale-gf8;
+        .area-list {display: flex; flex-direction: column; justify-content: space-between; padding: 20px 0;
+            @include mobile{min-height: calc(-56px - 96px + 100vh);}
+            @include desktop{min-height: calc(-80px - 96px + 100vh);}
+            .bullets {padding-top: 20px; border-top: 1px solid #eee; margin-top: 20px;}
+        }
+    }
+
+    // 회원탈퇴
+    &.withdraw-section {
+        .withdraw-sheet {margin-top: 30px; margin-bottom: 20px;}
+        .cert-box {margin-bottom: 40px;}
+        .form-set {
+            padding-top: 40px; padding-bottom: 40px; border-top: 1px solid $grayscale-gee;
+            .reason-select {
+                margin-top: 20px;
+                li + li {margin-top: 20px;}
+            }
+            .content-byte {
+                margin-top: 20px;
+                textarea {padding: 10px 16px; min-height: 120px; text-indent: 0;}
+                .byte {margin-top: 6px; text-align: right; color: $grayscale-g94; @include text-script2(400);}
+            }
+            .point {margin-top: 12px; color: $grayscale-g44;
+                strong {color: $primary-hankblue; font-weight: 700;}
+            }
+        }
+        .fail-reason {
+            margin-top: 30px; padding: 20px; border-radius: 4px; background-color: $grayscale-gf8;
+            dt {margin-bottom: 12px; color: $primary-hankblue; font-weight: 600;}
+            .bullets {
+                >li {color: $grayscale-g44;
+                    &::before {background-color: $grayscale-g44;}
+                }
+            }
+        }
+    }
+
+    // 설정
+    &.setting-section {
+        .form-set {
+            position: relative;
+            dl {
+                display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px solid $grayscale-gee;
+                dt {margin: 0; font-weight: 400;}
+                dd {margin: 0;
+                    .btns.small {width: 63px; height: 28px; font-size: 11px;}
+                }
+                & + dl {margin-top: 10px;}
+            }
+        }
+        .title + .subtext {margin-top: 4px;}
+        .subtext {color: $grayscale-g94; @include text-script2(400);}
+        .layer {position: absolute; right: 0; top: 20px;}
+    }
+}
+
+.membership-card {
+    min-height: 175px; padding: 20px; box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.15); background: linear-gradient(180deg, #0A2161 0%, #314D9E 100%);
+    border-radius: 4px; color: $primary-white; box-shadow: 1px 4px 10px 0px rgba(0, 0, 0, 0.15); text-align: center;
+}
+
+.layerpop_load{
+    // 비밀번호 변경
+    .modal-modify-pwd {
+        .sample {
+            border-top: 1px solid $grayscale-gee;
+            .form-set {
+                padding-top: 0;
+            }
+        }
+    }
+
+    // 회원권 추가 조회
+    .modal-myMembership-search {
+        .content {
+            border-top: 1px solid $grayscale-gee;
+            .search {@include sub-section; background-color: $primary-white;
+                .form-set {
+                    dl {
+                        &:first-child {margin-top: 0;}
+                    }
+                }
+                .list {margin-top: 20px;
+                    .item {
+                        position: relative; padding: 11px 44px; background-color: $bg-lightsky; border-radius: 4px;
+                        & + li {margin-top: 10px}
+                        p {display: flex; flex-wrap: wrap; align-items: center;
+                            .name {font-weight: 500;}
+                            .num {position:relative; padding-left: 17px; color: $grayscale-g94;
+                                &::before {content: '';position:absolute; left:8px; top: 50%; width: 1px; height: 12px; background-color: $grayscale-gd4; transform: translateY(-50%);}
+                            }
+                        }
+                        .i-ai-membership {position: absolute; left: 16px; top: 50%; transform: translateY(-50%);}
+                        .btns {position: absolute; right: 16px; top: 50%; transform: translateY(-50%);}
+                    }
+                }
+                .btn-box {margin-top: 20px;}
+            }
+            .result {@include sub-section; padding-top: 20px; padding-bottom: 20px; border-top: 1px solid $grayscale-gee;
+                .tit { @include text-body3(600);}
+                .list {margin-top: 20px;
+                    .item {
+                        input[type=radio] {display: none;}
+                        input[type=radio] + label {display: block; border-radius: 4px; background-color: $primary-white; padding: 20px;}
+                        input[type=radio]:checked + label {background-color: $bg-lightsky;}
+                        .name {margin-top: 20px;font-weight: 600;}
+                        .info {
+                            margin-top: 12px; padding-top: 12px; border-top: 1px solid $grayscale-gee;
+                            dl {display: flex; justify-content: space-between;
+                                + dl {margin-top: 8px;}
+                            }
+                            dt {@include text-script2(400); color: $grayscale-g94;}
+                            dd {@include text-script2(500); text-align: right;}
+                        }
+
+                        & + .item {margin-top: 10px;}
+                    }
+                }
+            }
+        }
+        &.bg {
+            .content {background-color: $grayscale-gf8;}
+        }
+    }
+
+    // 회원권 상세
+    .modal-myMembership-detail {
+        .content {
+            .detail {@include sub-section; padding-top: 20px; padding-bottom: 20px; background-color: $grayscale-gf8;
+                .inner {border-radius: 4px; background-color: $primary-white; padding: 20px;}
+                .name {margin-top: 20px;
+                    .en {@include text-en; @include text-body4(600);}
+                    .ko {color: $grayscale-g94; @include text-body2(400);margin-top:4px;}
+                }
+                .info {
+                    margin-top: 20px; padding-top: 20px; border-top: 1px solid $grayscale-gee;
+                    dl {display: flex; justify-content: space-between;
+                        + dl {margin-top: 10px;}
+                    }
+                    dt {color: $grayscale-g94;}
+                    dd {font-weight: 500; text-align: right;}
+                }
+                .bullets {margin-top: 12px;}
+            }
+            .benefit {@include sub-section; padding-bottom: 20px;
+                dl {margin-top: 30px;}
+                dt {@include text-body2(500);}
+                dd {margin-top: 10px;
+                    .bullets li {color: $grayscale-g44; font-weight: 400;}
+                }
+                .so {
+                    li {display: flex; gap: 0 12px; align-items: center; color: $grayscale-g44;
+                        + li {margin-top: 10px;}
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+    $('.bt-schedule-modify').on('click', function(){
+        const target = $(this).closest('.group');
+        target.addClass('modify-ing');
+        calendar.search({
+            el: '.scheduleCalendar',
+            start: '#scheduleStart',
+            end: '#scheduleEnd'
+        });
+    })
+    $('.bt-schedule-cancle').on('click', function(){
+        const target = $(this).closest('.group');
+        target.removeClass('modify-ing');
+    })
+    $('.bt-schedule-complete').on('click', function(){
+        const target = $(this).closest('.group');
+        alert('수정완료');
+        target.removeClass('modify-ing');
+    })
+});
+//]]>
+</script>
+
+<!-- 투어 일정 -->
+<dl class="box-round white">
+    <dt class="title-m detail-title" onclick="boxToggle(this)">투어 일정<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+    <dd class="detail-schedule detail-detail">
+        <div class="group">
+            <div class="group-title">
+                <div class="title-m">7박 8일</div>
+                <div class="btn-layer">
+                    <span class="set complete">
+                        <a href="#" class="btns txt bt-schedule-modify">수정</a>
+                    </span>
+                    <span class="set ing">
+                        <a href="#" class="btns txt bt-schedule-cancle">수정취소</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-schedule-complete">수정완료</a>
+                    </span>
+                    <i class="icons i-12 i-arrow-right g94"></i>
+                </div>
+            </div>
+            <div class="group-data1 complete">
+                <dl>
+                    <dt>출발일</dt>
+                    <dd>2024.04.01</dd>
+                </dl>
+                <dl>
+                    <dt>도착일</dt>
+                    <dd>2024.04.08</dd>
+                </dl>
+            </div>
+            <div class="group-data1 ing">
+                <p class="notice">일정 변경 시, 예상 견적이 변동됩니다.</p>
+                <dl>
+                    <dt>출발일</dt>
+                    <dd>
+                        <div class="calendar-input"><input type="text" id="scheduleStart" value="2024.04.01" readonly></div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>도착일</dt>
+                    <dd>
+                        <div class="calendar-input"><input type="text" id="scheduleEnd" value="2024.04.08" readonly></div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="scheduleCalendar"></div>
+        </div>
+    </dd>
+</dl><!-- //box-round -->

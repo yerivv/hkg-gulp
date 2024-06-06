@@ -32,24 +32,243 @@ $icon-sizes: 12, 16, 20, 24, 28, 32, 36, 40, 48, 60;
 }
 
 .i-back {
-  background-image: url($path-icon + 'back.svg');
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/back.svg');}
+    }
 }
 .i-search {
-  background-image: url($path-icon + 'search.svg');
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/search.svg');}
+    }
 }
 .i-share {
-  background-image: url($path-icon + 'share.svg');
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/share.svg');}
+    }
 }
 .i-menu {
-  background-image: url($path-icon + 'menu.svg');
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/menu.svg');}
+    }
 }
 .i-arrow-up {
-  background-image: url($path-icon + 'arrow-up.svg');
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/arrow-up.svg');}
+    }
+}
+.i-arrow-down {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/arrow-down.svg');}
+    }
+}
+.i-arrow-left {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/arrow-left.svg');}
+    }
+}
+.i-arrow-right {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/arrow-right.svg');}
+    }
 }
 .i-close {
-  background-image: url($path-icon + 'close.svg');
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/close.svg');}
+    }
+}
+.i-eye-off {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/eye-off.svg');}
+    }
+}
+.i-eye-on {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/eye-on.svg');}
+    }
+}
+.i-clip {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/clip.svg');}
+    }
+}
+.i-lock {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/lock.svg');}
+    }
+}
+.i-more {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/more.svg');}
+    }
+}
+.i-user {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/user.svg');}
+    }
+}
+.i-tel {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/tel.svg');}
+    }
+}
+.i-error {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/error.svg');}
+    }
+}
+.i-pen {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/pen.svg');}
+    }
+}
+.i-check {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/check.svg');}
+    }
+}
+.i-trash {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/trash.svg');}
+    }
+}
+.i-receipt {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/receipt.svg');}
+    }
+}
+.i-reverse {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/reverse.svg');}
+    }
+}
+.i-naver {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/naver.svg');}
+  }
+}
+.i-kakao {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/kakao.svg');}
+  }
+}
+.i-apple {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/apple.svg');}
+  }
+}
+.i-hank {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/hank.svg');}
+  }
+}
+.i-phone {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/phone.svg');}
+  }
+}
+.i-plus {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/plus.svg');}
+  }
+}
+.i-minus {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/minus.svg');}
+  }
+}
+.i-email {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/email.svg');}
+  }
+}
+.i-trash {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/trash.svg');}
+  }
+}
+.i-filter {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/filter.svg');}
+  }
 }
 
 .i-ai-calendar {
-  background-image: url($path-icon + 'ia-calendar.svg');
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-calendar.svg');}
+    }
+}
+.i-ai-user {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-user.svg');}
+    }
+}
+.i-ai-court {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-court.svg');}
+    }
+}
+.i-ai-hotel {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-hotel.svg');}
+    }
+}
+.i-ai-car {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-car.svg');}
+    }
+}
+.i-ai-flight {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-flight.svg');}
+    }
+}
+.i-ai-best {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-best.svg');}
+    }
+}
+.i-ai-membership {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-membership.svg');}
+    }
+}
+.i-ai-pay {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-pay.svg');}
+    }
+}
+.i-ai-card {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-card.svg');}
+    }
+}
+.i-ai-bank {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-bank.svg');}
+    }
+}
+.i-ai-online {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-online.svg');}
+    }
+}
+.i-ai-naver {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-naver.svg');}
+    }
+}
+.i-ai-kakao {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-kakao.svg');}
+    }
+}
+.i-ai-place {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-place.svg');}
+    }
+}
+.i-ai-restaurant {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-restaurant.svg');}
+    }
 }

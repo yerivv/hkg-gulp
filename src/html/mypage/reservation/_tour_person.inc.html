@@ -1,0 +1,85 @@
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+    $('.bt-person-modify').on('click', function(){
+        const target = $(this).closest('.group');
+        target.addClass('modify-ing');
+    })
+    $('.bt-person-cancle').on('click', function(){
+        const target = $(this).closest('.group');
+        target.removeClass('modify-ing');
+    })
+    $('.bt-person-complete').on('click', function(){
+        const target = $(this).closest('.group');
+        alert('수정완료')
+        target.removeClass('modify-ing');
+    })
+});
+//]]>
+</script>
+
+<!-- 투어 인원 -->
+<dl class="box-round white">
+    <dt class="title-m detail-title" onclick="boxToggle(this)">투어 인원<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+    <dd class="detail-person detail-detail">
+        <div class="group">
+            <div class="group-title">
+                <div class="title-m">총 5명</div>
+                <div class="btn-layer">
+                    <span class="set complete">
+                        <a href="#" class="btns txt bt-person-modify">수정</a>
+                    </span>
+                    <span class="set ing">
+                        <a href="#" class="btns txt bt-person-cancle">수정취소</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-person-complete">수정완료</a>
+                    </span>
+                    <i class="icons i-12 i-arrow-right g94"></i>
+                </div>
+            </div>
+            <div class="group-data1 complete">
+                <dl>
+                    <dt>투어 인원</dt>
+                    <dd>
+                        <ul>
+                            <li>성인 4명</li>
+                            <li>아동 1명</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="group-data1 ing">
+                <p class="notice">인원 변경 시, 예상 견적이 변동됩니다.</p>
+                <dl>
+                    <dt>투어 인원</dt>
+                    <dd>
+                        <dl class="input-ea type2">
+                            <dt>성인</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                        <dl class="input-ea type2">
+                            <dt>아동</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                        <dl class="input-ea type2">
+                            <dt>유아</dt>
+                            <dd class="ctr">
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '-');"><i class="icons i-16 i-minus midnight">-</i></button>
+                                <input type="text" value="0" readonly>
+                                <button type="button" class="btns square b-28 white-outline" onclick="inputea(this, '+');"><i class="icons i-16 i-plus midnight">+</i></button>
+                            </dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </dd>
+</dl><!-- //box-round -->

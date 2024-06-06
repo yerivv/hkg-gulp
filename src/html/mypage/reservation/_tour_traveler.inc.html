@@ -1,0 +1,508 @@
+
+<!-- <script type="text/javascript" src="${G.uriStatic}/jscript/global/handlebars.min.js"></script>
+<script type="text/javascript" src="${G.uriStatic}/jscript/global/jquery.filepack.js?v=<c:out value="${G.launchVer}" />"></script> -->
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+    travelerCheck();
+    
+    $(document).on('click', '.bt-traveler-remove', function() {
+        const target = $(this).closest('.group');
+        target.remove();
+        alert('삭제');
+        travelerCheck();
+    });
+    $('.bt-traveler-modify').on('click', function(){
+        const target = $(this).closest('.group');
+        target.addClass('modify-ing');
+        //$('.ux-file-photo').filePhoto();
+    })
+    $('.bt-traveler-cancle').on('click', function(){
+        const target = $(this).closest('.group');
+        target.removeClass('modify-ing');
+    })
+    $('.bt-traveler-complete').on('click', function(){
+        const target = $(this).closest('.group');
+        alert('수정완료');
+        target.removeClass('modify-ing');
+    })
+
+    // 여행자 추가
+    $('.bt-traveler-add').on('click', function(){
+        // Handlebars Template
+        //var templateH = Handlebars.compile($('#tpl_traveler').html());
+        //$('.detail-traveler .btn-add-box').before(templateH({}));
+        //$('.ux-file-photo').filePhoto();
+        travelerCheck();
+    });
+});
+
+const travelerCheck = () => {
+    console.log('1')
+    const target = document.querySelector('.detail-traveler');
+    const btnBox = target.querySelector('.btn-add-box');
+    let traveler = target.querySelectorAll('.group').length;
+    let travelerTotal = parseInt(target.querySelector('input[name=traveler_total]').value, 10);
+
+    if(travelerTotal > traveler) {
+        btnBox.style.display = 'block';
+    } else {
+        btnBox.style.display = 'none';
+    }
+}
+
+//]]>
+</script>
+
+<!-- 여행자 정보 -->
+<dl class="box-round white">
+    <dt class="title-m detail-title" onclick="boxToggle(this)">여행자 정보<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+    <dd class="detail-traveler detail-detail">
+        <input type="hidden" name="traveler_total" value="3" />
+        <!-- 등록한 정보가 있을 경우 -->
+        <div class="group type1">
+            <div class="group-title">
+                <div class="title-m">여행자 1</div>
+                <div class="text">대표여행자</div>
+                <div class="btn-layer">
+                    <span class="set complete">
+                        <a href="#" class="btns txt bt-traveler-remove">삭제</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-traveler-modify">수정</a>
+                    </span>
+                    <span class="set ing">
+                        <a href="#" class="btns txt bt-traveler-cancle">수정취소</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-traveler-complete">수정완료</a>
+                    </span>
+                    <i class="icons i-12 i-arrow-right g94"></i>
+                </div>
+            </div>
+            <div class="group-data2 complete">
+                <dl>
+                    <dt>이름</dt>
+                    <dd>김예약</dd>
+                    <dd>KIM BOOKING</dd>
+                </dl>
+                <dl>
+                    <dt>생년월일</dt>
+                    <dd>1981.01.31</dd>
+                </dl>
+                <dl>
+                    <dt>성별</dt>
+                    <dd>남성</dd>
+                </dl>
+                <dl>
+                    <dt>연락처</dt>
+                    <dd>01012341234</dd>
+                </dl>
+                <dl>
+                    <dt>이메일</dt>
+                    <dd>abc1234@hank.com</dd>
+                </dl>
+                <dl>
+                    <dt>여권번호</dt>
+                    <dd>M000000000000000</dd>
+                    <dd class="small">2024.12.30 만료 예정</dd>
+                </dl>
+                <dl>
+                    <dt>여권 및 비자 사본</dt>
+                    <dd>
+                        <div class="imgs">
+                            <div><img src="" alt="여권사진" /></div>
+                            <div><img src="" alt="여권사진" /></div>
+                            <div><img src="" alt="여권사진" /></div>
+                            <div><img src="" alt="여권사진" /></div>
+                            <div><img src="" alt="여권사진" /></div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>비자 발급 대행</dt>
+                    <dd>신청</dd>
+                </dl>
+                <dl>
+                    <dt>여행자보험 가입</dt>
+                    <dd>신청안함</dd>
+                </dl>
+            </div>
+            <div class="group-data3 ing">
+                <dl>
+                    <dt>이름</dt>
+                    <dd>
+                        <input type="text" name="traveler1_name" value="김예약" placeholder="이름" />
+                    </dd>
+                    <dd>
+                        <div class="en-name">
+                            <input type="text" name="traveler1_en1" value="kim" placeholder="영문 성" />
+                            <input type="text" name="traveler1_en2" value="booking" placeholder="영문 이름" />
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>생년월일</dt>
+                    <dd>
+                        <input type="text" name="traveler1_birth" value="1981.01.31" placeholder="YYYY.MM.DD" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>성별</dt>
+                    <dd>
+                        <div class="d-flex flex-wrap flex-col-2 gap-8">
+                            <label for="male" class="toggle-text col col-4">
+                                <input name="traveler1_gender" type="radio" id="male" checked>
+                                <span class="medium skyblue">남자</span>
+                            </label>
+                            <label for="female" class="toggle-text col col-4">
+                                <input name="traveler1_gender" type="radio" id="female">
+                                <span class="medium skyblue">여자</span>
+                            </label>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>연락처</dt>
+                    <dd>
+                        <input type="text" name="traveler1_mobile" value="01012341234" placeholder="숫자만 입력해 주세요." />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>이메일</dt>
+                    <dd>
+                        <input type="text" name="traveler1_email" value="abc1234@hank.com" placeholder="" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>여권번호</dt>
+                    <dd>
+                        <input type="text" name="traveler1_passport_num" value="M000000000000000" placeholder="" />
+                    </dd>
+                    <dd>
+                        <input type="text" name="traveler1_passport_end" value="2024.12.30" placeholder="여권 유효기간 숫자만 입력" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>여권 및 비자 사본</dt>
+                    <dd>
+                        <div class="filebox">
+                        <c:forEach var="no" begin="1" end="5" varStatus="vs">
+                            <div class="ux-file-photo">
+                                <input type="file" name="image${vs.count}"
+                                    accept="<c:out value="${mv.var.attachExtImage}"/>" 
+                                    max-vol="<c:out value="${mv.var.attachMaxVol}"/>"
+                                />
+                            </div>
+                        </c:forEach>
+                        </div>
+                    </dd>
+                    <dd>
+                        <ul class="bullets">
+                            <li>파일은 30MB의 jpg, jpeg, png, pdf 파일을 최대 5개까지 등록할 수 있습니다.</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>비자 발급 대행</dt>
+                    <dd>
+                        <label class="checkbox">
+                            <input name="traveler1_visa" type="checkbox" checked />
+                            <span>신청</span>
+                        </label>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>여행자보험 가입</dt>
+                    <dd>
+                        <label class="checkbox">
+                            <input name="traveler1_insurance" type="checkbox" />
+                            <span>신청</span>
+                        </label>
+                    </dd>
+                </dl>
+                <div class="btn-box">
+                    <a href="#" class="btns small skyblue-outline bt-traveler-cancle">수정취소</a>
+                    <a href="#" class="btns small skyblue bt-traveler-complete">수정완료</a>
+                </div>
+            </div>
+        </div>
+        <!-- 등록한 정보가 없을 경우 -->
+        <div class="group type1">
+            <div class="group-title">
+                <div class="title-m">여행자 2</div>
+                <div class="text">동행자에게 입력요청</div>
+                <div class="btn-layer">
+                    <span class="set complete">
+                        <a href="#" class="btns txt bt-traveler-remove">삭제</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-traveler-modify">수정</a>
+                    </span>
+                    <span class="set ing">
+                        <a href="#" class="btns txt bt-traveler-cancle">수정취소</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-traveler-complete">수정완료</a>
+                    </span>
+                    <i class="icons i-12 i-arrow-right g94"></i>
+                </div>
+            </div>
+            <div class="group-data2 complete">
+                <dl>
+                    <dt>이름</dt>
+                    <dd class="none">이름을 입력해 주세요.</dd>
+                    <dd class="none">영문 이름을 입력해 주세요.</dd>
+                </dl>
+                <dl>
+                    <dt>생년월일</dt>
+                    <dd class="none">생년월일을 입력해 주세요.</dd>
+                </dl>
+                <dl>
+                    <dt>성별</dt>
+                    <dd class="none">성별을 선택해 주세요.</dd>
+                </dl>
+                <dl>
+                    <dt>연락처</dt>
+                    <dd class="none">휴대폰번호를 입력해 주세요.</dd>
+                </dl>
+                <dl>
+                    <dt>이메일</dt>
+                    <dd class="none">이메일을 입력해 주세요.</dd>
+                </dl>
+                <dl>
+                    <dt>여권번호</dt>
+                    <dd class="none">여권번호를 입력해 주세요.</dd>
+                    <dd class="none">여권 만료일을 입력해 주세요.</dd>
+                </dl>
+                <dl>
+                    <dt>여권 및 비자 사본</dt>
+                    <dd class="none">여권 사본 이미지를 등록해 주세요.<br />비자 발급 사본이 있는 경우, 등록해 주세요.</dd>
+                </dl>
+                <dl>
+                    <dt>비자 발급 대행</dt>
+                    <dd class="none">신청안함</dd>
+                </dl>
+                <dl>
+                    <dt>여행자보험 가입</dt>
+                    <dd class="none">신청안함</dd>
+                </dl>
+            </div>
+            <div class="group-data3 ing">
+                <dl>
+                    <dt>이름</dt>
+                    <dd>
+                        <input type="text" name="traveler2_name" value="" placeholder="이름" />
+                    </dd>
+                    <dd class="complete">영문 이름을 입력해 주세요.</dd>
+                    <dd>
+                        <div class="en-name">
+                            <input type="text" name="traveler2_en1" value="" placeholder="영문 성" />
+                            <input type="text" name="traveler2_en2" value="" placeholder="영문 이름" />
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>생년월일</dt>
+                    <dd>
+                        <input type="text" name="traveler2_birth" value="" placeholder="YYYY.MM.DD" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>성별</dt>
+                    <dd>
+                        <div class="d-flex flex-wrap flex-col-2 gap-8">
+                            <label for="male" class="toggle-text col col-4">
+                                <input name="traveler2_gender" type="radio" id="male">
+                                <span class="medium skyblue">남자</span>
+                            </label>
+                            <label for="female" class="toggle-text col col-4">
+                                <input name="traveler2_gender" type="radio" id="female">
+                                <span class="medium skyblue">여자</span>
+                            </label>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>연락처</dt>
+                    <dd>
+                        <input type="text" name="traveler2_mobile" value="" placeholder="숫자만 입력해 주세요." />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>이메일</dt>
+                    <dd>
+                        <input type="text" name="traveler2_email" value="" placeholder="" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>여권번호</dt>
+                    <dd>
+                        <input type="text" name="traveler2_passport_num" value="" placeholder="" />
+                    </dd>
+                    <dd>
+                        <input type="text" name="traveler2_passport_end" value="" placeholder="여권 유효기간 숫자만 입력" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>여권 및 비자 사본</dt>
+                    <dd>
+                        <div class="filebox">
+                        <c:forEach var="no" begin="1" end="5" varStatus="vs">
+                            <div class="ux-file-photo">
+                                <input type="file" name="image${vs.count}"
+                                    accept="<c:out value="${mv.var.attachExtImage}"/>" 
+                                    max-vol="<c:out value="${mv.var.attachMaxVol}"/>"
+                                />
+                            </div>
+                        </c:forEach>
+                        </div>
+                    </dd>
+                    <dd>
+                        <ul class="bullets">
+                            <li>파일은 30MB의 jpg, jpeg, png, pdf 파일을 최대 5개까지 등록할 수 있습니다.</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>비자 발급 대행</dt>
+                    <dd>
+                        <label class="checkbox">
+                            <input name="traveler2_visa" type="checkbox" checked />
+                            <span>신청</span>
+                        </label>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>여행자보험 가입</dt>
+                    <dd>
+                        <label class="checkbox">
+                            <input name="traveler2_insurance" type="checkbox" />
+                            <span>신청</span>
+                        </label>
+                    </dd>
+                </dl>
+                <div class="btn-box">
+                    <a href="#" class="btns small skyblue-outline bt-traveler-cancle">수정취소</a>
+                    <a href="#" class="btns small skyblue bt-traveler-complete">수정완료</a>
+                </div>
+            </div>
+        </div>
+        <div class="btn-add-box" style="display:none">
+            <a href="#" class="btns small skyblue bt-traveler-add">여행자 추가</a>
+            <p>여행자는 투어 인원만큼만 추가할 수 있습니다.</p>
+        </div>
+    </dd>
+</dl><!-- //box-round -->
+
+<script id="tpl_traveler" type="text/x-handlebars-template">
+	<div class="group type1 modify-ing">
+        <div class="group-title">
+            <div class="title-m">여행자 2</div>
+            <div class="text">동행자에게 입력요청</div>
+            <div class="btn-layer">
+                <span class="set ing">
+                    <a href="#" class="btns txt bt-traveler-remove">삭제</a>
+                    <span class="line"></span>
+                    <a href="#" class="btns txt bt-traveler-save">저장</a>
+                </span>
+                <i class="icons i-12 i-arrow-right g94"></i>
+            </div>
+        </div>
+        <div class="group-data3 ing">
+            <dl>
+                <dt>이름</dt>
+                <dd>
+                    <input type="text" name="traveler2_name" value="" placeholder="이름" />
+                </dd>
+                <dd class="complete">영문 이름을 입력해 주세요.</dd>
+                <dd>
+                    <div class="en-name">
+                        <input type="text" name="traveler2_en1" value="" placeholder="영문 성" />
+                        <input type="text" name="traveler2_en2" value="" placeholder="영문 이름" />
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>생년월일</dt>
+                <dd>
+                    <input type="text" name="traveler2_birth" value="" placeholder="YYYY.MM.DD" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>성별</dt>
+                <dd>
+                    <div class="d-flex flex-wrap flex-col-2 gap-8">
+                        <label for="male" class="toggle-text col col-4">
+                            <input name="traveler2_gender" type="radio" id="male">
+                            <span class="medium skyblue">남자</span>
+                        </label>
+                        <label for="female" class="toggle-text col col-4">
+                            <input name="traveler2_gender" type="radio" id="female">
+                            <span class="medium skyblue">여자</span>
+                        </label>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>연락처</dt>
+                <dd>
+                    <input type="text" name="traveler2_mobile" value="" placeholder="숫자만 입력해 주세요." />
+                </dd>
+            </dl>
+            <dl>
+                <dt>이메일</dt>
+                <dd>
+                    <input type="text" name="traveler2_email" value="" placeholder="" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>여권번호</dt>
+                <dd>
+                    <input type="text" name="traveler2_passport_num" value="" placeholder="" />
+                </dd>
+                <dd>
+                    <input type="text" name="traveler2_passport_end" value="" placeholder="여권 유효기간 숫자만 입력" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>여권 및 비자 사본</dt>
+                <dd>
+                    <div class="filebox">
+                    <c:forEach var="no" begin="1" end="5" varStatus="vs">
+                        <div class="ux-file-photo">
+                            <input type="file" name="image${vs.count}"
+                                accept="<c:out value="${mv.var.attachExtImage}"/>" 
+                                max-vol="<c:out value="${mv.var.attachMaxVol}"/>"
+                            />
+                        </div>
+                    </c:forEach>
+                    </div>
+                </dd>
+                <dd>
+                    <ul class="bullets">
+                        <li>파일은 30MB의 jpg, jpeg, png, pdf 파일을 최대 5개까지 등록할 수 있습니다.</li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt>비자 발급 대행</dt>
+                <dd>
+                    <label class="checkbox">
+                        <input name="traveler2_visa" type="checkbox" checked />
+                        <span>신청</span>
+                    </label>
+                </dd>
+            </dl>
+            <dl>
+                <dt>여행자보험 가입</dt>
+                <dd>
+                    <label class="checkbox">
+                        <input name="traveler2_insurance" type="checkbox" />
+                        <span>신청</span>
+                    </label>
+                </dd>
+            </dl>
+            <div class="btn-box">
+                <a href="#" class="btns small skyblue-outline bt-traveler-remove">삭제</a>
+                <a href="#" class="btns small skyblue bt-traveler-save">저장</a>
+            </div>
+        </div>
+    </div>
+</script>

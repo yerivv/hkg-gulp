@@ -51,10 +51,10 @@
 @mixin text-title3($w:600){font-size:32px;line-height:44px;font-weight:$w;} //space?
 @mixin text-title4($w:600){font-size:40px;line-height:52px;font-weight:$w;}
 
-@mixin text-body1($w:500){font-size:14px;line-height:14px;font-weight:$w;}
-@mixin text-body2($w:500){font-size:14px;line-height:24px;font-weight:$w;}
-@mixin text-body3($w:500){font-size:16px;line-height:26px;font-weight:$w;}
-@mixin text-body4($w:600){font-size:20px;line-height:30px;font-weight:$w;} //space?
+@mixin text-body1($w:400){font-size:14px;line-height:22px;font-weight:$w;}
+@mixin text-body2($w:400){font-size:16px;line-height:26px;font-weight:$w;}
+@mixin text-body3($w:400){font-size:18px;line-height:28px;font-weight:$w;}
+@mixin text-body4($w:400){font-size:20px;line-height:30px;font-weight:$w;} //space?
 
 @mixin text-script1($w:500){font-size:11px;line-height:18px;font-weight:$w;}
 @mixin text-script2($w:600){font-size:12px;line-height:20px;font-weight:$w;}
@@ -80,6 +80,8 @@
     background-size: contain;
     background-position: center;
     text-indent: -999em;
+    font-size: 0;
+    line-height: 0;
 }
 @mixin filter-white {filter: invert(100%) sepia(100%) saturate(25%) hue-rotate(2deg) brightness(106%) contrast(105%);}
 @mixin filter-midnight {filter: invert(8%) sepia(66%) saturate(4350%) hue-rotate(222deg) brightness(86%) contrast(95%);}
@@ -93,3 +95,15 @@
 //ellipsis
 @mixin ellipsis($w){text-overflow:ellipsis;overflow:hidden;max-width:$w;white-space:nowrap;}
 @mixin ellipsis-multi($line,$lh){display:-webkit-box;-webkit-line-clamp:$line;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow:hidden;max-height:$line*$lh;white-space:normal;}
+
+@mixin sub-section{padding-left:20px;padding-right:20px;
+    @media screen and (min-width:($sub-max-width + $sub-margin)){
+        padding-left:max(calc((100% - $sub-max-width) / 2), 20px);padding-right:max(calc((100% - $sub-max-width) / 2), 20px);
+    }
+}
+
+//flex
+@mixin flex-column{display:flex;flex-direction:column;}
+@mixin flex-column-reverse{display:flex;flex-direction:column-reverse;}
+@mixin flex-row{display:flex;flex-direction:row;}
+@mixin flex-row-reverse{display:flex;flex-direction:row-reverse;}

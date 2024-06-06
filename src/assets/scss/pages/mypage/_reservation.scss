@@ -1,0 +1,328 @@
+.calendar-input {
+    position: relative; width: 100%; border-radius: 10px; background-color: $grayscale-gf8;
+    &::after {content: ''; position: absolute; top: 50%; right: 16px; transform: translateY(-50%); width: 20px; height: 20px; background: url($path-icon + '20/calendar.svg') center no-repeat;}
+    input[type=text] {position: relative; z-index: 1; background-color: transparent; border-color: transparent; color: $grayscale-black; cursor: pointer;}
+}
+
+.reservation-section {
+    [class^='area-'] {@include sub-section;
+        .title-l {@include text-body2(600);}
+        .title-m {@include text-body1(600);}
+    }
+    .nodata {padding-top: 120px; padding-bottom: 120px; @include sub-section;}
+    .area-sorting {display: flex; justify-content: space-between; padding-top: 16px; padding-bottom: 16px; background-color: $primary-white;
+        .tab2 {padding:0;}
+    }
+    .area-result {padding-top: 20px; padding-bottom: 20px; background-color: $grayscale-gf8;
+        .item {position: relative; padding: 20px; border-radius: 6px; background-color: $primary-white;
+            & + .item {margin-top: 10px;}
+            .box {display: block;}
+            .row {margin-top: 12px;
+                &.prod {display: flex; align-items: center; gap: 0 6px;margin-top: 0; padding-bottom: 12px; border-bottom: 1px solid $grayscale-gee;
+                    .name {width: 80%;@include text-body1(600); @include ellipsis(80%);}
+                }
+                &.status {display: flex; gap: 0 6px;
+                    .card {@include text-script1(500);}
+                    .num {color: $grayscale-g44; @include text-script1(500);}
+                    .date {margin-left: auto; color: $grayscale-g94; @include text-script1(500);}
+                }
+                &.memo {padding: 5px; border-radius: 4px; background-color: $grayscale-gf4; color: $grayscale-g94; @include text-script1(500); text-align: center;}
+            }
+            .bt-remove {position: absolute; top: 21px; right: 20px; z-index: 1; margin-left: auto;}
+        }
+    }
+
+    // 예약관리 상세
+    .area-status {@include flex-row; gap: 0 10px;padding-top: 12px; padding-bottom: 12px;
+        .card {@include text-script1(600);line-height:22px;}
+        .num {color: $grayscale-g44; @include text-body1(500);}
+        .date {margin-left: auto; color: $grayscale-g94; @include text-body1(400);}
+    }
+    .area-summary {padding-top: 30px; padding-bottom: 30px; background-color: $primary-white;
+        > [class^='box-'] {margin-top: 30px;}
+        .box-words {margin-top: 0;
+            .words {@include text-title1(600);}
+            .text {margin-top: 10px;color: $grayscale-g44; @include text-body2(400);}
+        }
+        .box-prod {
+            .row {margin-top: 12px; padding-top: 12px; border-top: 1px solid $grayscale-gee;
+                &.prod {@include flex-row; align-items: center; gap: 0 6px; margin-top: 0; padding-top: 0; border-top-width: 0;
+                    .name {@include text-body1(600);}
+                }
+                &.detail {
+                    li {color: $grayscale-g44; @include text-script2(400);
+                        & + li {margin-top: 2px;}
+                        .line {display: inline-block; position: relative; padding-left:8px; margin-left: 8px;
+                            &::before {content: ''; position: absolute; left: 0; top: 50%; width: 1px; height: 10px; background-color: $grayscale-gd4; transform: translateY(-50%);}
+                        }
+                    }
+                }
+                &.price {
+                    dl {@include flex-row; justify-content: space-between; align-items: center;
+                        dt {color: $grayscale-g44; @include text-body1(600);}
+                        dd {color: $primary-hankblue; @include text-body2(600);}
+                    }
+                }
+                &.reason {
+                    li {color: $grayscale-g44; @include text-body1(600);}
+                }
+            }
+            
+        }
+        .btn-box {margin-top: 8px; text-align: right;}
+        .box-price {margin-top: 20px;
+            .group + .group {margin-top: 12px; padding-top: 12px; border-top: 1px solid $grayscale-gee;}
+            .group {@include flex-column; gap: 4px 0;}
+            dl {@include flex-row; justify-content: space-between; align-items: center;
+                dt {@include text-body1(500);}
+                dd {@include text-body1(500);}
+                &.total {
+                    & + dl {margin-top: 4px;}
+                    dt {font-weight: 600;}
+                    dd {color: $primary-hankblue; @include text-body2(600);}
+                }
+            }
+        }
+        .box-bullets {padding-top: 20px;border-top: 1px solid $grayscale-gd4;}
+    }
+
+    .area-detail {padding-top: 20px; padding-bottom: 20px;
+        [class^='box-'] {margin-top: 10px;}
+        .box-detail {margin-top: 0;
+            .title {display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;}
+            .box-round {padding-top: 12px; padding-bottom: 12px;}
+            .detail-title {position: relative; cursor: pointer;
+                .icons {position: absolute; top: 50%; right: 0; margin-top: -8px;}
+            }
+            .detail-detail {margin-top: 20px;
+                &.close {display: none;}
+                .group-title {display: flex; align-items: center; position: relative; min-height: 22px; margin-bottom: 8px;
+                    .text {margin-left: 4px; color: $grayscale-g94; @include text-script2(400);}
+                    .btn-layer {display: flex; align-items: center; position: absolute; right: 0; top: 0;
+                        .set {display: flex; align-items: center;
+                            .line {width: 1px; height: 10px; margin: 0 8px; background-color: $grayscale-gd4;}
+                            .icons {margin-left: 4px;}
+                        }
+                    }
+                }
+                .group-data1 {@include flex-column; gap: 6px 0;
+                    dl {@include flex-row; justify-content: space-between; align-items: center;
+                        dt, dd {color: $grayscale-g94; @include text-script2(500);}
+                    }
+                    .notice {padding: 5px; border-radius: 4px; background-color: $grayscale-gf4; color: $grayscale-g94; @include text-script1(500); text-align: center;}    
+                }
+                .group-data2 {@include flex-column;margin-top:12px;
+                    dl {@include flex-column;gap:2px 0;padding:8px 0 12px;border-top: solid 1px $grayscale-gee;
+                        dt {color: $grayscale-g94; @include text-script2(500);}
+                        dd {@include text-body1(500);
+                            &.none {color: $grayscale-g94; font-weight: 400;}
+                        }
+                        .small {color: $grayscale-g94; @include text-script2(500);}
+                        &:first-child {padding-top:12px;}
+                        &:last-child {padding-bottom:0;}
+                    }
+                }
+                .group-data3 {@include flex-column;margin-top:12px;border-top: solid 1px $grayscale-gee;
+                    dl {@include flex-column;gap:10px 0;padding:8px 0 12px;
+                        dt {color: $grayscale-g94; @include text-script2(500);}
+                        dd {@include text-body1(500);}
+                        .small {color: $grayscale-g94; @include text-script2(500);}
+                        &:first-child {padding-top:12px;}
+                        &:last-child {padding-bottom:0;}
+                    }
+                }
+
+                .group {
+                    &.type1 {
+                        & + .type1 {margin-top: 30px; padding-top: 30px; border-top: 1px solid $grayscale-g94;}
+                    }
+                    .ing {display: none;}
+                    .complete {display: flex;}
+                    .btn-layer, .group-data1, .group-data2 {
+                        .ing {display: none !important;}
+                        .complete {display: flex !important;}
+                    }
+                    &.modify-ing {
+                        .ing {display: flex;}
+                        .complete {display: none;}
+                        .btn-layer, .group-data1, .group-data2 {
+                            .ing {display: flex !important;}
+                            .complete {display: none !important;}
+                        }
+                        .btn-box {@include flex-row;gap:0 8px;margin-top:8px;}
+                    }
+                }
+                .btn-add-box {margin-top: 20px;
+                    p {margin-top: 8px; color: $grayscale-g94; @include text-script2(500); text-align: center;}
+                }
+                .calendar-input {width: 156px;}
+
+                // 결제 정보
+                &.detail-payment {
+                    .total {margin-bottom: 12px; padding-bottom: 12px; border-bottom: solid 1px $grayscale-gee;
+                        dl {display: flex; justify-content: space-between; align-items: center;}
+                        dt, dd {color: $grayscale-black; @include text-body1(600);}
+                        .btn-box {margin-top: 12px;
+                            .btns + .btns {margin-top: 6px;}
+                        }
+                    }
+                    .group {gap: 0;
+                        .row {display: flex; width: 100%;
+                            .col1 {width: 70px;}
+                            .col2 {width: auto; text-align: right;}
+                            .col3 {width: 94px; text-align: right;}
+                            .col4 {width: 100%;}
+                            .end {color: $primary-hankblue}
+                            .wait {color: $grayscale-g94; @include text-script2(500);}
+                        }
+                        .head {
+                            .col {@include text-body1(600)}
+                        }
+                        .body {padding-bottom: 12px; margin-bottom: 12px; border-bottom: solid 1px $grayscale-gee;
+                            .row {margin-top: 4px;}
+                            .col {color: $grayscale-g94; @include text-script2(500);}
+                            .end {color: $grayscale-g44;}
+                            .state {display: flex; justify-content: flex-end;
+                                .icons {margin-left: 4px;}
+                            }
+                            .btn-box {margin-top: 8px;}
+                        }
+                        &:last-child {
+                            .body {padding-bottom: 0; margin-bottom: 0; border-bottom-width: 0;}
+                        }
+                    }
+                }
+                // 견적 정보
+                &.detail-estimate {
+                    .total {margin-bottom: 12px; padding-bottom: 12px; border-bottom: solid 1px $grayscale-gee;
+                        dl {display: flex; justify-content: space-between; align-items: center;}
+                        dt, dd {color: $grayscale-black; @include text-body1(600);}
+                        .btn-box {margin-top: 12px;
+                            .btns + .btns {margin-top: 6px;}
+                        }
+                    }
+                    .group {
+                        & + .group {margin-top: 12px; padding-top: 12px; border-top: solid 1px $grayscale-gee;}
+                        &.check {gap: 4px 0;
+                            dt, dd {color: $grayscale-g44;}
+                            dt {@include text-body1(400);}
+                            dd {@include text-body2(500);}
+                        }
+                    }
+                }
+                // 투어 인원
+                &.detail-person {
+                    .group {
+                        dl {align-items: flex-start;}
+                        li + li {margin-top: 6px;}
+                        dd {
+                            .input-ea {align-items: center;
+                                & + .input-ea {margin-top: 4px;}
+                            }
+                        }
+                    }
+                }
+                // 예행자 정보
+                &.detail-traveler {
+                    .type1 {
+                        &.modify-ing {
+                            dl {gap: 8px 0;}
+                            dd {
+                                .bullets {margin-top: 10px;}
+                            }
+                        }
+                    }
+                    .en-name {@include flex-row;gap:8px;}
+                    .filebox {flex-wrap:nowrap;overflow-x:auto;
+                        .ux-file-photo {flex:0 0 auto;}
+                    } 
+                    .imgs{@include flex-row;gap:8px;overflow-x:auto;
+                        div{flex:0 0 auto;position:relative;overflow:hidden;width:100px;max-width:100px;border-radius:4px;background:$grayscale-gf4;
+                            &:after{content:"";display:block;padding-top:100%;}
+                            img{position:absolute;top:0;left:0;width:100% !important;height:100% !important;object-fit:cover;cursor:pointer;}
+                        }
+                    }
+                }
+                // 티타임 정보
+                &.detail-teetime {
+                    .group {margin-top: 12px; padding-top: 12px; border-top: 1px solid $grayscale-gee;
+                        .group-title {margin-bottom: 20px;
+                            .title-m {color: $grayscale-g94;@include text-script2(500);}
+                            .negative {color: $negative-red}
+                        }
+                        .group-data1 {gap: 12px 0;
+                            dl {align-items: flex-start;}
+                            dt {display: flex; align-items: center; color: $grayscale-black; @include text-body1(400);
+                                i {margin-right: 12px;}
+                            }
+                            dd {color: $grayscale-black; @include text-body1(500); text-align: right;
+                                .small {color: $grayscale-g94; @include text-script2(400);}
+                            }
+                        }
+                    }
+                }
+                // 예약자 정보
+                &.detail-user {
+                    .group-data1 {
+                        dd {color: $grayscale-black;}
+                    }
+                }
+                // 이용약관
+                &.detail-terms {
+                    .list {
+                        li {display: flex; justify-content: space-between; align-items: center; margin-top: 12px;
+                            &.choice {
+                                a {color: $grayscale-g94;}
+                            }
+                        }
+                    }
+                }
+                // 기타 요청사항
+                &.detail-memo {
+                    textarea {height: 80px; @include text-script2(400);}
+                }
+            }
+        }
+        .box-notice {margin-top: 20px;
+            .bullets {margin-top: 10px;}
+        }
+    }
+
+    // 하단 버튼
+    .area-fixed{position:fixed;bottom:0;left:50%;width:100%;max-width:$pad-width;min-width:$mo-width;transform:translateX(-50%);padding:0;
+        .filebox{display:flex;flex-direction:row;gap:0;@include sub-section;
+            dt{flex-shrink:0;margin:0 0 20px;padding:8px 12px;@include text-script2(400);color:$grayscale-g94;border-radius:5px 0 0 5px;background:$grayscale-gf4;
+                i{margin:2px 2px 2px 0;vertical-align:top;}
+            }
+            dd{display:flex;flex-direction:column;flex-grow:1;align-items:flex-start;margin:0 0 20px;padding:8px 0;border-radius:0 5px 5px 0;background:$grayscale-gf4;
+                a{@include text-script2(500);color:$grayscale-black;}
+            }
+        }
+        .btn-box{display:flex;gap:0 8px;@include sub-section;padding-top:19px;padding-bottom:20px;border-top:1px solid $grayscale-gee;background:$primary-white;}
+        &.inline{position:absolute;}
+    }
+}
+
+.layerpop_load{
+    // 예약 내역 조회
+    .modal-reservation-search {
+        .content {
+            .search-terms {@include sub-section; padding-top: 10px;
+                dt {@include blind;}
+                .input {display: flex; gap: 0 8px;}
+                .period {display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;}
+                .searchCalendar {
+                    &.hkcalendar + .period {display: none;}
+                }
+            }
+            .search-status {@include sub-section; padding-top: 20px;
+                dt {margin-bottom: 10px; @include text-body1(600);}
+                dd {display: flex; flex-wrap: wrap; gap: 8px;}
+            }
+        }
+
+        &.calendar-open {
+            .search-status {display: none;}
+        }
+    }
+}

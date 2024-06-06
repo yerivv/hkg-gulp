@@ -47,10 +47,23 @@
 
     <script src="@@webRoot/js/ui.js"></script>
     <script src="@@webRoot/js/develop.js"></script>
+
+
+    <style type="text/css">
+        .testheader{position:fixed;top:0;left:0;z-index:9;width:100%;text-align:center;color:red;background:white;}
+        .testheader span{font-size:18px;}
+        @media screen and (max-width:799px){
+            .testheader{height:56px;font-size:20px;line-height:56px;border-bottom:1px solid #eee;}
+        }
+        @media screen and (min-width:800px) and (max-width:9999px){
+            .testheader{height:80px;font-size:30px;line-height:80px;}
+        }
+    </style>
 </head>
 <body>
     <div id="app" class="app-guide" style="overflow:initial">
-        <main id="container">
+        <header class="testheader">확인용 header <span></span></header>
+        <main id="container" style="background:#eee;">
             <h1>HANK GOLF <strong>Web style guide</strong></h1>
             <div class="guide-section colors">
                 <h2>01. Colors</h2>
@@ -82,9 +95,17 @@
                             <p class="hex">#030f30</p>
                             <p class="name">darkblue</p>
                         </li>
+                        <li class="color-chip flyblue">
+                            <p class="hex">#5B7BDA</p>
+                            <p class="name">FlyBlue</p>
+                        </li>
                         <li class="color-chip skyblue">
                             <p class="hex">#7dA8ea</p>
                             <p class="name">skyblue</p>
+                        </li>
+                        <li class="color-chip lightblue">
+                            <p class="hex">#9BC3FF</p>
+                            <p class="name">LightBLUE</p>
                         </li>
                         <li class="color-chip turquoise">
                             <p class="hex">#40cdc5</p>
@@ -94,9 +115,9 @@
                             <p class="hex">#a1e2b8</p>
                             <p class="name">lightgreen</p>
                         </li>
-                        <li class="color-chip flyblue">
-                            <p class="hex">#5b7bda</p>
-                            <p class="name">flyblue</p>
+                        <li class="color-chip cyonblue">
+                            <p class="hex">#A1DEE2</p>
+                            <p class="name">cyonblue</p>
                         </li>
                     </ul>
                 </div>
@@ -145,7 +166,7 @@
                             <p class="name">lightsky</p>
                         </li>
                         <li class="color-chip pear">
-                            <p class="hex">#f5f4e8</p>
+                            <p class="hex">#F2F1DF</p>
                             <p class="name">pear</p>
                         </li>
                     </ul>
@@ -158,6 +179,7 @@
                         <li class="color-chip gradation3"></li>
                         <li class="color-chip gradation4"></li>
                         <li class="color-chip gradation5"></li>
+                        <li class="color-chip gradation6"></li>
                     </ul>
                 </div>
                 <div class="group">
@@ -179,160 +201,36 @@
                             <span class="thumb">가나다</span>
                             <div>
                                 <p class="name">Pretendard</p>
-                                <p class="weight">SemiBold / Medium / Regular</p>
+                                <p class="weight">Regular / Medium / SemiBold</p>
                             </div>
                             <span class="lang">KR</span>
                         </li>
                         <li class="en">
                             <span class="thumb">Aa</span>
                             <div>
-                                <p class="name">Silk Serif</p>
-                                <p class="weight">SemiBold / Medium / Regular / Light / ExtraLight</p>
+                                <p class="name">Anek Gujarati</p>
+                                <p class="weight">Light / Medium / Bold</p>
                             </div>
-                            <span class="lang">ENG</span>
+                            <span class="lang">EN</span>
                         </li>
                     </ul>
                 </div>
                 <div class="group">
                     <h3>style</h3>
                     <div class="style-box">
-                        <ul>
-                            <li>
-                                <div class="type">H1</div>
-                                <div class="summary">Header</div>
-                                <div class="option">SemiBold, Medium, Regular / 48pt / 58LineHeight / Space</div>
-                            </li>
-                            <li>
-                                <div class="type">H2</div>
-                                <div class="summary">Header</div>
-                                <div class="option">SemiBold, Medium, ExtraLight / 56pt / 70LineHeight</div>
-                            </li>
-                            <li>
-                                <div class="type">H3</div>
-                                <div class="summary">Header</div>
-                                <div class="option">SemiBold / 60pt / 72LineHeight</div>
-                            </li>
-                            <li>
-                                <div class="type">H4</div>
-                                <div class="summary">Header</div>
-                                <div class="option">SemiBold / 72pt / 92LineHeight</div>
-                            </li>
-                            <li>
-                                <div class="type">H5</div>
-                                <div class="summary">Header</div>
-                                <div class="option">Regular / 88pt / 100LineHeight / Space</div>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <div class="type">T1</div>
-                                <div class="summary">Title</div>
-                                <div class="option">SemiBold, Medium, Regular, Light / 24pt / 36LineHeight / Space</div>
-                            </li>
-                            <li>
-                                <div class="type">T2</div>
-                                <div class="summary">Title</div>
-                                <div class="option">SemiBold, Medium, Regular / 28pt / 40LineHeight / Space</div>
-                            </li>
-                            <li>
-                                <div class="type">T3</div>
-                                <div class="summary">Title</div>
-                                <div class="option">SemiBold, Medium, Regular, ExtraLight / 32pt / 44LineHeight / Space</div>
-                            </li>
-                            <li>
-                                <div class="type">T4</div>
-                                <div class="summary">Title</div>
-                                <div class="option">SemiBold, Regular / 40pt / 52LineHeight</div>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <div class="type">B1</div>
-                                <div class="summary">Body</div>
-                                <div class="option">SemiBold, Medium, Regular / 14pt / 22LineHeight</div>
-                            </li>
-                            <li>
-                                <div class="type">B2</div>
-                                <div class="summary">Body</div>
-                                <div class="option">SemiBold, Medium, Regular / 16pt / 26LineHeight</div>
-                            </li>
-                            <li>
-                                <div class="type">B3</div>
-                                <div class="summary">Body</div>
-                                <div class="option">SemiBold, Medium, Regular / 18pt / 28LineHeight</div>
-                            </li>
-                            <li>
-                                <div class="type">B4</div>
-                                <div class="summary">Body</div>
-                                <div class="option">SemiBold, Medium, Regular / 20pt / 30LineHeight / Space</div>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <div class="type">S1</div>
-                                <div class="summary">Script</div>
-                                <div class="option">SemiBold, Medium, Regular / 11pt / 18LineHeight</div>
-                            </li>
-                            <li>
-                                <div class="type">S2</div>
-                                <div class="summary">Script</div>
-                                <div class="option">SemiBold, Medium, Regular / 12pt / 20LineHeight</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="group">
-                    <h3>style - ex</h3>
-                    <div class="style-box">
                         <dl>
                             <dt>
                                 <span class="type">H1</span>
-                                <span class="style">SemiBold, Medium, Regular / 48pt / 58LineHeight / Space</span>
+                                <span class="style">Light / 48pt / 58LineHeight</span>
                             </dt>
-                            <dd class="head1 en">
-                                HanK Golf / 
-                                <span class="weight-medium">HanK Golf</span> / 
-                                <span class="weight-regular">HanK Golf</span>
-                            </dd>
+                            <dd class="head1 en">HanK Golf</dd>
                         </dl>
                         <dl>
                             <dt>
                                 <span class="type">H2</span>
-                                <span class="style">SemiBold, Medium, ExtraLight / 56pt / 70LineHeight</span>
+                                <span class="style">Bold / 60pt / 56LineHeight</span>
                             </dt>
-                            <dd class="head2 en">
-                                HanK Golf / 
-                                <span class="weight-medium">HanK Golf</span> / 
-                                <span class="weight-extralight">HanK Golf</span>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <span class="type">H3</span>
-                                <span class="style">SemiBold / 60pt / 72LineHeight</span>
-                            </dt>
-                            <dd class="head3 en">HanK Golf</dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <span class="type">H4</span>
-                                <span class="style">SemiBold / 72pt / 92LineHeight</span>
-                            </dt>
-                            <dd class="head4 en">HanK Golf</dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <span class="type">H5</span>
-                                <span class="style">Regular / 88pt / 100LineHeight / Space</span>
-                            </dt>
-                            <dd class="head5 en">HanK Golf</dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <span class="type">H6</span>
-                                <span class="style">SemiBold / 110pt / 130LineHeight</span>
-                            </dt>
-                            <dd class="head6 en">HanK Golf</dd>
+                            <dd class="head2 en">HanK Golf</dd>
                         </dl>
                         <dl>
                             <dt>
@@ -434,21 +332,9 @@
                     <div class="style-box">
                         <dl>
                             <dt>
-                                <span class="type">extralight</span>
-                            </dt>
-                            <dd class="en weight-extralight">HanK Golf</dd>
-                        </dl>
-                        <dl>
-                            <dt>
                                 <span class="type">light</span>
                             </dt>
                             <dd class="en weight-light">HanK Golf</dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <span class="type">regular</span>
-                            </dt>
-                            <dd class="en weight-regular">HanK Golf</dd>
                         </dl>
                         <dl>
                             <dt>
@@ -458,9 +344,9 @@
                         </dl>
                         <dl>
                             <dt>
-                                <span class="type">semibold</span>
+                                <span class="type">bold</span>
                             </dt>
-                            <dd class="en weight-semibold">HanK Golf</dd>
+                            <dd class="en weight-bold">HanK Golf</dd>
                         </dl>
                     </div>
                 </div>
@@ -469,7 +355,7 @@
                 <h2>05. Buttons</h2>
                 <div class="group">
                     <h3>Standard Buttons</h3>
-                    <div class="group-in default">
+                    <div class="group-in">
                         <h4>Large (h : 52px)</h4>
                         <div>
                             <ul>
@@ -485,43 +371,43 @@
                             <ul>
                                 <li>
                                     <button type="button" class="btns large midnight">
-                                        <i class="icons i-search white"></i>button
+                                        <i class="icons i-24 i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large midnight-outline">
-                                        <i class="icons i-search midnight"></i>button
+                                        <i class="icons i-24 i-search midnight"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large hank">
-                                        <i class="icons i-search white"></i>button
+                                        <i class="icons i-24 i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large hank-outline">
-                                        <i class="icons i-search hank"></i>button
+                                        <i class="icons i-24 i-search hank"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large skyblue">
-                                        <i class="icons i-search white"></i>button
+                                        <i class="icons i-24 i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large skyblue-outline">
-                                        <i class="icons i-search skyblue"></i>button
+                                        <i class="icons i-24 i-search skyblue"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns large negative" disabled>
-                                        <i class="icons i-search g94"></i>button
+                                        <i class="icons i-24 i-search g94"></i>button
                                     </button>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="group-in default">
+                    <div class="group-in">
                         <h4>Medium (h : 44px)</h4>
                         <div>
                             <ul>
@@ -537,43 +423,44 @@
                             <ul>
                                 <li>
                                     <button type="button" class="btns medium midnight">
-                                        <i class="icons i-search white"></i>button
+                                        <i class="icons i-20 i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium midnight-outline">
-                                        <i class="icons i-search midnight"></i>button
+                                        <i class="icons i-20 i-search midnight"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium hank">
-                                        <i class="icons i-search white"></i>button
+                                        <i class="icons i-20 i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium hank-outline">
-                                        <i class="icons i-search hank"></i>button
+                                        <i class="icons i-20 i-search hank"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium skyblue">
-                                        <i class="icons i-search white"></i>button
+                                        <i class="icons i-20 i-search white"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium skyblue-outline">
-                                        <i class="icons i-search skyblue"></i>button
+                                        <i class="icons i-20 i-search skyblue"></i>button
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button" class="btns medium negative" disabled>
-                                        <i class="icons i-search g94"></i>button
+                                        <i class="icons i-20 i-search g94"></i>button
                                     </button>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="group-in default">
+                    
+                    <div class="group-in">
                         <h4>Small (h : 36px)</h4>
                         <ul>
                             <li><button type="button" class="btns small midnight">button</button></li>
@@ -589,6 +476,9 @@
                 </div>
                 <div class="group">
                     <h3>TEXT BUTTON</h3>
+                    <div><a href="#" class="btns txt">티타임 변경하기<i class="icons i-12 i-arrow-right g94"></i></a></div>
+                    <div><a href="#" class="btns txt txt2">티타임 변경하기<i class="icons i-16 i-arrow-right g94"></i></a></div>
+                    <div><a href="#" class="btns txt txt3">텍스트 버튼</a></div>
                 </div>
                 <div class="group">
                     <h3>ICON BUTTON</h3>
@@ -808,7 +698,7 @@
                                 <select name="guide-select1">
                                     <option value="">카테고리</option>
                                 </select>
-                                <i class="icons i-arrow-up"></i>
+                                <i class="icons i-16 i-arrow-up"></i>
                             </div>
                         </li>
                         <li>
@@ -816,7 +706,7 @@
                                 <select name="guide-select1" disabled>
                                     <option value="">카테고리</option>
                                 </select>
-                                <i class="icons i-arrow-up"></i>
+                                <i class="icons i-16 i-arrow-up"></i>
                             </div>
                         </li>
                     </ul>
@@ -859,6 +749,9 @@
                                 <input name="checkbox4" type="checkbox" />
                                 <span>라지</span>
                             </label>
+                            <label class="checkbox">
+                                <input name="checkbox5" type="checkbox" checked />
+                            </label>
                         </div>
                     </div>
                     <div class="group-in">
@@ -879,6 +772,9 @@
                             <label class="radio large">
                                 <input name="radio" type="radio" />
                                 <span>라지</span>
+                            </label>
+                            <label class="radio">
+                                <input name="radio" type="radio" />
                             </label>
                         </div>
                         <div class="d-flex flex-wrap flex-col-2 gap-8" style="margin-top:15px">
@@ -916,13 +812,107 @@
                 </div>
                 <div class="group">
                     <h3>CALENDAR</h3>
-                    <div class="sample1"></div>
-                    <script>
-                        calendar.init({
-                            el: '.sample1',
-                            navi: true
-                        });
-                    </script>
+                    <div class="group-in" style="width:360px;">
+                        <h4>INLINE</h4>
+                        <input type="text" id="input1" readonly>
+                        <div class="cal1"></div>
+                        <script>
+                            calendar.inline({
+                                el: '.cal1',
+                                target: '#input1'
+                            });
+                        </script>
+                    </div>
+                    <div class="group-in" style="width:360px;">
+                        <h4>INLINE RANGE</h4>
+                        <div class="d-flex flex-col-2 gap-x-8">
+                            <div class="box col"><input type="text" id="start1" readonly></div>
+                            <div class="box col"><input type="text" id="end1" readonly></div>
+                        </div>
+                        <div class="cal2"></div>
+                        <script>
+                            calendar.inline({
+                                el: '.cal2',
+                                start: '#start1',
+                                end: '#end1',
+                                body: 2,
+                                range: true
+                            });
+                        </script>
+                    </div>
+                    <div class="group-in">
+                        <h4>LAYER</h4>
+                        <input type="text" id="input3" readonly>
+                        <script>
+                            calendar.layer('#input3');
+                        </script>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>인풋박스 필수입력값</h3>
+                    <div class="form-set-box">
+                        <div class="form-set">
+                            <div class="title">정보입력</div>
+                            <input type="hidden" name="cmd" value="guest" />
+                            <dl>
+                                <dt class="essential">이름</dt>
+                                <dd>
+                                    <input type="text" name="name" maxlength="30" required="이름" placeholder="이름" />
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="essential">휴대폰 번호</dt>
+                                <dd>
+                                    <div class="in-btn">
+                                        <input type="text" name="mobile" maxlength="20" placeholder="-없이 숫자만 입력" required="휴대폰 번호" class="ux-mobile" />
+                                        <button type="button" class="btns medium midnight-outline bt-mobile-send">번호발송</button>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="essential">인증번호</dt>
+                                <dd>
+                                    <div class="in-btn">
+                                        <input type="text" name="order" id="f_order" placeholder="" maxlength="16" required="예약번호" class="ux-number" />
+                                        <button type="button" class="btns medium midnight-outline bt-mobile-cert">인증</button>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="essential">비밀번호</dt>
+                                <dd>
+                                    <input type="password" name="password" id="f_password" placeholder="" maxlength="16" required="비밀번호" />
+                                    <ul class="bullets script">
+                                        <li>영문 대문자 + 영문소문자 + 숫자(또는 특수문자) 조합</li>
+                                        <li>8자리 이상</li>
+                                        <li>사용가능 특수문자: !@#$%^&*()</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="essential">비밀번호 확인</dt>
+                                <dd>
+                                    <input type="password" name="password" id="f_password" placeholder="" maxlength="16" required="비밀번호" />
+                                    <div class="error">비밀번호가 일치하지 않습니다.</div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt class="">주소</dt>
+                                <dd>
+                                    <div class="in-btn">
+                                        <input type="text" name="order" id="f_order" placeholder="" maxlength="16" required="예약번호" class="ux-number" />
+                                        <button type="button" class="btns medium midnight-outline">주소검색</button>
+                                    </div>
+                                    <input type="text" name="order" id="f_order" placeholder="상세주소 입력" />
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="d-flex btn-box">
+                            <div class="col col-fill">
+                                <button type="button" class="btns large midnight">확인</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="guide-section ico-g">
@@ -933,13 +923,55 @@
                         <h4>12 x 12</h4>
                         <ul>
                             <li>
-                                <i class="i-12 i-back"></i>
+                                <i class="i-12 i-arrow-up">up</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-arrow-down">down</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-arrow-left">left</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-arrow-right">right</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-plus">&#43;</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-pen">펜</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-check">체크</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-trash">휴지통</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-close">닫기</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-receipt">영수증</i>
+                            </li>
+                            <li>
+                                <i class="i-12 i-reverse">바꾸기</i>
                             </li>
                         </ul>
                     </div>
                     <div class="group-in">
                         <h4>16 x 16</h4>
                         <ul>
+                            <li>
+                                <i class="i-16 i-arrow-up">up</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-arrow-down">down</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-arrow-left">left</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-arrow-right">right</i>
+                            </li>
                             <li>
                                 <i class="i-16 i-back">이전</i>
                             </li>
@@ -955,19 +987,103 @@
                             <li>
                                 <i class="i-16 i-close">닫기</i>
                             </li>
+                            <li>
+                                <i class="i-16 i-clip">첨부파일</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-user">유저</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-tel">전화</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-naver">네이버</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-kakao">카카오</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-apple">애플</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-plus">&#43;</i>
+                            </li>
+                            <li>
+                                <i class="i-16 i-minus">&#45;</i>
+                            </li>
                         </ul>
                     </div>
                     <div class="group-in">
                         <h4>20 x 20</h4>
                         <ul>
                             <li>
-                                <i class="i-20 i-back">이전</i>
+                                <i class="i-20 i-arrow-up">up</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-arrow-down">down</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-arrow-left">left</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-arrow-right">right</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-phone">휴대폰</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-lock">잠김</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-more">더보기</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-user">유저</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-tel">전화</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-email">이메일</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-error">오류</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-naver">네이버</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-kakao">카카오</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-plus">&#43;</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-trash">삭제</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-filter">필터</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-receipt">영수증</i>
                             </li>
                         </ul>
                     </div>
                     <div class="group-in">
                         <h4>24 x 24</h4>
                         <ul>
+                            <li>
+                                <i class="i-24 i-arrow-up">up</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-arrow-down">down</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-arrow-left">left</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-arrow-right">right</i>
+                            </li>
                             <li>
                                 <i class="i-24 i-back">이전</i>
                             </li>
@@ -983,11 +1099,41 @@
                             <li>
                                 <i class="i-24 i-close">닫기</i>
                             </li>
+                            <li>
+                                <i class="i-24 i-lock">잠김</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-naver">네이버</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-kakao">카카오</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-apple">애플</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-phone">휴대폰</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-filter">필터</i>
+                            </li>
                         </ul>
                     </div>
                     <div class="group-in">
                         <h4>32 x 32</h4>
                         <ul>
+                            <li>
+                                <i class="i-32 i-arrow-up">up</i>
+                            </li>
+                            <li>
+                                <i class="i-32 i-arrow-down">down</i>
+                            </li>
+                            <li>
+                                <i class="i-32 i-arrow-left">left</i>
+                            </li>
+                            <li>
+                                <i class="i-32 i-arrow-right">right</i>
+                            </li>
                             <li>
                                 <i class="i-32 i-back">이전</i>
                             </li>
@@ -999,21 +1145,11 @@
                             <li>
                                 <i class="i-36 i-back">이전</i>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="group-in">
-                        <h4>40 x 40</h4>
-                        <ul>
                             <li>
-                                <i class="i-40 i-back">이전</i>
+                                <i class="i-36 i-plus">&#43;</i>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="group-in">
-                        <h4>48 x 48</h4>
-                        <ul>
                             <li>
-                                <i class="i-48 i-back">이전</i>
+                                <i class="i-36 i-minus">&#45;</i>
                             </li>
                         </ul>
                     </div>
@@ -1021,42 +1157,37 @@
                 <div class="group">
                     <h3>ILLUST ICONS</h3>
                     <div class="group-in">
-                        <h4>60 x 60</h4>
+                        <h4>20 x 20</h4>
                         <ul>
                             <li>
-                                <i class="i-60 i-ai-calendar">달력</i>
+                                <i class="i-20 i-ai-calendar">달력</i>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="group-in">
-                        <h4>48 x 48</h4>
-                        <ul>
                             <li>
-                                <i class="i-48 i-ai-calendar">달력</i>
+                                <i class="i-20 i-ai-user">사용자</i>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="group-in">
-                        <h4>40 x 40</h4>
-                        <ul>
                             <li>
-                                <i class="i-40 i-ai-calendar">달력</i>
+                                <i class="i-20 i-ai-court">코스</i>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="group-in">
-                        <h4>36 x 36</h4>
-                        <ul>
                             <li>
-                                <i class="i-36 i-ai-calendar">달력</i>
+                                <i class="i-20 i-ai-hotel">숙소</i>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="group-in">
-                        <h4>28 x 28</h4>
-                        <ul>
                             <li>
-                                <i class="i-28 i-ai-calendar">달력</i>
+                                <i class="i-20 i-ai-car">차량</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-ai-flight">항공</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-ai-best">베스트</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-ai-membership">회원권</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-ai-place">지역</i>
+                            </li>
+                            <li>
+                                <i class="i-20 i-ai-restaurant">레스토랑</i>
                             </li>
                         </ul>
                     </div>
@@ -1066,21 +1197,176 @@
                             <li>
                                 <i class="i-24 i-ai-calendar">달력</i>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="group-in">
-                        <h4>20 x 20</h4>
-                        <ul>
                             <li>
-                                <i class="i-20 i-ai-calendar">달력</i>
+                                <i class="i-24 i-ai-user">사용자</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-court">코스</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-hotel">숙소</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-car">차량</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-flight">항공</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-best">베스트</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-pay">pay</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-card">카드결제</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-bank">계좌이체</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-online">무통장입금</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-naver">네이버</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-kakao">카카오</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-place">지역</i>
+                            </li>
+                            <li>
+                                <i class="i-24 i-ai-restaurant">레스토랑</i>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div> 
+            </div>
+
+            <div class="guide-section elements">
+                <h2>06. UI ELEMENTS</h2>
+                <div class="group">
+                    <h3>NO DATA</h3>
+                    <div class="nodata">
+                        <span>No Data</span>
+                        <p>예약하신 투어가 없어요.<br>예약 내역은 최근 5년 이내 기간만 조회됩니다.</p>
+                    </div>
+
+                    <div class="nodata">
+                        <span>No Data</span>
+                        <p>예약하신 투어가 없어요.<br>예약 내역은 최근 5년 이내 기간만 조회됩니다.</p>
+                        <div class="btn-box">
+                            <a href="#" class="btns medium midnight-outline">
+                                <i class="icons i-20 i-plus midnight"></i>숙소 추가
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>Bullet</h3>
+                    <div class="group-in">
+                        <h4>body</h4>
+                        <ul class="bullets">
+                            <li>만 14세 미만 승객은 예매 시 법정대리인의 동의가 필요합니다.</li>
+                            <li>수업 종료 후 책상 및 주변 정리정돈</li>
+                        </ul>
+                    </div>
+                    <div class="group-in">
+                        <h4>script</h4>
+                        <ul class="bullets script">
+                            <li>만 14세 미만 승객은 예매 시 법정대리인의 동의가 필요합니다.</li>
+                            <li>수업 종료 후 책상 및 주변 정리정돈</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>TAB</h3>
+                    <div class="group-in">
+                        <h4>Tab Style1</h4>
+                        <div class="tab1">
+                            <div class="active">골프장</div>
+                            <div>숙소</div>
+                            <div>회원권</div>
+                            <div>기타정보</div>
+                        </div>
+                        <div class="tab1 free">
+                            <div class="active">골프장</div>
+                            <div>숙소</div>
+                        </div>
+                        <div class="tab1 fill">
+                            <div class="active">골프장</div>
+                            <div>숙소</div>
+                            <div>숙소</div>
+                        </div>
+                    </div>
+                    <div class="group-in">
+                        <h4>Tab Style2</h4>
+                        <div class="tab2">
+                            <div class="active">가족과 함께</div>
+                            <div>부부동반</div>
+                            <div class="disabled">친목모임</div>
+                        </div>
+                    </div>
+                    <div class="group-in">
+                        <h4>Tab Style3</h4>
+                        <div class="tab3">
+                            <div class="active">가족여행</div>
+                            <div>부부동반</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>LABEL</h3>
+                    <div class="group-in">
+                        <h4>small</h4>
+                        <span class="card small">라벨</span>
+                        <span class="card small turquoise">라벨</span>
+                        <span class="card small flyblue">라벨</span>
+                        <span class="card small gd4">라벨</span>
+                        <span class="card small gradation">라벨</span>
+                    </div>
+                    <div class="group-in">
+                        <h4>large</h4>
+                        <span class="card large">라벨</span>
+                        <span class="card large turquoise">라벨</span>
+                        <span class="card large flyblue">라벨</span>
+                        <span class="card large gd4">라벨</span>
+                        <span class="card large gradation">라벨</span>
+                    </div>
+                    <div class="group-in">
+                        <h4>big</h4>
+                        <span class="card big">라벨</span>
+                        <span class="card big turquoise">라벨</span>
+                        <span class="card big flyblue">라벨</span>
+                        <span class="card big gd4">라벨</span>
+                        <span class="card big gradation">라벨</span>
+                    </div>
+                </div>
+                <div class="group">
+                    <h3>round box</h3>
+                    <div class="group-in">
+                        <h4>white</h4>
+                        <div class="box-round white">라운드 박스</div>
+                    </div>
+                    <div class="group-in">
+                        <h4>gf8</h4>
+                        <div class="box-round gf8">라운드 박스</div>
+                    </div>
+                    <div class="group-in">
+                        <h4>lightsky</h4>
+                        <div class="box-round lightsky">라운드 박스</div>
+                    </div>
+                    <div class="group-in">
+                        <h4>white-b</h4>
+                        <div class="box-round white-b">라운드 박스</div>
+                    </div>
+                </div>
+            </div>
 
             <div class="guide-section popups">
                 <h2>08. popup</h2>
+                <!--
                 <div class="group">
                     <h3>full popup</h3>
                     <button type="button" class="btns medium hank" style="width: 150px" onclick="modalFull()">모달-full</button>
@@ -1099,6 +1385,46 @@
                 <div class="group">
                     <h3>alert popup</h3>
                     <button type="button" class="btns medium hank" style="width: 150px" onclick="modalAlert()">모달-alert</button>
+                </div>
+                -->
+
+                <div class="group">
+                    <h3>load full popup</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_full1.html');">모달-load full_1</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_full2.html');">모달-load full_2</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_full3.html');">모달-load full_3</button>
+                </div>
+
+                <div class="group">
+                    <h3>load bottom popup</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_bottom1.html');">모달-load bottom1</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_bottom2.html');">모달-load bottom2</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_bottom3.html');">모달-load bottom3</button>
+                </div>
+
+                <div class="group">
+                    <h3>load center popup</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_center1.html');">모달-load center1</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_center2.html');">모달-load center2</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('style_center3.html');">모달-load center3</button>
+                </div>
+
+                <div class="group">
+                    <h3>liner type</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('liner_type1.html');">liner type1</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('liner_type2.html');">liner type2</button>
+                </div>
+
+                <div class="group">
+                    <h3>lightsky type</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('lightsky_type1.html');">lightsky type1</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('lightsky_type2.html');">lightsky type2</button>
+                </div>
+
+                <div class="group">
+                    <h3>gradation type</h3>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('gradation_type1.html');">gradation type1</button>
+                    <button type="button" class="btns medium hank" style="width: 150px" onclick="modalLoad('gradation_type2.html');">gradation type2</button>
                 </div>
             </div>
             
@@ -1163,6 +1489,7 @@
             </div>
         </main>
     </div>
+    
     <div id="dim"></div>
     <div id="modal" class="sample-full">
         <!-- Full Popup -->
@@ -1238,399 +1565,6 @@
         </div>
     </div>
     <script>
-        (function() {
-	// 화면 상단 이동
-	hnk.moveTop = function(complete) {
-		$('html, body').animate({
-			scrollTop: 0
-		}, 150, function() {
-			if (typeof(complete) == 'function') {
-				complete();
-			}
-		});
-	};
-
-	// 화면 하단 이동
-	hnk.moveBottom = function(complete) {
-		var doH = $(document).innerHeight();
-		$('html, body').animate({
-			scrollTop: doH
-		}, 150, function() {
-			if (typeof(complete) == 'function') {
-				complete();
-			}
-		});
-	};
-
-	// 화면 지정위치 이동
-	hnk.moveTarget = function() {
-		var top = 0,
-			duration = 150,
-			complete = function() {};
-
-		$.each(arguments, function(i, v) {
-			if (i == 0) {
-				if (typeof (v) == 'number') {
-					top = v;
-				} else {
-					top = $('#wrap').scrollTop() + $(v).offset().top;
-				}
-			} else if (typeof (v) == 'number') {
-				duration = v;
-			} else if (typeof (v) == 'function') {
-				complete = v;
-			}
-		});
-
-		$('html, body').animate({
-			scrollTop: top
-		}, duration, complete);
-	};
-
-	// swiper
-	hnk.slide = {
-		product: function(selector, options) {
-			var opts = $.extend({
-				spaceBetween: 0,
-				slidesPerView: 'auto',
-				slidesPerGroup: 0,
-				loop: true,
-				loopFillGroupWithBlank: true,
-			}, options);
-
-			var $box = $(selector),
-				$slide = $box.find('.swiper-container');
-
-			if ($slide.find('.swiper-slide').length > opts.slidesPerGroup) {
-				$box.find('.swiper-button-next1').show();
-				$box.find('.swiper-button-prev1').show();
-				$slide.addClass('load');
-
-				new Swiper($slide, {
-					navigation: {
-						nextEl: $box.find('.swiper-button-next1'),
-						prevEl: $box.find('.swiper-button-prev1'),
-					},
-					pagination: {
-						el: $box.find('.swiper-pagination'),
-						type: 'fraction',
-					},
-					spaceBetween: opts.spaceBetween,
-					slidesPerView: opts.slidesPerView,
-					slidesPerGroup: opts.slidesPerGroup,
-					loop: opts.loop,
-					loopFillGroupWithBlank: opts.loopFillGroupWithBlank,
-				});
-			} else {
-				$box.find('.swiper-button-next1').hide();
-				$box.find('.swiper-button-prev1').hide();
-				$slide.removeClass('load');
-			}
-		},
-		banner: function(selector, options) {
-			var opts = $.extend({
-				spaceBetween: 0,
-				slidesPerView: 'auto',
-				slidesPerGroup: 0,
-				loop: true,
-				loopFillGroupWithBlank: true,
-			}, options);
-
-			var $box = $(selector),
-				$slide = $box.find('.swiper-container');
-
-			if ($slide.find('.swiper-slide').length > opts.slidesPerGroup) {
-				$box.find('.swiper-button-next1').show();
-				$box.find('.swiper-button-prev1').show();
-
-				new Swiper($slide, {
-					navigation: {
-						nextEl: $box.find('.swiper-button-next1'),
-						prevEl: $box.find('.swiper-button-prev1'),
-					},
-					pagination: {
-						el: $box.find('.swiper-pagination2'),
-						clickable: true,
-					},
-					spaceBetween: opts.spaceBetween,
-					slidesPerView: opts.slidesPerView,
-					slidesPerGroup: opts.slidesPerGroup,
-					loop: opts.loop,
-					loopFillGroupWithBlank: opts.loopFillGroupWithBlank,
-				});
-			} else {
-				$box.find('.swiper-button-next1').hide();
-				$box.find('.swiper-button-prev1').hide();
-			}
-		},
-		bannerSingle: function(selector) {
-			var $box = $(selector),
-				$slide = $box.find('.swiper-container');
-
-			if ($slide.find('.swiper-slide').length > 1) {
-				$box.find('.swiper-button-box').show();
-
-				new Swiper($slide, {
-					navigation: {
-						nextEl: $box.find('.swiper-button-next2'),
-						prevEl: $box.find('.swiper-button-prev2'),
-					},
-					loop: true,
-				});
-			} else {
-				$box.find('.swiper-button-box').hide();
-			}
-		}
-	};
-
-	// layer control
-	hnk.laypop = {
-		position: {
-			open: function($target) {
-				$('body').addClass('layerOpen');
-				// $('#dim').on('click.laypop', function(){
-				// 	hnk.laypop.close($target);
-				// 	return false;
-				// })
-				$target.find('.ux-laypop-close').on('click.laypop', function() {
-					hnk.laypop.close($target);
-					return false;
-				});
-			},
-			close: function($target) {
-				$('body').removeClass('layerOpen');
-				//$('#dim').off('click.laypop');
-				$target.find('.ux-laypop-close').off('click.laypop');
-			}
-		},
-		open: function(options) {
-			var opts = $.extend({
-				selector: null,
-				oncompleted: function() {},
-			}, options);
-
-			if (! opts.selector) {
-				return false;
-			}
-
-			var $target = (opts.selector instanceof jQuery ?
-				opts.selector : $(opts.selector)
-			);
-			if ($target.length <= 0) return false;
-
-			//hnk.laypop.position.open($target.children().show());
-			hnk.laypop.position.open($target.addClass('active'));
-			opts.oncompleted($target);
-		},
-		load: function(options) {
-			var opts = $.extend({
-				id: null,
-				url: null,
-				data: {},
-				class: null,
-				container: null,
-				baser: '#contents',
-				oncompleted: function() {},
-			}, options);
-
-			var $target = null;
-
-			if (opts.container) {
-				$target = (opts.container instanceof jQuery ?
-					opts.container : $(opts.container)
-				);
-			} else if (opts.id) {
-				$target = $('#'+opts.id);
-			}
-			if ($target && $target.length <= 0) {
-				$target = null;
-			}
-
-			if ($target) {
-				$target.removeClass().addClass('layerpop_full');
-			} else {
-				$target = $('<div class="layerpop_full" />').hide().appendTo(opts.baser);
-			}
-			if (opts.id) {
-				$target.attr('id', opts.id);
-			}
-			if (opts.class) {
-				$target.addClass(opts.class);
-			}
-
-			$.ajax({
-				type: "get",
-				url: opts.url,
-				data: opts.data,
-				cache: false,
-				success: function (result) {
-					if (! result) {
-						alert("page loading fail");
-						return false;
-					}
-
-					hnk.laypop.position.open(
-						$target.children().remove().end().append(result).show()
-					);
-
-					opts.oncompleted($target);
-				}
-			});
-		},
-		close: function(selector, options) {
-			var opts = $.extend({
-				oncompleted: function() {},
-			}, options);
-
-			var $target = null;
-			if (selector) {
-				$target = (selector instanceof jQuery ? selector : $(selector));
-			} else {
-				$target = $('.layerpop_full');
-			}
-
-			//hnk.laypop.position.close($target.hide());
-			hnk.laypop.position.close($target.removeClass('active'));
-
-			opts.oncompleted($target);
-		}
-	};
-
-	hnk.opener = {
-		// 상품Q&A 작성
-		qnaRegist: function(options) {
-			var opts = $.extend({
-				pno: 0,
-				oncompleted: function() {}
-			}, options);
-
-			if (! opts.pno) return false;
-
-			$.loadScript(URI_STATIC+"/jscript/front/ui.qna.js?v="+LAUNCH_VER, function() {
-				$.laybox({
-					type: "ajax",
-					source: URI_FRONT+"/product/qna_regist.ajax?pno="+opts.pno,
-					oncomplete: function(canvas) {
-						$(canvas).find('.contents').mCustomScrollbar({
-							theme: 'dark-2',
-							scrollInertia: 150,
-							advanced: {
-								autoScrollOnFocus: false
-							},
-							mouseWheel: {
-								disableOver: null
-							}
-						});
-
-						hnk.qna.onregist({
-							pno: opts.pno,
-							oncompleted: function(idx) {
-								opts.oncompleted(idx);
-
-								setTimeout(function() {
-									$.laybox.close();
-								}, 100);
-							},
-							oncanceled: function() {
-								$.laybox.close();
-							}
-						});
-					}
-				});
-			});
-		},
-		// 상품평 작성
-		reviewRegist: function(options) {
-			var opts = $.extend({
-				idx: 0,								// 상품평 일련번호 
-				pidx: 0,								// 주문상품 일련번호
-				oncompleted: function() {}
-			}, options);
-
-			if (! opts.idx && ! opts.pidx) return false;
-
-			$.loadScript(URI_STATIC+"/jscript/front/ui.review.js?v="+LAUNCH_VER, function() {
-				$.laybox({
-					type: 'ajax',
-					source: "shop_review_regist.ajax?pidx="+opts.pidx+(opts.idx ? "&idx="+opts.idx : ''),
-					oncomplete: function(canvas) {
-						$(canvas).find('.contents').mCustomScrollbar({
-							theme: 'dark-2',
-							scrollInertia: 150,
-							advanced: {
-								autoScrollOnFocus: false
-							},
-							mouseWheel: {
-								disableOver: null
-							}
-						});
-
-						hnk.review.onregist({
-							oncompleted: function() {
-								opts.oncompleted();
-
-								setTimeout(function() {
-									$.laybox.close();
-								}, 100);
-							},
-							oncanceled: function() {
-								$.laybox.close();
-							}
-						});
-					}
-				});
-			});
-		},
-		// 비밀번호 변경
-		passwdChange: function() {
-			$.laybox({
-				type: 'ajax',
-				source: URI_FRONT+"/global/passwd_change.ajax",
-				oncomplete: function(canvas) {
-					$(canvas).find('form').validform({
-						rules: {
-							pwNew: function(f, es) {
-								switch (checkInvalidPw(es.id.val(), es.pwNew.val(), 6, 20)) {
-								case 1:	alert("비밀번호는 아이디와 동일하게 사용할 수 없습니다."); return false;
-								case 2:	alert("영문, 숫자, 특수문자 포함 2가지 이상 조합하여 6~20자로 입력해주세요."); return false;
-								}
-							},
-							pwRe: function(f, es) {
-								if (es.pwNew.val() == es.pwRe.val()) return true;
-								
-								alert("새 비밀번호와 새 비밀번호 확인이 일치하지 않습니다.\n다시 입력해주세요.");
-								return $.focusing(es.pwRe);
-							}
-						},
-						submit: function(f, es) {
-							if (f.attr('submited')) return false;
-							f.attr('submited', 1);
-							
-							f.ajaxSubmit({
-								dataType: "json",
-								beforeSerialize: function() {
-								},
-								error: function() {
-									f.removeAttr('submited');
-								},
-								success: function(result) {
-									if (result.message) alert(result.message);
-									if (result.error > 0) {
-										f.removeAttr('submited');
-										return false;
-									}
-
-									alert("비밀번호 변경을 완료하였습니다.");
-									$.laybox.close();
-								}
-							});
-						}
-					});
-				}
-			});
-		}
-	};
-})(hnk);
         function modalFull(){
             hnk.laypop.open({
                 selector: '.sample-full',
@@ -1667,6 +1601,15 @@
             });
             return false;
         }
+
+        const modalLoad = url => {
+            hnk.laypopcustom.load({
+                url: url,
+                oncompleted: function() {
+                    
+                }
+            });
+        };
     </script>
 </body>
 </html>

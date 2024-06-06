@@ -90,6 +90,12 @@
     &.flyblue {
       background: $secondary-flyblue;
     }
+    &.lightblue {
+      background: $secondary-lightblue;
+    }
+    &.cyonblue {
+      background: $secondary-cyonblue;
+    }
     &.black {
       background: $grayscale-black;
     }
@@ -141,6 +147,9 @@
     }
     &.gradation5 {
       background: $gradation-05;
+    }
+    &.gradation6 {
+        background: $gradation-06;
     }
     &.negative {
       background: $negative-red;
@@ -370,6 +379,17 @@
           line-height: 0;
           background-color: #FFBFBF;
         }
+      }
+    }
+  }
+
+  .elements {
+    .group-in {
+      + .group-in {
+        margin-top: 30px;
+      }
+      h4 {
+        margin-bottom: 15px;
       }
     }
   }

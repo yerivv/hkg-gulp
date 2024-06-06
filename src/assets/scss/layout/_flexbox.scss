@@ -31,7 +31,8 @@
   flex-basis: 0%;
 }
 .col-fill {
-  flex-grow: 1;
+  flex: 0 0 auto;
+  width: 100%;
 }
 .col-auto {
   flex-grow: 0;
@@ -58,8 +59,8 @@
   width: 50%;
 }
 
-$gap-values: 6, 8, 16;
-@for $i from 2 through 9 {
+$gap-values: 6, 8, 10, 16;
+@for $i from 1 through 9 {
   .flex-col-#{$i} {
     .col {
       flex: 0 0 auto;
@@ -79,6 +80,11 @@ $gap-values: 6, 8, 16;
         .col {
           width: calc((100% - ((#{$i} - 1) * #{$gap}px)) / #{$i});
         }
+      }
+    }
+    @each $gap in $gap-values {
+      &.gap-y-#{$gap} {
+        gap: #{$gap}px 0;
       }
     }
   }

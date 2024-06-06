@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "투어 예약관리"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+    <div id="app">
+        @@include('@@webRoot/_include/header.html', {
+            "style" : "light",
+            "page-name" : "투어 예약관리",
+            "share" : true,
+            "prevPage" : 'null'
+        })
+
+        <main id="container" class="sub">
+            <!-- 본문시작 -->
+            <div id="contents">
+                <div class="reservation-section">
+                    
+                    <div class="area-sorting">
+                        <div class="tab2">
+                            <a href="#" class="active">예약확정</a>
+                            <a href="#">예약취소</a>
+                        </div>
+                        <a href="#" class="i-20 i-filter bt-filter">필터</a>
+                    </div><!-- //area-sorting -->
+
+                    <!-- 예약 내역이 없거나 결과가 없을 시 -->
+                    <div class="nodata">
+                        <span>No Data</span>
+                        <p>예약하신 투어가 없어요.<br>예약 내역은 최근 5년 이내 기간만 조회됩니다.</p>
+                        <div class="btn-box">
+                            <a href="#" class="btns medium midnight-outline">
+                                <i class="icons i-20 i-plus midnight"></i>나만의 골프투어 만들기
+                            </a>
+                        </div>
+                    </div><!-- //nodata -->
+
+                    <div class="area-result">
+                        <div class="reservation-list">
+                            <ul class="list">
+                                <li class="item">
+                                    <a href="reservation_tour_detail.html" class="box">
+                                        <div class="row prod">
+                                            <i class="i-20 i-ai-calendar"></i>
+                                            <span class="name">상품명</span>
+                                        </div>
+                                        <div class="row status">
+                                            <div class="card">status</div>
+                                            <div class="num">주문번호(구분코드+숫자)</div>
+                                            <div class="date">주문일</div>
+                                        </div>
+                                        <div class="row memo">
+                                            <p>상태관련 안내 문구</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="icons g94 i-20 i-trash bt-remove">삭제</a>
+                                </li>
+                                <li class="item">
+                                    <a href="reservation_tour_detail.html" class="box">
+                                        <div class="row prod">
+                                            <i class="i-20 i-ai-calendar"></i>
+                                            <span class="name">나트랑 저녁 출발 18홀 마사지 상품입니다.</span>
+                                        </div>
+                                        <div class="row status">
+                                            <div class="card">예약접수</div>
+                                            <div class="num">P2024032501012345</div>
+                                            <div class="date">2024.03.25</div>
+                                        </div>
+                                        <div class="row memo">
+                                            <p>3일 이내 모든 여행자 정보를 입력해 주세요.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="icons g94 i-20 i-trash bt-remove">삭제</a>
+                                </li>
+                                <li class="item">
+                                    <a href="reservation_tour_detail.html" class="box">
+                                        <div class="row prod">
+                                            <i class="i-20 i-ai-calendar"></i>
+                                            <span class="name">나트랑 저녁 출발 18홀 마사지 상품입니다.</span>
+                                        </div>
+                                        <div class="row status">
+                                            <div class="card">견적확인</div>
+                                            <div class="num">P2024032501012345</div>
+                                            <div class="date">2024.03.25</div>
+                                        </div>
+                                        <div class="row memo">
+                                            <p>5일 이내 투어 견적을 결제해 주세요.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="icons g94 i-20 i-trash bt-remove">삭제</a>
+                                </li>
+                                <li class="item">
+                                    <a href="reservation_tour_detail.html" class="box">
+                                        <div class="row prod">
+                                            <i class="i-20 i-ai-calendar"></i>
+                                            <span class="name">나트랑 저녁 출발 18홀 마사지 상품입니다.</span>
+                                        </div>
+                                        <div class="row status">
+                                            <div class="card">결제진행</div>
+                                            <div class="num">P2024032501012345</div>
+                                            <div class="date">2024.03.25</div>
+                                        </div>
+                                        <div class="row memo">
+                                            <p>4월 10일까지 모든 결제를 완료해 주세요.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="icons g94 i-20 i-trash bt-remove">삭제</a>
+                                </li>
+                                <li class="item">
+                                    <a href="reservation_tour_detail.html" class="box">
+                                        <div class="row prod">
+                                            <i class="i-20 i-ai-calendar"></i>
+                                            <span class="name">나트랑 저녁 출발 18홀 마사지 상품입니다.</span>
+                                        </div>
+                                        <div class="row status">
+                                            <div class="card">결제완료</div>
+                                            <div class="num">P2024032501012345</div>
+                                            <div class="date">2024.03.25</div>
+                                        </div>
+                                        <div class="row memo">
+                                            <p>1~2일 이내 예약이 확정됩니다.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="icons g94 i-20 i-trash bt-remove">삭제</a>
+                                </li>
+                                <li class="item">
+                                    <a href="reservation_tour_detail.html" class="box">
+                                        <div class="row prod">
+                                            <i class="i-20 i-ai-calendar"></i>
+                                            <span class="name">나트랑 저녁 출발 18홀 마사지 상품입니다.</span>
+                                        </div>
+                                        <div class="row status">
+                                            <div class="card">예약확정</div>
+                                            <div class="num">P2024032501012345</div>
+                                            <div class="date">2024.03.25</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="icons g94 i-20 i-trash bt-remove">삭제</a>
+                                </li>
+                                <li class="item">
+                                    <a href="reservation_tour_detail.html" class="box">
+                                        <div class="row prod">
+                                            <i class="i-20 i-ai-calendar"></i>
+                                            <span class="name">나트랑 저녁 출발 18홀 마사지 상품입니다.</span>
+                                        </div>
+                                        <div class="row status">
+                                            <div class="card gd4">예약불가</div>
+                                            <div class="num">P2024032501012345</div>
+                                            <div class="date">2024.03.25</div>
+                                        </div>
+                                        <div class="row memo">
+                                            <p>예약 옵션을 변경해 주세요.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="icons g94 i-20 i-trash bt-remove">삭제</a>
+                                </li>
+                                <li class="item">
+                                    <a href="reservation_tour_detail.html" class="box">
+                                        <div class="row prod">
+                                            <i class="i-20 i-ai-calendar"></i>
+                                            <span class="name">나트랑 저녁 출발 18홀 마사지 상품입니다.</span>
+                                        </div>
+                                        <div class="row status">
+                                            <div class="card gd4">예약취소</div>
+                                            <div class="num">P2024032501012345</div>
+                                            <div class="date">2024.03.25</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="icons g94 i-20 i-trash bt-remove">삭제</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- //area-result -->
+
+                </div><!-- //reservation-section -->
+            </div><!-- //contents -->
+        </main>
+
+        @@include('@@webRoot/_include/footer.html')
+
+        @@include('@@webRoot/_include/foot.html')
+
+        @@include('@@webRoot/_include/modal.html')
+    </div>
+    
+    <script>
+    </script>
+</body>
+</html>

@@ -12,18 +12,12 @@
   }
 
   &.large {
-    height: 56px;
-    @include text-body3;
-    .icons {
-      @include icon-box(24px, 24px);
-    }
+    height: 52px;
+    @include text-body2(500);
   }
   &.medium {
     height: 44px;
-    @include text-body2;
-    .icons {
-      @include icon-box(20px, 20px);
-    }
+    @include text-body1(500);
   }
   &.small {
     height: 36px;
@@ -134,6 +128,7 @@
     color: $negative-red;
   }
   &:disabled {
+    border-color: $grayscale-gd4;
     background-color: $grayscale-gd4;
     color: $grayscale-g94;
   }
@@ -165,5 +160,16 @@
   }
   &.transparent {
     //background-color: transparent;
+  }
+
+  // text button
+  &.txt {
+    gap: 0 4px; width: auto; border: 0 none; border-radius: 0; background: transparent; color: $grayscale-g94; @include text-script2(500);
+  }
+  &.txt2 {
+    @include text-body1(500);
+  }
+  &.txt3 {
+    text-decoration: underline; text-underline-position: under; text-underline-offset: 0;
   }
 }

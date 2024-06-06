@@ -1,0 +1,82 @@
+.layerpop_load{
+    .title.liner{
+        &:before{border-bottom:1px solid $grayscale-gee;}
+    }
+    .modal-membership-cert{
+        .content{
+            .form-set{@include sub-section;padding-top:0;padding-bottom:0;}
+        }
+    }
+    .modal-reserve-common{
+        .content{
+            .area-place{@include sub-section;padding-top:20px;
+                .item{
+                    .toggle-text{width:100%;}
+                    .skyblue{color:$primary-midnight;border-color:$grayscale-gd4;}
+                    input:checked+.skyblue{color:$primary-white;border-color:$secondary-skyblue;background-color:$secondary-skyblue;}
+                    &+.item{margin:8px 0 0;}
+                }
+            }
+            .area-person{@include sub-section;padding-top:10px;
+                dt{padding:10px 0 0;@include text-body2(500);}
+                dd{@include flex-row;gap:0 8px;padding:10px 0 0;
+                    input{text-indent:0;text-align:center;color:$grayscale-black;font-weight:500;border-color:$grayscale-gf8;background:$grayscale-gf8;}
+                    .btns{flex-basis:44px;min-width:44px;}
+                }
+                &.disabled{
+                    dd{
+                        input{color:$grayscale-g94;}
+                        .i-minus{@include filter-gd4;}
+                    }
+                }
+            }
+            .area-schedule{padding-bottom:0;
+                .hkcalendar-head{@include sub-section;}
+                .hkcalendar-body{@include sub-section;
+                    &:after{@include sub-section;}
+                }
+            }
+            .area-period{@include sub-section;padding-top:20px;
+                dt{@include flex-row;gap:0 8px;align-items:center;@include text-body2(500);
+                    span{display:inline-block;margin-left:auto;vertical-align:top;@include text-body1(400);color:$grayscale-g44;}
+                }
+                dd{@include flex-row;flex-wrap:wrap;gap:8px;padding:10px 0 0;
+                    .toggle-text{
+                        span{height:36px;color:$grayscale-g44;border-radius:100px;background:$grayscale-gf4;
+                            &.short{width:53px;}
+                            &.long{width:96px;}
+                        }
+                        input:checked + span{color:$primary-white;background:$secondary-lightblue;}
+                    }
+                }
+                &+.area-period{padding-top:30px;}
+            }
+            .bullets{position:relative;margin:30px 0 0;@include sub-section;padding-top:21px;
+                &:before{content:"";position:absolute;top:0;left:0;width:100%;height:1px;@include sub-section;box-sizing:border-box;background:$grayscale-gee;background-clip:content-box;}
+            }
+        }
+        .lay-fixed{
+            .insert{@include sub-section;
+                &:after{content:"";display:block;clear:both;}
+                .person{position:relative;min-height:44px;margin:0 0 20px;border-radius:4px;background:$grayscale-gf8;
+                    &:before{content:"";pointer-events:none;position:absolute;top:12px;left:16px;@include icon-box(20px, 20px);background-image:url($path-icon + '20/ia-user.svg');}
+                    input{height:44px;margin:0;text-indent:43px;@include text-body1(500);color:$grayscale-g44;border-radius:4px;border-color:$grayscale-gf8;background:$grayscale-gf8;}
+                }
+                .normal{margin:0 0 20px;
+                    input{pointer-events:none;height:30px;text-indent:0;@include text-body4(600);color:$grayscale-black;border:none;border-radius:0;background:none;}
+                    .tit{display:block;padding:0 0 6px;@include text-body1(400);}
+                }
+                .range{float:left;width:50%;margin:0 0 20px;
+                    input{pointer-events:none;height:30px;text-indent:0;@include text-body4(600);color:$grayscale-black;border:none;border-radius:0;background:none;}
+                    .tit{display:block;padding:0 0 6px;@include text-body1(400);}
+                    &+.range{text-align:right;
+                        input{text-align:right;}
+                    }
+                }
+                .waitrsv{position:relative;float:left;clear:both;width:100%;margin:0 0 20px;padding:12px 0 0;line-height:0;
+                    &:before{content:"";position:absolute;top:-5px;left:0;width:100%;height:1px;background:$bg-sky;}
+                }
+            }
+        }
+    }
+}

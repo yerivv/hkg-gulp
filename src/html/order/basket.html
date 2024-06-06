@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "장바구니"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+    <div id="app">
+        @@include('@@webRoot/_include/header.html', {
+            "style" : "light",
+            "page-name" : "장바구니",
+            "share" : true,
+            "prevPage" : 'null'
+        })
+
+        <main id="container" class="sub">
+            <!-- 본문시작 -->
+            <div id="contents">
+                <div class="basket-section">
+                    <div class="area-tab">11</div>
+                    <div class="area-basket">11</div>
+
+                    <div class="area-prod">
+                        인기상품 TOP 100
+                    </div>
+                    
+                    <div class="area-fixed">
+                        <!-- 예약접수 -->
+                        <div class="btn-box">
+                            <button type="button" class="btns large midnight">0건 예약접수</button>
+                        </div>
+                    </div><!-- //area-fixed -->
+                </div><!-- //basket-section -->
+            </div><!-- //contents -->
+        </main>
+
+        @@include('@@webRoot/_include/footer.html')
+
+        @@include('@@webRoot/_include/foot.html')
+
+        @@include('@@webRoot/_include/modal.html')
+    </div>
+    
+    <script>
+        fixed.init('.basket-section');
+    </script>
+</body>
+</html>

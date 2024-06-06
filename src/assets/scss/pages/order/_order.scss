@@ -1,0 +1,201 @@
+.basket-section {padding-top: 20px;
+    [class^='area-'] {@include sub-section;}
+    .area-fixed{position:fixed;bottom:0;left:50%;width:100%;max-width:$pad-width;min-width:$mo-width;transform:translateX(-50%);padding:0;
+        .btn-box{display:flex;gap:0 8px;@include sub-section;padding-top:20px;padding-bottom:20px;background:$primary-white;}
+        &.inline{position:absolute;}
+    }
+}
+
+.order-section {padding-top: 20px;
+    [class^='area-'] {@include sub-section;
+        .title {@include text-body2(600);}
+        .subtext {margin-top: 4px;color: $grayscale-g44;@include text-body1(400);}
+    }
+    .box-white {padding: 20px; margin-bottom: 10px; border-radius: 6px; background-color: $primary-white;}
+    .area-prod {@include sub-section;
+        .box-white {background-color: $bg-lightsky;}
+        .prod {display: flex;@include text-body1(600);
+            i {margin-top: 1px; margin-right: 6px;}
+            .name {width: calc(100% - 26px);}
+        }
+        .detail {margin-top:12px;padding-top:12px;border-top: 1px solid $bg-sky;
+            li {color:$grayscale-g44; @include text-script2(500);
+                & + li {margin-top:4px;}
+            }
+        }
+    }
+    .area-price {
+        .group {
+            display: flex; flex-direction: column; gap: 8px 0;
+            & + .group {margin-top: 20px;padding-top: 20px;border-top:1px solid $grayscale-gee;}
+        }
+        dl {display: flex; justify-content: space-between; align-items: center;
+            dt {color: $grayscale-g44;}
+            dd {color: $grayscale-g44;@include text-body2(500);}
+            &.total {padding-bottom: 2px;
+                dt {color: $grayscale-black;@include text-body2(600);}
+                dd {color: $primary-hankblue;@include text-body3(600);}
+            }
+        }
+    }
+    .area-coupon {
+        .bt-coupon {margin-top:20px;}
+        .list {display:flex;flex-direction:column;gap:8px 0;margin-top: 20px;padding-top: 20px;border-top:1px solid $grayscale-gee;
+            dl {display: flex; justify-content: space-between; align-items: center;color: $grayscale-g94;@include text-body1(500);
+                dt {position:relative;padding-left:12px;
+                    &::before {content:'';position:absolute;top:10px;left:0;width:4px;height:4px;border-radius:50%;background-color:$grayscale-g94;}
+                }
+                dd {display:flex;align-items:center;
+                    .btns {margin-left: 12px;}
+                }
+            }
+        }
+        .login {
+            .ux-force-login {margin-top:20px;}
+        }
+    }
+    .area-point {
+        .use {display:flex;flex-direction:column;gap:8px 0;margin-top:4px;
+            dl {display: flex; justify-content: space-between; align-items: center;
+                dt {width:75px;color:$grayscale-g44;@include text-body1(400);}
+                dd {width:calc(100% - 75px);color:$grayscale-g44;@include text-body1(600);text-align:right;}
+            }
+            .use-box {display:flex;gap:0 8px;max-width:300px;margin-left:auto;text-align:left;
+                .input {position:relative;width:calc(100% - 72px);
+                    input {padding-right:29px;font-weight:600;color:$primary-hankgolf;text-align:right;}
+                    .circle {position:absolute;right:10px;top:50%;transform:translateY(-50%);}
+                }
+                .bt-smoney-whole {width:64px;}
+            }
+        }
+        .login {
+            .ux-force-login {margin-top:20px;}
+        }
+    }
+    .area-method {
+        .list {margin-top: 20px;
+            li {
+                .checkbox {width:100%;gap:0 12px;
+                    input {margin-left: auto;}
+                }
+                & + li {margin-top: 12px;padding-top: 12px;border-top:1px solid $grayscale-gee;}
+            }
+        }
+    }
+    .area-payment {
+        .title {margin-bottom: 12px;}
+        .group {
+            display: flex; flex-direction: column; gap: 8px 0;
+            & + .group {margin-top: 12px;padding-top: 12px;border-top:1px solid $grayscale-gee;}
+        }
+        dl {display: flex; justify-content: space-between; align-items: center;
+            dt {color: $grayscale-g44;}
+            dd {color: $grayscale-g44;@include text-body2(500);}
+            &.total {padding-bottom: 2px;
+                dt {color: $grayscale-black;@include text-body2(600);}
+                dd {color: $primary-hankblue;@include text-body3(600);}
+            }
+        }
+        .detail {display: flex; flex-direction: column; gap: 6px 0; margin-top: 4px;padding-top: 12px;border-top:1px solid $grayscale-gee;
+            dt, dd {color: $grayscale-g94;@include text-script2(500);}
+        }
+    }
+    .area-notice {
+        .title {margin-bottom: 10px;}
+    }
+    .area-terms {
+        .title {display:flex;justify-content:space-between;align-items:center;}
+        .list {margin-top:10px;padding-top:10px;border-top:1px solid $grayscale-gee;
+            li {display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;
+                & + li {margin-top:10px;}
+                &.choice {color:$grayscale-g94;}
+                a {max-width:calc(100% - 38px);@include text-body1(400);}
+            }
+        }
+    }
+    .area-info {color:$grayscale-g94;@include text-script2(500);}
+    .area-fixed{position:fixed;bottom:0;left:50%;width:100%;max-width:$pad-width;min-width:$mo-width;transform:translateX(-50%);padding:0;
+        .filebox{display:flex;flex-direction:row;gap:0;@include sub-section;
+            dt{flex-shrink:0;margin:0 0 20px;padding:8px 12px;@include text-script2(400);color:$grayscale-g94;border-radius:5px 0 0 5px;background:$grayscale-gf4;
+                i{margin:2px 2px 2px 0;vertical-align:top;}
+            }
+            dd{display:flex;flex-direction:column;flex-grow:1;align-items:flex-start;margin:0 0 20px;padding:8px 0;border-radius:0 5px 5px 0;background:$grayscale-gf4;
+                a{@include text-script2(500);color:$grayscale-black;}
+            }
+        }
+        .btn-box{display:flex;gap:0 8px;@include sub-section;padding-top:19px;padding-bottom:20px;border-top:1px solid $grayscale-gee;background:$primary-white;}
+        &.inline{position:absolute;}
+    }
+}
+.layerpop_load{
+    // 쿠폰 바우처 조회
+    .modal-order-coupon {
+        .content{
+            .summary{margin:20px 0 0;@include sub-section;@include text-title1(600);}
+            .regist{margin:20px 0 0;@include sub-section;
+                .input-box {display:flex;gap:0 8px;margin:0 0 8px;
+                    input {width:calc(100% - 84px);}
+                    .btns {width:74px;}
+                }
+            }
+            .tab2{margin:30px 0 0;}
+            .list{margin:20px 0 0;@include sub-section;
+                .item {margin-top:20px;
+                    &:first-child{margin:0;}
+                    input{position:absolute;opacity:0;
+                        &:checked+label{background:$grayscale-gf8;
+                            &::after{position:absolute;right:20px;top:20px;padding:0 7px;border-radius:4px;border:1px solid $primary-hankblue;color:$primary-hankblue;@include text-script1(600);content:'사용중';}
+                        }
+                    }
+                    label{display:block;position:relative;padding:19px;border-radius:4px;border:1px solid $grayscale-gee;background:$primary-white;cursor:pointer;
+                        .label{margin-bottom:12px;}
+                        .tit{@include text-body2(600);}
+                        .txt{color:$grayscale-g44;@include text-body1(400);}
+                        .info{display:flex;flex-wrap:wrap;gap:0 12px;margin-top:8px;@include text-script2(400);
+                            .day {color:$grayscale-g44;font-weight:600;}
+                            .limit {color:$grayscale-g94;}
+                        }
+                    }
+                }
+            }
+        }
+        .lay-fixed{background:$primary-white;
+            .select-list {display:flex;flex-direction:column-reverse;@include sub-section;margin-bottom:20px;
+                dl {display:flex;justify-content:space-between;align-items:center;}
+                .total {
+                    dt {color:$grayscale-g44;@include text-body2(500);}
+                    dd {display:flex;align-items:center;@include text-body2(400);cursor:pointer;
+                        strong {@include text-body4(600);margin-right:4px;}
+                        > i {margin-left: 8px;}
+                    }
+                }
+                .list {display:none;flex-direction:column;gap:8px 0;margin-top:16px;padding-top:16px;border-top:1px solid $grayscale-gee;
+                    dt {color:$grayscale-g94;@include text-body1(400);}
+                    dd {display:flex;align-items:center;color:$grayscale-g44;@include text-body1(500);
+                        .btns {margin-left: 8px;}
+                    }
+                    &.open {display:flex;}
+                }
+            }
+        }
+    }
+
+    // 무이자할부 안내
+    .modal-order-cardInfo {
+        .content{
+            .list{@include sub-section;
+                .item {display:flex;align-items:flex-start;margin-top:20px;
+                    .img {width:28px;height:28px;overflow:hidden;border-radius:50%;background:$grayscale-gee;}
+                    .info {width:calc(100% - 38px);margin-left:10px;}
+                    .name {@include text-body2(500);}
+                    .text {
+                        p {color:$grayscale-g94;@include text-body1(400);
+                            & + p {margin-top:10px;}
+                            span {color:$grayscale-g44;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

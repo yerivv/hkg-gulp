@@ -1,20 +1,101 @@
-.hkcalendar{position:relative;width:360px;
-    &-head{padding:0 0 9px;border-bottom:1px solid $grayscale-gee;
-        .th{display:flex;flex-direction:row;justify-content:center;align-items:center;height:20px;@include text-body1;color:$grayscale-g94;
-            &:first-child{color:$negative-red;}
+.hkcalendar{position:relative;padding:20px 0;text-transform:none;
+    &.inline{
+        .hkcalendar-head{padding-bottom:9px;border-bottom:1px solid $grayscale-gee;
+            .th{display:flex;flex-direction:row;justify-content:center;align-items:center;height:20px;@include text-body1;color:$grayscale-g94;
+                &:first-child{color:$negative-red;}
+            }
+        }
+        .hkcalendar-body{position:relative;padding-top:20px;padding-bottom:30px;
+            &:after{content:"";position:absolute;bottom:0;left:0;width:100%;height:1px;box-sizing:border-box;background:$grayscale-gee;background-clip:content-box;}
+            &:last-child{padding-bottom:0;
+                &:after{display:none;}
+            }
+            &-caption{padding:0 0 12px;text-align:center;
+                &-tit{display:inline-block;width:114px;vertical-align:top;text-align:center;@include text-body2(600);color:$grayscale-black;}
+                &-prev{@include icon-box(16px, 16px);margin:5px 0;vertical-align:top;cursor:pointer;background-image:url($path-icon + '16/arrow-left.svg');}
+                &-next{@include icon-box(16px, 16px);margin:5px 0;vertical-align:top;cursor:pointer;background-image:url($path-icon + '16/arrow-right.svg');}
+            }
+        }
+        .hkcalendar-tr{margin:8px 0 0;
+            .td{display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;height:46px;@include text-script1(400);cursor:pointer;
+                &:first-child{border-radius:4px 0 0 4px;}
+                &:last-child{border-radius:0 4px 4px 0;}
+                &.sunday{
+                    .data{color:$negative-red;}
+                }
+                &.other{
+                    .data{color:$grayscale-gd4 !important;}
+                }
+                &.disabled{pointer-events:none;background:none !important;
+                    .data{color:$grayscale-gd4 !important;}
+                }
+                &.today{
+                    .text{color:$primary-hankblue;}
+                }
+                &.current{
+                    &:last-child{border-radius:4px;}
+                    &:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;border-radius:4px;background:$secondary-skyblue;}
+                    &:after{content:"";position:absolute;top:100%;left:50%;width:12px;height:12px;margin:-6px 0 0 -6px;box-sizing:border-box;border:2px solid $primary-white;border-radius:100%;background:$secondary-skyblue;}
+                    .data{color:$primary-white;}
+                    .text{color:$primary-white;}
+                }
+                &.range{background:#9bc3ff;
+                    .data{color:$primary-white;}
+                }
+                &.start{border-radius:4px 0 0 4px;
+                    &:last-child{border-radius:4px;}
+                    &:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;border-radius:4px;background:$secondary-skyblue;}
+                    &:after{content:"";position:absolute;top:100%;left:50%;width:12px;height:12px;margin:-6px 0 0 -6px;box-sizing:border-box;border:2px solid $primary-white;border-radius:100%;background:$secondary-skyblue;}
+                    .data{color:$primary-white;}
+                }
+                &.end{border-radius:0 4px 4px 0;
+                    &:first-child{border-radius:4px;}
+                    &:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;border-radius:4px;background:$secondary-flyblue;}
+                    &:after{content:"";position:absolute;top:100%;left:50%;width:12px;height:12px;margin:-6px 0 0 -6px;box-sizing:border-box;border:2px solid $primary-white;border-radius:100%;background:$secondary-flyblue;}
+                    .data{color:$primary-white;}
+                }
+                .data{pointer-events:none;position:relative;padding:1px 0;@include text-body1(500);color:$grayscale-black;}
+                .text{pointer-events:none;position:relative;padding:1px 0;@include text-script1(400);color:$grayscale-black;}
+            }
         }
     }
-    &-body{padding:20px 0 0;
-        &-caption{margin:0 0 12px;text-align:center;@include text-body3(600);color:$grayscale-black;
-            &-tit{display:inline-block;vertical-align:top;}
-            &-prev{display:inline-block;margin:0 10px 0 0;padding:0 10px;vertical-align:top;cursor:pointer;}
-            &-next{display:inline-block;margin:0 0 0 10px;padding:0 10px;vertical-align:top;cursor:pointer;}
+    &.layer{display:flex;flex-direction:column;justify-content:center;position:absolute;width:100%;max-width:680px;padding:30px 24px;box-shadow:1px 4px 10px 0 rgba(0,0,0,0.15);border-radius:4px;background:$primary-white;
+        .hkcalendar-head{margin:0 0 10px;padding-bottom:9px;border-bottom:1px solid $grayscale-gee;
+            .th{display:flex;flex-direction:row;justify-content:center;align-items:center;height:20px;@include text-body1;color:$grayscale-g94;
+                &:first-child{color:$negative-red;}
+            }
         }
-    }
-    &-tr{
-        .td{display:flex;flex-direction:row;justify-content:center;align-items:center;height:46px;margin:8px 0 0;@include text-body1;color:$grayscale-black;
-            &.sunday{color:$negative-red;}
-            &.other{color:$grayscale-gd4;}
+        .hkcalendar-body{
+            &-caption{padding-bottom:6px;text-align:center;
+                &-tit{display:inline-block;width:114px;vertical-align:top;text-align:center;@include text-body2(600);color:$grayscale-black;}
+                &-prev{@include icon-box(16px, 16px);margin:5px 0;vertical-align:top;cursor:pointer;background-image:url($path-icon + '16/arrow-left.svg');}
+                &-next{@include icon-box(16px, 16px);margin:5px 0;vertical-align:top;cursor:pointer;background-image:url($path-icon + '16/arrow-right.svg');}
+            }
+        }
+        .hkcalendar-tr{margin:4px 0 0;
+            .td{display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;height:32px;@include text-script1(400);cursor:pointer;
+                &:first-child{border-radius:4px 0 0 4px;}
+                &:last-child{border-radius:0 4px 4px 0;}
+                &.sunday{
+                    .data{color:$negative-red;}
+                }
+                &.other{
+                    .data{color:$grayscale-gd4;}
+                }
+                &.disabled{
+                    .data{color:$grayscale-gd4;}
+                }
+                &.current{color:$primary-white;
+                    &:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;border-radius:4px;background:$secondary-skyblue;}
+                    &:after{content:"";position:absolute;top:100%;left:50%;width:12px;height:12px;margin:-6px 0 0 -6px;box-sizing:border-box;border:2px solid $primary-white;border-radius:100%;background:$secondary-skyblue;}
+                    .data{color:$primary-white;}
+                }
+                .data{pointer-events:none;position:relative;padding:1px 0;@include text-body1;color:$grayscale-black;}
+                .text{pointer-events:none;position:relative;padding:1px 0;@include text-script1(400);color:$grayscale-black;}
+            }
+        }
+        .hkcalendar-close{position:absolute;top:10px;right:10px;padding:10px;
+            i{pointer-events:none;}
         }
     }
 }

@@ -1,0 +1,220 @@
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+    $(document).on('click', '.bt-teetime-remove', function() {
+        const target = $(this).closest('.group');
+        target.remove();
+        alert('삭제');
+    });
+    $('.bt-teetime-modify').on('click', function(){
+        const target = $(this).closest('.group');
+        target.addClass('modify-ing');
+    })
+    $('.bt-teetime-cancle').on('click', function(){
+        const target = $(this).closest('.group');
+        target.removeClass('modify-ing');
+    })
+    $('.bt-teetime-complete').on('click', function(){
+        const target = $(this).closest('.group');
+        alert('수정완료');
+        target.removeClass('modify-ing');
+    })
+
+    // 티타임 추가
+    $('.bt-teetime-add').on('click', function(){
+        // Handlebars Template
+        //var templateH = Handlebars.compile($('#tpl_teetime').html());
+        //$('.detail-teetime .btn-add-box').before(templateH({}));
+    });
+});
+
+//]]>
+</script>
+
+<!-- 티타임 예약 -->
+<dl class="box-round white">
+    <dt class="title-m detail-title" onclick="boxToggle(this)">티타임 예약 (10)<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+    <dd class="detail-teetime detail-detail">
+        <div class="group-title">
+            <div class="title-m">전체 10건</div>
+            <div class="btn-layer">
+                <span class="set">
+                    <a href="#" class="btns txt">전체수정</a>
+                </span>
+                <i class="icons i-12 i-arrow-right g94"></i>
+            </div>
+        </div>
+        <div class="group">
+            <div class="group-title">
+                <div class="title-m">2024.04.01</div>
+                <div class="text negative">예약불가</div>
+                <div class="btn-layer">
+                    <span class="set complete">
+                        <a href="#" class="btns txt bt-teetime-remove">삭제</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-teetime-modify">수정</a>
+                    </span>
+                    <span class="set ing">
+                        <a href="#" class="btns txt bt-teetime-cancle">수정취소</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-teetime-complete">수정완료</a>
+                    </span>
+                    <i class="icons i-12 i-arrow-right g94"></i>
+                </div>
+            </div>
+            <div class="group-data1 complete">
+                <dl>
+                    <dt><i class="i-20 i-ia-golfball"></i>홀수</dt>
+                    <dd>18홀</dd>
+                </dl>
+                <dl>
+                    <dt><i class="i-20 i-ia-court"></i>코스</dt>
+                    <dd>1코스</dd>
+                </dl>
+                <dl>
+                    <dt><i class="i-20 i-ia-time"></i>타임</dt>
+                    <dd>오전</dd>
+                </dl>
+                <dl>
+                    <dt><i class="i-20 i-ia-people"></i>인원</dt>
+                    <dd>4명</dd>
+                </dl>
+                <dl>
+                    <dt><i class="i-20 i-ia-sum"></i>비용</dt>
+                    <dd>
+                        <div>180,000원</div>
+                        <div class="small">3,400,000 VND</div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="group-data3 ing">
+                <dl>
+                    <dt>홀수</dt>
+                    <dd>
+                        <div class="d-flex flex-wrap flex-col-3 gap-8">
+                            <label for="male" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="male">
+                                <span class="medium skyblue">18홀</span>
+                            </label>
+                            <label for="female" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="female">
+                                <span class="medium skyblue">27홀</span>
+                            </label>
+                            <label for="female" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="female" disabled>
+                                <span class="medium skyblue">36홀</span>
+                            </label>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>코스</dt>
+                    <dd>
+                        <div class="d-flex flex-wrap flex-col-2 gap-8">
+                            <label for="male" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="male">
+                                <span class="medium skyblue">1코스</span>
+                            </label>
+                            <label for="female" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="female">
+                                <span class="medium skyblue">2코스</span>
+                            </label>
+                            <label for="female" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="female" disabled>
+                                <span class="medium skyblue">3코스</span>
+                            </label>
+                            <label for="female" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="female" disabled>
+                                <span class="medium skyblue">4코스</span>
+                            </label>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>타임</dt>
+                    <dd>
+                        <div class="d-flex flex-wrap flex-col-2 gap-8">
+                            <label for="male" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="male">
+                                <span class="medium skyblue">오전</span>
+                            </label>
+                            <label for="female" class="toggle-text col">
+                                <input name="traveler2_gender" type="radio" id="female">
+                                <span class="medium skyblue">오후</span>
+                            </label>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>인원</dt>
+                    <dd>
+                        인원
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>비용</dt>
+                    <dd>
+                        인원
+                    </dd>
+                </dl>
+                <div class="btn-box">
+                    <a href="#" class="btns small skyblue-outline bt-teetime-cancle">수정취소</a>
+                    <a href="#" class="btns small skyblue bt-teetime-complete">수정완료</a>
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <div class="group-title">
+                <div class="title-m">2024.04.02</div>
+                <div class="text negative"></div>
+                <div class="btn-layer">
+                    <span class="set complete">
+                        <a href="#" class="btns txt bt-teetime-remove">삭제</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-teetime-modify">수정</a>
+                    </span>
+                    <span class="set ing">
+                        <a href="#" class="btns txt bt-teetime-cancle">수정취소</a>
+                        <span class="line"></span>
+                        <a href="#" class="btns txt bt-teetime-complete">수정완료</a>
+                    </span>
+                    <i class="icons i-12 i-arrow-right g94"></i>
+                </div>
+            </div>
+            <div class="group-data1 complete">
+                <dl>
+                    <dt><i class="i-20 i-ia-golfball"></i>홀수</dt>
+                    <dd>18홀</dd>
+                </dl>
+                <dl>
+                    <dt><i class="i-20 i-ia-court"></i>코스</dt>
+                    <dd>1코스</dd>
+                </dl>
+                <dl>
+                    <dt><i class="i-20 i-ia-time"></i>타임</dt>
+                    <dd>오전</dd>
+                </dl>
+                <dl>
+                    <dt><i class="i-20 i-ia-people"></i>인원</dt>
+                    <dd>4명</dd>
+                </dl>
+                <dl>
+                    <dt><i class="i-20 i-ia-sum"></i>비용</dt>
+                    <dd>
+                        <div>180,000원</div>
+                        <div class="small">3,400,000 VND</div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="group-data3 ing">수정</div>
+        </div>
+        <div class="btn-add-box">
+            <a href="#" class="btns small skyblue bt-teetime-add">타타임 예약 추가</a>
+            <p>원하는 날짜를 선택하신 후 예약을 추가해 주세요.</p>
+        </div>
+    </dd>
+</dl><!-- //box-round -->
+
+<script id="tpl_teetime" type="text/x-handlebars-template">
+	
+</script>

@@ -3,27 +3,32 @@
 @import './abstracts/mixins';
 
 //base
-@import './base/init';
 @import './base/normalize';
 @import './base/reset';
 @import './base/typography';
+@import './base/init';
 
 //layout
 @import './layout/header';
-@import './layout/navigation';
-@import './layout/container';
 @import './layout/footer';
+@import './layout/container';
 @import './layout/modal';
-@import './layout/popup';
 @import './layout/flexbox';
 @import './layout/forms';
-@import './layout/tables';
 
 //components
 @import './components/buttons';
 @import './components/icons';
 @import './components/calendar';
+@import './components/elements';
 
 //page
 @import './pages/guide/guide';
-@import './pages/main/main';
+@import './pages/help/help';
+@import './pages/member/member';
+@import './pages/mypage/inquiry';
+@import './pages/mypage/member';
+@import './pages/order/order';
+@import './pages/mypage/reservation';
+@import './pages/product/product';
+@import './pages/product/custom';

@@ -1,0 +1,132 @@
+$path-help: '../../imgs/front/help/';
+
+.help-section{padding:0 0 60px;
+    .area-search{position:relative;@include sub-section;padding-top:20px;padding-bottom:20px;
+        input[type=search]{padding-right:71px;
+            &.active+.clear{opacity:1;cursor:pointer;}
+            &.empty{border:1px solid $grayscale-gf4;background:$grayscale-gf4;}
+        }
+        .clear{position:absolute;margin:14px 0 0 -72px;padding:2px;opacity:0;font-size:0;border-radius:100%;background:$grayscale-gd4;cursor:text;}
+        .submit{position:absolute;margin:10px 0 0 -40px;}
+    }
+    .area-sorting{position:relative;@include sub-section;padding-top:20px;padding-bottom:20px;background:$grayscale-gf8;}
+    .area-visual{@include sub-section;padding-top:30px;padding-bottom:20px;background:linear-gradient(180deg, rgba(125,168,234,0) 0%, rgba(125,168,234,0.25) 100%);
+        p{margin:0 10px;@include text-body2(500);}
+        .visual{margin:-1px 0 5px;padding:17px 10px 31px;@include text-title2(600);color:$primary-hankblue;background:url($path-help + 'visual.png') right 0 no-repeat;background-size:128px 128px;}
+        .area-search{padding:20px 0 0;
+            input[type=search]{border:1px solid $primary-white;
+                &:focus{border:1px solid $grayscale-black;}
+                &.empty{border:1px solid $primary-white;background:$primary-white;}
+            }
+        }
+    }
+    .area-cs{position:relative;overflow:hidden;@include sub-section;margin:30px 0 0;padding-top:10px;padding-bottom:30px;background:$grayscale-gf8;
+        &:before{content:"";position:absolute;bottom:0;left:50%;width:0;height:0;margin:0 0 0 -53px;opacity:0.1;border:132px solid transparent;border-bottom:157px solid $secondary-skyblue;}
+        h3{padding:20px 0 0;@include text-body2(500);color:$primary-midnight;
+            strong{display:block;padding:4px 0 0;@include text-title2(600);}
+        }
+        .info{padding:12px 0 10px;
+            dt{padding:4px 0 0;@include text-body1(500);color:$grayscale-black;}
+            dd{padding:4px 0 0;@include text-body1(400);color:$grayscale-g44;
+                span{color:$grayscale-g94;}
+            }
+        }
+        .item{position:relative;margin:10px 0 0;border-radius:4px;background:$primary-white;
+            .link{display:block;position:relative;padding:12px 65px 12px 16px;
+                .tit{display:block;padding:4px 0;@include text-body2(500);color:$primary-hankblue;
+                    i{margin:5px 0 5px 2px;vertical-align:top;}
+                }
+                .info{display:block;padding:4px 0;@include text-script2(400);color:$grayscale-g44;
+                    span{display:block;color:$grayscale-g94;}
+                }
+                .icon1{position:absolute;top:50%;right:16px;width:40px;height:40px;margin:-20px 0 0;background:url($path-help + 'cs1.svg') center center no-repeat;}
+                .icon2{position:absolute;top:50%;right:16px;width:40px;height:40px;margin:-20px 0 0;background:url($path-help + 'cs2.svg') center center no-repeat;}
+            }
+        }
+    }
+    .area-board{@include sub-section;padding-top:30px;text-align:center;
+        h3{margin:0 0 20px;padding:0 0 20px;text-align:left;@include text-body3(600);border-bottom:1px solid $grayscale-gee;}
+        .tab1{display:block;position:relative;padding:82px 0 0;text-align:left;
+            &:before{padding:0;}
+            > *{position:static;height:0;margin:0;padding:0;text-align:left;border:none;cursor:auto;
+                &:before{display:inline-block;margin:0 99999px 0 -99999px;vertical-align:top;white-space:nowrap;@include text-body2(500);}
+                &:nth-child(1){
+                    &:before{content:"골프장별 소식";width:0;}
+                }
+                &:nth-child(2){
+                    &:before{content:"공지사항";padding:0 24px 0 0;}
+                }
+                .tabbtn{position:absolute;top:0;padding:12px 0;@include text-body2(500);color:$grayscale-g94;border-bottom:2px solid transparent;cursor:pointer;}
+                .tabcont{display:none;position:relative;top:-26px;margin:0 0 -26px;}
+
+                &.active{height:auto;
+                    .tabbtn{@include text-body2(600);color:$primary-midnight;border-bottom-color:$primary-midnight;}
+                    .tabcont{display:block;}
+                }
+            }
+        }
+        .list{text-align:left;
+            .item{margin:20px 0 0;border-bottom:1px solid $grayscale-gee;
+                &:first-child{margin:0;}
+                .acrtit{position:relative;margin:-20px 0 0;padding:20px 20px 20px 0;cursor:pointer;
+                    .depth{display:block;margin:0 0 2px;@include text-body1(500);color:$grayscale-g94;
+                        .i-arrow-right{margin:3px 4px;vertical-align:top;}
+                    }
+                    .tit{display:block;@include text-body2(400);color:$grayscale-black;}
+                    .i-arrow-up{position:absolute;top:50%;right:0;margin:-10px 0 0;transform:rotate(180deg);}
+                }
+                .acrdetail{overflow:hidden;height:0;padding:0;will-change:height;background:$grayscale-gf8;
+                    .editorarea{padding:8px 20px;@include text-body1(400);
+                        &:first-child{padding-top:20px;}
+                        &:last-child{padding-bottom:20px;}
+                    }
+                    .filebox{@include flex-row;gap:0;clear:both;padding:8px 20px;
+                        &:first-child{padding-top:20px;}
+                        &:last-child{padding-bottom:20px;}
+                        dt{flex-shrink:0;margin:0 12px 0 0;@include text-script2(400);color:$grayscale-g94;}
+                        dd{@include flex-column;
+                            a{@include text-script2(500);color:$grayscale-black;}
+                        }
+                    }
+                }
+                &.active{
+                    .acrtit{
+                        .i-arrow-up{transform:rotate(0deg);}
+                    }
+                }
+                .link{display:block;margin:-20px 0 0;padding:20px 0;
+                    .card{margin:0 0 6px;vertical-align:top;
+                        &+.tit.hgt{color:$primary-midnight;}
+                    }
+                    .typ{display:inline-block;margin:0 0 2px;vertical-align:top;@include text-script2(600);color:$grayscale-g44;}
+                    .tit{display:block;@include text-body2(500);color:$grayscale-black;}
+                    .date{display:block;padding:4px 0 0;@include text-body1(400);color:$grayscale-g94;}
+                }
+            }
+        }
+        .detail{text-align:left;
+            .card{margin:0 0 6px;vertical-align:top;}
+            .typ{display:inline-block;margin:0 0 2px;vertical-align:top;@include text-script2(600);color:$grayscale-g44;}
+            .tit{@include text-body3(500);color:$grayscale-black;}
+            .date{display:block;padding:6px 0 0;@include text-body1(400);color:$grayscale-g94;}
+            .editorarea{margin:20px 0 0;padding:20px 0 0;@include text-body1(400);color:$grayscale-g44;border-top:1px solid $grayscale-gee;}
+        }
+        .btns{margin:20px 0 0;}
+        .nodata{margin:-30px 0 0;
+            &+.btns{width:155px;margin:0;}
+        }
+    }
+    .area-fixed{position:fixed;bottom:0;left:50%;width:100%;max-width:$pad-width;min-width:$mo-width;transform:translateX(-50%);
+        .filebox{@include flex-row;gap:0;@include sub-section;
+            dt{flex-shrink:0;margin:0 0 20px;padding:8px 12px;@include text-script2(400);color:$grayscale-g94;border-radius:5px 0 0 5px;background:$grayscale-gf4;
+                i{margin:2px 2px 2px 0;vertical-align:top;}
+            }
+            dd{@include flex-column;flex-grow:1;align-items:flex-start;margin:0 0 20px;padding:8px 0;border-radius:0 5px 5px 0;background:$grayscale-gf4;
+                a{@include text-script2(500);color:$grayscale-black;}
+            }
+        }
+        .btn-box{@include flex-row;gap:0 8px;@include sub-section;padding-top:19px;padding-bottom:20px;border-top:1px solid $grayscale-gee;background:$primary-white;}
+        &.inline{position:absolute;}
+    }
+}
+

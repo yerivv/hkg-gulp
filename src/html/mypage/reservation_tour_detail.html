@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "투어 예약상세"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+    <div id="app">
+        @@include('@@webRoot/_include/header.html', {
+            "style" : "light",
+            "page-name" : "투어 예약상세",
+            "share" : true,
+            "prevPage" : 'null'
+        })
+
+        <main id="container" class="sub">
+            <!-- 본문시작 -->
+            <div id="contents" class="gray">
+                <div class="reservation-section">
+                    <div class="area-status">
+                        <div class="card">예약접수</div>
+                        <!-- 예약불가 -->
+                        <!-- <div class="card negative">예약불가</div> -->
+                        <!-- 예약취소 -->
+                        <!-- <div class="card gd4">예약취소</div> -->
+                        <div class="num">P2024032501012345</div>
+                        <div class="date">2024.03.25</div>
+                    </div><!-- //area-status -->
+    
+                    <div class="area-summary">
+                        <div class="box-words">
+                            <!-- 예약접수 -->
+                            <div class="words">입력하신 예약 정보를 <br />확인해 주세요.</div>
+                            <p class="text">2024.02.01까지 예약 정보 수정 가능</p>
+                            <!-- 견적확인 -->
+                            <!-- <div class="words">견적을 확인 후 <br />결제를 진행해 주세요.</div>
+                            <p class="text">2024.04.03 17:00까지 결제 가능</p> -->
+                            <!-- 결제진행 -->
+                            <!-- <div class="words">전액 결제 완료 시<br />예약이 확정됩니다.</div>
+                            <p class="text">2024.04.03 17:00까지 결제 가능</p> -->
+                            <!-- 결제완료 -->
+                            <!-- <div class="words">결제가 완료 되었어요.<br />진행 상황을 알림으로 안내드려요.</div>
+                            <p class="text">예약이 확정될 경우, 알림톡을 발송해 드려요.</p> -->
+                            <!-- 예약확정 -->
+                            <!-- <div class="words">예약이 확정 되었어요.<br />이용일에 맞추어 방문해 주세요.</div>
+                            <p class="text">궁금하신 점은 언제든지 채팅상담으로 문의해 주세요.</p> -->
+                            <!-- 예약불가 -->
+                            <!-- <div class="words">예약이 불가한 일정이 있습니다.<br />예약 정보를 변경해 주세요.</div>
+                            <p class="text">자세한 문의는 채팅상담으로 문의해 주세요.</p> -->
+                            <!-- 예약취소 -->
+                            <!-- <div class="words">예약이 취소 되었습니다.</div>
+                            <p class="text">예약 상담은 채팅상담으로 문의해 주세요.</p> -->
+                        </div>
+                        <div class="box-prod box-round gf8">
+                            <div class="row prod">
+                                <i class="i-20 i-ia-calendar"></i>
+                                <span class="name">치구사 골프 오키야마 7박8일 저녁출발</span>
+                            </div>
+                            <div class="row detail">
+                                <ul class="detail">
+                                    <li>2024. 04. 01 ~ 2024. 04. 10<span class="line">10박 11일</span></li>
+                                    <li>성인 4, 아동 2</li>
+                                </ul>
+                            </div>
+                            <div class="row price">
+                                <dl>
+                                    <dt>투어견적</dt>
+                                    <dd>38,500,000원</dd>
+                                </dl>
+                            </div>
+                            <!-- 예약 불가 / 취소 -->
+                            <div class="row reason">
+                                <ul>
+                                    <li>2024.04.05 티타임 예약마감</li>
+                                    <li>2024.04.05 항공권 발권 불가</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-box">
+                            <a href="#" class="btns txt">예약취소<i class="icons i-12 i-arrow-right g94"></i></a>
+                        </div>
+                        <div class="box-price box-round white-b">
+                            <div class="group">
+                                <dl>
+                                    <dt>주문금액</dt>
+                                    <dd>5,000,000원</dd>
+                                </dl>
+                            </div>
+                            <div class="group">
+                                <dl>
+                                    <dt>할인금액</dt>
+                                    <dd>2,000,000원</dd>
+                                </dl>
+                            </div>
+                            <div class="group">
+                                <dl class="total">
+                                    <dt>총 결제 금액</dt>
+                                    <dd>2,000,000원</dd>
+                                </dl>
+                                <dl>
+                                    <dt>결제된 금액</dt>
+                                    <dd>2,000,000원</dd>
+                                </dl>
+                                <dl>
+                                    <dt>결제 필요 금액</dt>
+                                    <dd>4,000,000원</dd>
+                                </dl>
+                            </div>
+                            <!-- 예약취소 -->
+                            <!-- <div class="group">
+                                <dl>
+                                    <dt>결제금액</dt>
+                                    <dd>5,000,000원</dd>
+                                </dl>
+                            </div>
+                            <div class="group">
+                                <dl>
+                                    <dt>결제 취소</dt>
+                                    <dd>2,000,000원</dd>
+                                </dl>
+                            </div>
+                            <div class="group">
+                                <dl>
+                                    <dt>취소 수수료</dt>
+                                    <dd>3,000,000원</dd>
+                                </dl>
+                            </div> -->
+                        </div>
+                        <div class="box-bullets">
+                            <ul class="bullets">
+                                <!-- 예약접수 -->
+                                <li>예상견적은 항공권 발권 대행, 비자 발급 대행, 여행자 보험 가입 등 일부 이용 내역의 금액이 미포함 되어 있을 수 있습니다.</li>
+                                <li>미포함 항목의 금액은 예약 정보 입력 완료 후 견적이 확정되는 시점 확인 가능합니다.</li>
+                                <li>견적 확정은 모든 여행자의 정보를 입력 완료 하신 후 1~2일 이내 진행됩니다.</li>
+                                <li>견적 확정 전까지 예약 정보를 수정할 수 있습니다.</li>
+                                <!-- 견적확인 -->
+                                <!-- <li>3일 이내 결제하지 않을 시 예약이 자동으로 취소됩니다.</li>
+                                <li>견적은 예약 비용에 대해 확인된 금액이며, 현지 및 이용 상황에 따라 추가 비용이 발생할 수 있습니다.</li>
+                                <li>쿠폰/바우처 할인은 결제 시 적용할 수 있습니다.</li> -->
+                                <!-- 결제진행 -->
+                                <!-- <li>설정된 모든 금액의 결제가 3일 이내 완료되지 않을 시 자동으로 예약 취소됩니다.</li>
+                                <li>예약은 결제 완료 후 확정 처리 됩니다.</li> -->
+                                <!-- 결제완료 -->
+                                <!-- <li>영업일 기준 3일 이내 예약이 확정됩니다.</li>
+                                <li>예약이 확정될 시, 예약확정 상태로 변경됩니다.</li>
+                                <li>현장 상황에 따라 예약이 불가한 경우, 예약불가 상태로 변경됩니다.</li> -->
+                                <!-- 예약확정 -->
+                                <!-- <li>현장 상황에 따라 결제하신 금액 외 추가 금액 발생 시 현장결제가 진행될 수 있습니다.</li>
+                                <li>예약하신 정보와 실제 이용자의 정보가 상이할 경우, 이용이 불가할 수 있습니다.</li>
+                                <li>실물 바우처를 꼭 지참해 주세요.</li> -->
+                                <!-- 예약불가 -->
+                                <!-- <li>예약 정보를 변경하여 다시 예약접수 해주세요.</li>
+                                <li>예약 정보 변경 시, 이미 결제하신 금액은 재결제 없이 변경한 예약 정보에 적용할 수 있습니다.</li>
+                                <li>예약 정보 변경 시, 발생하는 추가금은 추가 결제가 필요합니다.</li>
+                                <li>예약 정보 변경 시, 발생하는 차액은 결제하신 수단으로 환불됩니다.</li> -->
+                                <!-- 예약취소 -->
+                                <!-- <li>취소 사유가 확인되지 않는 경우, 채팅상담으로 문의해 주세요.</li>
+                                <li>결제 수단에 따라 환불까지 영업일 기준 5~7일 소요됩니다.</li>
+                                <li>무통장입금으로 결제하신 금액은 회원정보에 등록된 환불 계좌로 입금됩니다.</li>
+                                <li>취소된 예약은 다시 원복 처리할 수 없습니다.</li> -->
+                            </ul>
+                        </div>
+                    </div><!-- //area-summary -->
+    
+                    <div class="area-detail">
+                        <div class="box-detail">
+                            <div class="title">
+                                <h3 class="title-l">예약정보</h3>
+                                <a href="#" class="btns txt">예약확인증<i class="icons i-12 i-arrow-right g94"></i></a>
+                            </div>
+
+                            <!-- 결제 정보 -->
+                            <dl class="box-round white">
+                                <dt class="title-m detail-title" onclick="boxToggle(this)">결제 정보<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+                                <dd class="detail-payment detail-detail">
+                                    <div class="total">
+                                        <dl>
+                                            <dt>총 결제 금액</dt>
+                                            <dd>35,000,000원</dd>
+                                        </dl>
+                                        <!-- 결제 완료 -->
+                                        <div class="btn-box">
+                                            <a href="${G.uriFront}/auth/login" class="btns small skyblue">현금영수증·세금계산서 발행</a>
+                                            <a href="${G.uriFront}/auth/login" class="btns small skyblue">현금영수증·세금계산서</a>
+                                        </div>
+                                    </div>
+                                    <!-- 혼자 결제 -->
+                                    <div class="group">
+                                        <div class="head">
+                                            <div class="row">
+                                                <span class="col col1">계약금</span>
+                                                <span class="col col2">32,000,000원</span>
+                                                <span class="col col3"><span class="end">결제완료</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="row">
+                                                <span class="col col1">2024.04.05</span>
+                                                <span class="col col2">카드간편결제</span>
+                                                <span class="col col3 state">
+                                                    <span class="end">결제완료</span>
+                                                    <a href="#" class="icons i-20 i-receipt">영수증</a>
+                                                </span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="col col1">10101010101</span>
+                                                <span class="col col2">현대카드(9090)</span>
+                                                <span class="col col3">12,000,000원</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div class="head">
+                                            <div class="row">
+                                                <span class="col col1">잔금</span>
+                                                <span class="col col2">32,000,000원</span>
+                                                <span class="col col3">결제진행중</span>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="row">
+                                                <span class="col col1">2024.04.05</span>
+                                                <span class="col col2">카드간편결제</span>
+                                                <span class="col col3 state">
+                                                    <span class="end">결제완료</span>
+                                                    <a href="#" class="icons i-20 i-receipt">영수증</a>
+                                                </span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="col col1">10101010101</span>
+                                                <span class="col col2">현대카드(9090)</span>
+                                                <span class="col col3">12,000,000원</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 분할 결제 : 견적확인 -->
+                                    <div class="group">
+                                        <div class="head">
+                                            <div class="row">
+                                                <span class="col col1">박예약</span>
+                                                <span class="col col2">12,000,000원</span>
+                                                <span class="col col3"><span class="wait">결제필요</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div class="head">
+                                            <div class="row">
+                                                <span class="col col1">박예약</span>
+                                                <span class="col col2">12,000,000원</span>
+                                                <span class="col col3"><span class="wait">결제필요</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 분할 결제 : 견적진행 -->
+                                    <div class="group">
+                                        <div class="head">
+                                            <div class="row">
+                                                <span class="col col1">박예약</span>
+                                                <span class="col col2">12,000,000원</span>
+                                                <span class="col col3"><span class="end">결제완료</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="row">
+                                                <span class="col col1">2024.04.05</span>
+                                                <span class="col col2">카드간편결제</span>
+                                                <span class="col col3 state">
+                                                    <span class="end">결제완료</span>
+                                                    <a href="#" class="icons i-20 i-receipt">영수증</a>
+                                                </span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="col col1">10101010101</span>
+                                                <span class="col col2">현대카드(9090)</span>
+                                                <span class="col col3">12,000,000원</span>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="row">
+                                                <span class="col col1">2024.04.05</span>
+                                                <span class="col col2">계좌간편결제</span>
+                                                <span class="col col3 state">
+                                                    <span class="end">결제완료</span>
+                                                    <a href="#" class="icons i-20 i-receipt">영수증</a>
+                                                </span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="col col1">10101010101</span>
+                                                <span class="col col2">신한(0000)</span>
+                                                <span class="col col3">12,000,000원</span>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="row">
+                                                <span class="col col1">2024.04.05</span>
+                                                <span class="col col2">무통장입금</span>
+                                                <span class="col col3">입금확인중</span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="col col1">10101010101</span>
+                                                <span class="col col2">신한(12121212121)</span>
+                                                <span class="col col3">12,000,000원</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div class="head">
+                                            <div class="row">
+                                                <span class="col col1">김예약</span>
+                                                <span class="col col2">12,000,000원</span>
+                                                <span class="col col3">결제진행중</span>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="row col4 btn-box">
+                                                <a href="${G.uriFront}/auth/login" class="btns small skyblue">결제 재요청</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div class="head">
+                                            <div class="row">
+                                                <span class="col col1">이동행</span>
+                                                <span class="col col2">12,000,000원</span>
+                                                <span class="col col3">결제완료</span>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="row">
+                                                <span class="col col1">2024.04.05</span>
+                                                <span class="col col2">카드간편결제</span>
+                                                <span class="col col3">결제완료</span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="col col1">10101010101</span>
+                                                <span class="col col2">현대카드(9090)</span>
+                                                <span class="col col3">12,000,000원</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl><!-- //box-round -->
+
+                            <!-- 견적 정보 -->
+                            <dl class="box-round white">
+                                <dt class="title-m detail-title" onclick="boxToggle(this)">견적 정보<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+                                <dd class="detail-estimate detail-detail">
+                                    <div class="group-data1 total">
+                                        <dl>
+                                            <dt>예상 견적</dt>
+                                            <dd>35,000,000원</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="group group-data1">
+                                        <dl>
+                                            <dt>성인 4</dt>
+                                            <dd>1,000,000원</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>아동 1</dt>
+                                            <dd>1,000,000원</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>유아 1</dt>
+                                            <dd>330,000원</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="group group-data1">
+                                        <dl>
+                                            <dt>티타임</dt>
+                                            <dd>60,000원</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>숙소</dt>
+                                            <dd>250,000원</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>이용권/서비스</dt>
+                                            <dd>40,000원</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="group group-data1">
+                                        <dl>
+                                            <dt>상품 할인</dt>
+                                            <dd>-50,000원</dd>
+                                        </dl>
+                                    </div>
+                                    <!-- 견적확인 -->
+                                    <div class="group group-data1 check">
+                                        <dl>
+                                            <dt>계약금</dt>
+                                            <dd>1,000,000원</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>중도금</dt>
+                                            <dd>20,000,000원</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>잔금</dt>
+                                            <dd>14,000,000원</dd>
+                                        </dl>
+                                    </div>
+                                </dd>
+                            </dl><!-- //box-round -->
+    
+                            @@include('@@webRoot/mypage/reservation/_tour_schedule.inc.html')
+                            @@include('@@webRoot/mypage/reservation/_tour_person.inc.html')
+                            @@include('@@webRoot/mypage/reservation/_tour_traveler.inc.html')
+                            @@include('@@webRoot/mypage/reservation/_tour_teetime.inc.html')
+                            @@include('@@webRoot/mypage/reservation/_tour_plane.inc.html')
+                            @@include('@@webRoot/mypage/reservation/_tour_hotel.inc.html')
+                            @@include('@@webRoot/mypage/reservation/_tour_service.inc.html')
+
+                            <!-- 예약자 정보 -->
+                            <dl class="box-round white">
+                                <dt class="title-m detail-title" onclick="boxToggle(this)">예약자 정보<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+                                <dd class="detail-user detail-detail">
+                                    <div class="group">
+                                        <div class="group-data1">
+                                            <dl>
+                                                <dt>예약자명</dt>
+                                                <dd>(주)코너스톤</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>연락처</dt>
+                                                <dd>010-0000-0000</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>이메일</dt>
+                                                <dd>aaaa@abc.com</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl><!-- //box-round -->
+
+                            <!-- 이용약관 -->
+                            <dl class="box-round white">
+                                <dt class="title-m detail-title" onclick="boxToggle(this)">이용약관 및 동의 정보<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+                                <dd class="detail-terms detail-detail">
+                                    <ul class="list">
+                                        <li>
+                                            <a href="#" class="bt-clause-open" clause="">(필수) 국외여행 표준약관 동의</a>
+                                            <span>동의</span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="bt-clause-open" clause="">(필수) 개인정보 수집 및 이용 동의</a>
+                                            <span>동의</span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="bt-clause-open" clause="">(필수) 제3자 개인정보 제공 및 활용 동의</a>
+                                            <span>동의</span>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="bt-clause-open" clause="">(필수) 여권정보 저장 및 활용 동의</a>
+                                            <span>동의</span>
+                                        </li>
+                                        <li class="choice">
+                                            <a href="#" class="bt-clause-open" clause="">(선택) 위치정보 이용 동의</a>
+                                            <label for="agree_terms1" class="toggle-text">
+                                                <input type="checkbox" name="agreeTerms" id="agree_terms1" />
+                                                <span class="hankblue">동의</span>
+                                            </label>
+                                        </li>
+                                        <li class="choice">
+                                            <a href="#" class="bt-clause-open" clause="">(선택) 마케팅 정보 수신 동의</a>
+                                            <label for="agree_terms2" class="toggle-text">
+                                                <input type="checkbox" name="agreeTerms" id="agree_terms2" checked />
+                                                <span class="hankblue">동의</span>
+                                            </label>
+                                        </li>
+                                        <li class="choice">
+                                            <a href="#" class="bt-clause-open" clause="">(선택) 광고성 정보 활용 및 수신 동의</a>
+                                            <label for="agree_terms3" class="toggle-text">
+                                                <input type="checkbox" name="agreeTerms" id="agree_terms3" checked />
+                                                <span class="hankblue">동의</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl><!-- //box-round -->
+
+                            <!-- 요청사항 -->
+                            <dl class="box-round white">
+                                <dt class="title-m detail-title" onclick="boxToggle(this)">기타 요청사항<i class="icons g94 i-16 i-arrow-up">닫기</i></dt>
+                                <dd class="detail-memo detail-detail">
+                                    <div class="group">
+                                        <div class="group-title">
+                                            <div class="btn-layer">
+                                                <span class="set complete">
+                                                    <a href="#" class="btns txt">삭제</a>
+                                                    <span class="line"></span>
+                                                    <a href="#" class="btns txt">수정</a>
+                                                </span>
+                                                <span class="set ing">
+                                                    <a href="#" class="btns txt">수정취소</a>
+                                                    <span class="line"></span>
+                                                    <a href="#" class="btns txt">수정완료</a>
+                                                </span>
+                                                <i class="icons i-12 i-arrow-right g94"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <textarea name="" placeholder="추가로 전달하실 내용이 있으신 경우, 입력해 주세요."></textarea>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl><!-- //box-round -->
+                        </div>
+
+                        <div class="box-notice box-round white">
+                            <h3 class="title-l">유의사항</h3>
+                            <ul class="bullets">
+                                <li>현장 이용 시, 예약정보와 상이할 경우 이용이 불가할 수 있습니다.</li>
+                                <li>예약정보를 정확히 입력해 주세요.</li>
+                                <li>여권 사본 이미지가 제출되지 않을 시, 예약이 불가합니다.</li>
+                                <li>여권을 필히 제출해 주세요.</li>
+                                <li>비자 발급을 이미 진행하신 경우, 비자 발급 이미지를 첨부해 주세요.</li>
+                                <li>예약 정보 미입력, 여권 미제출 3일 경과 시 예약이 자동으로 취소됩니다.</li>
+                            </ul>
+                        </div>
+                    </div><!-- //area-detail -->
+
+                    <div class="area-fixed">
+                        <!-- 예약접수 -->
+                        <div class="btn-box">
+                            <a href="${G.uriFront}/mypage/reservation_tour_list" class="btns large midnight-outline">목록으로 가기</a>
+                            <a href="#" class="btns large midnight">예약정보 저장</a>
+                        </div>
+                        <!-- 견적확인 -->
+                        <!-- <div class="btn-box">
+                            <a href="#" class="btns large midnight-outline">나눠서 결제하기</a>
+                            <a href="#" class="btns large midnight">혼자 결제하기</a>
+                        </div> -->
+                        <!-- 견적확인 : 나눠결제 -->
+                        <!-- <div class="btn-box">
+                            <a href="#" class="btns large midnight-outline">결제금액 재설정</a>
+                            <a href="#" class="btns large midnight">결제하기</a>
+                        </div> -->
+                        <!-- 견적확인 : 혼자 -->
+                        <!-- <div class="btn-box">
+                            <a href="#" class="btns large midnight-outline">목록으로 가기</a>
+                            <a href="#" class="btns large midnight">결제하기</a>
+                        </div> -->
+                        <!-- 결제진행 : 혼자 -->
+                        <!-- <div class="btn-box">
+                            <a href="#" class="btns large midnight-outline">목록으로 가기</a>
+                            <a href="#" class="btns large midnight">잔금 결제하기</a>
+                        </div> -->
+                        <!-- 결제진행 : 동행 -->
+                        <!-- <div class="btn-box">
+                            <a href="#" class="btns large midnight-outline">목록으로 가기</a>
+                            <a href="#" class="btns large midnight">결제 재요청</a>
+                        </div> -->
+                        <!-- 결제완료 & 예약확정 -->
+                        <!-- <div class="btn-box">
+                            <a href="#" class="btns large midnight-outline">목록으로 가기</a>
+                            <a href="#" class="btns large midnight">댜른 투어보기</a>
+                        </div> -->
+                        <!-- 예약불가 -->
+                        <!-- <div class="btn-box">
+                            <a href="#" class="btns large midnight-outline">채팅상담</a>
+                            <a href="#" class="btns large midnight">예약정보 변경하기</a>
+                        </div> -->
+                        <!-- 예약취소 -->
+                        <!-- <div class="btn-box">
+                            <a href="#" class="btns large midnight-outline">채팅상담</a>
+                            <a href="#" class="btns large midnight">다시 예약하기</a>
+                        </div> -->
+                    </div><!-- //area-fixed -->
+                </div><!-- //reservation-section -->
+            </div><!-- //contents -->
+        </main>
+
+        @@include('@@webRoot/_include/footer.html')
+
+        @@include('@@webRoot/_include/foot.html')
+
+        @@include('@@webRoot/_include/modal.html')
+    </div>
+    
+    <script>
+        fixed.init('.reservation-section');
+
+        function boxToggle(obj) {
+            const btn = obj;
+            const box = btn.parentElement.querySelector('.detail-detail');
+            const icons = btn.querySelector('.icons');
+
+            const isClosed = box.classList.toggle('close');
+            icons.classList.toggle('i-arrow-down', isClosed);
+            icons.classList.toggle('i-arrow-up', !isClosed);
+            icons.textContent = isClosed ? '열기' : '닫기';
+        }
+    </script>
+</body>
+</html>

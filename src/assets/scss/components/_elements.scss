@@ -1,0 +1,112 @@
+.bullets {
+    > li {position: relative; padding-left: 12px; color: $grayscale-g94;@include text-body1(500);
+        &::before {content: ''; position: absolute; top:10px; left: 0; width: 4px; height: 4px; border-radius: 50%; background-color: $grayscale-g94;}
+        & + li {margin-top: 8px;}
+    }
+    &.script {
+        > li {padding-left: 8px; @include text-script2(500);
+            &::before {top:8px; width: 2.5px; height: 2.5px;}
+            & + li {margin-top: 4px;}
+        }
+    }
+}
+
+.nodata{clear:both;padding:100px 0 30px;text-align:center;
+    span{display:block;position:relative;width:60px;height:60px;margin:0 auto;text-indent:-99999px;border-radius:100%;border:2px solid #d8e5f0;
+        &:before{content:"";position:absolute;top:14px;left:50%;width:4px;height:20px;margin:0 0 0 -2px;border-radius:19px;background:$secondary-flyblue;}
+        &:after{content:"";position:absolute;bottom:14px;left:50%;width:4px;height:4px;margin:0 0 0 -2px;border-radius:2px;background:$secondary-flyblue;}
+    }
+    p{padding:16px 0 0;text-align:center;@include text-body2(400);color:$grayscale-g94;}
+    .btn-box{margin-top:30px;
+        .btns{border-color:$grayscale-gd4;}
+    }
+}
+
+.tab1{position:relative;display:flex;flex-direction:row;justify-content:space-between;@include sub-section;
+    &:before{content:"";position:absolute;top:50px;left:0;width:100%;height:2px;@include sub-section;box-sizing:border-box;background:$grayscale-gee;background-clip:content-box;}
+    > *{position:relative;padding:12px 0;text-align:center;@include text-body2(500);color:$grayscale-g94;border-bottom:2px solid transparent;cursor:pointer;
+        &.active{@include text-body2(600);color:$primary-midnight;border-bottom-color:$primary-midnight;}
+    }
+    &.free{justify-content:flex-start;
+        > *{margin-right:24px;
+            &:last-child{margin-right:0;}
+        }
+    }
+    &.fill{
+        > *{width:100%;margin-right:8px;
+            &:last-child{margin-right:0;}
+        }
+    }
+}
+
+.tab2{position:relative;display:flex;flex-direction:row;justify-content:flex-start;gap:6px;@include sub-section;
+    > *{position:relative;padding:4px 9px;text-align:center;@include text-body1(500);color:$grayscale-g94;border:1px solid $grayscale-gd4;border-radius:3px;cursor:pointer;
+        &.active{@include text-body1(600);color:$primary-white;background-color:$primary-hankblue;border-color:$primary-hankblue;box-shadow:3px 3px 6px 0px rgba(0, 0, 0, 0.25);}
+        &.disabled, &:disabled{background-color:$grayscale-gd4;}
+    }
+}
+
+.tab3{position:relative;display:flex;flex-direction:row;justify-content:flex-start;gap:10px;@include sub-section;
+    > *{position:relative;padding:5px 16px;text-align:center;@include text-body1(500);color:$grayscale-g94;border-radius:16px;cursor:pointer;
+        &.active{color:$primary-white;background-color:$primary-hankblue;box-shadow:3px 3px 6px 0px rgba(0, 0, 0, 0.25);}
+    }
+}
+
+.card{display:inline-flex;padding-left:8px;padding-right:8px;color:$primary-white;border-radius:3px;background:$primary-hankblue;}
+$card-sizes: 'small', 'large', 'big';
+@each $card in $card-sizes {
+    .card{
+        &.#{$card}{
+            @if($card == 'small') {
+                padding-top:1px;padding-bottom:1px;@include text-script1(500);
+            }
+            @if($card == 'large') {
+                padding-top:3px;padding-bottom:3px;@include text-script1(600);
+            }
+            @if($card == 'big') {
+                padding-top:3px;padding-bottom:3px;@include text-body1(500);
+            }
+        }
+    }
+}
+$card-colors: 'turquoise', 'flyblue', 'gd4', 'gradation';
+@each $card in $card-colors {
+    .card{
+        &.#{$card}{
+            @if($card == 'turquoise') {
+                background:$secondary-turquoise;
+            }
+            @if($card == 'flyblue') {
+                background:$secondary-flyblue;
+            }
+            @if($card == 'gd4') {
+                background:$grayscale-gd4;
+            }
+            @if($card == 'gradation') {
+                background:$gradation-06;
+            }
+        }
+    }
+}
+
+.box-round {display:block;padding:19px;border:1px solid transparent;border-radius:4px;}
+$box-colors: 'white', 'gf8', 'lightsky', 'white-b';
+@each $box-round in $box-colors {
+    .box-round{
+        &.#{$box-round}{
+            @if($box-round == 'white') {
+                background:$primary-white;
+            }
+            @if($box-round == 'gf8') {
+                background:$grayscale-gf8;
+            }
+            @if($box-round == 'lightsky') {
+                background:$bg-lightsky;
+            }
+            @if($box-round == 'white-b') {
+                background:$primary-white;
+                border-color:$grayscale-gee;
+            }
+        }
+    }
+}

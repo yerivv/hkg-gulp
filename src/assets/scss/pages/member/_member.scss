@@ -1,0 +1,170 @@
+$path-member: '../../imgs/front/member/';
+
+// 회원 관련
+.member-section {
+    @include mobile{min-height: calc(100vh - 56px);}
+    @include desktop{min-height: calc(100vh - 80px);}
+    @include sub-section; @include text-body1(400); 
+    .section-title {@include text-title3; text-align: center;}
+
+    // 로그인
+    &.auth-section {
+        padding-top: 40px;
+        .login-form {margin-top: 40px;
+            .inputset {display: flex; flex-direction: column;
+                .input {
+                    position: relative;
+                    & + .input {margin-top: 10px;}
+                    .eye {position: absolute; top: 50%; right: 16px; transform: translateY(-50%);}
+                }
+                .auto {margin-top: 20px;}
+                .btn-box {margin-top: 20px;}
+            }
+            .checklink {
+                margin-top: 30px;
+                .link {
+                    display: flex; justify-content: center; align-items: center;
+                    li, a {color: $grayscale-g94;}
+                    .line {width: 1px; height:12px; margin: 0 16px; background-color: $grayscale-gd4;}
+                }
+            }
+        }
+        .sns-login {
+            margin-top: 30px; border-bottom: 1px solid $grayscale-gee;
+            dt {
+                position: relative; color: $grayscale-g44; text-align: center;
+                > span {display: inline-block; position: relative; padding: 0 16px; background-color: $primary-white;}
+                &::before {
+                    content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 1px; background-color: $grayscale-gee; transform: translateY(-50%);
+                }
+            }
+            dd {
+                padding: 30px 0;
+                ul {
+                    display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px;
+                    li {
+                        .img {display: block; width: 100%; height: 44px; overflow: hidden; border-radius: 50%;}
+                        .text {@include blind;}
+                    }
+                }
+            }
+        }
+        .guest-login {margin-top: 30px;}
+        .bullets {margin-top: 20px;}
+    }
+
+    //section-summary
+    .section-summary {
+        padding-top: 30px;
+        .title {@include text-title1;}
+        .subtext {margin-top: 10px; color: $grayscale-g44; @include text-body2;}
+    }
+
+    .result-box {
+        .result-list {
+            padding: 30px 20px; margin-top: 30px; background-color: $grayscale-gf8; @include text-body2; text-align: center;
+            .type {display: flex; justify-content: center; align-items: center; font-weight: 500; height: 26px;
+                .sns-icons {margin-top: -1px;margin-right: 10px;}
+            }
+            .result {margin-top: 20px; padding-top: 20px; border-top: 1px solid $grayscale-gee; color: $grayscale-g44;}
+        }
+    }
+    
+    // 가입, 수정
+    &.regist-section {
+        .regist-guide {
+            .bullets {margin-top: 30px; padding-top: 20px; border-top: 1px solid $grayscale-gee;}
+        }
+        .toggle-text {
+            .midnight {
+                border-color: $grayscale-gd4;
+            }
+            input:checked + .midnight {
+                border-color: $primary-midnight;
+            }
+        }
+        .regist-sheet {
+            padding-bottom: 60px;
+        }
+        .form-set {
+            .noti-text {color: $grayscale-g94;}
+        }
+        .btn-add-box {margin-bottom: 20px;}
+        .withdraw {text-align: right;}
+        .btn-box {margin-top: 30px;}
+        .mob-mobile {display: none;}
+    }
+
+    // 가입완료
+    &.join-complete {
+        min-height: 100vh;
+        background-image: url($path-member + 'bg-complete.png'); background-size: cover; background-repeat: no-repeat; background-position: center;
+        .section-summary {
+            padding-top: 18.625vh;
+            .title {color: $primary-white; @include text-title2;}
+            .subtext {color: $primary-white; font-weight: 500;}
+        }
+    }
+
+    //버튼
+    .area-fixed{position:fixed;bottom:0;left:50%;width:100%;max-width:$pad-width;min-width:$mo-width;transform:translateX(-50%);
+        .contents{position:absolute;bottom:0;left:0;width:100%;@include sub-section;padding-top:19px;padding-bottom:20px;border-top:1px solid $grayscale-gee;background:$primary-white;
+            &.type {border-top-width: 0;}
+            &.type2 {border-top-width: 0; background: transparent;}
+        }
+        &.inline{position:absolute;}
+    }
+}
+
+.sns-icons {
+    display: inline-flex; justify-content: center; align-items: center; width: 44px; height: 44px; border-radius: 50%;
+    &.naver {background-color: #03C75A;}
+    &.kakao {background-color: #FEE500;}
+    &.apple {background-color: $grayscale-black;}
+    &.hank {background-color: $primary-hankblue;}
+    &.small {@include icon-box(28px, 28px);}
+}
+
+.btns {
+    &.sns-naver {background-color: #03C75A; color: $primary-white;}
+    &.sns-kakao {background-color: #FEE500;
+        .icons {filter: none;}
+    }
+}
+
+#DaumZipcodeLayer {
+    width: 100% !important; height: 100% !important; border-width: 0 !important; padding-top: 65px; background-color: $primary-white;
+    &::before {
+        content: '주소검색'; position: fixed; top: 0; left: 0; width: 100%; height: 56px; text-align: center;
+        @include text-body2(600); line-height: 56px; border-bottom: 1px solid $grayscale-gee;
+    }
+    .close-zip {
+        position: fixed !important; right: 20px !important; top: 15px !important;
+        @include icon-box(24px, 24px);
+        background-image: url($path-icon + '24/close.svg');
+        img {display: none;}
+    }
+}
+
+.layerpop_load{
+    // 약관
+    .modal-caluse {
+        .content {border-top: 1px solid $grayscale-gee;}
+        .section-clause {
+            padding: 20px;
+        }
+    }
+
+    // 회원권 인증
+    .modal-membership-cert {
+        .sample {
+            border-top: 1px solid $grayscale-gee;
+            .form-set {
+                padding-top: 0;
+                .bullets {
+                    padding-top: 20px; margin-top: 30px; border-top: 1px solid $grayscale-gee;
+                }
+            }
+        }
+    }
+}

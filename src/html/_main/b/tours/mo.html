@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HankGolf - Tour B</title>
+    
+    <script src="./mo/resource/js/gsap.min.js"></script>
+    <script src="./mo/resource/js/jquery-1.11.3.min.js"></script>
+    <script src="./mo/resource/js/ScrollTrigger.min.js"></script>
+    <script src="./mo/resource/js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./mo/resource/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./mo/resource/fonts/SUIT.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {overflow: hidden;}
+        img {width: 100%;}
+        #header {position: fixed;top: 0;left: 0;width: 100vw;z-index: 999;transition: all ease-in .4s;padding: 16px 20px;height: 56px;display: flex;justify-content: space-between}
+        #header .logo img {height: 24px;}
+        #header.active {background: rgba(255, 255, 255, 0.30);backdrop-filter: blur(20px);}
+        #header .menu {width: 24px;}
+        #header h1 {display: none;}
+        #footer {position: relative;}
+        
+
+        .tab-bar img {width: calc(100% + 20px);margin-left: -10px;margin-bottom: -10px;}
+        .my {position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;z-index: 999;background-color: #fff;transition: top ease-in .4s;background-color: #f5f9ff;display: none;overflow-y: scroll;}
+        .my  {padding-bottom: 100px;}
+        .my .my1 { display: none;}
+        .my .my1.on {display: block;}
+        .my .my2 { display: none;}
+        .my .my2.on {display: block;}
+        .my .my3 { display: none;}
+        .my .my3.on {display: block;}
+        .my .bottom-nav {position: fixed;bottom: 0;left: 0;}
+
+        .my .inner {padding: 0 20px;width: 340px;}
+        .my .close-btn {position: absolute;top: 0;right: 0;width: 60px;height: 60px;border: none;padding: none;background-color: transparent;}
+        .my .card-wrap {width: 100%;position: absolute;bottom: 0;}
+        .my .card-wrap .card-item {z-index: 1;background-color: #fff;height: 72px;width: 100%;border-radius: 12px 12px 0px 0px;transition: height .4s ease-in;position: absolute;overflow: hidden; }
+        .my .card-wrap .card-item:nth-of-type(2) {bottom: 104px;z-index: 2;background: #40CDC5;}
+        .my .card-wrap .card-item:nth-of-type(3) {background: linear-gradient(180deg, rgba(0, 101, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(0deg, #002394 0%, #002394 100%), linear-gradient(0deg, #5B7BDA 0%, #5B7BDA 100%), #40CDC5;  bottom: 48px;z-index: 3;}
+        .my .card-wrap .card-item:nth-of-type(4) {bottom: 0;height: 64px;background-color: #fff;z-index: 4;}
+        .my .my-tabs {bottom: -4px;position: absolute;z-index: 9;}
+        .my .card-wrap .card-item .my-header {display: flex;padding: 12px 20px 24px;justify-content: flex-end;}
+        .my .card-wrap .card-item .my-header .bell { width: 32px;position: absolute;left: 20px;top: 12px;}
+        .my .card-wrap .card-item:nth-of-type(1) .my-header p {color: #000;}
+        .my .card-wrap .card-item .my-header p {font-family: "Pretendard";font-size: 16px;font-weight: 600;line-height: 26px; color: #fff;}
+        .my .card-wrap .card-item .my-header p span {font-size: 10px;font-weight: 500;letter-spacing: 2px;display: inline-block;margin-right: 16px;}
+        .my .card-wrap .card-item .my-body {display: none;height: calc(100% - 175px);padding-bottom: 20px;overflow: scroll;}
+        .my .card-wrap .card-item .my-body  .inner{width: 320px;}
+        .my .card-wrap .card-item .my-body.on {display: block;}
+        .my .card-wrap .card-item.on {width: 100%;height:  calc(100vh - 290px);bottom: 0;}
+        .my .card-wrap .card-item .inner {padding: 0 20px;}
+        .my .card-wrap .card-item .my-body .text-box {margin-top: 20px;font-family: "Pretendard";}
+        .my .card-wrap .card-item .my-body .text-box .text-wrap::-webkit-scrollbar {position: absolute;right: 0;}
+        .my .card-wrap .card-item .my-body .text-box .text-wrap {overflow-y: scroll;height: 426px;padding-left: 20px;}
+        .my .card-wrap .card-item .my-body .text-box strong {font-size: 14px;font-weight: 600;line-height: 22px; display: block;margin-top: 16px;}
+        .my .card-wrap .card-item .my-body .text-box strong:first-of-type {margin-top: 0;}
+        .my .card-wrap .card-item .my-body .text-box li {list-style: none;position: relative;font-size: 14px;font-weight: 400;line-height: 22px;color: #444;padding-left: 11px;}
+        .my .card-wrap .card-item .my-body .text-box li+li {margin-top: 4px;}
+        .my .card-wrap .card-item .my-body .text-box li::before {content: '';width: 3px; height: 3px;display: block;top: 9px;left: 0;position: absolute;background-color: #444;}
+        .my .card-wrap .card-item .my-body .text-box p {font-size: 14px;font-weight: 500;line-height: 22px;margin-top: 4px;}
+        .my .card-wrap .card-item .my-body .btns {padding: 0 20px;margin-top: 20px;}
+        .my .card-wrap .card-item .my-body.step3 span {padding-right: 9px;margin-right: 8px;position: relative;}
+        .my .card-wrap .card-item .my-body.step3 span::after {content: '';width: 1px;height: 10px;background-color: #444;position: absolute;right: 0;top: 50%;transform: translateY(-50%);opacity: .2;}
+        .my .card-wrap .card-item .my-body.step3 p {opacity: 0.8;}
+        .my .card-wrap .card-item .my-body.step3 .text-wrap  {height: 332px;}
+        .my .card-wrap .card-item .my-body.step3 h2 {font-size: 16px;font-weight: 500;line-height: 26px;opacity: .8;margin-top: 4px;margin-bottom: 4px;}
+        .my .card-wrap .card-item .my-body.step3 .text-wrap img{margin-top: 24px;}
+        .my .card-wrap .card-item .on-header {display: none;}
+        .my .card-wrap .card-item.on .my-header {display: none;}
+        .my .card-wrap .card-item.on {background-color: #fff;}
+        .my .card-wrap .card-item.on .on-header {display: block;padding: 20px;}
+        section .inner {width: 100%;margin: 0 auto;padding: 0 20px;}
+        .con01 {width: 100vw;height: 100vh;}
+        .con01 .swiper {width: 100%;height: 100%;}
+        .con01 .swiper-slide {width: 100%;height: 100%;background: no-repeat center center / cover; background-image: url('./mo/resource/images/con01-01.jpg');}
+        .con01 .swiper-slide:nth-child(2) {background-image: url('./mo/resource/images/con01-02.jpg');}
+        .con01 .swiper-slide:nth-child(3) {background-image: url('./mo/resource/images/con01-03.jpg');}
+        .con01 .txt-area {padding-top: 196px; }
+        .con01 .txt-area strong{font-family: "Pretendard";font-size: 32px;font-weight: 700;line-height: 44px; color: #fff;}
+        .con01 .txt-area p{font-family: "Pretendard";font-size: 16px;font-weight: 400;line-height: 26px; color: #fff;margin-top: 10px;height: 104px;}
+        .con01 .txt-area .btn {width: 200px;margin-top: 40px;display: block;}
+
+        .con01 .swiper-btns {position: absolute;top: 520px;left: 20px;display: inline-flex;z-index: 1;}
+        .con01 .swiper-btns .count {display: inline-block; font-size: 16px;color: #fff;font-weight: 500;font-family: "Pretendard";line-height: 20px;margin: 0 8px;padding-bottom: 2px;}
+        .con01 .swiper-btns .count em {font-style: normal; opacity: .5;margin-left: 4px;display: inline-block;}
+        .con01 .swiper-btns .count span {display: inline-block;margin-right: 4px;}
+        .con01 .swiper-btns .swiper-button-prev:after,
+        .con01 .swiper-btns .swiper-button-next:after  {content: '';width: 20px;height: 20px; background-image: url('./mo/resource/images/arrow.png');background-size: 20px 20px;}
+        .con01 .swiper-btns .swiper-button-next:after {transform: rotate(180deg);}
+        .con01 .swiper-btns .swiper-button-prev,
+        .con01 .swiper-btns .swiper-button-next {position: relative;margin: 0;top: 0;left: 0;transform: translate(0,0);height: 20px;width: 20px;}
+        .con01 .swiper .swiper-pagination {bottom: 104px;left: 50%;transform: translateX(-50%);}
+        .con01 .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {background-color: #fff;opacity: 1;}
+        .con01 .swiper .swiper-pagination-bullet {background-color: #fff;opacity: 0.4;width: 6px;height: 6px;}
+
+        .con02 {padding: 40px 0;position: relative;}
+        .con02 .con01-swiper {margin-right: -20px;height: calc(100vw - 80px);width: calc(100% + 20px);}
+        .con02 .swiper-wrapper {height: calc(100vw - 80px);}
+        .con02 .swiper-slide {width: 100%;}
+        .con02 .txt-area {margin-top: 40px;font-family: "Pretendard";}
+        .con02 .txt-area .txt {color: #40CDC5;font-family: "Poppins";font-size: 14px;font-weight: 500;line-height: 22px;letter-spacing: 2.8px;} 
+        .con02 .txt-area strong {font-size: 24px;font-weight: 600;line-height: 36px;color: #000; display: block;margin-top: 8px;font-family: "Pretendard";
+        letter-spacing: 0;}
+        .con02 .txt-area .sub-txt {font-size: 16px;font-weight: 400;line-height: 26px; color: #444;margin-top: 20px;}
+        .con02 .txt-area .txt-price {margin-top: 20px; font-size: 16px;font-weight: 600;line-height: 26px;}
+        .con02 .txt-area .txt-price strong{font-size: 20px;font-weight: 700;line-height: 30px;display: inline-block;}
+        .con02 .txt-area .btn-more {margin-top: 48px;width: 200px;}
+        .con02 .bg {position: absolute;bottom: 0;left: 0;width: 100%;height: calc(100% - 160px);background: linear-gradient(180deg, #A1DEE2 0%, rgba(161, 222, 226, 0.00) 100%);opacity: .15;transition: background .4s ease-in;z-index: -1;}
+        .con02 .bg.bg1 {background: linear-gradient(180deg, #A1DEE2 0%, rgba(161, 222, 226, 0.00) 100%);}
+        .con02 .bg.bg2 {background: linear-gradient(180deg, #F5CC64 0%, rgba(245, 204, 100, 0.00) 100%);}
+        .con02 .bg.bg3 {background: linear-gradient(180deg, #409ACD 0%, rgba(64, 154, 205, 0.00) 100%);}
+
+        .con03 {background: linear-gradient(0deg, rgba(0, 35, 148, 0.05) 0%, rgba(0, 35, 148, 0.05) 100%), #FFF;padding: 60px 0;position: relative;}
+        .con03 .tit-area h2 {font-family: 'Pretendard';font-size: 24px;font-style: normal;font-weight: 600;line-height: 36px; }
+        .con03 .tit-area p {color: #002394;font-family: "Poppins";font-size: 14px;font-weight: 500;line-height: 22px;letter-spacing: 2.8px;margin-bottom: 8px;}
+        .con03 .tabs {margin-top: 20px;width: 196px;}
+        .con03 .swiper {margin-top: 40px;}
+        .con03 .swiper-slide img+img {margin-top: 20px;}
+        .con03 .swiper-pagination {bottom: 60px;left: 50%;transform: translateX(-50%);}
+        .con03 .swiper-pagination-bullet.swiper-pagination-bullet-active {background-color: #949494;opacity: 1;}
+        .con03 .swiper-pagination-bullet {background-color: #949494;opacity: 0.4;width: 6px;height: 6px;}
+
+        .con04 { padding-top: 60px;}
+        .con04 .tit-area {text-align: center;}
+        .con04 .tit-area p.sub-tit {color: #002394;font-family: "Poppins";font-size: 14px;font-weight: 500;line-height: 22px;letter-spacing: 2.8px;margin-bottom: 8px;}
+        .con04 .tit-area h2 {font-family: 'Pretendard';font-size: 24px;font-style: normal;font-weight: 600;line-height: 36px;}
+        .con04 .tit-area p {margin-top: 20px; font-family: 'Pretendard';font-size: 16px;font-style: normal;font-weight: 400;line-height: 26px; color: #444;}
+        .con04 .swiper {width: 100%;height: 496px; margin-top: 40px;position: relative;}
+        .con04 .swiper .swiper-pagination {bottom: 40px;left: 50%;transform: translateX(-50%);}
+        .con04 .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {background-color: #fff;opacity: 1;}
+        .con04 .swiper .swiper-pagination-bullet {background-color: #fff;opacity: 0.4;width: 6px;height: 6px;}
+        .con04 .swiper-slide {padding: 20px; background-repeat: no-repeat;background-size: cover;background-position: center;}
+        .con04 .swiper-slide:nth-of-type(1) {background-image: url('./mo/resource/images/con04-01.jpg');}
+        .con04 .swiper-slide:nth-of-type(2) {background-image: url('./mo/resource/images/con04-02.jpg');}
+        .con04 .swiper-slide:nth-of-type(3) {background-image: url('./mo/resource/images/con04-03.jpg');}
+        .con04 .swiper-slide:nth-of-type(4) {background-image: url('./mo/resource/images/con04-04.jpg');}
+        .con04 .swiper-slide .box { width: 100%;height: 100%;border: 1px solid rgba(255, 255, 255, 0.50);background: rgba(0, 0, 0, 0.50);backdrop-filter: blur(0px); display: inline-flex;display: inline-flex;justify-content: center;align-content: center;flex-wrap: wrap;color: #fff;text-align: center;}
+        .con04 .swiper-slide .box strong {font-family: 'Pretendard';font-size: 24px;line-height: 36px;font-weight: 600;display: block;width: 100%;}
+        .con04 .swiper-slide .box p {margin-top: 20px; font-family: 'Pretendard';font-size: 16px;line-height: 26px;font-weight: 400;width: 100%;}
+
+        .con05 {padding: 60px 0;}
+        .con05 .tit-area p.sub-tit {color: #002394;font-family: "Poppins";font-size: 14px;font-weight: 500;line-height: 22px;letter-spacing: 2.8px;margin-bottom: 8px;}
+        .con05 .tit-area h2 {font-family: 'Pretendard';font-size: 24px;font-style: normal;font-weight: 600;line-height: 36px;}
+        .con05 .tit-area h2 strong {display: block;}
+        .con05 .text-wrap {margin-top: 20px;font-family: 'Pretendard';}
+        .con05 .text-wrap .text-area {height: 300px;position: relative;}
+        .con05 .text-wrap .tit {font-size: 20px;font-weight: 600;line-height: 30px;}
+        .con05 .text-wrap p {font-size: 16px;font-weight: 400;line-height: 26px;color: #444;}
+        .con05 .text-wrap .price {margin-top: 20px;display: block; font-size: 14px;font-weight: 400;line-height: 22px;}
+        .con05 .text-wrap .price strong {font-weight: 600;font-size: 18px;line-height: 28px;margin-right: 4px;vertical-align: middle;}
+        .con05 .text-wrap .btn {width: 200px;position: absolute;bottom: 0;}
+        .con05 .swiper  {margin-top: 20px;}
+        .con05 .con05-swiper  {margin-top: 40px;}
+        .con05 .swiper .swiper-pagination {bottom: 1 0px;left: 50%;transform: translateX(-50%);}
+        .con05 .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {background-color: #fff;opacity: 1;}
+        .con05 .swiper .swiper-pagination-bullet {background-color: #fff;opacity: 0.4;width: 6px;height: 6px;}
+
+        .con06 {padding-top: 60px;background-color: #EAF0F5;}
+        .con06 .tit {color: #000;text-align: center;}
+        .con06 .content-wrap {display: flex;flex-direction: row;justify-content: space-around;margin-top: 40px;}
+        /* .con06 .content-box {position: relative;display: flex;align-items: center;justify-content: left;width: 100%;} */
+        /* .con06 .content-box .content-item {opacity: 0;position: absolute;background-color: #000;width: 100%;height: 100vh;display: inline-flex;align-items: center;justify-content: center;background-position: center;background-repeat: no-repeat;background-size: cover;} */
+        .con06 .content-box {width: 100%;}
+        .con06 .content-box .content-item {padding: 52px 60px;background-position: center;background-repeat: no-repeat;background-size: cover;width: 100%;}
+        .con06 .content-box .content-item:nth-of-type(1) {background-image: url('./mo/resource/images/con06-02-04.jpg');}
+        .con06 .content-box .content-item:nth-of-type(2) {background-image: url('./mo/resource/images/con06-02-02.jpg');}
+        .con06 .content-box .content-item:nth-of-type(3) {background-image: url('./mo/resource/images/con06-02-01.jpg');}
+        .con06 .content-box .content-item:nth-of-type(4) {background-image: url('./mo/resource/images/con06-02-03.jpg');}
+        .con06 .content-box .content-item p {color: #fff;font-family: "Zen Antique";font-size: 14px;font-weight: 400;line-height: 22px;letter-spacing: 2.8px;text-align: center;}
+        .con06 .content-box .content-item p strong{font-family: "Pretendard";font-size: 20px;font-weight: 600;line-height: 30px; display: block;text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.50);}
+
+        .top-btn {position: fixed;bottom: 70px;right: 20px;z-index: 98; width: 54px;transition: transform ease-in .4s;}
+        .tab-bar {position: fixed;bottom: 0;left: 0;width: 100%;height: 75px;z-index: 998;transition: bottom ease-in .4s;}
+        .tab-bar button {position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);height: 78px;width: 78px;background-color: transparent;border: none;}
+        .tab-bar a {position: absolute;bottom: 0;left: 0;height: 78px;width: 70px;background-color: transparent;border: none;}
+        .tab-bar a:nth-of-type(2) {left: 70px;}
+    </style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+            <a href="./mo.html" class="logo"><h1>logo</h1><img src="./mo/resource/images/logo.png" alt="" ></a>
+            
+            <img src="./mo/resource/images/menu.png" alt="" class="menu">
+		</div>
+
+        <div class="main">
+            <div class="my">
+                <img src="./mo/resource/images/my-1.jpg" class="my1 on">
+                <img src="./mo/resource/images/my-2.jpg" alt="" class="my2">
+                <img src="./mo/resource/images/my-3.jpg" alt="" class="my3">
+                <img src="./mo/resource/images/my-bottom.png" alt="" class="bottom-nav">
+                <button class="close-btn"></button>
+                
+              </div>
+            <div class="tab-bar">
+                <a href="../membership/mo.html"></a>
+                <a href="./mo.html"></a>
+                <button ></button>
+                <img src="./mo/resource/images/con01_nav.png" alt="">
+            </div>
+            <section class="con01">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="txt-area inner">
+                                <strong>별을 향한 항해, <br>로포텐 섬</strong>
+                                <p>24시간 동안 골프를 즐기고, <br>북극광 쇼를 경험해보세요.</p>
+                                <a href="#" class="btn"><img src="./mo/resource/images/btn.png" alt=""></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="txt-area inner">
+                                <strong>천국의 모티브 꿈의 섬, <br>모리셔스</strong>
+                                <p>남서쪽의 물살을 타고 즐기는 <br>반짝이는 순간을 경험해보세요.</p>
+                                <a href="#" class="btn"><img src="./mo/resource/images/btn.png" alt=""></a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="txt-area inner">
+                                <strong>푸르른 자연, <br>스위스의 여름속으로</strong>
+                                <p>
+                                    마터호른에서 몽블랑까지 <br>
+                                    가장 높은 봉우리를 마주하고 있는 <br>
+                                    크랑 쉬르 시에르 <br>
+                                    골프 클럽을 즐기세요.
+                                </p>
+                                <a href="#" class="btn"><img src="./mo/resource/images/btn.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <!-- <div class="swiper-btns">
+                        <div class="swiper-button-prev"></div>
+                        <p class="count"><span>01</span>/<em class="total">03</em></p>
+                        <div class="swiper-button-next"></div>
+                    </div> -->
+                </div>
+            </section>
+            <section class="con02">
+                <div class="inner">
+                    <div class="con01-swiper">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="./resources/images/con01_img01.jpg" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="./resources/images/con01_img02.jpg" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="./resources/images/con01_img03.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="txt-area">
+						<p class="txt">
+                            LUXURY TOUR
+							<strong>
+								아름다운 나라 스위스의 <br>
+								골프 체험 5박7일
+							</strong>
+						</p>
+						<p class="sub-txt">
+							스위스 알프스 크랑 쉬르 시에르의 오메가 마스터스 골프 코스와 
+							고도가 높은 베르비에 골프에서 <br>
+                            라운드 내내 멋진 산의 전망을 즐기실 수 있습니다.<br>
+							미식가들을 위한 다양한 레스토랑과 요리도 <br>
+                            기다리고 있으며, 와인 테이스팅과 
+							전기 산악자전거 투어도 예정되어 있습니다.
+						</p>
+						<p class="txt-price"><strong>1,999,999</strong> 원 부터</p>
+						<img src="./mo/resource/images/more-btn.png" alt="" class="btn-more">
+					</div>
+                </div>
+                <div class="bg"></div>
+            </section>
+
+            <section class="con03">
+                <div class="inner">
+                    <div class="tit-area">
+                        <p>BEST TOUR</p>
+                        <h2>
+                            한케이 골프 여행
+                        </h2>
+                    </div>
+                    <div class="tabs">
+                        <img src="./mo/resource/images/tabs.png" alt="">
+                    </div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./mo/resource/images/con03-01.jpg" alt="">
+                                <img src="./mo/resource/images/con03-02.jpg" alt="">
+                                <img src="./mo/resource/images/con03-03.jpg" alt="">
+                                <img src="./mo/resource/images/con03-04.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="con04">
+                <div class="inner">
+                    <div class="tit-area">
+                        <p class="sub-tit">THEME TOUR</p>
+                        <h2>
+                            풍요로움과 소박함이 <br>
+                            공존하는 곳, 베트남
+                        </h2>
+                        <p>
+                            동서양의 문화가 어우러진 <br>
+                            유네스코 세계문화 유산의 도시 ‘호이안’과 <br>
+                            최대 야외 공연인 ‘메모리즈 쇼’를 관람하며 <br>
+                            5일 간의 여정을 보내세요.
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <strong>호이안 올드타운</strong>
+                                <p>
+                                    세계문화 유산의 도시에서<br>
+                                    과거와 현재를 경험해보세요.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <strong>호이안 메모리즈 쇼</strong>
+                                <p>
+                                    500명이 연출하는 대규모 전통 공연은<br>
+                                    호이안의 과거 이야기를 전달합니다.  
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <strong>전통 마사지 체험</strong>
+                                <p>
+                                    여행의 피로를 날려보내고<br>
+                                    다음 여정을 위한 활력을 되찾으세요!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <strong>다낭 시내 자유 관광</strong>
+                                <p>
+                                    다낭 주민들과 교류하면서 <br>
+                                    현지 문화에 푹 빠져보세요.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <section class="con05">
+                <div class="inner">
+                    <div class="tit-area">
+                        
+                        <p class="sub-tit">RECOMMENDED TOUR</p>
+                        <h2>
+                            한케이와 함께 하는<br>
+                            2025 더 오픈 챔피언십 투어
+                        </h2>
+                    </div>
+                    <div class="con05-swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./mo/resource/images/con05-01.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./mo/resource/images/con05-02.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./mo/resource/images/con05-03.jpg" alt="">
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                    <div class="text-wrap swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-area active">
+                                <p>
+                                    스코틀랜드에서 열리는 가장 오래된 메이저 <br>
+                                    골프 대회를 5성급 호텔에서 머무르며 즐기세요!
+                                </p>
+                                <span class="price">
+                                    <strong>1,449,000</strong>원 부터
+                                </span>
+                            </div>
+                            <div class="swiper-slide text-area">
+                                <p>
+                                    일주일 동안 머무르게 될 마린 트룬5성급 호텔은 <br>
+                                    기대해도 좋습니다.<br>
+                                    해변에 위치한 마린 트룬에 머물며 <br>
+                                    에글린턴 컨트리 파크와 딘 캐슬 컨트리 파크를 <br>
+                                    방문하셔도 좋고, 서핑을 즐겨도 좋습니다. <br>
+                                    에어 레이스코스와 럭비 파크에서는 각종 이벤트가 <br>
+                                    개최되니 놓치지 마세요.
+                                </p>
+                            </div>
+                            <div class="swiper-slide text-area">
+                                <p>
+                                    골프의 가장 오래된 메이저 대회가 <br>
+                                    2025년에 스코틀랜드의 로열 트룬 골프 클럽으로 <br>
+                                    세 번째로 복귀합니다.<br>
+                                    매킬로이, 호브랜드 & 램이 클라렛저그를 두고 <br>
+                                    겨루는 모습을 가까이서 직접 볼 수 있습니다.
+                                </p>
+                            </div>
+                        </div>
+                        <img src="./mo/resource/images/btn-blue.png" alt="" class="btn ">
+                    </div>
+                </div>
+            </section>
+
+            <!-- <div class="section con06">
+                <h2 class="tit">
+                    한케이 골프의 <br>특별한 서비스
+                </h2>
+
+                <div class="content-wrap">
+                    <div class="content-box">
+                        <div class="content-item">
+                            <p>
+                                <strong>컨시어지 서비스</strong>
+                                CONCIERGE SERVICE
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <p>
+                                <strong>환상적인 숙박</strong>
+                                MAGNIFICENT STAYS
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <p>
+                                <strong>특별한 다이닝</strong>
+                                EXCEPTIONAL DINING
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <p>
+                                <strong>이색적인 맞춤 여행</strong>
+                                CURATED ECPERICENCE
+                            </p>
+                        </div>
+                    </div>
+                </div>
+			</div> -->
+        </div>
+     
+		<div id="footer">
+            <img class="top-btn" src="./mo/resource/images/top.png">
+            <div class="footer_inner"><img src="./mo/resource/images/footer.jpg" alt=""></div>
+		</div>
+	</div>
+    <script>
+    $(document).ready(function(){
+        let realIndex = 0;
+        
+        
+        var con01Swiper = new Swiper('.con01 .swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            speed: 1000,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.con01 .swiper-button-next',
+                prevEl: '.con01 .swiper-button-prev',
+            },
+            pagination: {
+                el: '.con01 .swiper-pagination'
+            },
+            on: {
+                slideChangeTransitionStart: function() {
+                    let index = this.activeIndex;
+                    realIndex = this.realIndex;
+
+                    var idx = this.realIndex + 1;
+                    $('.con01 .swiper-btns .count span').text(0+`${idx}`);
+                    $('.con01 .swiper-btns .count em').text(0+`${$('.con01 .swiper .swiper-slide').length}`);
+
+                    gsap.from('.con01 .swiper-slide-active .txt-area strong', {
+                        y: 50,
+                        opacity: 0,
+                        duration: .4,
+                        delay: .2,
+                    });
+
+                    gsap.from('.con01 .swiper-slide-active .txt-area p', {
+                        y: 50,
+                        opacity: 0,
+                        duration: .4,
+                        delay: .1,
+                    });
+
+                    gsap.from('.con01 .swiper-slide-active .txt-area a', {
+                        y: 50,
+                        opacity: 0,
+                        duration: .4,
+                        delay: .3,
+                    });
+                },
+            }
+        });
+
+        var con02Swiper = new Swiper('.con02 .swiper', {
+            slidesPerView: "1",
+            spaceBetween: 0,
+            direction: "vertical",
+            mousewheel: true,
+            on: {
+                slideChangeTransitionStart: function() {
+                    let index = this.activeIndex;
+                    $('.con02 .bg').removeClass('bg1 bg2 bg3').addClass('bg'+(index+1));
+                },
+            }
+        });
+
+        var con03wiper = new Swiper('.con03 .swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.con03 .swiper-pagination'
+            },
+        });
+
+        var con04Swiper = new Swiper('.con04 .swiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            effect:'fade',
+            pagination: {
+                el: '.con04 .swiper-pagination'
+            },
+        });
+
+            var con05Swiper = new Swiper('.con05 .con05-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                pagination: {
+                    el: '.con05 .swiper-pagination'
+                },
+            });
+
+        var con05textSwiper = new Swiper('.con05 .text-wrap.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            controller: {
+                control: con05Swiper, // con05Swiper를 제어 대상으로 설정
+            },
+        });
+
+        con05Swiper.controller.control = con05textSwiper; // con05textSwiper를 제어 대상으로 설정
+
+        gsap.registerPlugin(ScrollTrigger);
+        const headings = document.querySelectorAll('.content-item');
+        const head = document.querySelector('.content-wrap');
+
+        const numOfTransitions = headings.length
+
+        const singleDuration = 1000;
+        const totalDuration = singleDuration * numOfTransitions;
+
+
+        //top btn
+        $('.top-btn').click(function(){
+            $('html, body').animate({scrollTop: 0}, 400);
+        });
+        // .top-btn의 위치가 #footer로 부터 40px 위에 닿으면 #footer top:40px 위에 고정
+        const footercheck = document.querySelector('#footer').getBoundingClientRect().top
+        const windowHeight = window.innerHeight;
+
+        $(window).scroll(function(){
+            if($(this).scrollTop() + windowHeight >= footercheck - 20){
+                $('.top-btn').css({position:'absolute', bottom: "200px",transform:'translateY(0)' });
+            }else{
+                $('.top-btn').css({position:'fixed', bottom: '70px',transform:'translateY(150px)'});
+            }
+        });
+        
+        // scroll 내리면 header가 숨겨지고 올리면 나타남
+        let lastScrollTop = 0;
+        $(window).scroll(function(event){
+            let st = $(this).scrollTop();
+            if (st > lastScrollTop){
+                $('#header').css({top: -100});
+            } else {
+                $('#header').css({top: 0});
+            }
+            lastScrollTop = st;
+
+            if (st > 0 ){
+                $('#header .logo img').attr('src','./mo/resource/images/logo_on.png');
+                $('#header .menu').attr('src','./mo/resource/images/menu_on.png');
+                $("#header").addClass('active')
+                $('.top-btn').fadeIn();
+            }
+            else{
+                
+                $('#header .logo img').attr('src','./mo/resource/images/logo.png');
+                $('#header .menu').attr('src','./mo/resource/images/menu.png');
+                $("#header").removeClass('active')
+                $('.top-btn').fadeOut();
+            }
+        });
+
+
+        // 스크롤을 내리면 .tab-bar가 내려오고 올리면 올라가는 효과
+        let lastScrollTop2 = 0;
+        $(window).scroll(function(event){
+            let st = $(this).scrollTop();
+            if (st > lastScrollTop2){
+                $('.tab-bar').css({bottom: -75});
+                $('.top-btn').css({transform: 'translateY(150px)'});
+            } else {
+                $('.tab-bar').css({bottom: 0});
+                $('.top-btn').css({transform: 'translateY(0)'});
+            }
+            lastScrollTop2 = st;
+        });
+
+        // .con02 요소 마다 slideup 애니메이션 효과
+    
+        gsap.from('.con02 .txt', {
+            scrollTrigger: {
+                trigger: '.con02',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: .4,
+        });
+
+        gsap.from('.con02 .sub-txt', {
+            scrollTrigger: {
+                trigger: '.con02',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: .4,
+        });
+
+        gsap.from('.con02 .txt-price', {
+            scrollTrigger: {
+                trigger: '.con02',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            x: 50,
+            opacity: 0,
+            duration: .4,
+        });
+
+
+        // .con03 내부 swiper-slide 애니메이션 효과
+        gsap.from('.con03 .swiper-slide img', {
+            scrollTrigger: {
+                trigger: '.con03',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: .4,
+            stagger: 0.2,
+        });
+
+
+        gsap.from('.con04 h2', {
+            scrollTrigger: {
+                trigger: '.con04',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: .4,
+        });
+
+        gsap.from('.con04 .tit-area p', {
+            scrollTrigger: {
+                trigger: '.con04',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            scale: 1.2,
+            opacity: 0,
+            duration: .4,
+        });
+
+        gsap.from('.con04 .swiper', {
+            scrollTrigger: {
+                trigger: '.con04',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            scale: 1.2,
+            duration: .4,
+        });
+
+        gsap.from('.con05 .swiper', {
+            scrollTrigger: {
+                trigger: '.con05',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            scale: 1.2,
+            opacity: 0,
+            duration: .4,
+        });
+
+        gsap.from('.con05 .tit-area', {
+            scrollTrigger: {
+                trigger: '.con05',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: .4,
+        });
+
+        gsap.from('.con05 p', {
+            scrollTrigger: {
+                trigger: '.con05',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            delay: .4,
+            duration: .4,
+        });
+
+        gsap.from('.con05 .price', {
+            scrollTrigger: {
+                trigger: '.con05',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            delay: .8,
+            duration: .4,
+        });
+
+        gsap.from('.con05 .btn', {
+            scrollTrigger: {
+                trigger: '.con05',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            x: -100,
+            opacity: 0,
+            delay: .8,
+            duration: .4,
+        });
+
+        // gsap.from('.con06 .content-item', {
+        //     scrollTrigger: {
+        //         trigger: '.con06',
+        //         start: 'top 40%',
+        //         end: 'bottom 20%',
+        //         toggleActions: 'play none none none',
+        //     },
+        //     y: 50,
+        //     opacity: 0,
+        //     duration: .4,
+        //     stagger: 0.2,
+        // });
+
+        // gsap.from('.con06 .tit', {
+        //     scrollTrigger: {
+        //         trigger: '.con06',
+        //         start: 'top 40%',
+        //         end: 'bottom 20%',
+        //         toggleActions: 'play none none none',
+        //     },
+        //     scale: .9,
+        //     y: 50,
+        //     opacity: 0,
+        //     duration: .4,
+        // });
+        $('.tab-bar button').on('click', function(){
+            $('.my').fadeIn();
+            $('body').css('overflow', 'hidden');
+            
+        });
+        $('.my .close-btn').on('click', function(){
+            $('.my').fadeOut();
+            $('body').css('overflow', 'auto');
+            $('.my .card-item').eq(0).addClass('on').siblings().removeClass('on');
+            // $('.my .card-item').eq(1).css('bottom', '104px');
+            // $('.my .card-item').eq(2).css('bottom', '48px');
+            $('.my .my-body').removeClass('on')
+            $('.my .my-body').eq(0).addClass('on')
+            $('.dim').fadeOut();
+            $('.my .my3').removeClass('on');
+            $('.my .my1').addClass('on');
+            $('.my .my2').removeClass('on');
+        });
+        $('.my .my1').on('click', function(){
+            $(this).removeClass('on');
+            $('.my .my2').addClass('on');
+        });
+
+        $('.my .my2').on('click', function(){
+            $(this).removeClass('on');
+            $('.my .my3').addClass('on');
+        });
+
+        
+        $('.my .my3').on('click', function(){
+            $(this).removeClass('on');
+            $('.my .my1').addClass('on');
+        });
+        $('.my .card-item').on('click', function(){
+		if($(this).hasClass('on')) {
+			return;
+		} else {
+			$(this).addClass('on');
+			$(this).find('.cover').fadeOut();
+		}
+
+		if($(this).eq(1)) {
+			$(this).css('height','calc(100vh - 96px)');
+			setTimeout(() => {	
+				$('.my .card-item').eq(0).find('.step3 img').attr('src','./mo/resource/images/on-header_01.png')
+				$('.my .card-item').eq(0).css({
+					'backgroundColor':'#00ADD3',
+					'padding':20
+			},1000);
+		})
+	}
+
+        });
+
+        $('.my-body.step3 > img').on('click', function(){
+            $(this).attr('src', './mo/resource/images/my01-02-01.png')
+        });
+        $('.my-body.step2 .btns').on('click', function(){
+
+            $('.my-body.step2').removeClass('on');
+            $('.my-body.step3').addClass('on');
+        });
+
+
+
+        $('.my .profile').on('click', function(){
+            $('.my-body.step1').removeClass('on');
+            $('.my-body.step2').addClass('on');
+            $('.my .card-wrap .card-item.on').css('height','calc(100vh - 46px)')
+            
+        });
+
+    });
+    </script>
+</body>
+</html>

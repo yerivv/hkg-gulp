@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/**
+* --------------------------------
+* Fonts CSS
+* --------------------------------
+*/
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  src: local("Pretendard Regular"),
+  url("../fonts/Pretendard-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  src: local("Pretendard Medium"),
+  url("../fonts/Pretendard-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  src: local("Pretendard SemiBold"),
+  url("../fonts/Pretendard-SemiBold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  src: local("Pretendard Bold"),
+  url("../fonts/Pretendard-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silk Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Silk Serif Regular"),
+  /* url("../fonts/Silk-Serif-Regular.woff2") format("woff2"), */
+  url("../fonts/Silk-Serif-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silk Serif";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Silk Serif Silk-Serif-Medium"),
+  url("../fonts/Silk-Serif-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silk Serif";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Silk Serif SemiBold"),
+  url("../fonts/Silk-Serif-SemiBold.woff") format("woff");
+  font-display: swap;
+}
+
+/**
+ * --------------------------------
+ * common CSS
+ * --------------------------------
+*/
+
+/* base */
+html {width: 100%;margin: 0;padding: 0;}
+body {width: 100%;margin: 0;padding: 0;font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", Dotum, "돋움", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-weight: 400;font-size: 16px;line-height: 1;color: #000;font-weight: 400;letter-spacing: 0;word-wrap: break-word;image-rendering: -webkit-optimize-contrast;}
+/* body {width: 100%;margin: 0;padding: 0;font-family: "Malgun Gothic", "맑은 고딕", Dotum, "돋움", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-weight: 400;font-size: 16px;line-height: 1;color: #000;font-weight: 400;letter-spacing: 0;word-wrap: break-word;image-rendering: -webkit-optimize-contrast;} */
+h1, h2 ,h3, h4, h5, h6 {margin: 0;font-weight: 400;}
+ul, ol {list-style: none;margin: 0;padding: 0;}
+/* button {font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", Dotum, "돋움", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";cursor: pointer;padding: 0;border: none;letter-spacing: -0.025em;background-color: transparent;outline: none;} */
+button {font-family: "Malgun Gothic", "맑은 고딕", Dotum, "돋움", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";cursor: pointer;padding: 0;border: none;letter-spacing: -0.025em;background-color: transparent;outline: none; -webkit-tap-highlight-color: transparent;}
+a {color: #767676;text-decoration: none;outline: none;}
+i, p, div, span, li {margin: 0;}
+em {display: inline-block;font-style: normal;}
+table {table-layout: fixed;width: 100%;border-collapse: collapse;border-spacing: 0;}
+table caption {display: none;}
+th, td {padding: 0;}
+dl, dd {margin: 0;}
+figure {margin: 0;}
+img {vertical-align: top;}
+address {font-style: normal;}
+.hide {position: absolute !important;left: -9999px;}
+*, *:before, *:after {box-sizing: border-box;}

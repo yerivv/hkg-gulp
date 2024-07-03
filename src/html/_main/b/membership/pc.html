@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <script src="./resources/lib/swiper-bundle.min.js" type="text/javascript"></script>
+  <script src="./resources/lib/gsap.min.js" type="text/javascript"></script>
+  <script src="./resources/lib/ScrollTrigger.min.js" type="text/javascript"></script>
+  <script src="./resources/membership.js" type="text/javascript"></script>
+  <script src="./resources/lib/jquery-3.6.4.min.js"></script>
+
+  <link rel="stylesheet" href="./resources/lib/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./resources/membership.css">
+
+  <title>HankGolf - Membership B</title>
+
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+      <div class="inner">
+        <a href="./pc.html" class="btn-home"></a>
+        <img src="./resources/images/header01-1.png" alt="" class="header1">
+        <img src="./resources/images/header02-1.png" alt="" class="header2">
+        <img src="./resources/images/header03-1.png" alt="" class="header3">
+      </div>
+    </header>
+
+    <div id="container">
+      <div class="dim"></div>
+      <div class="my">
+        <img src="./mo/resource/images/my-1.jpg" class="my1 on">
+        <img src="./mo/resource/images/my-2.jpg" alt="" class="my2">
+        <img src="./mo/resource/images/my-3.jpg" alt="" class="my3">
+        <img src="./mo/resource/images/my-bottom.png" alt="" class="bottom-nav">
+
+        <button class="close-btn"></button>
+      </div>
+ 
+      
+      <div class="floating_btn">
+        <img src="./resources/images/_Floating Btn.png" alt="">
+      </div>
+      <div class="visual">
+        
+        <div class="visual-swiper">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide1">
+                <div class="img img1">
+                  <div class="dim"></div>
+                  <img src="./resources/images/visual_bg02.jpg" alt="">
+                  <div class="txt-area">
+                    <span>New Club</span>
+                    <p class="tit">삼 투엔 람, 달랏</p>
+                    <p class="txt">사계절 온화한 영원한 봄의 도시, 달랏 <br>대한민국 최초 회원권 출시</p>
+                  </div> 
+                  <div class="scroll-icon">
+                    <img src="./resources/images/visual_scroll_icon.png" alt="">
+                  </div>
+                </div> 
+                <div class="img img2 active">
+                  <div class="dim"></div>
+                  <img src="./resources/images/visual_bg01.jpg" alt="">
+                  <div class="txt-area">
+                    <span>PREMIUM</span>
+                    <p class="tit">빈펄, 남호이안</p>
+                    <p class="txt">Vinpearl Resort & Golf Nam Hoi An의 <br>세련된 럭셔리를 즐겨보세요.</p>
+                  </div>
+                  <div class="scroll-icon">
+                    <img src="./resources/images/visual_scroll_icon.png" alt="">
+                  </div>
+                </div> 
+                <div class="img img3">
+                  <div class="dim"></div>
+                  <img src="./resources/images/visual_bg03.jpg" alt="">
+                  <div class="txt-area">
+                    <span>Exclusive</span>
+                    <p class="tit">대한민국 No.1</p>
+                    <p class="txt">6개국 15개의 명문 골프장을 <br>46,260명의 회원이 경험하고 있습니다.</p>
+                  </div>
+                  <div class="scroll-icon">
+                    <img src="./resources/images/visual_scroll_icon.png" alt="">
+                  </div>
+                </div> 
+              </div>
+              <div class="swiper-slide slide1">
+                <div class="img img1">
+                  <div class="dim"></div>
+                  <img src="./resources/images/visual_bg02.jpg" alt="">
+                  <div class="txt-area">
+                    <span>New Club</span>
+                    <p class="tit">삼 투엔 람, 달랏</p>
+                    <p class="txt">사계절 온화한 영원한 봄의 도시, 달랏 <br>대한민국 최초 회원권 출시</p>
+                  </div> 
+                  <div class="scroll-icon">
+                    <img src="./resources/images/visual_scroll_icon.png" alt="">
+                  </div>
+                </div> 
+                <div class="img img2 active">
+                  <div class="dim"></div>
+                  <img src="./resources/images/visual_bg01.jpg" alt="">
+                  <div class="txt-area">
+                    <span>PREMIUM</span>
+                    <p class="tit">빈펄, 남호이안</p>
+                    <p class="txt">Vinpearl Resort & Golf Nam Hoi An의 <br>세련된 럭셔리를 즐겨보세요.</p>
+                  </div>
+                  <div class="scroll-icon">
+                    <img src="./resources/images/visual_scroll_icon.png" alt="">
+                  </div>
+                </div> 
+                <div class="img img3">
+                  <div class="dim"></div>
+                  <img src="./resources/images/visual_bg03.jpg" alt="">
+                  <div class="txt-area">
+                    <span>Exclusive</span>
+                    <p class="tit">대한민국 No.1</p>
+                    <p class="txt">6개국 15개의 명문 골프장을 <br>46,260명의 회원이 경험하고 있습니다.</p>
+                  </div>
+                  <div class="scroll-icon">
+                    <img src="./resources/images/visual_scroll_icon.png" alt="">
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <a href="../tours/pc.html" class="nav-btn"><img src="./resources/images/nav_img.png" alt=""></a>
+
+        <div class="indicator active">
+          <div class="progress-wrap"><div class="progress"></div></div>
+
+          <div class="btns">
+            <button type="button" class="btn-autoplay"><span class="blind">재생/일시정지</span></button>
+            <button type="button" class="btn-prev">
+              <img src="./resources/images/arrow.png" alt="">
+              <span class="blind">이전</span>
+            </button>
+
+            <div class="pagination">
+              <div class="pagination-inner">
+                <span class="current">1</span><img src="./resources/images/slash.png" alt=""><span class="total">6</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-next">
+              <img src="./resources/images/arrow.png" alt="">
+              <span class="blind">다음</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- <img src="./resources/images/visual_scroll_icon.png" alt="" class="scroll-icon"> -->
+      </div>
+
+
+      <div class="con smart inner">
+        <h2 class="tit">SMART TOUR</h2>
+        <p class="sub-tit">한케이님, 지난 여행이 즐거우셨다면 다시 예약을 도와드릴게요.</p>
+        <div class="smart-wrap">
+          <div class="smart-item">
+            <figure>
+              <img src="./resources/images/smart-img01.jpg" alt="">
+              <figcaption>
+                <p>
+                  <span>2024.08.05</span>
+                  김골프, 이골프, 박골프님과 함께 한<br>
+                  베트남, 빈펄 나트랑
+                </p>
+                <img src="./resources/images/smart01-txt.png" alt="">
+                <a href=""><img src="./resources/images/smart-btn.png" alt=""></a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="smart-item">
+            <figure>
+              <img src="./resources/images/smart-img02.jpg" alt="">
+              <figcaption>
+                <p>
+                  <span>2023.10.10</span>
+                  김골프, 이골프, 박골프님과 함께 한<br>
+                  베트남, 빈펄 나트랑
+                </p>
+                <img src="./resources/images/smart01-txt.png" alt="">
+                <a href=""><img src="./resources/images/smart-btn.png" alt=""></a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="smart-item">
+            <figure>
+              <img src="./resources/images/smart-img03.jpg" alt="">
+              <figcaption>
+                <p>
+                  <span>2023.08.05</span>
+                  김골프, 이골프님과 함께 한<br>
+                  태국, 가싼쿤탄
+                </p>
+                <img src="./resources/images/smart01-txt.png" alt="">
+                <a href=""><img src="./resources/images/smart-btn.png" alt=""></a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="con con01">
+        <div class="inner">
+          <div class="tit-area">
+            <h2 class="tit">지금 <br>주목할 만한 <br>회원권</h2>
+            <img src="./resources/images/con01-tabs.png" alt="">
+          </div>
+          <div class="con-wrap">
+            <div class="box box1">
+              <div class="cover">
+                <p>
+                  nilai springs
+                </p>
+              </div>
+              <figure>
+                <img src="./resources/images/con01-01-01.jpg" alt="">
+              </figure>
+              <div class="swiper">
+                <div class="indicator active">
+                  <div class="btns">
+                      <img src="./resources/images/visual_arrow.png" alt="">
+                      <span class="blind">이전</span>
+                    </button>
+        
+                    <div class="pagination">
+                      <div class="pagination-inner">
+                        <span class="current">1</span><img src="./resources/images/slash_black.png" alt=""><span class="total">6</span>
+                      </div>
+                    </div>
+        
+                    <button type="button" class="btn-next">
+                      <img src="./resources/images/visual_arrow.png" alt="">
+                      <span class="blind">다음</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>MALAYSIA</span>
+                      <strong>
+                        평온한, 그러나 감각적인<br>
+                        닐라이 스프링스
+                      </strong>
+                      <p>
+                        <strong>THRILL AND RELAX</strong>
+                        환상적인 골프 라운드 외에도 다양한 활동이 가능해 지루할 틈이 없습니다. 화려한 쿠알라룸푸르의 골프장에서 짜릿함과 휴식을 즐겨보세요.
+                      </p>
+                      <div class="hash">
+                        <span>#초급자</span>
+                        <span>#중급자</span>
+                        <span>#가족여행</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>membership</span>
+                      <strong>
+                        닐라이 스프링스 회원 혜택
+                      </strong>
+                      <p>
+                        <strong>PROVIDE A SENSE TRANQUILITY</strong>
+                        망고, 아일랜드, 파인스 세 개의 매력적인 시그니처 코스가 절묘한 
+                        조화를 이루는 닐라이 스프링스는 아름다운 페어웨이와 그린을 갖춘
+                        27홀의 챔피언십 골프 코스입니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>닐라이 스프링스 회원권</span>
+                      <strong>
+                        회원혜택
+                      </strong>
+                      <ul>
+                        <li>1일 체류비 79,000원 (18홀 기준)</li>
+                        <li>양도·양수 가능</li>
+                        <li>10년간 연회비 면제</li>
+                        <li>노캐디 플레이</li>
+                        <li>사용횟수 제한 없음</li>
+                        <li>2인 플레이 가능</li>
+                        <li>그린피 0원</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box box2">
+              <div class="cover">
+                <p>
+                  membership
+                </p>
+              </div>
+              <figure>
+                <img src="./resources/images/con01-02-01.jpg" alt="">
+              </figure>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>membership</span>
+                      <strong>
+                        닐라이 스프링스 회원 혜택
+                      </strong>
+                      <p>
+                        <strong>PROVIDE A SENSE TRANQUILITY</strong>
+                        망고, 아일랜드, 파인스 세 개의 매력적인 시그니처 코스가 절묘한 <br>
+                        조화를 이루는 닐라이 스프링스는 아름다운 페어웨이와 그린을 갖춘<br>
+                        27홀의 챔피언십 골프 코스입니다.
+                        <img src="./resources/images/box2_iimg.png" alt="" style="margin-top: 32px;">
+                      </p>
+                    </div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="box box3">
+              <div class="cover">
+                <p>
+                  STAY
+                </p>
+              </div>
+              <figure>
+                <img src="./resources/images/con01-03-01.jpg" alt="">
+              </figure>
+              <div class="swiper">
+                <div class="indicator active">
+                <div class="btns">
+                    <img src="./resources/images/visual_arrow.png" alt="">
+                    <span class="blind">이전</span>
+                  </button>
+      
+                  <div class="pagination">
+                    <div class="pagination-inner">
+                      <span class="current">1</span><img src="./resources/images/slash_black.png" alt=""><span class="total">6</span>
+                    </div>
+                  </div>
+      
+                  <button type="button" class="btn-next">
+                    <img src="./resources/images/visual_arrow.png" alt="">
+                    <span class="blind">다음</span>
+                  </button>
+                </div>
+              </div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>STAY</span>
+                      <strong>
+                        닐라이 스프링스 리조트 & 호텔
+                      </strong>
+                      <p>
+                        <strong>아름다움과 도전이 합쳐지는 곳</strong>
+                        무성한 녹지로 둘러싸인 닐라이 스프링스 리조트 호텔은 평온함을<br>
+                        선사하는 전망을 갖춘 183개의 객실을 갖춘 리조트입니다. <br>
+                        호텔 투숙객은 골프 및 컨트리 클럽하우스의 다양한 스포츠 및 <br>
+                        레크리에이션 시설을 이용할 수 있으며, 아이들은 어린이 수영장이나 공원에서 물놀이를 즐길 수 있습니다. <br>
+                        골프 코스를 내려다보며 자쿠지에서 휴식을 취하실 수도 있습니다.<br>
+                        닐라이 스프링스는 골프, 비즈니스 및 휴양지이며 푸트라 닐라이 <br>
+                        중심부에 위치해 있으며 클랑 밸리와 가깝습니다. <br>
+                        리조트는 쿠알라룸푸르 남쪽으로 30분, 쿠알라룸푸르 국제공항에서 15분, 푸트라자야에서 차로 25분 거리에 있습니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box box4">
+              <div class="cover">
+                <p>
+                  colorful malaysia
+                </p>
+              </div>
+              <figure>
+                  <img src="./resources/images/con01-04-01.jpg" alt="">
+                  <div class="btn-wrap">
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                  </div>
+              </figure>
+              <div class="swiper">
+                <div class="indicator active">
+                  <div class="btns">
+                      <img src="./resources/images/visual_arrow.png" alt="">
+                      <span class="blind">이전</span>
+                    </button>
+        
+                    <div class="pagination">
+                      <div class="pagination-inner">
+                        <span class="current">1</span><img src="./resources/images/slash_black.png" alt=""><span class="total">4</span>
+                      </div>
+                    </div>
+        
+                    <button type="button" class="btn-next">
+                      <img src="./resources/images/visual_arrow.png" alt="">
+                      <span class="blind">다음</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>HOT PLACE</span>
+                      <strong>
+                        마스지드 느가르
+                      </strong>
+                      <p>
+                        <strong>말레이시아에서 가장 아름다운 모스크 중 하나입니다.</strong>
+                        국립 모스크는 쿠알라룸푸르 중앙역에서 가깝습니다. 말레이시아의 국립 모스크인 이곳에서는 종교 행사가 많이 개최됩니다. 약 52,600m² 규모의 정원을 돌아보세요. 국립 모스크의 건축 양식은 말레이시아에 있는 대부분의 모스크의 전형적인 돔 양식과 달리 키 큰 첨탑이 중심을 이룹니다. 모스크 중심부 주변에서 맑은 하늘을 비추는 인공 연못과 분수를 살펴보고 곳곳을 장식하는 꽃과 나무도 구경해보세요
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>HOT PLACE</span>
+                      <strong>
+                        페트로나스 트윈 타워
+                      </strong>
+                      <p>
+                        <strong>세계에서 가장 높은 쌍둥이 빌딩의 86층 전망대에서 시내의 경치를 감상해 보세요.</strong>
+                        페트로나스 트윈 타워(Petronas Twin Tower)는 쿠알라룸푸르 최고의 랜드마크입니다. 높이는 약 452미터로, 세계에서 가장 높은 쌍둥이 빌딩입니다. 아르헨티나 건축가 세사르펠리(César Pelli)가 설계한 이 건물은 21세기 쿠알라룸푸르의 상징으로, 1992년에 공사가 시작되어 1997년 말에 완공되었습니다. 장엄한 이 고층 건물은 2004년 타이베이101이 세워지기 전까지 세계에서 가장 높은 건물이었습니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>HOT PLACE</span>
+                      <strong>
+                        바투 동굴
+                      </strong>
+                      <p>
+                        <strong>높이 솟은 힌두교 신상을 감상한 후 신비한 사원과 사당으로 이어지는<br>
+                          세 개의 동굴 속 계단을 올라보세요.</strong>
+                          바투 동굴은 지상으로부터 거의 100미터 높이의 석회암 지대에 있습니다. 이 힌두교 성지인 바투 동굴은 경외심을 불러일으키는 조각상과 사당을 둘러싸고 있으며, 각종 기념 행사와 의식이 열려 종교적으로 중요한 의미를 지닙니다. 주요 동굴은 세 개이고 주변에 작은 동굴이 여러 개 있습니다. 숨을 한 번 크게 쉬고 카디드랄 동굴(Cathedral Cave)로 이어지는 272개의 계단을 올라보세요. 계단이 가파르고 너비도 제각각이라 오르기가 힘들지만 그만큼 보람도 클 것입니다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>HOT PLACE</span>
+                      <strong>
+                        페르다나 식물원
+                      </strong>
+                      <p>
+                        <strong>높이 솟은 힌두교 신상을 감상한 후 신비한 사원과 사당으로 이어지는<br>
+                          세 개의 동굴 속 계단을 올라보세요.</strong>
+                          호수 정원으로도 알려진 페르다나 식물원은 말레이시아 쿠알라룸푸르에 위치한 인기 있는 공공 공원입니다. 다양한 여가 활동과 볼거리를 제공하는 고요하고 아름다운 녹지 공간입니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box box5">
+              <div class="cover">
+                <p>
+                  REVIEWS
+                </p>
+              </div>
+              <figure>
+                <img src="./resources/images/con01-05-01.jpg" alt="">
+              </figure>
+              <div class="swiper">
+                <div class="indicator active">
+                  <div class="btns">
+                      <img src="./resources/images/visual_arrow.png" alt="">
+                      <span class="blind">이전</span>
+                    </button>
+        
+                    <div class="pagination">
+                      <div class="pagination-inner">
+                        <span class="current">1</span><img src="./resources/images/slash_black.png" alt=""><span class="total">6</span>
+                      </div>
+                    </div>
+        
+                    <button type="button" class="btn-next">
+                      <img src="./resources/images/visual_arrow.png" alt="">
+                      <span class="blind">다음</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="text-area">
+                      <span>REVIEWS</span>
+                      <strong>
+                        동반자와 마음이 하나 되는<br>
+                        다시 오고 싶은 골프장
+                      </strong>
+                      <p>
+                        지인들과 첫 해외 골프 여행으로 말레이시아 닐라이 스프링스 CC&리조트를 다녀왔다. 코로나 19로 인해 2년 여간 해외여행을 다녀오지 못해 아쉬움이 컸었는데 드디어 외국으로 여행을 가게 된다고 생각하니 며칠 전부터 설레여 밤잠을 설치기도 했다. 나는 지인들과 한껏 부푼 마음으로 골프장에 들어섰다. 그 동안 태국 등 비슷한 동남아 골프장 경험이 있었던지라 골프장 환경, 시설 등이 눈에 익었다. 그렇지만 수영장, 클럽하우스 등이 여타 그 동안 다녀온 골프장과 비교했을 때 더 웅장하고 시설이 훌륭했으며 특히 팬데믹으로 인해 고객의 발길이 뜸했음에도 관리가 잘 되어 있었던 점에 높은 점수를 주고 싶다.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"></div>
+                  <div class="swiper-slide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="con con02">
+        <div class="inner">
+          <div class="title-area">
+            <h2 class="tit">TGS SPECIAL</h2>
+            <p class="sub-tit">한케이골프의 골프 전문가 그룹인 TGS(Total Golf Solver)가 추천하는 이달의 골프장을 만나보세요</p>
+          </div>
+      
+          <div class="img-wrap">
+            <div class="left-img">
+              <img src="./resources/images/con-img02.jpg" alt="">
+            </div>
+            <div class="middle-img">
+              <div class="img-inner">
+                <img src="./resources/images/con-img01.jpg" alt="">
+              </div>
+              <div class="text-area">
+                <p>
+                  <strong>Mission Hills Haikou</strong>
+                  제주도 19배 크기의 하이난섬에 위치한 하이난 미션힐스는 10개 코스 180홀 규모를 자랑하며, 1년 중 300일 이상 맑은 날씨가 지속되기<br>
+                  때문에 감히 골퍼들의 천국이라고 불릴만 합니다.<br><br>
+      
+                  오전에는 타이거 우즈와 로리 맥길로이의 명경기가 펼쳐진 명품 코스에서 골프를 즐기고, 라운드 후에 168개의 자연 온천과 전 세계 테마로<br>
+                  구성된 기네스 선정 아시아 최대 규모 스파센터에서 휴식을 한 뒤 최고급 수준의 레스토랑에서 식사를 하신다면 그 누구 부럽지 않은 휴가를<br>
+                  즐기실 수 있으실 수 있을 것입니다.<br><br>
+      
+                  단 하나의 회원권으로 10개 골프장과 세계 수준의 부대시설을 <br>
+                  누릴 수 있는 유일한 회원권 '한케이골프 미션힐스 골프 회원권'입니다.
+                </p>
+              </div>
+            </div>
+            <div class="right-img">
+              <img src="./resources/images/con-img03.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="con con02 inner">
+        <h2 class="tit">TGS SPECIAL</h2>
+        <p class="sub-tit">
+          한케이골프의 골프 전문가 그룹인 TGS가 고객님을 위해 추천합니다.<br>
+          편안함과 특별함이 공존하는 미션힐스 하이커우를 만나보세요.
+        </p>
+
+        <div class="con-wrap">
+          <div class="box box1">
+            <img src="./resources/images/con02_img01.jpg" alt="" class="img">
+            <img src="./resources/images/con02_txt01.png" alt="" class="txt">
+          </div>
+          <div class="box box2">
+            <img src="./resources/images/con02_txt02.png" alt="" class="txt">
+            <img src="./resources/images/con02_img02.jpg" alt="" class="img img1">
+          </div>
+          <div class="box box3">
+            <img src="./resources/images/con02_img03.jpg" alt="" class="img">
+            <img src="./resources/images/con02_txt03.png" alt="" class="txt">
+          </div>
+          <div class="box box4">
+            <img src="./resources/images/con02_txt04.png" alt="" class="txt">
+            <img src="./resources/images/con02_img04.jpg" alt="" class="img img1">
+          </div>
+        </div>
+      </div>
+
+      <div class="con con03">
+        <div class="inner">
+          <h2 class="tit">
+            MEMBERSHIP TOUR
+          </h2>
+          <img src="./resources/images/con05_vinpearl_logo.png" alt="" class="logo">
+          <span class="badge">THE PEARLS OF VIETNAM</span>
+          <p class="sub-tit">베트남의 보석, 최고의 명소에 위치한 빈펄은 회원님의 품격을 높이는 명실상부한 럭셔리 골프 회원권의 최상급 브랜드 입니다.</p>
+
+          <div class="con-wrap">
+            <div class="box box1">
+              <img src="./resources/images/con03_txt01.jpg" alt="" class="txt">
+              <img src="./resources/images/con03_img01.jpg" alt="" class="img">
+            </div>
+            <div class="box box2">
+              <img src="./resources/images/con03_txt02.jpg" alt="" class="txt">
+              <img src="./resources/images/con03_img02.jpg" alt="" class="img">
+            </div>
+            <div class="box box3">
+              <img src="./resources/images/con03_img03.jpg" alt="" class="img">
+              <img src="./resources/images/con03_txt03.jpg" alt="" class="txt">
+            </div>
+            <div class="box box4">
+              <img src="./resources/images/con03_img04.jpg" alt="" class="img" style="width: 430px;">
+              <img src="./resources/images/con03_txt04.jpg" alt="" class="txt">
+            </div>
+          </div>
+
+          <div class="membership-wrap">
+            <img src="./resources/images/con05_btn.png" alt="" class="membership-img">
+          </div>
+
+          <div class="btns">
+            <img src="./resources/images/con03_btns.png" alt="">
+          </div>
+        </div>
+      </div>
+<!-- 
+      <div class="con con00">
+        <div class="inner">
+          <h2 class="tit">
+            Mission Hills Haikou
+          </h2>
+          <p class="sub-tit">성공적인 당신의 삶이 더 특별해질 기회</p>
+
+          <div class="image-slide">
+            <div class="slide-item">
+              <img src="./resources/images/con00_01.jpg" alt="">
+            </div>
+            
+            <div class="slide-item">
+              <img src="./resources/images/con00_02.jpg" alt="">
+            </div>
+            
+            <div class="slide-item">
+              <img src="./resources/images/con00_03.jpg" alt="">
+            </div>
+            
+            <div class="slide-item">
+              <img src="./resources/images/con00_04.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="con con05">
+        <ul class="list">
+          <li class="tour">
+            <div class="vin">
+              <div class="inner">
+                <div class="txt01">MEMBERSHIP TOUR</div>
+                <div class="logo"><img src="./resources/images/con05_vinpearl_logo.png" alt=""></div>
+                <div class="txt02">THE PEARLS OF VIETNAM</div>
+                <div class="txt03">베트남의 보석, 최고의 명소에 위치한 빈펄은 회원님의 품격을 높이는 명실상부한 럭셔리 골프 회원권의 최상급 브랜드 입니다.</div>
+              </div>
+            </div>
+          </li>
+          <li class="tour">
+            <div class="background" style="background-image: url('./resources/images/con05_bg01.jpg'); "></div>
+            <div class="inner">
+              <div class="txt">
+                <strong>Membership<br>Tour</strong>
+                <span>THE PEARLS OF VIETNAM</span>
+                <p>최고의 명소에 위치한 빈펄은 회원님의 품격을 높이는 <br>명실상부한 럭셔리 골프 회원권의 최상급 브랜드입니다.</p>
+              </div>
+              <div class="img">
+                <img src="./resources/images/membershipimg_01.jpg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="tour">
+            <div class="background" style="background-image: url('./resources/images/con05_bg02.jpg'); "></div>
+            <div class="inner">
+              <div class="txt">
+                <strong>Membership<br>Tour</strong>
+                <span>빈펄 나트랑<span>18홀<em>파71</em></span></span>
+                <p>아시안 골프 어워즈가 선정한 베트남 3대 골프 코스인 나트랑 빈펄 골프장은 <br>베트남 골프협회에서 선정한 베트남에서 가장 아름다운 풍경을 자랑하는 골프장입니다.</p>
+              </div>
+              <div class="img">
+                <img src="./resources/images/membershipimg_01.jpg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="tour">
+            <div class="background" style="background-image: url('./resources/images/con05_bg03.jpg'); "></div>
+            <div class="inner">
+              <div class="txt">
+                <strong>Membership<br>Tour</strong>
+                <span>빈펄 호이안<span>18홀<em>파71</em></span></span>
+                <p>베트남 중부 지역의 가장 매력적인 골프 관광지로 꼽히는 곳에 위치하고 있으며 백사장, <br>넓은 페어웨이, 완만하고 구불구불한 녹지 등 자연 지형의 특징을 잘 살린 골프 코스입니다.</p>
+              </div>
+              <div class="img">
+                <img src="./resources/images/membershipimg_03.jpg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="tour">
+            <div class="background" style="background-image: url('./resources/images/con05_bg04.jpg'); "></div>
+            <div class="inner">
+              <div class="txt">
+                <strong>Membership<br>Tour</strong>
+                <span>빈펄 푸꾸옥<span>18홀<em>파71</em></span></span>
+                <p>열대 낙원과 아름다운 해변으로 유명한 세계적인 휴양지인 푸꾸옥 섬의 유일한 골프장으로 <br>끝없이 이어지는 울창한 수목원과 다양한 호수들이 골퍼들의 도전 의식을 불러 <br>일으킵니다.</p>
+              </div>
+              <div class="img">
+                <img src="./resources/images/membershipimg_04.jpg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="tour">
+            <div class="background" style="background-image: url('./resources/images/con05_bg05.jpg'); "></div>
+            <div class="inner">
+              <div class="txt">
+                <strong>Membership<br>Tour</strong>
+                <span>빈펄 하이퐁<span>18홀<em>파71</em></span></span>
+                <p>레이크 코스 18홀과 습지 코스 18홀로 구성된 빈펄하이퐁은 라운드하면서 <br>바다를 경험할 수 있는 이상적인 골프장으로 많은 골퍼들에게 사랑 받고 있습니다.</p>
+              </div>
+              <div class="img">
+                <img src="./resources/images/membershipimg_05.jpg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="tour">
+            <div class="last">
+              <div class="inner">
+                <div class="txt01">THE PEARLS OF VIETNAM</div>
+                <div class="logo"><img src="./resources/images/con05_vinpearl_logo.png" alt=""></div>
+                <div class="txt02">누구나 누릴 수 없는 베트남 최고의 서비스를 특별한 분들께 제공합니다.</div>
+                <div class="table"><img src="./resources/images/con05_btn.png" alt=""></div>
+                <div class="btn"><img src="./resources/images/con05_btns.png" alt=""></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div> -->
+      <div class="con banner">
+        <img src="./resources/images/con00_banner.jpg" alt="">
+      </div>
+
+      <div class="con con06">
+        <div class="inner">
+          <h2 class="tit">HIGHLIGHT</h2>
+          <img src="./resources/images/con05_btnmore.png" alt="" class="btn-more">
+          <div class="con-wrap">
+            <div class="con-item">
+              <div class="txt-area">
+                <span>한케이 스토리</span>
+                <strong>전세계 골프 투어 관계자들과<br>
+                  만난 아부다비 AGTC 방문기</strong>
+                <p>
+                  한케이골프에서는 13개국 36개의 골프 투어 전문 기업과 만나 심도 깊은 이야기를 나누었던 AGTC 현장을 소개합니다.
+                </p>
+                <img src="./resources/images/con05_img02.jpg" alt="">
+              </div>
+            </div>
+            <div class="con-item">
+              <div class="txt-area">
+                <span>명예의 전당</span>
+                <strong>박한설님 홀인원을 축하드립니다.</strong>
+                <p>
+                  당사의 회원이신 '박한설' 회원님께서 2023년 9월 30일 빈펄 나트랑 골프장 16번홀에서 홀인원을 기록하시는 쾌거를 이루셨습니다.
+                </p>
+                <img src="./resources/images/con05_img01.jpg" alt="">
+              </div>
+            </div>
+            <div class="con-item">
+              <div class="txt-area">
+                <span>한케이 스토리</span>
+                <strong>2024년 3월,<br>
+                  가장 많이 떠난 골프 여행지는?</strong>
+                <p>
+                  2024년 3월 한달 간 가장 많은 회원들이 방문한<br>
+                  골프 리조트는 베트남의 진주, 빈펄 남호이안 골프 리조트였습니다.
+                </p>
+                <img src="./resources/images/con05_img03.jpg" alt="">
+              </div>
+            </div>
+            <div class="con-item">
+              <div class="txt-area">
+                <span>명예의 전당</span>
+                <strong>박한설님 홀인원을 축하드립니다.</strong>
+                <p>
+                  당사의 회원이신 '박한설' 회원님께서 2023년 9월 30일 빈펄 나트랑 골프장 16번홀에서 홀인원을 기록하시는 쾌거를 이루셨습니다.
+                </p>
+                <img src="./resources/images/con05_img04.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banners">
+          <img src="./resources/images/con06-01.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="bg"><img src="./resources/images/footer01.jpg" alt=""></div>
+      <img src="./resources/images/footer02.jpg" alt="">
+    </footer>
+  </div>
+</body>
+</html>

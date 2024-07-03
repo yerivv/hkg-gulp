@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HankGolf - Membership B</title>
+    
+    <script src="./mo/resource/js/gsap.min.js"></script>
+    <script src="./mo/resource/js/jquery-1.11.3.min.js"></script>
+    <script src="./mo/resource/js/ScrollTrigger.min.js"></script>
+    <script src="./mo/resource/js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./mo/resource/css/swiper.css">
+    <link rel="stylesheet" href="./mo/resource/fonts/SUIT.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img {width: 100%;}
+        #header {position: fixed;top: 0;left: 0;width: 100vw;z-index: 999;transition: all ease-in .4s;padding: 16px 20px;height: 56px;display: flex;justify-content: space-between}
+        #header .logo img {height: 24px;}
+        #header.active {background: rgba(255, 255, 255, 0.30);backdrop-filter: blur(20px);}
+        #header .menu {width: 24px;}
+        #header h1 {display: none;}
+
+        .nav {position: fixed ;bottom: 0;left: 0;z-index: 99;transition: bottom .4s ease-in;}
+        .nav button {position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);height: 78px;width: 78px;background-color: transparent;border: none;}
+        .nav a {position: absolute;bottom: 0;left: 0;height: 78px;width: 70px;background-color: transparent;border: none;}
+        .nav a:nth-of-type(2) {left: 70px;}
+        .my {position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;z-index: 999;background-color: #fff;transition: top ease-in .4s;background-color: #f5f9ff;display: none;overflow-y: scroll;}
+        .my  {padding-bottom: 100px;}
+        .my .my1 { display: none;}
+        .my .my1.on {display: block;}
+        .my .my2 { display: none;}
+        .my .my2.on {display: block;}
+        .my .my3 { display: none;}
+        .my .my3.on {display: block;}
+        .my .bottom-nav {position: fixed;bottom: 0;left: 0;}
+
+        .my .inner {padding: 0 20px;width: 340px;}
+        .my .close-btn {position: absolute;top: 0;right: 0;width: 60px;height: 60px;border: none;padding: none;background-color: transparent;}
+        .my .card-wrap {width: 100%;position: absolute;bottom: 0;}
+        .my .card-wrap .card-item {z-index: 1;background-color: #fff;height: 72px;width: 100%;border-radius: 12px 12px 0px 0px;transition: height .4s ease-in;position: absolute;overflow: hidden; }
+        .my .card-wrap .card-item:nth-of-type(2) {bottom: 104px;z-index: 2;background: #40CDC5;}
+        .my .card-wrap .card-item:nth-of-type(3) {background: linear-gradient(180deg, rgba(0, 101, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(0deg, #002394 0%, #002394 100%), linear-gradient(0deg, #5B7BDA 0%, #5B7BDA 100%), #40CDC5;  bottom: 48px;z-index: 3;}
+        .my .card-wrap .card-item:nth-of-type(4) {bottom: 0;height: 64px;background-color: #fff;z-index: 4;}
+        .my .my-tabs {bottom: -4px;position: absolute;z-index: 9;}
+        .my .card-wrap .card-item .my-header {display: flex;padding: 12px 20px 24px;justify-content: flex-end;}
+        .my .card-wrap .card-item .my-header .bell { width: 32px;position: absolute;left: 20px;top: 12px;}
+        .my .card-wrap .card-item:nth-of-type(1) .my-header p {color: #000;}
+        .my .card-wrap .card-item .my-header p {font-family: "Pretendard";font-size: 16px;font-weight: 600;line-height: 26px; color: #fff;}
+        .my .card-wrap .card-item .my-header p span {font-size: 10px;font-weight: 500;letter-spacing: 2px;display: inline-block;margin-right: 16px;}
+        .my .card-wrap .card-item .my-body {display: none;height: calc(100% - 175px);padding-bottom: 20px;overflow: scroll;}
+        .my .card-wrap .card-item .my-body  .inner{width: 320px;}
+        .my .card-wrap .card-item .my-body.on {display: block;}
+        .my .card-wrap .card-item.on {width: 100%;height:  calc(100vh - 290px);bottom: 0;}
+        .my .card-wrap .card-item .inner {padding: 0 20px;}
+        .my .card-wrap .card-item .my-body .text-box {margin-top: 20px;font-family: "Pretendard";}
+        .my .card-wrap .card-item .my-body .text-box .text-wrap::-webkit-scrollbar {position: absolute;right: 0;}
+        .my .card-wrap .card-item .my-body .text-box .text-wrap {overflow-y: scroll;height: 426px;padding-left: 20px;}
+        .my .card-wrap .card-item .my-body .text-box strong {font-size: 14px;font-weight: 600;line-height: 22px; display: block;margin-top: 16px;}
+        .my .card-wrap .card-item .my-body .text-box strong:first-of-type {margin-top: 0;}
+        .my .card-wrap .card-item .my-body .text-box li {list-style: none;position: relative;font-size: 14px;font-weight: 400;line-height: 22px;color: #444;padding-left: 11px;}
+        .my .card-wrap .card-item .my-body .text-box li+li {margin-top: 4px;}
+        .my .card-wrap .card-item .my-body .text-box li::before {content: '';width: 3px; height: 3px;display: block;top: 9px;left: 0;position: absolute;background-color: #444;}
+        .my .card-wrap .card-item .my-body .text-box p {font-size: 14px;font-weight: 500;line-height: 22px;margin-top: 4px;}
+        .my .card-wrap .card-item .my-body .btns {padding: 0 20px;margin-top: 20px;}
+        .my .card-wrap .card-item .my-body.step3 span {padding-right: 9px;margin-right: 8px;position: relative;}
+        .my .card-wrap .card-item .my-body.step3 span::after {content: '';width: 1px;height: 10px;background-color: #444;position: absolute;right: 0;top: 50%;transform: translateY(-50%);opacity: .2;}
+        .my .card-wrap .card-item .my-body.step3 p {opacity: 0.8;}
+        .my .card-wrap .card-item .my-body.step3 .text-wrap  {height: 332px;}
+        .my .card-wrap .card-item .my-body.step3 h2 {font-size: 16px;font-weight: 500;line-height: 26px;opacity: .8;margin-top: 4px;margin-bottom: 4px;}
+        .my .card-wrap .card-item .my-body.step3 .text-wrap img{margin-top: 24px;}
+        .my .card-wrap .card-item .on-header {display: none;}
+        .my .card-wrap .card-item.on .my-header {display: none;}
+        .my .card-wrap .card-item.on {background-color: #fff;}
+        .my .card-wrap .card-item.on .on-header {display: block;padding: 20px;}
+
+
+        .nav img {width: calc(100% + 20px);margin-left: -10px;margin-bottom: -10px;}
+        section {overflow: hidden;}
+        section .inner {width: 100%;margin: 0 auto;padding: 0 20px;}
+        .con01 .swiper {position: relative;width: 100%;height: 100vh;}
+        .con01 .swiper .img  {height: 100%;}
+        .con01 .swiper .img img{ height: 100%;object-fit: cover;}
+        .con01 .swiper-container {width: 100%;height: 100vh;}
+        .con01 .swiper-container .swiper-btns {position: absolute; bottom: 125px;width: 104px;right: 24px;height: 20px;z-index: 1;display: inline-flex;align-items: center;}
+        .con01 .swiper-container .swiper-btns .count {display: inline-flex;align-items: center; font-size: 14px;color: #fff;font-weight: 700;font-family: "Poppins";line-height: 20px;margin: 0 2px;}
+        .con01 .swiper-container .swiper-btns .count img {width: 7px;}
+        .con01 .swiper-container .swiper-btns .count em {font-style: normal; opacity: .5;margin-left: 4px;display: inline-block;width: 9px;}
+        .con01 .swiper-container .swiper-btns .count span {display: inline-block;margin-right: 4px;width: 9px;text-align: right;}
+        .con01 .swiper-container .swiper-btns .swiper-stop-btn { background-color: transparent;border: none;width: 20px;height: 20px;}
+        .con01 .swiper-container .swiper-btns .swiper-stop-btn img { width: 20px;height: 20px;}
+        .con01 .swiper-container .swiper-button-next, .con01 .swiper-container .swiper-button-prev {position: relative; background-image: url('./mo/resource/images/arrow.png'); width: 20px;height: 20px;background-size: 20px 20px; margin-top: 0;top: auto;bottom: auto;left: auto;right: auto;}
+        .con01 .swiper-container .swiper-button-prev { transform: rotate(180deg);}
+        /* .con01 .swiper-slide {background: url('./mo/resource/images/con01_01.png') no-repeat center;background-size: cover;}
+        .con01 .swiper-slide:nth-of-type(2) {background-image: url('./mo/resource/images/con01_02.png');}
+        .con01 .swiper-slide:nth-of-type(3) {background-image: url('./mo/resource/images/con01_03.jpg');} */
+        .con01 .txt-area {text-align: center;color: #FFF;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); width: calc(100% - 40px);}
+        .con01 .txt-area strong {margin-bottom: 20px;font-family: 'Poppins';font-size: 16px;font-weight: 500;letter-spacing: 3.2px;opacity: 0.8;}
+        .con01 .txt-area h2 {display: block;margin-top: 24px;color: #FFF;font-family: "Pretendard";font-size: 44px;font-weight: 600;line-height: 48px;}
+        .con01 .txt-area p {font-family: "Pretendard";font-size: 16px;font-weight: 500;line-height: 26px;margin-top: 12px;}
+        .con01 .swiper-pagination {bottom: 134px;left: 20px;width: calc(100% - 156px);height: 2px;background-color:rgba(255, 255, 255, .5);}
+        .con01 .swiper-pagination-progressbar-fill {background-color: #fff;height: 100%;display: inline-block;position: absolute;width: 100%;left: 0;z-index: 1;transform-origin: left;}
+
+        .con02-1 {padding: 60px 0 100px;position: relative;}
+        .con02-1 .title-area {font-family: "Pretendard";}
+        .con02-1 .title-area h2 {font-size: 28px;font-weight: 600;color: #000;}
+        .con02-1 .title-area p {font-size: 18px;font-weight: 400;line-height: 28px;color: #444;margin-top: 16px;}
+        .con02-1 .swiper {margin-top: 24px;}
+        .con02-1  button {width: 100%;height: 56px;background-color: #092060;color: #fff;font-size: 18px;font-weight: 500;line-height: 54px; font-family: 'Pretendard';margin-top: 40px;border: none;cursor: pointer;}
+        .con02-1 .swiper-pagination {bottom: 60px;left: 50%;width: calc(100% - 40px);height: 2px;background-color:rgba(0, 0, 0, .1);transform: translateX(-50%);}
+        .con02-1 .swiper-pagination-progressbar-fill {background-color:rgba(0, 35, 148, .8);height: 100%;display: inline-block;position: absolute;width: 100%;left: 0;z-index: 1;transform-origin: left;}
+
+
+        .con02 {background-color: #f9faf9;padding: 60px 0;}
+        .con02 .title-area {font-family: "Pretendard";}
+        .con02 .title-area h2 {font-size: 28px;font-weight: 600;color: #000;}
+        .con02 .title-area p {font-size: 18px;font-weight: 400;line-height: 28px;color: #444;margin-top: 16px;}
+        .con02 .tabs {margin-top: 40px;}
+        .con02 .con-wrap {display: flex;flex-direction: column;margin-top: 40px;}
+        .con02 .con-wrap .box {width: 100%;max-height: 104px;position: relative;transition: max-height .4s ease-in;overflow: hidden;background-color: #fff;}
+        .con02 .con-wrap .box+.box {margin-top: 1px ;}
+        .con02 .con-wrap .box .img {position: relative;height: 392px;overflow: hidden;}
+        .con02 .con-wrap .box .img img {position: absolute;transition: transform ease-in .4s;transform: translateY(-35%);}
+        /* .con02 .con-wrap .box.on {height: 100%;} */
+        .con02 .con-wrap .box.on .img img {top: 0;transform: translateY(0);}
+        .con02 .con-wrap .box .text-area {padding: 32px 20px;font-family: "Pretendard";opacity: 0;transition: opacity ease-in .4s;background-color: #fff;position: relative;}
+        .con02 .con-wrap .box.on .text-area {opacity: 1;}
+        .con02 .con-wrap .box .text-area > span {font-size: 14px;font-weight: 500;line-height: 24px;letter-spacing: 2.8px;color: #40CDC5; display: block;text-transform: uppercase; font-family: 'Poppins';}
+        .con02 .con-wrap .box .text-area > strong {font-size: 24px;font-weight: 600;line-height: 36px;display: block;margin-top: 24px;}
+        .con02 .con-wrap .box .text-area > p {font-size: 16px;font-weight: 400;line-height: 26px;color: #444;margin-top: 24px;}
+        .con02 .con-wrap .box .text-area > p strong {margin-bottom: 4px;display: block;font-weight: 500;}
+        .con02 .con-wrap .box .text-area .hash {margin-top: 40px;}
+        .con02 .con-wrap .box .text-area .hash span {display: inline-block;color: #949494;font-size: 14px;line-height: 22px;}
+        .con02 .con-wrap .box .text-area .table { margin-top: 24px;padding-top: 24px;border-top: 1px solid #eee;}
+        .con02 .con-wrap .box .text-area .hash span+span {margin-left: 4px;}
+        .con02 .con-wrap .box .cover {position: absolute;top: 0;left: 50%;transform: translateX(-50%);width: 100%;height: 100%;display: inline-flex;align-items: center;justify-content: center;background-color: rgba(3, 15, 48, .3);transition: opacity ease-in .4s .4s   ;backdrop-filter: blur(10px);}
+        .con02 .con-wrap .box .cover::after {display: block;content: ''; position: absolute;top: 0;left: 50%;transform: translateX(-50%);width: 100%;height: 100%;opacity: 0.1;background: linear-gradient(180deg, #030F30 0%, #0A3096 100%);}
+        .con02 .con-wrap .box.on .cover {opacity: 0;height: 392px;display: none;}
+        .con02 .con-wrap .box .cover p {font-family:'Poppins'; font-size: 16px;text-align: center;color: #fff;font-weight: 600; letter-spacing: 3.2px;text-transform: uppercase;}
+        /* .con02 .con-wrap .box .cover p strong {display: block; font-family: "Silk Serif";font-size: 20px;font-weight: 600;line-height: 30px;color: #000;margin-bottom: 12px;} */
+        /* .con02 .con-wrap .box4 {max-height: 1074px;} */
+        .con02 .con-wrap .box4 .btn-wrap {display: flex;flex-direction: row;width: 100%;height: 100px;position: absolute;bottom: 0;left: 0;}
+        .con02 .con-wrap .box4 .btn-wrap .btn {width: calc(100% / 3);height: 100%;border: none;background-color: transparent;}
+        .con02 .con-wrap .box4 .swiper-container { position: relative;height: auto;}
+        .con02 .con-wrap .box4 .swiper-slide {padding-bottom: 96px;height: auto;}
+        .con02 .swiper-btns {position: absolute; bottom: 32px;width: 104px;left: 20px;height: 20px;z-index: 1;display: inline-flex;align-items: center;z-index: 2;}
+        .con02 .swiper-btns .count {display: inline-flex;align-items: center;font-size: 14px;color: #000;font-weight: 700;font-family: "Poppins";line-height: 20px;margin: 0 4px;}
+        .con02 .swiper-btns .count img {width: 8px;}
+        .con02 .swiper-btns .count em {font-style: normal; opacity: .5;margin-left: 7px;display: inline-block;font-size: 16px;width: 9px;}
+        .con02 .swiper-btns .count span {display: inline-block;margin-right: 9px;font-size: 16px;width: 9px;text-align: right;}
+        .con02 .swiper-btns .swiper-stop-btn { background-color: transparent;border: none;width: 20px;height: 20px;}
+        .con02 .swiper-btns .swiper-stop-btn img { width: 20px;height: 20px;}
+        .con02 .swiper-button-next, .con02 .swiper-button-prev {position: relative; background-image: url('./mo/resource/images/arrow_black.png'); width: 20px;height: 20px;background-size: 20px 20px; margin-top: 0;top: auto;bottom: auto;left: auto;right: auto;}
+        .con02 .swiper-button-prev { transform: rotate(180deg);}
+
+        .con02 .btn {margin-top: 40px;}
+
+        .con03 {padding: 60px 0;}
+        .con03 .title-area {font-family: "Pretendard";}
+        .con03 .title-area h2 {font-size: 28px;font-weight: 600;color: #000;}
+        .con03 .title-area p {font-size: 16px;font-weight: 400;line-height: 28px;color: #444;margin-top: 16px;}
+
+        .con03 .cont-area {margin-top: 40px;}
+        /* .con03 .cont-area img { } */
+        .con03 .cont-area:nth-of-type(even) .text-area,
+        .con03 .cont-area:last-of-type .text-area {float: right;}
+        
+        .con03 .cont-area:nth-of-type(even)::after,
+        .con03 .cont-area:last-of-type::after {clear: both;content: '';display: block;}
+        .con03 .cont-area .text-area {margin-top: -90px;padding: 24px; background-color: #f9faf9;z-index: 1;position: relative;;width: calc(100% - 20px);}
+        .con03 .cont-area .text-area strong {display: block;font-family: Poppins;font-size: 20px;font-weight: 600;line-height: 32px;text-transform: uppercase;}
+        .con03 .cont-area .text-area p {font-family: 'Pretendard';font-size: 16px;line-height: 26px;font-weight: 400;color: #444;margin-top: 16px;}
+        .con03 .banner {margin-top: 40px;}
+        .con03 .more-btn {width: 100%;height: 64px;background-color: #002394;color: #fff;font-size: 20px;font-weight: 700;line-height: 62px; font-family: 'Pretendard';margin-top: 40px;border: none;cursor: pointer;border-radius: 4px;}
+        
+        .con04 {padding: 38px 0 0; background: #F9FAFC;}
+        .con04 .title-area {text-align: center;font-family: "Pretendard";margin-bottom: 40px;}
+        .con04 .title-area strong {font-family: 'Poppins'; font-size: 28px;font-weight: 600;color: #000;line-height: 40px;}
+        .con04 .title-area img {width: 210px;display: block;margin: 0 auto;margin-top: 24px;}
+        .con04 .title-area h2 {font-size: 20px;font-weight: 600;color: #000;margin-top: 24px;line-height: 30px;}
+        .con04 .title-area p {font-size: 18px;font-weight: 400;line-height: 28px;color: #444;margin-top: 16px;}
+        .con04 .cont-area {text-align: center;padding: 0 20px 24px;}
+        /* .con04 .cont-area+.cont-area {margin-top: 24px;} */
+        .con04 .cont-area img { max-width: calc(100% + 40px);margin-left: -20px;width: calc(100% + 40px);}
+        .con04 .cont-area strong {margin-top: 24px; display: block;font-family: "Silk Serif";font-size: 24px;font-weight: 600;line-height: 36px; } 
+        .con04 .cont-area .circle {margin-top: 12px;justify-content: center;padding: 5px 14px;border-radius: 9999px;border: 1px solid #002394;display: inline-flex;}
+        .con04 .cont-area .circle p {font-size: 14px;line-height: 23px; font-family: 'Pretendard'; color: #002394;}
+        .con04 .cont-area .circle p:nth-of-type(1) {padding-right: 9px;position: relative;}
+        .con04 .cont-area .circle p:nth-of-type(1)::before {content: '';position: absolute;width: 1px;height: 10px;background-color: #002394;right: 0;top: 50%;transform: translateY(-50%);opacity: 0.3;}
+        .con04 .cont-area .circle p:nth-of-type(2) {padding-left: 8px;}
+        .con04 .cont-area .circle p span {font-family: 'Zen Antique';}
+        .con04 .cont-area > p {font-family: 'Pretendard';font-size: 16px;line-height: 26px;font-weight: 400;color: #444;margin-top: 20px;}
+        .con04 .banner .inner {background-color: #f9faf9;padding: 0 20px 40px;}
+        .con04 .banner+ .cont-area {margin-top: 0px;}
+        .con04 .btns {margin-top: 40px;}
+        .con04 .btns .more-btn {width: 100%;height: 46px;background-color: #002394;color: #fff;font-size: 16px;font-weight: 500;line-height: 44px; font-family: 'Pretendard';border: none;cursor: pointer;}
+        .con04 .btns .more-btn:nth-of-type(2) {background-color: #fff;color: #002394;border: 1px solid #002394;margin-top: 10px;}
+        .con04 .bg-banner {background: url('./mo/resource/images/con04_banner_bg.jpg') no-repeat center;background-size: cover;padding: 70px 12px;text-align: center;}
+        .con04 .bg-banner strong {font-family: 'Pretendard';font-size: 20px;font-weight: 600;line-height: 30px;color: #fff;}
+
+        .con05 .inner {padding: 60px 20px ; position: relative;}
+        .con05 .title-area {font-family: "Pretendard";}
+        .con05 .title-area h2 {font-size: 28px;font-weight: 600;color: #000;}
+        .con05 .swiper {margin-top: 40px; width: 100%;overflow: hidden;}
+        .con05 .swiper .swiper-wrapper {padding-bottom: 40px;}
+        .con05 .swiper .swiper-slide {display: flex;gap: 32px;flex-direction: column;font-family: "Pretendard";}
+        .con05 .swiper .swiper-slide span {font-size: 14px;font-weight: 500;line-height: 24px;letter-spacing: 2.8px;color: #40CDC5;}
+        .con05 .swiper .swiper-slide strong {font-size: 20px;font-weight: 600;line-height: 30px;}
+        .con05 .swiper .swiper-slide p {font-size: 18px;font-style: normal;font-weight: 400;line-height: 28px;color: #444;}
+        .con05 .swiper-pagination {bottom: 38px;left: 50%;width: calc(100% - 40px);height: 2px;background-color:rgba(0, 0, 0, .1);transform: translateX(-50%);}
+        .con05 .swiper-pagination-progressbar-fill {background-color:rgba(0, 0, 0, .8);height: 100%;display: inline-block;position: absolute;width: 100%;left: 0;z-index: 1;transform-origin: left;}
+
+        #footer {position: relative;}
+        .top-btn {position: fixed;bottom: 70px;right: 20px;z-index: 98; width: 54px;transition: transform ease-in .4s;}
+    </style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+            <a href="./mo.html" class="logo"><h1>logo</h1><img src="./mo/resource/images/logo.png" alt="" ></a>
+            
+            <img src="./mo/resource/images/menu.png" alt="" class="menu">
+		</div>
+
+        <div class="main">
+            <!-- <div class="my">
+                <div class="inner">
+                    <div class="profile">
+                        <img src="./mo/resource/images/my-profile.png" alt="">
+                    </div>
+                </div>
+                <button class="close-btn"><img src="./mo/resource/images/close.png" alt=""></button>
+                <div class="cont ">
+                    <div class="card-wrap">
+                        <div class="card-item on">
+                            <div class="my-body step1 on">
+                                <img src="./resources/images/my-01.jpg" alt="">
+                            </div>
+                            <div class="my-body step2">
+                                <img src="./resources/images/my01-02.jpg" alt="">
+                                <div class="text-box">
+                                    <div class="text-wrap">
+                                        <strong>입국 전 유의사항</strong>
+                                        <ul>
+                                            <li>베트남은 45일간 무비자 체류가 가능합니다. </li>
+                                            <li>전자 비자를 발급받으면 90일까지 체류가 가능합니다.</li>
+                                            <li>비자는 베트남 이민국의 E-Visa 온라인 시스템을 통하여 신청할 수 있습니다.</li>
+                                        </ul>
+                                        <strong>출발 전 준비서류</strong>
+                                        <p>여권</p>
+                                        <ul>
+                                            <li>여권 만료일 6개월 이상 남아 있어야 합니다. 여권 만료일을 꼭 확인하시길 바랍니다.</li>
+                                        </ul>
+                                        <p>회원 카드</p>
+                                        <ul>
+                                            <li>회원 카드 미소지 시 일반가로 전환되니 회원 카드를 꼭 소지하시길 바랍니다.</li>
+                                        </ul>
+                                        <strong>골프 백 & 캐리어 짐싸기</strong>
+                                        <ul>
+                                            <li>골프 백은 파손을 방지하기 위해 항공 커버를 씌우는 것을 추천 드립니다.</li>
+                                            <li>전압 : 220V 이용으로 따로 콘센트를 준비하지 않으셔도 됩니다.</li>
+                                        </ul>
+                                        <strong>기후</strong>
+                                        <ul>
+                                            <li>아열대 기후를 띠는 나트랑. 연간 300일 이상 맑은 날씨를 자랑하는 것이 특징입니다.</li>
+                                            <li>1~8월은 건기, 9~12월은 우기로 나뉘어집니다.</li>
+                                            <li>우기라고 해서 비가 지속해서 내리는 것이 아니라 하루 한두 번 짧게 내립니다.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="btns">
+                                        <img src="./resources/images/my-btns.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="my-body step3">
+                                <img src="./resources/images/my01-03.jpg" alt="">
+                                <div class="text-box">
+                                    <div class="text-wrap">
+                                        <strong>출발</strong>
+                                        <p><span>편명</span> 제주항공 7C4907 </p>
+            
+                                        <strong>도착</strong>
+                                        <p>도착시간 | 01:35 (+1일)</p>
+                                        <ul>
+                                            <li>나트랑 깜란 공항에 도착하여 입국 수속 후 나오시어 '빈펄 유니폼'을 입고 피켓을 들고 있는 직원을 찾아
+                                                주시길 바랍니다.</li>
+                                            <li>만약 직원이 안보일 경우 당황하지 마시고 그 자리에서 대기하여 주시길 바랍니다. </li>
+                                        </ul>
+                                        <strong>라운딩</strong>
+                                        <p>빈펄 나트랑 CC 18홀</p>
+                                        <p>복장규정</p>
+                                        <ul>
+                                            <li>라운드 티, 축구 유니폼, 청바지, 짧은 반바지 입장 불가</li>
+                                            <li>무릎 길이의 반바지는 허용되고 있습니다.</li>
+                                            <li>한국에서 골프웨어로 나온 차이나 카라티는 입장이 <br>
+                                                불가합니다. </li>
+                                        </ul>
+                                        <h2>티 오프 안내</h2>
+                                        <ul>
+                                            <li>티오프 시간 30분 전에 체크인 하셔야 합니다.</li>
+                                        </ul>
+                                        <h2>우천 취소</h2>
+                                        <ul>
+                                            <li>악천후로 인한 라운드 중단은 골프장의 지시를 따라주시길 바랍니다.</li>
+                                            <li>골프장의 공식적인 경기 중단 선언이 없으면 악천후<br>라도 환불이 불가합니다.</li>
+                                            <li>라운드 전에 비가 오더라도 반드시 골프장에 방문<br>하시어 골프장의 조치를 확인하시길 바랍니다.</li>
+                                        </ul>
+                                        <strong>기후</strong>
+                                        <ul>
+                                            <li>아열대 기후를 띠는 나트랑. 연간 300일 이상 맑은 날씨를 자랑하는 것이 특징입니다.</li>
+                                            <li>1~8월은 건기, 9~12월은 우기로 나뉘어집니다.</li>
+                                            <li>우기라고 해서 비가 지속해서 내리는 것이 아니라 하루 한두 번 짧게 내립니다.</li>
+                                        </ul>
+                                        <img src="./mo/resource/images/my-text.png" alt="">
+                                    </div>
+                                    <div class="btns">
+                                        <img src="./resources/images/my-btns.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item">
+                            <div class="my-header">
+                                <img src="./mo/resource/images/bell.png" alt="" class="bell">
+                                <p><span>JAPAN</span> HK 치구사</p>
+                            </div>
+                            <div class="on-header">
+                                <img src="./mo/resource/images/on-header.png" alt="">
+                            </div>
+                            <div class="my-body step3">
+                                <img src="./mo/resource/images/my02-01.jpg" alt="">
+                                <div class="text-box">
+                                    <div class="text-wrap">
+                                        <strong>출발</strong>
+                                        <p><span>편명</span> 제주항공 7C4907 </p>
+            
+                                        <strong>도착</strong>
+                                        <p>도착시간 | 01:35 (+1일)</p>
+                                        <ul>
+                                            <li>나트랑 깜란 공항에 도착하여 입국 수속 후 나오시어 '빈펄 유니폼'을 입고 피켓을 들고 있는 직원을 찾아
+                                                주시길 바랍니다.</li>
+                                            <li>만약 직원이 안보일 경우 당황하지 마시고 그 자리에서 대기하여 주시길 바랍니다. </li>
+                                        </ul>
+                                        <strong>라운딩</strong>
+                                        <p>빈펄 나트랑 CC 18홀</p>
+                                        <p>복장규정</p>
+                                        <ul>
+                                            <li>라운드 티, 축구 유니폼, 청바지, 짧은 반바지 입장 불가</li>
+                                            <li>무릎 길이의 반바지는 허용되고 있습니다.</li>
+                                            <li>한국에서 골프웨어로 나온 차이나 카라티는 입장이 <br>
+                                                불가합니다. </li>
+                                        </ul>
+                                        <h2>티 오프 안내</h2>
+                                        <ul>
+                                            <li>티오프 시간 30분 전에 체크인 하셔야 합니다.</li>
+                                        </ul>
+                                        <h2>우천 취소</h2>
+                                        <ul>
+                                            <li>악천후로 인한 라운드 중단은 골프장의 지시를 따라주시길 바랍니다.</li>
+                                            <li>골프장의 공식적인 경기 중단 선언이 없으면 악천후<br>라도 환불이 불가합니다.</li>
+                                            <li>라운드 전에 비가 오더라도 반드시 골프장에 방문<br>하시어 골프장의 조치를 확인하시길 바랍니다.</li>
+                                        </ul>
+                                        <strong>기후</strong>
+                                        <ul>
+                                            <li>아열대 기후를 띠는 나트랑. 연간 300일 이상 맑은 날씨를 자랑하는 것이 특징입니다.</li>
+                                            <li>1~8월은 건기, 9~12월은 우기로 나뉘어집니다.</li>
+                                            <li>우기라고 해서 비가 지속해서 내리는 것이 아니라 하루 한두 번 짧게 내립니다.</li>
+                                        </ul>
+                                        <img src="./mo/resource/images/my-text.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <img src="./resources/images/my-btns.jpg" alt="">
+                                </div>
+                            </div>
+            
+                        </div>
+                        <div class="card-item">
+                            <div class="my-header">
+                                <p><span>THAILAND</span> 가싼쿤탄</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-tabs">
+                        <img src="./mo/resource/images/my-tab.png" alt="">
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="my">
+                <img src="./mo/resource/images/my-1.jpg" class="my1 on">
+                <img src="./mo/resource/images/my-2.jpg" alt="" class="my2">
+                <img src="./mo/resource/images/my-3.jpg" alt="" class="my3">
+                <img src="./mo/resource/images/my-bottom.png" alt="" class="bottom-nav">
+                <button class="close-btn"></button>
+                
+              </div>
+            <div class="nav">
+                <a href="./mo.html"></a>
+                <a href="../tours/mo.html"></a>
+                <button ></button>
+                <img src="./mo/resource/images/con01_nav.png" alt="">
+            </div>
+            <section class="con01">
+                <div class="con01-swiper">
+                    <div class="swiper">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="img">
+                                        <img src="./mo/resource/images/con01_01.png" alt="">
+                                    </div>
+                                    <div class="txt-area">
+                                        <strong>NEW CLUB</strong>
+                                        <h2>삼 투엔 람, 달랏</h2>
+                                        <p>
+                                            사계절 온화한 영원한 봄의 도시, 달랏<br>
+                                            대한민국 최초 회원권 출시
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="img">
+                                        <img src="./mo/resource/images/con01_02.jpg" alt="">
+                                    </div>
+                                    <div class="txt-area">
+                                        <strong>PREMIUM</strong>
+                                        <h2>빈펄, 남호이안</h2>
+                                        <p>
+                                            Vinpearl Resort & Golf Nam Hoi An의<br>
+                                            세련된 럭셔리를 즐겨보세요.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="img">
+                                        <img src="./mo/resource/images/con01_03.jpg" alt="">
+                                    </div>
+                                    <div class="txt-area">
+                                        <strong>EXCLUSIVE</strong>
+                                        <h2>대한민국 No.1</h2>
+                                        <p>
+                                            6개국 15개의 명문 골프장을 <br>
+                                            46,260명의 회원이 경험하고 있습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-btns">
+                                <button class="swiper-stop-btn">
+                                    <img src="./mo/resource/images/pause.png" alt="">
+                                </button>
+                                <div class="swiper-button-prev"></div>
+                                <p class="count"><span>1</span><img src="./mo/resource/images/slash.png" alt=""> <em class="total">3</em></p>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="con02-1">
+                <div class="inner">
+                    <div class="title-area">
+                        <h2>SMART TOUR</h2>
+                        <p>최골퍼님, 지난 여행이 즐거우셨다면<br>
+                            다시 예약을 도와드릴게요.</p>
+                    </div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./mo/resource/images/con02-01_01.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./mo/resource/images/con02-01_02.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./mo/resource/images/con02-01_03.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+            <section class="con02">
+                <div class="inner">
+                    <div class="title-area">
+                        <h2>지금 주목할 만한 회원권</h2>
+                        <p>최골퍼님을 위해 한케이골프가 제안하는<br> 색다른 여행을 확인해 보세요.</p>
+                    </div>
+                    <div class="tabs">
+                        <img src="./mo/resource/images/con02-tabs.png" alt="">
+                    </div>
+                    <div class="con-wrap">
+                        <div class="box on">
+                            <div class="img">
+                                <img src="./mo/resource/images/con02-box01.jpg" alt="">
+                            </div>
+                            <div class="cover">
+                                <p>
+                                    nilai springs
+                                </p>
+                            </div>
+                            <div class="text-area">
+                                <span>MALAYSIA</span>
+                                <strong>
+                                    평온한, 그러나 감각적인<br>
+                                    닐라이 스프링스
+                                </strong>
+                                <p>
+                                    <strong>THRILL AND RELAX</strong>
+                                    환상적인 골프 라운드 외에도 다양한 활동이 <br>
+                                    가능해 지루할 틈이 없습니다. 화려한 <br>
+                                    쿠알라룸푸르의 골프장에서 짜릿함과 휴식을 <br>
+                                    즐겨보세요.
+                                </p>
+                                <div class="hash">
+                                    <span>#초급자</span>
+                                    <span>#중급자</span>
+                                    <span>#가족여행</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="./mo/resource/images/con02-box02.jpg" alt="">
+                            </div>
+                            <div class="cover">
+                                <p>
+                                    membership
+                                </p>
+                            </div>
+                            <div class="text-area">
+                                <span>membership</span>
+                                <strong>
+                                    닐라이 스프링스 회원 혜택
+                                </strong>
+                                <p>
+                                    <strong>PROVIDE A SENSE TRANQUILITY</strong>
+                                    망고, 아일랜드, 파인스 세 개의 매력적인 시그니처 코스가 절묘한 <br>
+                                    조화를 이루는 닐라이 스프링스는 아름다운 페어웨이와 그린을 갖춘<br>
+                                    27홀의 챔피언십 골프 코스입니다.
+                                </p>
+                                <img src="./mo/resource/images/box02-txt.png" alt="" class="table">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="./mo/resource/images/con02-box03.jpg" alt="">
+                            </div>
+                            <div class="cover">
+                                <p>
+                                    STAY
+                                </p>
+                            </div>
+                            <div class="text-area">
+                                <span>STAY</span>
+                                <strong>
+                                    닐라이 스프링스 리조트 &<br>
+                                    호텔
+                                </strong>
+                                <p>
+                                    <strong>아름다움과 도전이 합쳐지는 곳</strong>
+                                    무성한 녹지로 둘러싸인 닐라이 스프링스 리조트 호텔은 평온함을 선사하는 전망을 갖춘 183개의 객실을 갖춘 리조트입니다. 호텔 투숙객은 골프 및 컨트리 클럽하우스의 다양한 스포츠 및 레크리에이션 시설을 이용할 수 있으며, 아이들은 어린이 수영장이나 공원에서 물놀이를 즐길 수 있습니다. 골프 코스를 내려다보며 자쿠지에서 휴식을 취하실 수도 있습니다.<br>
+                                    닐라이 스프링스는 골프, 비즈니스 및 휴양지이며 푸트라 닐라이 중심부에 위치해 있으며 클랑 밸리와 가깝습니다. <br>
+                                    리조트는 쿠알라룸푸르 남쪽으로 30분, 쿠알라룸푸르 국제공항에서 15분, 푸트라자야에서 차로 25분 거리에 있습니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="box box4">
+                            <div class="img">
+                                <img src="./mo/resource/images/con02-box04-04-01.jpg" alt="">
+                                <div class="btn-wrap">
+                                    <button class="btn"></button>
+                                    <button class="btn"></button>
+                                    <button class="btn"></button>
+                                </div>
+                            </div>
+                            <div class="cover">
+                                <p>
+                                    colorful malaysia
+                                </p>
+                            </div>
+                            <div class="swiper-container  swiper-container-autoheight">
+                                <div class="swiper-btns">
+                                    <div class="swiper-button-prev"></div>
+                                    <p class="count"><span>1</span><img src="./mo/resource/images/slash_black.png" alt=""><em class="total">4</em></p>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide text-area">
+                                        <span>colorful malaysia</span>
+                                        <strong>
+                                            마스지드 느가르
+                                        </strong>
+                                        <p>
+                                            <strong>말레이시아에서 가장 아름다운 모스크 중 하나입니다.</strong>
+                                            국립 모스크는 쿠알라룸푸르 중앙역에서 가깝습니다. 말레이시아의 국립 모스크인 이곳에서는 종교 행사가 많이 개최됩니다. 약 52,600m² 규모의 정원을 돌아보세요. 국립 모스크의 건축 양식은 말레이시아에 있는 대부분의 모스크의 전형적인 돔 양식과 달리 키 큰 첨탑이 중심을 이룹니다. 모스크 중심부 주변에서 맑은 하늘을 비추는 인공 연못과 분수를 살펴보고 곳곳을 장식하는 꽃과 나무도 구경해보세요
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide text-area">
+                                        <span>colorful malaysia</span>
+                                        <strong>
+                                            페트로나스 트윈 타워
+                                        </strong>
+                                        <p>
+                                            <strong>세계에서 가장 높은 쌍둥이 빌딩의 86층 전망대에서 시내의 경치를 감상해 보세요.</strong>
+                                            페트로나스 트윈 타워(Petronas Twin Tower)는 쿠알라룸푸르 최고의 랜드마크입니다. 높이는 약 452미터로, 세계에서 가장 높은 쌍둥이 빌딩입니다. 아르헨티나 건축가 세사르펠리(César Pelli)가 설계한 이 건물은 21세기 쿠알라룸푸르의 상징으로, 1992년에 공사가 시작되어 1997년 말에 완공되었습니다. 장엄한 이 고층 건물은 2004년 타이베이101이 세워지기 전까지 세계에서 가장 높은 건물이었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide text-area">
+                                        <span>colorful malaysia</span>
+                                        <strong>
+                                            바투 동굴
+                                        </strong>
+                                        <p>
+                                            <strong>높이 솟은 힌두교 신상을 감상한 후 신비한 사원과 사당으로 이어지는 세 개의 동굴 속 계단을 올라보세요.</strong>
+                                            바투 동굴은 지상으로부터 거의 100미터 높이의 석회암 지대에 있습니다. 이 힌두교 성지인 바투 동굴은 경외심을 불러일으키는 조각상과 사당을 둘러싸고 있으며, 각종 기념 행사와 의식이 열려 종교적으로 중요한 의미를 지닙니다. 주요 동굴은 세 개이고 주변에 작은 동굴이 여러 개 있습니다. 숨을 한 번 크게 쉬고 카디드랄 동굴(Cathedral Cave)로 이어지는 272개의 계단을 올라보세요. 계단이 가파르고 너비도 제각각이라 오르기가 힘들지만 그만큼 보람도 클 것입니다.
+                                        </p>
+                                    </div>
+                                    <div class="swiper-slide text-area">
+                                        <span>colorful malaysia</span>
+                                        <strong>
+                                            KLCC 공원
+                                        </strong>
+                                        <p>
+                                            <strong>호숫가에서 쉬면서 쿠알라룸푸르의 스카이라인을 감상하거나 공원을 거닐며 각종 조각상과 인공 폭포, 정원의 조경을 구경해 보세요.</strong>
+                                            KLCC은 쿠알라룸푸르 시티 센터(Kuala Lumpur City Centre)의 약자로, 이 공원은 페트로나스 트윈 타워(PETRONAS Twin Towers) 아래의 시내 한가운데에 있습니다. 그러나 KLCC 공원에 있는 쿠알라룸푸르 컨벤션 센터 역시 약자가 "KLCC"로 똑같습니다. 약 20만 제곱미터 규모의 KLCC 공원은 현지인과 관광객 모두가 많이 찾는 도심 속 휴식처입니다. 어린이 놀이 공간, 고압 제트 분수가 설치된 호수, 산책 및 조깅로, 잔디밭 등이 있어 기분전환을 하거나 휴식을 취하기에 매우 좋은 장소입니다.산책로를 거닐며 말끔하게 정돈된 정원을 감상하거나 편안하게 앉아 새들을 관찰해 보세요.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="img">
+                                <img src="./mo/resource/images/con01-05-01.jpg" alt="">
+                            </div>
+                            <div class="cover">
+                                <p>
+                                    REVIEWS
+                                </p>
+                            </div>
+                            <div class="text-area">
+                                <span>REVIEWS</span>
+                                <strong>
+                                    동반자와 마음이 <br>
+                                    하나 되는 다시 오고 <br>
+                                    싶은 골프장
+                                </strong>
+                                <p>
+                                    지인들과 첫 해외 골프 여행으로 말레이시아 닐라이 스프링스 CC&리조트를 다녀왔다. 코로나 19로 인해 2년 여간 해외여행을 다녀오지 못해 아쉬움이 컸었는데 드디어 외국으로 여행을 가게 된다고 생각하니 며칠 전부터 설레여 밤잠을 설치기도 했다. 나는 지인들과 한껏 부푼 마음으로 골프장에 들어섰다. 그 동안 태국 등 비슷한 동남아 골프장 경험이 있었던지라 골프장 환경, 시설 등이 눈에 익었다. 그렇지만 수영장, 클럽하우스 등이 여타 그 동안 다녀온 골프장과 비교했을 때 더 웅장하고 시설이 훌륭했으며 특히 팬데믹으로 인해 고객의 발길이 뜸했음에도 관리가 잘 되어 있었던 점에 높은 점수를 주고 싶다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="./mo/resource/images/btn.jpg" alt="" class="btn">
+                </div>
+            </section>
+            <div class="banner">
+                <img src="./mo/resource/images/con04_banner_bg.jpg" alt="">
+            </div>
+            <section class="con03">
+                <div class="inner">
+                    <div class="title-area">
+                        <h2>TGS SPECIAL</h2>
+                        <p>한케이골프의 골프 전문가 그룹인 TGS가<br>
+                            고객님을 위해 추천합니다. <br>
+                            편안함과 특별함이 공존하는 미션힐스 하이커우를 만나보세요.</p>
+                    </div>
+                </div>
+
+                <div class="cont-area">
+                    <img src="./mo/resource/images/con03_01.jpg" alt="">
+                    <div class="text-area">
+                        <strong>Asia-Pacific's <br>Best Golf Resort</strong>
+                        <p>미션힐즈 하이커우는 Asian Golf Awards에서 선정한 7년 연속 아시아 태평양 최고의 골프 <br>리조트입니다.</p>
+                    </div>
+                </div>
+                <div class="cont-area">
+                    <img src="./mo/resource/images/con03_02.jpg" alt="">
+                    <div class="text-area">
+                        <strong>180 Amazing Pleasures</strong>
+                        <p>다채로운 즐거움이 가득한 10개의 코스, 180개 <br>홀이 여러분의 도전을 기다리고 있습니다</p>
+                    </div>
+                </div>
+
+                <div class="cont-area">
+                    <img src="./mo/resource/images/con03_04.jpg" alt="">
+                    <div class="text-area">
+                        <strong>The Ritz-Carlton <br>Experience</strong>
+                        <p>미션힐스 하이커우 멤버십 회원에게만 제공<br>되는 리츠 칼튼 혜택을 누려보세요</p>
+                    </div>
+                </div>
+
+
+                <div class="cont-area">
+                    <img src="./mo/resource/images/con03_04.png" alt="">
+                    <div class="text-area">
+                        <strong>Mission Hills Haikou</strong>
+                        <p>한케이골프와 함께 미션힐스의 특별한 <br>서비스를 누려보세요.</p>
+                    </div>
+                </div>
+
+                <!-- <div class="cont-area">
+                    <img src="./mo/resource/images/con03_03.jpg" alt="">
+                    <div class="text-area">
+                        <strong>World’s Largest <br>Volcanic Mineral <br>Springs</strong>
+                        <p>기네스북에 등재된 세계 최대의 화산 온천인<br>미션힐스 하이커우 온천은 미션힐스를 <br>방문해야 할 또 다른 이유입니다</p>
+                    </div>
+                </div> -->
+
+                    <!-- <button class="more-btn">더 많은 헤택보기</button> -->
+            </section>
+
+            <section class="con04">
+                <div class="inner">
+                    <div class="title-area">
+                        <strong>MEMBERSHIP TOUR</strong>
+                        <img src="./mo/resource/images/con04_logo.png" alt="">
+                        <h2>THE PEARLS OF VIETNAM</h2>
+                        <p>베트남의 보석, 최고의 명소에 위치한 빈펄은<br>
+                            회원님의 품격을 높이는 명실상부한<br>
+                            럭셔리 골프 회원권의 최상급 브랜드 입니다.</p>
+                    </div>
+                </div>
+                <div class="cont-area">
+                    <img src="./mo/resource/images/con04_01.jpg" alt="">
+                    <strong>빈펄 나트랑</strong>
+                    <div class="circle">
+                        <p><span>18</span> 홀</p>
+                        <p>파<span> 71</span></p>
+                    </div>
+                    <p>아시안 골프 어워즈에서 선정한 베트남 최고의 3대 <br>골프 코스로 선정된 나트랑 빈펄 골프장은 베트남 <br>골프협회에서 선정한 베트남에서 가장 아름다운 <br>풍경을 자랑하는 골프장입니다.</p>
+                </div>
+
+                <div class="cont-area">
+                    <img src="./mo/resource/images/con04_02.jpg" alt="">
+                    <strong>빈펄 남호이안</strong>
+                    <div class="circle">
+                        <p><span>18</span> 홀</p>
+                        <p>파<span> 72</span></p>
+                    </div>
+                    <p>베트남 중부 지역의 가장 매력적인 골프 관광지로<br>
+                        꼽히는 곳에 위치하고 있으며 백사장, 넓은 페어웨이, 완만하고 구불구불한 녹지 등 자연 지형의<br>
+                        특징을  잘 살린 골프 코스입니다.</p>
+                </div>
+                <div class="cont-area">
+                    <img src="./mo/resource/images/con04_04.jpg" alt="">
+                    <strong>빈펄 푸꾸옥</strong>
+                    <div class="circle">
+                        <p><span>18</span> 홀</p>
+                        <p>파<span> 72</span></p>
+                    </div>
+                    <p>열대 낙원과 아름다운 해변으로 유명한 세계적인<br>
+                        휴양지인 푸꾸옥 섬의 유일한 골프장으로 끝없이<br>
+                        이어지는 울창한 수목원과 다양한 호수들이<br>
+                        골퍼들의 도전 의식을 불러 일으킵니다.</p>
+                </div>
+                <div class="cont-area">
+                    <img src="./mo/resource/images/con04_03.jpg" alt="">
+                    <strong>빈펄 하이퐁</strong>
+                    <div class="circle">
+                        <p><span>36</span> 홀</p>
+                        <p>파<span> 144</span></p>
+                    </div>
+                    <p>레이크 코스 18홀과 습지 코스 18홀로 구성된<br>
+                        빈펄 하이퐁은 라운드하면서 바다를 경험할 수 있는<br>
+                        이상적인 골프장으로 많은 골퍼들에게<br>
+                        사랑 받고 있습니다.</p>
+                </div>
+                <div class="banner cont-area">
+                    <img src="./mo/resource/images/con04_banner_01.jpg" alt="">
+                    
+                    <div class="inner">
+                        <div class="btns">
+                            <button class="more-btn">회원권 문의</button>
+                            <button class="more-btn">상품소개서 받기</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="con05">
+                <div class="inner">
+                    <div class="title-area">
+                        <h2>HIGHLIGHT</h2>
+                    </div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <span>한케이 스토리</span>
+                                <strong>전세계 골프 투어 관계자들과 만난 아부<br>다비 AGTC 방문기</strong>
+                                <p>한케이골프에서는 13개국 36개의 골프 투어 전문 기업과 만나 심도 깊은 이야기를 나누었던 AGTC 현장을 소개합니다.</p>
+                                <figure>
+                                    <img src="./mo/resource/images/con05_01.jpg" alt="">
+                                </figure>
+                            </div>
+                            
+                            <div class="swiper-slide">
+                                <span>한케이 스토리</span>
+                                <strong>2024년 3월,<br>가장 많이 떠난 골프 여행지는?</strong>
+                                <p>2024년 3월 한달 간 가장 많은 회원들이 방문한 골프 리조트는 베트남의 진주, 빈펄 남호이안 골프 리조트였습니다.</p>
+                                <figure>
+                                    <img src="./mo/resource/images/con05_02.jpg" alt="">
+                                </figure>
+                            </div>
+                            </div>
+                        </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+        </div>
+		<div id="footer">
+            <img class="top-btn" src="./mo/resource/images/top.png">
+            <div class="footer_inner"><img src="./mo/resource/images/footer.jpg" alt=""></div>
+		</div>
+	</div>
+    <script>
+    $(document).ready(function(){
+        $('.top-btn').click(function(){
+            $('html, body').animate({scrollTop: 0}, 400);
+        });
+
+        const footercheck = document.querySelector('#footer').getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        const mainHeight = $('.main').innerHeight();
+
+        $(window).scroll(function(){
+            if($(this).scrollTop() <= 9444){
+                $('.top-btn').css({position:'fixed', bottom: '70px'});
+            }else{
+                $('.top-btn').css({position:'absolute', bottom: '380px'});
+            }
+        });
+
+        let lastScrollTop = 0;
+        $(window).scroll(function(event){
+            let st = $(this).scrollTop();
+            if (st > lastScrollTop){
+                $('#header').css({top: -100});
+            } else {
+                $('#header').css({top: 0});
+            }
+            lastScrollTop = st;
+
+            if (st > 0 ){
+                $('#header .logo img').attr('src','./mo/resource/images/logo_on.png');
+                $('#header .menu').attr('src','./mo/resource/images/menu_on.png');
+                $("#header").addClass('active')
+                $('.top-btn').fadeIn();
+            }
+            else{
+                
+                $('#header .logo img').attr('src','./mo/resource/images/logo.png');
+                $('#header .menu').attr('src','./mo/resource/images/menu.png');
+                $("#header").removeClass('active')
+                $('.top-btn').fadeOut();
+            }
+        });
+
+
+        let lastScrollTop2 = 0;
+        $(window).scroll(function(event){
+            let st = $(this).scrollTop();
+            if (st > lastScrollTop2){
+                $('.nav').css({bottom: -80});
+                $('.top-btn').css({transform: 'translateY(150px)'});
+                } else {
+                $('.nav').css({bottom: 0});
+                $('.top-btn').css({transform: 'translateY(0)'});
+            }
+            lastScrollTop2 = st;
+        });
+
+        var con01swiper = new Swiper('.con01-swiper .swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'progressbar'
+            },
+            navigation: {
+                nextEl: '.con01-swiper .swiper-button-next',
+                prevEl: '.con01-swiper .swiper-button-prev',
+            },
+            on : {
+                slideChangeTransitionStart : function(){
+                    // var idx = con01swiper.activeIndex + 1;
+                    var activeIndex = this.realIndex+1
+                    $('.con01 .swiper-btns .count span').text(activeIndex);
+                    // $('.con01 .swiper-container .swiper-slide').length
+                    $('.con01 .swiper-btns .count em').text(3);
+                    //gsap 모션
+                    gsap.from('.con01 .swiper-slide-active .txt-area strong', {
+                        y: 50,
+                        opacity: 0,
+                        duration: .4,
+                        delay: .2,
+                    });
+
+                    gsap.from('.con01 .swiper-slide-active .txt-area h2', {
+                        y: 50,
+                        opacity: 0,
+                        duration: .4,
+                        delay: .1,
+                    });
+
+                    gsap.from('.con01 .swiper-slide-active .txt-area p', {
+                        y: 50,
+                        opacity: 0,
+                        duration: .4,
+                        delay: .3,
+                    });
+                }
+
+
+
+            }
+        });
+
+        // con01
+        var con01Wrap = $('.con02 .con-wrap');
+        var boxAll = con01Wrap.find('.box');
+        var heightSet = function() {
+                boxAll.css('max-height', '104px');
+        };
+        var lastEnteredBox = boxAll.first();
+        let i = 796;
+
+        heightSet();
+
+        lastEnteredBox.css('max-height', i);
+        boxAll.each(function() {
+            $(this).on('click', function() {
+                // $(this).find('.cover').fadeOut();
+                $(this).addClass('on');
+                $(this).siblings().removeClass('on');
+
+
+                if (lastEnteredBox) {
+                    heightSet();
+                }
+                if($(this).index() == 0 ){
+                    i = 796
+                }  
+                if ($(this).index() == 1) {
+                    i = 951
+                }
+                if ($(this).index() == 2){
+                    i = 1020
+                } if ($(this).index() == 3){
+                    i = 1074
+                }
+                if($(this).index() == 4 ){
+                    i = 1088
+                }  
+
+                lastEnteredBox = $(this); 
+                $(this).css({
+                    'max-height': i+'px'
+                });
+            });
+        });
+
+        // con05 swiper
+        var con05swiper = new Swiper('.con05 .swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            pagination: {
+                el: '.con05 .swiper-pagination',
+                type: 'progressbar'
+            }
+        });
+
+        var con02swiper = new Swiper('.con02-1 .swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            pagination: {
+                el: '.con02-1 .swiper-pagination',
+                type: 'progressbar'
+            },
+        });
+
+        $('.nav button').on('click', function(){
+            $('.my').fadeIn();
+            $('body').css('overflow', 'hidden');
+            
+        });
+        $('.my .close-btn').on('click', function(){
+            $('.my').fadeOut();
+            $('body').css('overflow', 'auto');
+            $('.my .card-item').eq(0).addClass('on').siblings().removeClass('on');
+            // $('.my .card-item').eq(1).css('bottom', '104px');
+            // $('.my .card-item').eq(2).css('bottom', '48px');
+            $('.my .my-body').removeClass('on')
+            $('.my .my-body').eq(0).addClass('on')
+            $('.dim').fadeOut();
+            $('.my .my3').removeClass('on');
+            $('.my .my1').addClass('on');
+            $('.my .my2').removeClass('on');
+        });
+        $('.my .my1').on('click', function(){
+            $(this).removeClass('on');
+            $('.my .my2').addClass('on');
+        });
+
+        $('.my .my2').on('click', function(){
+            $(this).removeClass('on');
+            $('.my .my3').addClass('on');
+        });
+
+        
+        $('.my .my3').on('click', function(){
+            $(this).removeClass('on');
+            $('.my .my1').addClass('on');
+        });
+        $('.my .card-item').on('click', function(){
+		if($(this).hasClass('on')) {
+			return;
+		} else {
+			$(this).addClass('on');
+			$(this).find('.cover').fadeOut();
+		}
+
+		if($(this).eq(1)) {
+			$(this).css('height','calc(100vh - 96px)');
+			setTimeout(() => {	
+				$('.my .card-item').eq(0).find('.step3 img').attr('src','./mo/resource/images/on-header_01.png')
+				$('.my .card-item').eq(0).css({
+					'backgroundColor':'#00ADD3',
+					'padding':20
+			},1000);
+		})
+	}
+
+        });
+
+        $('.my-body.step3 > img').on('click', function(){
+            $(this).attr('src', './mo/resource/images/my01-02-01.png')
+        });
+        $('.my-body.step2 .btns').on('click', function(){
+
+            $('.my-body.step2').removeClass('on');
+            $('.my-body.step3').addClass('on');
+        });
+
+
+
+        $('.my .profile').on('click', function(){
+            $('.my-body.step1').removeClass('on');
+            $('.my-body.step2').addClass('on');
+            $('.my .card-wrap .card-item.on').css('height','calc(100vh - 46px)')
+            
+        });
+    
+        gsap.from('.con02 .title-area', {
+            scrollTrigger: {
+                trigger: '.con02',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: .4,
+        });
+        gsap.from('.con03 .title-area', {
+            scrollTrigger: {
+                trigger: '.con03',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: .4,
+        });
+
+        gsap.from('.con04 .title-area', {
+            scrollTrigger: {
+                trigger: '.con04 .title-area',
+                start: 'top 40%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none none',
+            },
+            y: 50,
+            opacity: 0,
+            duration: .4,
+        });
+
+
+        const conts = gsap.utils.toArray('.cont-area');
+        conts.forEach(cont => {
+            gsap.from(cont, { 
+                y: 200,
+                opacity: 0,
+                scrollTrigger: {
+                    start: 'top bottom',
+                    end: 'bottom 20%',
+                    trigger: cont,
+                }
+            })
+        });
+
+        const box04Swiper = new Swiper('.con02 .box4 .swiper-container', {
+			slidesPerView: 1,
+			spaceBetween: 20,
+            autoHeight:true, 
+            observer: true,
+            observeParents: true,
+			effect: 'fade',
+            navigation: {
+                nextEl: '.con02 .swiper-container .swiper-button-next',
+                prevEl: '.con02 .swiper-container .swiper-button-prev',
+            },
+			on: {
+				slideChangeTransitionStart: function() {
+					let realIndex = this.realIndex;
+					if(realIndex == 0) {
+						$('.box4 .img img').attr('src','./mo/resource/images/con02-box04-04-01.jpg');
+					} else if (realIndex == 1) {
+						$('.box4 .img img').attr('src','./mo/resource/images/con02-box04-04-02.jpg');
+					} else if (realIndex == 2) {
+						$('.box4 .img img').attr('src','./mo/resource/images/con02-box04-04-03.jpg');
+					} else if (realIndex == 3) {
+						$('.box4 .img img').attr('src','./mo/resource/images/con02-box04-04-04.jpg');
+					}
+                    var activeIndex = this.realIndex+1
+                    $('.con02 .swiper-btns .count span').text(activeIndex);
+                    $('.con02 .swiper-btns .count em').text(4);
+				}
+
+			}
+		});
+
+		
+		$('.box4 .btn').on('click', function() {
+			if(box04Swiper.realIndex == 0) {
+				if($(this).index() == 0) {
+					box04Swiper.slideTo(1);
+				}  
+				if ($(this).index() == 1) {
+					box04Swiper.slideTo(2);
+				}
+				if ($(this).index() == 2) {
+					box04Swiper.slideTo(3);
+				}
+			} else if(box04Swiper.realIndex == 1) {
+				
+				if($(this).index() == 0) {
+					box04Swiper.slideTo(2);
+				}  
+				if ($(this).index() == 1) {
+					box04Swiper.slideTo(3);
+				}
+				if ($(this).index() == 2) {
+					box04Swiper.slideTo(0);
+				}
+			} else if(box04Swiper.realIndex == 2) {
+				if($(this).index() == 0) {
+					box04Swiper.slideTo(3);
+				}  
+				if ($(this).index() == 1) {
+					box04Swiper.slideTo(0);
+				}
+				if ($(this).index() == 2) {
+					box04Swiper.slideTo(1);
+				}
+			} else if(box04Swiper.realIndex == 3) {
+				
+				if($(this).index() == 0) {
+					box04Swiper.slideTo(0);
+				}  
+				if ($(this).index() == 1) {
+					box04Swiper.slideTo(1);
+				}
+				if ($(this).index() == 2) {
+					box04Swiper.slideTo(2);
+				}
+			}
+		});
+    });
+    </script>
+</body>
+</html>

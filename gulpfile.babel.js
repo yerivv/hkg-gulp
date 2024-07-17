@@ -206,7 +206,7 @@ const live = {
 	server() {
 		browserSync.init({
 			port: 5000,
-			startPath: 'index.html',
+			startPath: 'main/membership.html',
 			server: {
 				baseDir: 'local/',
 				directory: true,

@@ -89,6 +89,7 @@
 @mixin filter-skyblue {filter: invert(69%) sepia(6%) saturate(3907%) hue-rotate(184deg) brightness(94%) contrast(95%);}
 @mixin filter-flyblue {filter: invert(50%) sepia(30%) saturate(1145%) hue-rotate(188deg) brightness(91%) contrast(86%);}
 @mixin filter-sky {filter: invert(98%) sepia(74%) saturate(649%) hue-rotate(173deg) brightness(95%) contrast(97%);}
+@mixin filter-g44 {filter: invert(23%) sepia(0%) saturate(1%) hue-rotate(222deg) brightness(99%) contrast(86%);}
 @mixin filter-g94 {filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(344deg) brightness(91%) contrast(84%);}
 @mixin filter-gd4 {filter: invert(94%) sepia(1%) saturate(66%) hue-rotate(314deg) brightness(96%) contrast(82%);}
 @mixin filter-reset {filter: none;}
@@ -100,6 +101,22 @@
 @mixin sub-section{padding-left:20px;padding-right:20px;
     @media screen and (min-width:($sub-max-width + $sub-margin)){
         padding-left:max(calc((100% - $sub-max-width) / 2), 20px);padding-right:max(calc((100% - $sub-max-width) / 2), 20px);
+    }
+}
+
+@mixin pc-main-wide{margin-left:220px;margin-right:220px;
+    @media screen and (max-width:($main-max-width + $scroll)){
+        margin-left:max(calc((100% - $main-width) / 2), 100px);margin-right:max(calc((100% - $main-width) / 2), 100px);
+        //margin-left:max(calc((100% - $main-width) / 2), 0px);margin-right:max(calc((100% - $main-width) / 2), 0px);
+        //width:$main-width;margin-right:0;
+    }
+}
+@mixin pc-main-center($type:margin){
+    @if($type == margin) {
+        margin-left:max(calc((100% - $main-width) / 2), 100px);margin-right:max(calc((100% - $main-width) / 2), 100px);
+    }
+    @if($type == padding) {
+        width:100%;padding-left:max(calc((100% - $main-width) / 2), 100px);padding-right:max(calc((100% - $main-width) / 2), 100px);box-sizing:border-box !important;
     }
 }
 

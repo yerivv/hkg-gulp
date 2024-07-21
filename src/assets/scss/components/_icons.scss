@@ -26,6 +26,9 @@ $icon-sizes: 12, 16, 20, 24, 28, 32, 36, 40, 48, 60;
   &.sky {
     @include filter-sky;
   }
+  &.g44 {
+    @include filter-g44;
+  }
   &.g94 {
     @include filter-g94;
   }
@@ -72,6 +75,11 @@ $icon-sizes: 12, 16, 20, 24, 28, 32, 36, 40, 48, 60;
 .i-arrow-right {
     @each $size in $icon-sizes {
         &.i-#{$size}{background-image: url($path-icon + $size + '/arrow-right.svg');}
+    }
+}
+.i-arrow-right2 {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/arrow-right2.svg');}
     }
 }
 .i-close {
@@ -144,6 +152,186 @@ $icon-sizes: 12, 16, 20, 24, 28, 32, 36, 40, 48, 60;
         &.i-#{$size}{background-image: url($path-icon + $size + '/reverse.svg');}
     }
 }
+.i-bed {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/bed.svg');}
+    }
+}
+.i-restaurant {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/restaurant.svg');}
+    }
+}
+.i-ticket {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ticket.svg');}
+    }
+}
+.i-cut {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/cut.svg');}
+    }
+}
+.i-bag {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/bag.svg');}
+    }
+}
+.i-umbrella {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/umbrella.svg');}
+    }
+}
+.i-aircon {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/aircon.svg');}
+    }
+}
+.i-welcometea {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/welcometea.svg');}
+    }
+}
+.i-slippers {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/slippers.svg');}
+    }
+}
+.i-parasol {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/parasol.svg');}
+    }
+}
+.i-hairdryer {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/hairdryer.svg');}
+    }
+}
+.i-kettle {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/kettle.svg');}
+    }
+}
+.i-wifi {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/wifi.svg');}
+    }
+}
+.i-safe {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/safe.svg');}
+    }
+}
+.i-gown {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/gown.svg');}
+    }
+}
+.i-closet {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/closet.svg');}
+    }
+}
+.i-tv {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/tv.svg');}
+    }
+}
+.i-heart {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/heart.svg');}
+    }
+}
+.i-heart-on {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/heart-on.svg');}
+    }
+}
+.i-download {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/download.svg');}
+    }
+}
+.i-point {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/point.svg');}
+    }
+}
+.i-reservation {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/reservation.svg');}
+    }
+}
+.i-clubtime {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/clubtime.svg');}
+    }
+}
+.i-court {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/court.svg');}
+    }
+}
+.i-card {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/card.svg');}
+    }
+}
+.i-coupon {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/coupon.svg');}
+    }
+}
+.i-voucher {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/voucher.svg');}
+    }
+}
+.i-inquire {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/inquire.svg');}
+    }
+}
+.i-faq {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/faq.svg');}
+    }
+}
+.i-channeltalk {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/channeltalk.svg');}
+    }
+}
+.i-customer1 {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/customer1.svg');}
+    }
+}
+.i-customer2 {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/customer2.svg');}
+    }
+}
+.i-textcopy {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/textcopy.svg');}
+    }
+}
+.i-refresh {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/refresh.svg');}
+    }
+}
+.i-calendar {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/calendar.svg');}
+    }
+}
+.i-membership {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/membership.svg');}
+    }
+}
 .i-naver {
   @each $size in $icon-sizes {
       &.i-#{$size}{background-image: url($path-icon + $size + '/naver.svg');}
@@ -197,6 +385,66 @@ $icon-sizes: 12, 16, 20, 24, 28, 32, 36, 40, 48, 60;
 .i-check {
   @each $size in $icon-sizes {
       &.i-#{$size}{background-image: url($path-icon + $size + '/check.svg');}
+  }
+}
+.i-link {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/link.svg');}
+  }
+}
+.i-camera {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/camera.svg');}
+  }
+}
+.i-place {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/place.svg');}
+  }
+}
+.i-mic {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/mic.svg');}
+  }
+}
+.i-bell-off {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/bell-off.svg');}
+  }
+}
+.i-bell-on {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/bell-on.svg');}
+  }
+}
+.i-clip {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/clip.svg');}
+    }
+}
+.i-play {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/play.svg');}
+  }
+}
+.i-pause {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/pause.svg');}
+  }
+}
+.i-transaction {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/transaction.svg');}
+  }
+}
+.i-tour {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/tour.svg');}
+  }
+}
+.i-mytrip {
+  @each $size in $icon-sizes {
+      &.i-#{$size}{background-image: url($path-icon + $size + '/mytrip.svg');}
   }
 }
 
@@ -313,5 +561,180 @@ $icon-sizes: 12, 16, 20, 24, 28, 32, 36, 40, 48, 60;
 .i-ia-sum {
     @each $size in $icon-sizes {
         &.i-#{$size}{background-image: url($path-icon + $size + '/ia-sum.svg');}
+    }
+}
+.i-ia-hole {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-hole.svg');}
+    }
+}
+.i-ia-par {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-par.svg');}
+    }
+}
+.i-ia-course {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-course.svg');}
+    }
+}
+.i-ia-courselength {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-courselength.svg');}
+    }
+}
+.i-ia-passport {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-passport.svg');}
+    }
+}
+.i-ia-visa {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-visa.svg');}
+    }
+}
+.i-ia-cart {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-cart.svg');}
+    }
+}
+.i-ia-bus {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-bus.svg');}
+    }
+}
+.i-ia-upgrade {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-upgrade.svg');}
+    }
+}
+.i-ia-airballoon {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-airballoon.svg');}
+    }
+}
+.i-ia-coin {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-coin.svg');}
+    }
+}
+.i-ia-tiket {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-tiket.svg');}
+    }
+}
+.i-ia-spa {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-spa.svg');}
+    }
+}
+.i-ia-best {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-best.svg');}
+    }
+}
+.i-ia-history {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-history.svg');}
+    }
+}
+.i-ia-japan {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-japan.svg');}
+    }
+}
+.i-ia-office {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-office.svg');}
+    }
+}
+.i-ia-tour {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-tour.svg');}
+    }
+}
+.i-ia-allinone {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-allinone.svg');}
+    }
+}
+.i-ia-coupon {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-coupon.svg');}
+    }
+}
+.i-ia-lock {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-lock.svg');}
+    }
+}
+.i-ia-shopping {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-shopping.svg');}
+    }
+}
+.i-ia-reverse {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-reverse.svg');}
+    }
+}
+.i-ia-takeoff {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-takeoff.svg');}
+    }
+}
+.i-ia-land {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-land.svg');}
+    }
+}
+.i-ia-land {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-land.svg');}
+    }
+}
+.i-ia-customer {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-customer.svg');}
+    }
+}
+.i-ia-pen {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-pen.svg');}
+    }
+}
+.i-ia-document {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-document.svg');}
+    }
+}
+.i-ia-bell {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-bell.svg');}
+    }
+}
+.i-ia-trip {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-trip.svg');}
+    }
+}
+.i-ia-faq {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-faq.svg');}
+    }
+}
+.i-ia-inquire {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-inquire.svg');}
+    }
+}
+.i-ia-channeltalk {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-channeltalk.svg');}
+    }
+}
+.i-ia-reservation {
+    @each $size in $icon-sizes {
+        &.i-#{$size}{background-image: url($path-icon + $size + '/ia-reservation.svg');}
     }
 }

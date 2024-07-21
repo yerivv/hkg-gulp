@@ -1,62 +1,22 @@
 console.log('멤버십 모바일');
 gsap.registerPlugin(ScrollTrigger);
 
-let membershipSection = document.querySelector('.membership-section');
-let membershipSectionArea = membershipSection.querySelectorAll('.mo-area');
-
-const fadeInAniY = target => {
-    target.forEach(elem => {
-        gsap.set(elem, { opacity: 0, y: 150, duration: 0.8, });
-        gsap.to(elem, {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            ease: 'expo',
-            scrollTrigger: {
-                trigger: elem,
-                start: 'top 90%',
-                end: 'bottom 90%',
-                toggleActions: 'play none resume reset',
-            },
-        });
+const mo_setting = () => {
+    const membershipSection = document.querySelector('.membership-section');
+    const trigger = ScrollTrigger.create({
+        trigger: membershipSection.firstElementChild,
+        start: '20% top',
+        end: '50% bottom',
+        onLeave: () => membershipSection.querySelector('.mo-bar').classList.remove('active'),
+        onLeaveBack: () => membershipSection.querySelector('.mo-bar').classList.add('active')
     });
-}
-
-const fadeInAniX = target => {
-    target.forEach(elem => {
-        gsap.set(elem, { opacity: 0, x: 150, duration: 0.8, });
-        gsap.to(elem, {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
-            ease: 'expo',
-            scrollTrigger: {
-                trigger: elem,
-                start: 'top 90%',
-                end: 'bottom 90%',
-                toggleActions: 'play none resume reset',
-            },
-        });
-    });
-}
-
-const fadeInAniReverseX = target => {
-    target.forEach(elem => {
-        gsap.set(elem, { opacity: 0, x: -150, duration: 0.8, });
-        gsap.to(elem, {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
-            ease: 'expo',
-            scrollTrigger: {
-                trigger: elem,
-                start: 'top 90%',
-                end: 'bottom 90%',
-                toggleActions: 'play none resume reset',
-            },
-        });
-    });
-}
+    trigger.vars.onLeaveBack();
+	//스크롤 버그 픽스
+    //ScrollTrigger.normalizeScroll(false);
+	if(navigator.userAgent.toLowerCase().indexOf('android') > -1 || navigator.userAgent.indexOf('NAVER') > -1 || navigator.userAgent.indexOf('KAKAOTALK') > -1) {
+		//ScrollTrigger.normalizeScroll(true);
+	}
+};
 
 const fn_mo_keyvisual = a => {
     // SplitText와 애니메이션 함수 정의
@@ -112,7 +72,9 @@ const fn_mo_keyvisual = a => {
                 let activeIndex = this.activeIndex;
                 let activeSlide = this.slides[this.activeIndex];
                 // video
-                this.slides[activeIndex].querySelector('video').play();
+                if(this.slides[activeIndex].querySelector('video')) {
+                    this.slides[activeIndex].querySelector('video').play();
+                }
                 // txt
                 let animateText = initTextAnimation(activeSlide.querySelector('.tit'));
                 animateText();
@@ -188,25 +150,11 @@ const fn_mo_keyvisual = a => {
 }
 
 const fn_mo_recommend = a => {
-    fadeInAniReverseX([a.querySelector('.titles')]);
-    fadeInAniReverseX([a.querySelector('.tab')]);
-    fadeInAniX([a.querySelector('.content')]);
-
     ScrollTrigger.create({
         trigger: a,
         start: '-15% center',
-        onEnter: function() {
-            a.classList.add('active');
-        },
-        onEnterBack: function() {
-            a.classList.add('active');
-        },
-        onLeave: function() {
-            a.classList.remove('active');
-        },
-        onLeaveBack: function() {
-            a.classList.remove('active');
-        },
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active'),
     });
 
     let slides = a.querySelectorAll('.slide');
@@ -254,24 +202,13 @@ const fn_mo_tgs = a => {
     let prevPcTgs = a.previousElementSibling;
     const textBox = a.querySelector('.text-box');
     const dimBox = a.querySelector('.dim');
-    gsap.set(dimBox, {opacity: 1});
-    gsap.set(textBox, {x: '-50px', opacity: 0});
-
-    fadeInAniX([a.querySelector('.list1')]);
-    fadeInAniReverseX([a.querySelector('.list2')]);
 
     let tgsSetTop = gsap.timeline({
         scrollTrigger: {
             trigger: prevPcTgs,
             start: 'bottom center',
-            onEnter: () => {
-                gsap.to(dimBox, {opacity: 0, duration: 2.5, ease: 'power3.out'});
-                gsap.to(textBox, {x: 0, opacity: 1, duration: 1.5, ease: 'power3.out', delay: 0.2});
-            },
-            onLeaveBack: () => {
-                gsap.to(dimBox, {opacity: 1});
-                gsap.to(textBox, {x: '-50px', opacity: 0});
-            }
+            onEnter: () => a.classList.add('active'),
+            onLeaveBack: () => a.classList.remove('active')
         }
     });
 
@@ -282,19 +219,19 @@ const fn_mo_tgs = a => {
             end: '+=1400 center',
             pin: true,
             scrub: 1,
-            onLeave: () => {
-                fadeInAniReverseX([a.querySelector('.card-box')]);
-            },
         },
     });
-
-    tgsSet.fromTo(a.querySelector('.list1'), {xPercent: 5.55}, {xPercent: -54.44}, 'a')
-        .fromTo(a.querySelector('.list2'), {xPercent: -54.44}, {xPercent: 5.55}, 'a');
+    tgsSet.fromTo(a.querySelector('.list1'), {x: '32px'}, {x: '-404px'}, 'a')
+        .fromTo(a.querySelector('.list2'), {x: '-404px'}, {x: '32px'}, 'a');
 }
 
-const fn_mo_season = a => {
-    fadeInAniReverseX([a.querySelector('.titles')]);
-    fadeInAniX([a.querySelectorAll('.tab-wrap')]);
+const fn_mo_season_back = a => {
+    ScrollTrigger.create({
+        trigger: a,
+        start: '-15% center',
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active'),
+    });
 
     const tabs = a.querySelectorAll('.tab .menu');
     const items = a.querySelectorAll('.tab-wrap > .content .swiper');
@@ -388,107 +325,151 @@ const fn_mo_season = a => {
             itemSwipers(currentIndex);
         });
     });
+}
+const fn_mo_season = a => {
+    ScrollTrigger.create({
+        trigger: a,
+        start: '-15% center',
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active'),
+    });
 
-    // gsap.utils.toArray(a.querySelectorAll('.tab .swiper-slide')).forEach(elem => {
-    //     gsap.set(elem, { opacity: 0, x: 150, duration: 0.6, });
-    //     gsap.to(elem, {
-    //         opacity: 1,
-    //         x: 0,
-    //         duration: 1.2,
-    //         ease: 'expo',
-    //         scrollTrigger: {
-    //             trigger: elem,
-    //             start: 'top 90%',
-    //             end: 'bottom 90%',
-    //             toggleActions: 'play none resume reset',
-    //         },
-    //     });
-    // });
+    const tabs = a.querySelectorAll('.tab .menu');
+    const items = a.querySelectorAll('.tab-wrap > .content .item');
+    const prevButtons = a.querySelectorAll('button.prev');
+    const nextButtons = a.querySelectorAll('button.next');
+    const tabContainer = a.querySelector('.tab');
+    
+    let currentIndex = 0;
+
+    const updateActiveTab = index => {
+        tabs.forEach((tab, i) => {
+            if (i === index) {
+                tab.classList.add('active');
+                const tabOffsetLeft = tab.offsetLeft;
+                const tabOffsetWidth = tab.offsetWidth;
+                const containerScrollWidth = tabContainer.scrollWidth;
+                const containerClientWidth = tabContainer.clientWidth;
+                let scrollLeftValue = tabOffsetLeft - (containerClientWidth / 2) + (tabOffsetWidth / 2);
+                
+                if (scrollLeftValue < 0) {
+                    scrollLeftValue = 0;
+                } else if (scrollLeftValue + containerClientWidth > containerScrollWidth) {
+                    scrollLeftValue = containerScrollWidth - containerClientWidth;
+                }
+                
+                tabContainer.scrollLeft = scrollLeftValue;
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+    }
+
+    const updateActiveItem = index => {
+        items.forEach((item, i) => {
+            if (i === index) {
+                item.classList.add('active');
+                item.closest('.content').scrollLeft = 0;
+                const scrollAreaAll =  item.querySelectorAll('.box .content');
+                scrollAreaAll.forEach(scrollArea => scrollArea.scrollTop = 0);
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', function(event) {
+            event.preventDefault();
+            currentIndex = index;
+            updateActiveTab(currentIndex);
+            updateActiveItem(currentIndex);
+        });
+    });
+
+    prevButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateActiveTab(currentIndex);
+            updateActiveItem(currentIndex);
+        });
+    });
+
+    nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateActiveTab(currentIndex);
+            updateActiveItem(currentIndex);
+        });
+    });
 }
 
 const fn_mo_membership = a => {
-    fadeInAniY([a.querySelector('.titles')]);
-    fadeInAniY([a.querySelector('.list .start')]);
-
     ScrollTrigger.create({
         trigger: a,
         start: 'top center',
         end: 'bottom+=100px bottom',
-        // markers: true,
-        onEnter: function() {
-            a.classList.add('active');
-        },
-        onEnterBack: function() {
-            a.classList.add('active');
-        },
-        onLeave: function() {
-            a.classList.remove('active');
-        },
-        onLeaveBack: function() {
-            a.classList.remove('active');
-        },
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active'),
     });
 
-    let slides = gsap.utils.toArray(document.querySelectorAll('.item'));
+    ScrollTrigger.create({
+        trigger: a.querySelector('.end'),
+        start: 'top center',
+        //end: 'bottom+=100px bottom',
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active'),
+    });
+
+    let movementFactor = 0.8;
+    let slides = a.querySelectorAll('.item');
     let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
 
     slides.forEach((slide, i) => {
-        let
-            bg = slide.querySelector('.background'),
-            txt = slide.querySelector('.content');
+        let bg = slide.querySelector('.background');
+        let txt = slide.querySelector('.content');
 
-        let slideAni = gsap.timeline({
+        gsap.fromTo(bg, {
+            y: () => i ? -movementFactor * 0.5 * slide.offsetHeight : 0
+        }, {
+            y: () => movementFactor * 0.5 * slide.offsetHeight,
+            ease: "none",
             scrollTrigger: {
                 trigger: slide,
-                start: () => i ? 'top bottom' : 'top top',
-                end: 'bottom top',
+                start: () => i ? "top bottom" : "-1px top", 
+                end: "bottom top",
                 scrub: true,
-                invalidateOnRefresh: true
+                invalidateOnRefresh: true // to make it responsive
             }
         });
 
-        if (bg && txt) {
-            slideAni.fromTo(bg, {
-                y: () => i ? -window.innerHeight * getRatio(slide) : 0
-            }, {
-                y: () => window.innerHeight * (1 - getRatio(slide)),
-                ease: 'none'
-            });
-
-            slideAni.fromTo(txt, {
-                y: () => i ? window.innerHeight * -getRatio(slide) * 2 : 0
-            }, {
-                y: () => window.innerHeight * getRatio(slide) * 2,
-                ease: 'none'
-            }, 0);
-        }
+        // gsap.fromTo(txt, {
+        //     //y: () => i ? -movementFactor * 1 * slide.offsetHeight : 0
+        //     y: () => i ? -movementFactor * 0.5 * slide.offsetHeight : 0
+        // }, {
+        //     //y: () => movementFactor * 1 * slide.offsetHeight,
+        //     y: () => movementFactor * 0.5 * slide.offsetHeight,
+        //     ease: "none",
+        //     scrollTrigger: {
+        //         trigger: slide,
+        //         start: () => i ? "top bottom" : "-1px top", 
+        //         end: "bottom top",
+        //         scrub: true,
+        //         invalidateOnRefresh: true // to make it responsive
+        //     }
+        // });
     });
-
-    fadeInAniY([a.querySelector('.list .end')]);
 }
 
 const fn_mo_customized = a => {
-    fadeInAniX([a.querySelector('.titles')]);
-	fadeInAniReverseX([a.querySelector('.list')]);
+    ScrollTrigger.create({
+        trigger: a,
+        start: '-15% center',
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active')
+    });
 
-	ScrollTrigger.create({
-		trigger: a,
-		start: 'top 50%',
-		onEnter: function() {
-            a.classList.add('active');
-        },
-        onEnterBack: function() {
-            a.classList.add('active');
-        },
-        onLeave: function() {
-            a.classList.remove('active');
-        },
-        onLeaveBack: function() {
-            a.classList.remove('active');
-        },
-	});
-
-	let con06BgSwiper = new Swiper(a.querySelector('.background .swiper'), {
+	const backgroundSwiper = new Swiper(a.querySelector('.background .swiper'), {
 		effect: 'fade',
 		loop: true,
 		speed: 1000,
@@ -497,7 +478,7 @@ const fn_mo_customized = a => {
 		watchSlidesProgress: true,
 	});
 
-	let con06Swiper = new Swiper(a.querySelector('.list .swiper'), {
+	const bannerSwiper = new Swiper(a.querySelector('.list .swiper'), {
 		effect: 'fade',
 		loop: true,
 		speed: 1000,
@@ -507,30 +488,17 @@ const fn_mo_customized = a => {
 			prevEl: a.querySelector('.list .prev'),
 		},
 		thumbs: {
-			swiper: con06BgSwiper,
+			swiper: backgroundSwiper,
 		},
 	});
 }
 
 const fn_mo_product = a => {
-    fadeInAniY([a.querySelector('.titles')]);
-    fadeInAniY([a.querySelector('.subtext'), a.querySelector('.tab'), a.querySelector('.content')]);
-
     ScrollTrigger.create({
         trigger: a,
         start: '-15% center',
-        onEnter: function() {
-            a.classList.add('active');
-        },
-        onEnterBack: function() {
-            a.classList.add('active');
-        },
-        onLeave: function() {
-            a.classList.remove('active');
-        },
-        onLeaveBack: function() {
-            a.classList.remove('active');
-        },
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active')
     });
 
     let subtexts = a.querySelectorAll('.subtext .title');
@@ -556,29 +524,18 @@ const fn_mo_product = a => {
                 content.classList.remove('active');
             });
             contents[index].classList.add('active');
+
+            ScrollTrigger.refresh();
         });
     });
 }
 
 const fn_mo_community = a => {
-    fadeInAniY([a.querySelector('.titles')]);
-    fadeInAniY([a.querySelector('.tab'), a.querySelector('.content')]);
-
     ScrollTrigger.create({
         trigger: a,
         start: '-25% center',
-        onEnter: function() {
-            a.classList.add('active');
-        },
-        onEnterBack: function() {
-            a.classList.add('active');
-        },
-        onLeave: function() {
-            a.classList.remove('active');
-        },
-        onLeaveBack: function() {
-            a.classList.remove('active');
-        },
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active')
     });
 
     let tabs = a.querySelectorAll('.tab .menu');
@@ -613,12 +570,35 @@ const fn_mo_community = a => {
 }
 
 const fn_mo_default = a => {
-    fadeInAniY([a.querySelector('.inner')]);
+    ScrollTrigger.create({
+        trigger: a,
+        start: '-1px top',
+		//end: 'bottom top',
+        onEnter: () => a.classList.add('active'),
+        onLeaveBack: () => a.classList.remove('active')
+    });
 }
 
-setTimeout(() => {
+const floting_mo = a => {
+    let target = a.closest('.mo-area');
+    
+    ScrollTrigger.create({
+        trigger: target,
+        start: 'top center',
+        end: 'bottom+=1px bottom',
+        //end: '140% bottom',
+        toggleClass: {
+            targets: target.querySelectorAll('.mo-floting'),
+            className: 'in'
+        }
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+	mo_setting();
+});
+window.onload = function() {
     for(let i of document.querySelectorAll('.mo-area')) {
-        fn_mo_default(i);
         if(i.classList.contains('mo-keyvisual')){
             fn_mo_keyvisual(i);
         }
@@ -643,5 +623,11 @@ setTimeout(() => {
         if(i.classList.contains('mo-community')){
             fn_mo_community(i);
         }
+        if(i.classList.contains('mo-add-area')){
+            fn_mo_default(i);
+        }
     }
-}, 0);
+    for(let j of document.querySelectorAll('.mo-floting')) {
+        floting_mo(j);
+    }
+}

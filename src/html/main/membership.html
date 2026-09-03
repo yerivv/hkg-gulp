@@ -27,10 +27,10 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <!-- 영상유형 -->
-                                <!-- <div class="slide">
+                                <div class="slide">
                                     <div class="video">
                                         <video loop muted playsinline>
-                                            <source src="http://project.cstone.co.kr/portfolio/hankgolf/a/membership/resource/images/pc/con01_slide01_video.mp4" type="video/mp4">
+                                            <source src="@@webRoot/media/mbr-visual01.mp4" type="video/mp4">
                                         </video>
                                     </div>
                                     <div class="content">
@@ -38,15 +38,7 @@
                                         <div class="tit">삼투엔람 달랏 삼투엔람달랏랏<br />삼투엔람 달랏삼투엔람달랏</div>
                                         <p class="subtxt">베트남의 보석, 최고의 명소에 위치한 빈펄은 회원님의 품격을 높이는 <br />명실상부한 럭셔리 골프 회원권의 최상급 브랜드 입니다.</p>
                                     </div>
-                                </div> -->
-                                <a href="#1" class="slide">
-                                    <div class="img"><img src="@@webRoot/images/membership/mo-keyvisual-1.png" alt="" /></div>
-                                    <div class="content">
-                                        <div class="label font-en">NEW CLUB</div>
-                                        <div class="tit">삼투엔람 달랏 삼투엔람달랏랏<br />삼투엔람 달랏삼투엔람달랏</div>
-                                        <p class="subtxt">베트남의 보석, 최고의 명소에 위치한 빈펄은 회원님의 품격을 높이는 <br />명실상부한 럭셔리 골프 회원권의 최상급 브랜드 입니다.</p>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
                             <div class="swiper-slide">
                                 <!-- 이미지 유형 : 링크값 있을 때 -->
@@ -306,7 +298,10 @@
                     <div class="mo-floting">
                         <div class="btn">
                             <span class="before">회원권 문의 텍스트 노출!</span>
-                            <a href="#" class="btn-go"></a>
+                            <!-- 일반 링크일때 -->
+                            <!-- <a href="#" class="btn-go"></a> -->
+                            <!-- 회원권 링크 일때 -->
+                            <button type="button" class="btn-go" onclick="btnConsult();"></button>
                         </div>
                     </div>
                     <!-- //mo-floating -->
@@ -1609,6 +1604,115 @@
                     </div>
                 </div>
 
+                <div class="mo-area mo-add-area">
+                    <div class="editor">
+                        <div class="mo-special-tour">
+                        <div class="mo-inner">
+                          <h2 class="tit">스페셜 투어</h2>
+                          <p class="subtxt">비행은 짧게, 라운드는 즐겁게 여유롭게</p>
+                        </div>
+                        <div class="mo-inner">
+                          <div class="banner"><img src="@@webRoot/images/membership/mo-tour.png" alt="스페셜 투어 배너"></div>
+                        </div>
+                        <div class="list">
+                          <a href="/front/product/package_detail?pno=1314&cateidx=365&saleDt=2026-09-12" class="item">
+                            <img
+                              class="card-image"
+                              src="@@webRoot/images/membership/pc-tour-01.png"
+                              alt="푸꾸옥 에메랄드 골프투어 빈펄리조트&스파 숙박"
+                            />
+                            <div class="card-body">
+                              <div class="row">
+                                <span class="region-badge">베트남/태국</span>
+                                <p class="card-title">푸꾸옥 에메랄드 골프투어<br />빈펄리조트&스파 푸꾸옥 숙박</p>
+                              </div>
+                              <div class="row">
+                                <div class="price-row">
+                                  <span class="price">1,240,000</span>
+                                  <span class="price-unit">원~</span>
+                                </div>
+                                <div class="tag-row">
+                                  <span class="tag">특전 호텔석식 1회</span>
+                                  <span class="tag">NO옵션</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <a href="/front/product/package_detail?pno=1315&cateidx=365&saleDt=2026-09-12" class="item">
+                            <img
+                              class="card-image"
+                              src="@@webRoot/images/membership/pc-tour-02.png"
+                              alt="멜리아 리조트 풀빌라 숙박"
+                            />
+                            <div class="card-body">
+                              <div class="row">
+                                <span class="region-badge">베트남/태국</span>
+                                <p class="card-title">푸꾸옥 에메랄드 골프투어<br />모벤픽리조트 숙박</p>
+                              </div>
+                              <div class="row">
+                                <div class="price-row">
+                                  <span class="price">1,270,000</span>
+                                  <span class="price-unit">원~</span>
+                                </div>
+                                <div class="tag-row">
+                                  <span class="tag">NO옵션</span>
+                                  <span class="tag">골프 3회</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <a href="/front/product/package_detail?pno=1343&cateidx=365&saleDt=2026-09-12" class="item">
+                            <img
+                              class="card-image"
+                              src="@@webRoot/images/membership/pc-tour-03.png"
+                              alt="멜리아 리조트 풀빌라 숙박"
+                            />
+                            <div class="card-body">
+                              <div class="row">
+                                <span class="region-badge">베트남/태국</span>
+                                <p class="card-title">푸꾸옥 에메랄드 골프투어<br />크라운플라자 스타베이 숙박</p>
+                              </div>
+                              <div class="row">
+                                <div class="price-row">
+                                  <span class="price">1,290,000</span>
+                                  <span class="price-unit">원~</span>
+                                </div>
+                                <div class="tag-row">
+                                  <span class="tag">NO옵션</span>
+                                  <span class="tag">골프 3회</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <a href="/front/product/package_detail?pno=1388&cateidx=365&saleDt=2026-09-14" class="item">
+                            <img
+                              class="card-image"
+                              src="@@webRoot/images/membership/pc-tour-04.png"
+                              alt="멜리아 리조트 풀빌라 숙박"
+                            />
+                            <div class="card-body">
+                              <div class="row">
+                                <span class="region-badge">베트남/태국</span>
+                                <p class="card-title">푸꾸옥 에메랄드 골프투어<br />멜리아 리조트 풀빌라 숙박</p>
+                              </div>
+                              <div class="row">
+                                <div class="price-row">
+                                  <span class="price">1,300,000</span>
+                                  <span class="price-unit">원~</span>
+                                </div>
+                                <div class="tag-row">
+                                  <span class="tag">NO옵션</span>
+                                  <span class="tag">골프 3회</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <a href="/front/promo/event/1117" class="btn">기획전 바로가기</a>
+                      </div>
+                    </div>
+                </div>
+
                 <!-- help -->
                 <div class="mo-area mo-help">
                     <div class="cs">
@@ -1652,6 +1756,109 @@
                     </div>
                 </div>
                 <!-- //고정영역 -->
+
+
+                <div class="mo-consult">
+                    <div class="dim"></div>
+                    <div class="inner">
+                    <form name="Frm" id="cnsltFrm" method="post" action="/front/main/membership_entry.act">
+                        <div class="form">
+                            <h2 class="title">No.1 해외 골프 회원권 기업 <br /><strong>한케이골프</strong></h2>
+
+                            <div class="form-set">
+                                <c:if test="${not empty mv.member}">
+                                    <input type="hidden" name="userNo" value="${mv.member.no}"/>
+                                </c:if>
+                                <dl>
+                                    <dt>관심 회원권 선택</dt>
+                                    <dd>
+                                        <div class="custom-select">
+                                            <select id="membershipIdx" name="membershipIdx">
+                                                <option value="">선택</option>
+                                                <c:if test="${not empty mv.membership}">
+                                                    <c:forEach var="membership" items="${mv.membership}">
+                                                        <option value="${membership.idx}">${membership.membershipName}</option>
+                                                    </c:forEach>
+                                                </c:if>
+                                            </select>
+                                            <i class="icons i-16 i-arrow-up"></i>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="essential">이름</dt>
+                                    <dd>
+                                        <input type="text" id="applName" name="applName" placeholder="이름을 입력해주세요" />
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="essential">휴대폰 번호</dt>
+                                    <dd>
+                                        <input type="text" id="applPhone" name="applPhone" placeholder="-없이 숫자만 입력" />
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="essential">이메일</dt>
+                                    <dd>
+                                        <input type="text" id="applEmail" name="applEmail" placeholder="이메일을 입력해주세요" />
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="essential">가입경로</dt>
+                                    <dd>
+                                        <div class="custom-select">
+                                            <select id="pathCode" name="pathCode">
+                                                <option value="">선택</option>
+                                                <c:if test="${not empty mv.codeList}">
+                                                    <c:forEach var="cd" items="${mv.codeList}">
+                                                        <option value="${cd.code}">${cd.codeName}</option>
+                                                    </c:forEach>
+                                                </c:if>
+                                            </select>
+                                            <i class="icons i-16 i-arrow-up"></i>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>문의내용</dt>
+                                    <dd>
+                                        <div class="memo">
+                                            <textarea name="content" id="memo_content" placeholder="최대 1000자까지 입력 가능합니다."></textarea>
+                                            <div class="byte"><span class="count">0자</span> / 1000자</div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+
+                            <div class="terms-list">
+                                <ul class="lists">
+                                    <li>
+                                        <label for="agree_privacyCollect" class="checkbox" clause="privacy_collect">
+                                            <input type="checkbox" name="agreePrivacyCollect" value="1"  id="agree_privacyCollect" required="개인정보 수집 및 이용동의"/><span class="label">(필수) 개인정보 수집 및 이용동의</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="noti">
+                                <div class="tit"><i class="i-20 i-error"></i>문의 전 확인해주세요.</div>
+                                <ul class="bullets">
+                                    <li>연락처가 다른 경우 내정보수정에서 연락 가능한 번호로 변경해주세요.</li>
+                                    <li>타인에게 노출될 수 있는 개인정보 입력에 주의해주세요.</li>
+                                    <li>상담과 무관한 내용의 경우 임의 삭제 될 수 있습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btns large midnight" onClick="membershipEntry();">회원권 문의</button>
+                        </div>
+                        <a href="#" styletype="icon" class="btns circle bt-consult-close">
+                            <i class="icons i-20 i-close white">닫기</i>
+                        </a>
+                    </form>
+                    </div>
+                </div>
+
             </div><!-- //membership-section -->
         </main>
     </div>

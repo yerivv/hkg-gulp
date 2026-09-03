@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "주문하기"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+    <style type="text/css">
+        #app{overflow:visible;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        @@include('@@webRoot/_include/header.html', {
+            "style" : "light",
+            "page-name" : "결제하기",
+            "share" : true,
+            "prevPage" : 'null'
+        })
+
+        <main id="container" class="sub">
+            <!-- 본문시작 -->
+            <div id="contents" class="gray">
+                <div class="order-section">
+                    <div class="order-section">
+                        <div class="area-sorting" id="area-sticky">
+                            <div class="scroll">
+                                <div class="tab3">
+                                    <div class="active" data-target="#reserve">예약 정보</div>
+                                    <div data-target="#estimate">견적 정보</div>
+                                    <div data-target="#discount">할인 정보</div>
+                                    <div data-target="#payment">결제 정보</div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div id="reserve" class="area-reserve area">
+                            <h3 class="title acrtit" onclick="multitab(this);">
+                                <div class="tit">예약 정보</div>
+                                <i class="i-16 i-arrow-down">접고/펼치기</i>
+                            </h3>
+                            <div class="acrdetail">
+                                <div class="box-round white">
+                                    <div class="prod-tour">
+                                        <div class="prod">
+                                            <div class="img"><img src="/static/imgs/front/test/thumb.png" alt="" /></div>
+                                            <div class="cont">
+                                                <div class="name">[베트남/나트랑] 빈펄나트랑 2024.05.10 (5박)</div>
+                                                <div class="detail">
+                                                    <p><strong>총 7명</strong></p>
+                                                    <p>2024.06.01 ~ 2024.06.30</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <dl>
+                                                <dt>여행국가</dt>
+                                                <dd>베트남</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>여행도시</dt>
+                                                <dd>나트랑, 하이난, 푸꾸옥</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="info">
+                                            <dl>
+                                                <dt>예약자</dt>
+                                                <dd>김예약</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>연락처</dt>
+                                                <dd>010-1111-1111</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>이메일</dt>
+                                                <dd>aaa@aaaaa.co.kr</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="membership">
+                                        <div class="box-round gf8 item">
+                                            <div class="type">
+                                                <p class="card small">VIP</p>
+                                                <p class="name">빈펄 VIP 회원권</p>
+                                            </div>
+                                            <p class="num">[G0001-M0003]</p>
+                                            <ul class="bullets">
+                                                <li>회원권 구분 : 기명 1인 + 무기명 3인</li>
+                                            </ul>
+                                        </div>
+                                        <div class="box-round gf8 item">
+                                            <div class="type">
+                                                <p class="card small">VIP</p>
+                                                <p class="name">빈펄 VIP 회원권</p>
+                                                <p class="entrust">위임</p>
+                                            </div>
+                                            <p class="num">[G0001-M0003]</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- //area-reserve -->
+        
+                        <div id="estimate" class="area-estimate area">
+                            <h3 class="title acrtit" onclick="multitab(this);">
+                                <div>견적 정보</div>
+                                <div class="sum"><strong>430,000,000</strong><span> 원</span></div>
+                                <i class="i-16 i-arrow-down">접고/펼치기</i>
+                            </h3>
+                            <div class="acrdetail">
+                                <div class="box-round white">
+                                    <div class="group total">
+                                        <dl>
+                                            <dt>투어 견적</dt>
+                                            <dd>
+                                                <strong>30,000,000</strong>
+                                                <span>원</span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>일 체류비</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>성인</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    4
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>티타임</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>2024.07.30/추가금</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>2024.07.30/예약금</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>2024.07.30/싱글카트비</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>항공권</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>인천-나트랑/일반/성인</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    1
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>인천-나트랑/일반/유아</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>인천-나트랑/비즈니스/유아</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    1
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>숙소</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>빈펄 럭셔리 나트랑/2박</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    1
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>빈홀리데이즈 피에스타 푸꾸옥/3박</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>싱글차지</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    5
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>송영서비스</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>2024.07.30/셔틀버스</dt>
+                                                <dd>
+                                                    0 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    1
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>2024.07.30/소형차</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>2024.07.30/미니밴</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    5
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>2024.07.30/SUV</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    5
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>빈윈더스 푸꾸옥 입장권</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>성인</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    4
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>전통마사지 2시간 이용권</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>성인</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    4
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>여행자보험</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>고급형/성인/30대/여</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>일반형/성인/30대/여</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>비자발급</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>성인</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>유아</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <dl>
+                                            <dt>예약대행수수료</dt>
+                                            <dd>
+                                                20,000,000 원
+                                            </dd>
+                                        </dl>
+                                        <div class="detail">
+                                            <dl>
+                                                <dt>예약</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>변경</dt>
+                                                <dd>
+                                                    5,000,000 원
+                                                    <i class="icons g94 i-12 i-close">곱하기</i>
+                                                    2
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- //area-estimate -->
+        
+                        <div id="discount" class="area-discount area">
+                            <h3 class="title">할인 정보</h3>
+                            <div class="box-round white">
+                                <div class="group total">
+                                    <dl>
+                                        <dt>할인금액</dt>
+                                        <dd>
+                                            <strong>- 300,000</strong>
+                                            <span>원</span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="group">
+                                    <a href="#" class="g-title bt-voucher">바우처<i class="i-16 i-arrow-right"></i></a>
+                                    <div class="detail">
+                                        <dl>
+                                            <dt>티타임 이용 바우처</dt>
+                                            <dd>
+                                                - 25,000 원
+                                                <a href="#" class="remove bt-remove"><i class="i-12 i-close">삭제</i></a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>여행 100만원 특별 지원금 바우처</dt>
+                                            <dd>
+                                                - 35,000 원
+                                                <a href="#" class="remove bt-remove"><i class="i-12 i-close">삭제</i></a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <a href="#" class="g-title bt-coupon">상품 할인<i class="i-16 i-arrow-right"></i></a>
+                                    <div class="detail">
+                                        <dl>
+                                            <dt>빈원더스 푸꾸옥 입장권 10% 할인</dt>
+                                            <dd>
+                                                - 25,000 원
+                                                <a href="#" class="remove bt-remove"><i class="i-12 i-close">삭제</i></a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>여행자 보험 예약 10% 할인</dt>
+                                            <dd>
+                                                - 25,000 원
+                                                <a href="#" class="remove bt-remove"><i class="i-12 i-close">삭제</i></a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>5,000원 할인쿠폰</dt>
+                                            <dd>
+                                                - 25,000 원
+                                                <a href="#" class="remove bt-remove"><i class="i-12 i-close">삭제</i></a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <a href="#" class="g-title bt-coupon">예약 할인<i class="i-16 i-arrow-right"></i></a>
+                                    <div class="detail">
+                                        <dl>
+                                            <dt>에약 50,000원 지원금</dt>
+                                            <dd>
+                                                - 50,000 원
+                                                <a href="#" class="remove bt-remove"><i class="i-12 i-close">삭제</i></a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- //area-price -->
+        
+                        <div id="payment" class="area-payment area">
+                            <h3 class="title">결제 정보</h3>
+                            <div class="box-round white">
+                                <div class="group">
+                                    <dl>
+                                        <dt>투어견적</dt>
+                                        <dd>
+                                            300,000,000 원
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="group">
+                                    <div class="icon-cal discount"></div>
+                                    <dl>
+                                        <dt>할인금액</dt>
+                                        <dd class="dicsount">
+                                            -3,000,000 원
+                                        </dd>
+                                    </dl>
+                                    <div class="detail">
+                                        <dl>
+                                            <dt>바우처</dt>
+                                            <dd>
+                                                - 185,000 원
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>상품할인</dt>
+                                            <dd>
+                                                - 65,000 원
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>예약할인</dt>
+                                            <dd>
+                                                - 50,000 원
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="group total">
+                                    <div class="icon-cal sum"></div>
+                                    <dl>
+                                        <dt>최종 결제금액</dt>
+                                        <dd>
+                                            <strong>27,000,000</strong>
+                                            <span>원</span>
+                                        </dd>
+                                    </dl>
+                                    <div class="box-round gf8">
+                                        <div class="group">
+                                            <dl class="other">
+                                                <dt>
+                                                    최소 결제금액
+                                                    <div class="tooltip">
+                                                        <i class="icons gd4 i-20 i-error" onclick="tooltip(this);"></i>
+                                                        <div class="tipbox">
+                                                            <p>
+                                                                최소 결제 금액은 투어 계약금(골프장 별 인당 계약금), 항공권 발권료, 예약대행수수료(투어 인당 수수료)로 이루어져 있습니다.
+                                                            </p>
+                                                            <div class="arw"></div>
+                                                        </div>
+                                                    </div>
+                                                </dt>
+                                                <dd>
+                                                    <strong>20,000,000 원</strong>
+                                                </dd>
+                                            </dl>
+                                            <div class="detail">
+                                                <dl>
+                                                    <dt>투어 계약금</dt>
+                                                    <dd>
+                                                        5,000,000 원
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>항공 발권료</dt>
+                                                    <dd>
+                                                        5,000,000 원
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>예약대행수수료</dt>
+                                                    <dd>
+                                                        5,000,000 원
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="group">
+                                            <dl class="other">
+                                                <dt>나머지 금액</dt>
+                                                <dd>
+                                                    <strong>17,000,000 원</strong>
+                                                </dd>
+                                            </dl>
+                                            <div class="detail">
+                                                <dl>
+                                                    <dt>박예약</dt>
+                                                    <dd>
+                                                        5,000,000 원
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>김친구</dt>
+                                                    <dd>
+                                                        5,000,000 원
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>여행자3</dt>
+                                                    <dd>
+                                                        5,000,000 원
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- //area-payment -->
+        
+                        <div class="area-fixed gradation">
+                            <div class="price">
+                                <!-- case 1 : 분할/전액 -->
+                                <div class="text">최종 결제금액</div>
+                                <div class="won"><strong>27,180,000</strong>원</div>
+                                <!-- case 2 : 분할/최소 -->
+                                <!-- <div class="text">최소 결제금액</div>
+                                <div class="won"><strong>27,180,000</strong>원</div> -->
+                                <!-- case 3 : 전액 -->
+                                <!-- <div class="text">최종 결제금액</div>
+                                <div class="won"><strong>27,180,000</strong>원</div> -->
+                            </div>
+                            <!-- case 1,2 노출 -->
+                            <div class="detail">
+                                <ul class="bullets script">
+                                    <li>결제금액을 직접 설정해서 결제를 진행할 수 있어요.</li>
+                                </ul>
+                            </div>
+                            <!-- case 1 -->
+                            <div class="btn-box">
+                                <button type="button" class="btns large midnight-outline bt-payment-set">결제금액 설정</button>
+                                <button type="button" class="btns large midnight">전액 결제</button>
+                            </div>
+                            <!-- case 2 -->
+                            <!-- <div class="btn-box">
+                                <button type="button" class="btns large midnight-outline bt-payment-set">결제금액 설정</button>
+                                <button type="button" class="btns large midnight">결제</button>
+                            </div> -->
+                            <!-- case 3 -->
+                            <!-- <div class="btn-box">
+                                <button type="button" class="btns large midnight">결제</button>
+                            </div> -->
+                        </div>
+                    </div><!-- //order-section -->
+                </div><!-- //order-section -->
+            </div><!-- //contents -->
+        </main>
+
+        @@include('@@webRoot/_include/footer.html')
+
+        @@include('@@webRoot/_include/foot.html')
+
+        @@include('@@webRoot/_include/modal.html')
+    </div>
+    
+    <script>
+        targetStickySetting('.order-section', '.tab3 > div', '.area');
+        fixed.init('.order-section');
+    </script>
+</body>
+</html>

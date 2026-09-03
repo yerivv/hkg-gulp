@@ -601,6 +601,120 @@ $path-membership: '../../imgs/front/membership/';
             }
         }
     }
+
+    // 투어 기획전
+    .pc-special-tour {@include flex-column;gap:40px 0;padding:120px 0;background-color:#f7f7f7;text-align:center;
+        .tit{margin:0 0 8px;color:$grayscale-black;font-size:36px;line-height:48px;font-weight:600;}
+        .subtxt{color:#606060;font-size:24px;line-height:29px;font-weight:400;}
+        .list{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            width: 1228px;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+        .item {
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 0 30px;
+        }
+    
+        .card-image {
+            width: 287px;
+            height: 205px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+    
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            text-align: left;
+        }
+    
+        .region-badge {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 500;
+            padding: 6px 15px 5px;
+            border-radius: 20px;
+            width: fit-content;
+            margin-bottom: 18px;
+        }
+    
+        .card-title {
+            font-size: 20px;
+            font-weight: 400;
+            color: #000;
+            line-height: 28px;
+            letter-spacing: -0.2px;
+        }
+    
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+    
+        .price {
+            font-size: 26px;
+            font-weight: 700;
+            color: #000;
+            letter-spacing: -0.26px;
+            line-height: 31px;
+        }
+    
+        .price-unit {
+            font-size: 16px;
+            color: #000;
+            letter-spacing: -0.16px;
+        }
+    
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 12px;
+        }
+    
+        .tag {
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 5px;
+            background-color: #5777BD;
+            color: #fff;
+        }
+
+        .btn {
+            display: flex;
+            width: 160px;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-radius: 4px;
+            border: 1px solid #111;
+            color: #111;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 30px;
+            letter-spacing: -0.18px;
+            padding: 9px 0;
+            margin: 0 auto;
+        }
+    }
 }
 
 //mo
@@ -609,7 +723,7 @@ $path-membership: '../../imgs/front/membership/';
 }
 .membership-section{
     .mo-title{@include text-en;@include text-title1(500);letter-spacing:12px;}
-    .mo-area{min-height:100vh;position:relative;z-index:1;}
+    .mo-area{min-height:100vh;min-height: -webkit-fill-available;position:relative;z-index:1;}
 
     .mo-keyvisual{height:100vh;background-color:$secondary-darkblue;
         .slide{display:block;position:relative;width:100%;height:100vh;background-color:$primary-white;
@@ -667,7 +781,7 @@ $path-membership: '../../imgs/front/membership/';
         }
     }
 
-    .mo-recommend{@include flex-column;justify-content:center;@include membership-mo-bgset;//justify-content:flex-start;padding:10vh 0;
+    .mo-recommend{@include flex-column;justify-content:center;padding:10vh 0;@include membership-mo-bgset;//justify-content:flex-start;padding:10vh 0;
         .titles{padding:0 20px;
             p{@include flex-row;justify-content:flex-end;margin:16px 0 0;padding-right:13px;color:$primary-hankblue;@include text-body3(500);}
         }
@@ -1170,27 +1284,38 @@ $path-membership: '../../imgs/front/membership/';
     }
 
     /* help */
-    .mo-help{display:flex;flex-direction:column;gap:20px 0;z-index:2;overflow:visible !important;padding:40px 20px 50px;border-top:1px solid #d4d4d4;background:white;}
-    .mo-help:after{content:"";position:absolute;top:0;left:0;width:20px;height:100%;background:white;}
-    .mo-help .cs{padding:0 0 8px;}
-    .mo-help .cs .tit{padding:0 0 8px;font-size:18px;color:black;line-height:28px;font-weight:bold;}
-    .mo-help .cs .tel{padding:0 0 12px;font-size:28px;color:#092060;line-height:40px;font-weight:bold;}
-    .mo-help .cs .time{margin:0 -12px 0 -13px;padding:0 0 12px;font-size:0;}
-    .mo-help .cs .time span{display:inline-block;position:relative;margin:0 12px 0 0;padding:0 0 0 13px;vertical-align:top;white-space:nowrap;font-size:14px;color:#949494;line-height:22px;font-weight:bold;}
-    .mo-help .cs .time span:before{content:"";position:absolute;top:50%;left:0;width:1px;height:12px;margin:-6px 0 0;background:#d4d4d4;}
-    .mo-help .notice .tit{padding:0 0 8px;font-size:18px;color:black;line-height:28px;font-weight:bold;}
-    .mo-help .notice .list{padding:8px 0 0;}
-    .mo-help .notice .list li{border-top:1px solid #eee;}
-    .mo-help .notice .list li a{display:block;text-overflow:ellipsis;overflow:hidden;padding:16px 8px;white-space:nowrap;font-size:14px;color:black;line-height:22px;}
-    .mo-help .banner{overflow:hidden;border-radius:4px;}
-    .mo-help .banner img{display:block;width:100%;}
-    .mo-help .top{position:absolute;top:100%;right:16px;width:54px;height:54px;margin:-26px 0 0;}
-    .mo-help .top:after{content:"T O P";position:absolute;top:100%;left:0;width:100%;margin:4px 0 0;text-align:center;font-size:12px;color:#444;line-height:20px;font-weight:bold;}
-    .mo-help .top button{position:absolute;top:50%;left:50%;width:40px;height:40px;transform:translate(-50%,-50%) rotate(-45deg);text-indent:-99999px;border-radius:10px;background:#002394;}
-    .mo-help .top button:before{content:"";position:absolute;top:50%;left:50%;width:16px;height:16px;transform:translate(-50%,-50%) rotate(45deg);background:white;}
+    .mo-help{@include flex-column;gap:20px 0;position:relative;z-index:auto;overflow:visible !important;min-height:auto;padding:40px 20px 50px;border-top:1px solid $grayscale-gd4;background:$primary-white;
+        &:after{content:"";position:absolute;top:0;left:0;width:20px;height:100%;background:$primary-white;}
+        .cs{padding:0 0 8px;
+            .tit{padding:0 0 8px;@include text-body3(600);}
+            .tel{padding:0 0 12px;@include text-title2(600);color:$primary-midnight;}
+            .time{margin:0 -12px 0 -13px;padding:0 0 12px;font-size:0;
+                span{display:inline-block;position:relative;margin:0 12px 0 0;padding:0 0 0 13px;vertical-align:top;white-space:nowrap;@include text-body1(500);color:$grayscale-g94;
+                    &:before{content:"";position:absolute;top:50%;left:0;width:1px;height:12px;margin:-6px 0 0;background:$grayscale-gd4;}
+                }
+            }
+        }
+        .notice{
+            .tit{padding:0 0 8px;@include text-body3(600);}
+            .list{padding:8px 0 0;
+                li{border-top:1px solid $grayscale-gee;
+                    a{display:block;@include ellipsis(100%);padding:16px 8px;@include text-body1(400);}
+                }
+            }
+        }
+        .banner{overflow:hidden;border-radius:4px;
+            img{display:block;width:100%;}
+        }
+        .top{position:absolute;top:100%;right:16px;z-index:6;width:54px;height:54px;margin:-26px 0 0;
+            &:after{content:"T O P";position:absolute;top:100%;left:0;width:100%;margin:4px 0 0;text-align:center;@include text-script2(500);color:$grayscale-g44;}
+            button{position:absolute;top:50%;left:50%;width:40px;height:40px;transform:translate(-50%,-50%) rotate(-45deg);text-indent:-99999px;border-radius:10px;background:$primary-hankblue;
+                &:before{content:"";position:absolute;top:50%;left:50%;@include icon-box(16px, 16px);transform:translate(-50%,-50%) rotate(135deg);background-image:url($path-icon + '16/back.svg');@include filter-white;}
+            }
+        }
+    }
 
     // 초기 로딩 메인바
-    .mo-bar{@include flex-row;justify-content:center;align-items:center;position:fixed;bottom:-60px;left:0;z-index:9;width:100%;height:60px;transition:1s;background-color:$primary-white;
+    .mo-bar{@include flex-row;justify-content:center;align-items:center;position:fixed;bottom:-150px;left:0;z-index:9;width:100%;height:60px;transition:1s;background-color:$primary-white;
         .gate{flex-shrink:0;position:relative;margin:0 5px;
             &:before{content:"";position:absolute;top:50%;left:0;z-index:1;width:34px;height:34px;border-radius:10px;transform:translate(0,-50%) rotate(45deg);background:#26D2B4;}
             &:after{content:"";position:absolute;top:50%;right:0;z-index:1;width:34px;height:34px;border-radius:10px;transform:translate(0,-50%) rotate(45deg);background:#05AA8D;}
@@ -1236,4 +1361,143 @@ $path-membership: '../../imgs/front/membership/';
             }
         }
     }
+
+    // 입회 상담
+    .mo-consult{display:none;
+        .dim{position:fixed;top:0;left:0;z-index:999;width:100vw;height:100vh;background:rgba(0, 0, 0, .2);}
+        .inner{position:fixed;top:0;right:0;z-index:1000;width:100%;height:100vh;background:$primary-white;overflow-y:auto;
+            &::-webkit-scrollbar{display:none;}
+            &::before{
+                content:'';position:absolute;left:-150px;top:-283px;width:630px;height:630px;border-radius:150px;background-color:$grayscale-gf8;transform:rotate(-45deg);
+            }
+            .form{position:relative;width:320px;padding:56px 0 125px;margin:0 auto;
+                .title{color:$primary-midnight;@include text-body4(400);
+                    strong{font-weight:600;}
+                }
+                .form-set{margin-bottom:20px;padding-top:10px;border-bottom:1px solid $grayscale-gee;}
+                .memo{
+                    textarea{height:120px;margin-bottom:6px;}
+                }
+                .noti{margin:60px 0 0;
+                    .tit{@include flex-row;align-items:center;gap:0 8px;margin:0 0 12px;@include text-body1(600);}
+                }
+            }
+            .btn-box{@include flex-column;position:fixed;bottom:0;right:0;width:100%;padding:20px 0;border-top:1px solid $grayscale-gee;background:$primary-white;
+                .btns{width:320px;margin:0 auto;}
+            }
+        }
+        .bt-consult-close{position:fixed;right:12px;top:12px;width:40px;height:40px;background:rgba(9, 32, 96, 0.30);}
+
+        &.active{display:block;}
+    }
+    // 투어 기획전
+    .mo-special-tour {@include flex-column;gap:32px 0;padding:64px 0;background-color:#fff;text-align:center;
+            .tit{margin:0 0 4px;color:$grayscale-black;font-size:26px;line-height:34px;font-weight:600;}
+            .subtxt{color:#606060;font-size:16px;line-height:19px;font-weight:400;}
+            .list{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 30px;
+                padding: 0 20px;
+            }
+            .item {
+                overflow: hidden;
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                gap: 0 16px;
+            }
+        
+            .card-image {
+                width: 157px;
+                height: 112px;
+                object-fit: cover;
+                display: block;
+                border-radius: 5px;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+        
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex: 1;
+                text-align: left;
+            }
+        
+            .region-badge {
+                display: inline-block;
+                background: #111;
+                color: #fff;
+                font-size: 11px;
+                line-height: 17px;
+                font-weight: 500;
+                padding: 0 6px;
+                border-radius: 15px;
+                width: fit-content;
+                margin-bottom: 6px;
+            }
+        
+            .card-title {
+                font-size: 14px;
+                font-weight: 400;
+                color: #000;
+                line-height: 20px;
+                letter-spacing: -0.14px;
+            }
+        
+            .price-row {
+                display: flex;
+                align-items: baseline;
+            }
+        
+            .price {
+                font-size: 16px;
+                font-weight: 700;
+                color: #000;
+                letter-spacing: -0.16px;
+                line-height: 19px;
+            }
+        
+            .price-unit {
+                font-size: 11px;
+                color: #000;
+                letter-spacing: -0.11px;
+            }
+        
+            .tag-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 3px;
+                margin-top: 6px;
+            }
+        
+            .tag {
+                font-size: 11px;
+                line-height: 15px;
+                font-weight: 500;
+                padding: 0 4px;
+                border-radius: 3px;
+                background-color: #5777BD;
+                color: #fff;
+            }
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: calc(100% - 40px);
+                border-radius: 4px;
+                border: 1px solid #111;
+                color: #111;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 30px;
+                letter-spacing: -0.16px;
+                padding: 9px 0;
+                margin: 0 auto;
+            }
+        }
+
 }

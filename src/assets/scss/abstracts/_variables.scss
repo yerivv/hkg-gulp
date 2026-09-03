@@ -30,11 +30,20 @@ $secondary-lightgreen: #a1e2b8;
 $secondary-cyonblue: #A1DEE2;
 $secondary-discount: #003CFF;
 $secondary-gold: #C7B44C;
+$secondary-cleanblue: #E4EEFF;
+$secondary-silver: #98A0B0;
+$secondary-emerald: #48C6D7;
+
+$secondary-grade1: #C3A847;
+$secondary-grade2: #009DB2;
+$secondary-grade3: #002394;
+$secondary-grade4: #4A0FAB;
 
 $grayscale-black: #000;
 $grayscale-g33: #333;
 $grayscale-g44: #444;
 $grayscale-g76: #767676;
+$grayscale-g77: #777;
 $grayscale-g94: #949494;
 $grayscale-gd4: #d4d4d4;
 $grayscale-gee: #eee;
@@ -45,6 +54,7 @@ $bg-sky: #d8e5f0;
 $bg-lightsky: #eaf0f5;
 $bg-pear: #F2F1DF;
 $bg-pure: #f5f6fb;
+$bg-pureline: #e0e4f6;
 
 $negative-red: #e43f3f;
 
@@ -57,9 +67,11 @@ $gradation-05: linear-gradient(180deg, rgba(125, 168, 234, 1) 0%, rgba(161, 226,
 $gradation-06: linear-gradient(90deg, rgba(64, 205, 197, 1) 0%, rgba(86, 120, 219, 1) 100%);
 $gradation-07: linear-gradient(95deg, rgba(113, 99, 45, 1) 2.4%, rgba(215, 189, 89, 1) 101.25%);
 $gradation-08: linear-gradient(180deg, rgba(3, 15, 48, 1) 0%, rgba(3, 15, 48, 0) 100%);
+$gradation-09: linear-gradient(90deg, rgba(86, 120, 219, 1) 0%, rgba(72, 198, 215, 1) 100%);
 
 /* path */
-$path-font: '../fonts/';
-$path-front: '../../images/';
-$path-common: '../images/common/';
-$path-icon: '../images/icon/';
+$path-font: '../../fonts/front/';
+$path-front: '../../imgs/front/';
+$path-common: '../../imgs/front/common/';
+$path-icon: '../../imgs/front/icon/';
+$path-mypage: '../../imgs/front/mypage/';

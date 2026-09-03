@@ -579,6 +579,16 @@ const fn_mo_default = a => {
     });
 }
 
+const fn_mo_help = a => {
+    a.querySelector('.top').addEventListener('click', () => {
+        //event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+};
+
 const floting_mo = a => {
     let target = a.closest('.mo-area');
     
@@ -626,8 +636,20 @@ window.onload = function() {
         if(i.classList.contains('mo-add-area')){
             fn_mo_default(i);
         }
+        if(i.classList.contains('mo-help')){
+            fn_mo_help(i);
+        }
     }
     for(let j of document.querySelectorAll('.mo-floting')) {
         floting_mo(j);
     }
+}
+
+function btnConsult(){
+    const target = document.querySelector('.mo-consult');
+    target.classList.add('active');
+
+    target.querySelector('.bt-consult-close').addEventListener('click', () => {
+        target.classList.remove('active');
+    })
 }

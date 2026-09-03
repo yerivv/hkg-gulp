@@ -73,6 +73,9 @@
   &.midnight-outline {
     border-color: $primary-midnight;
     color: $primary-midnight;
+    &.gray{
+      border-color:$grayscale-gd4;
+    }
     &.rhombus {
       &::before {border-color: $primary-midnight;}
     }

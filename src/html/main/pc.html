@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('@@webRoot/_include/head.html',{
+        "title": "메인"
+    })
+    @@include('@@webRoot/_include/library.html')
+    <script src="@@webRoot/js/ui.js"></script>
+    <script src="@@webRoot/js/develop.js"></script>
+</head>
+<body>
+    <div id="app">
+        @@include('@@webRoot/_include/header.html', {
+            "style" : "main",
+            "page-name" : "메인",
+            "share" : false,
+        })
+
+        @@include('@@webRoot/_include/navigation.html')
+
+        <main id="container">
+            <div id="contents" class="full">
+                <div class="membership-section">
+                  <div class="pc-area pc-add-area">
+                    <div class="editor">
+                      <div class="pc-special-tour">
+                        <div class="pc-inner">
+                          <h2 class="tit">스페셜 투어</h2>
+                          <p class="subtxt">비행은 짧게, 라운드는 즐겁게 여유롭게</p>
+                        </div>
+                        <div class="pc-inner">
+                          <div class="banner"><img src="@@webRoot/images/membership/pc-tour.jpg" alt="스페셜 투어 배너"></div>
+                        </div>
+                        <div class="list">
+                          <a href="/front/product/package_detail?pno=1314&cateidx=365&saleDt=2026-09-12" class="item">
+                            <img
+                              class="card-image"
+                              src="@@webRoot/images/membership/pc-tour-01.png"
+                              alt="푸꾸옥 에메랄드 골프투어 빈펄리조트&스파 숙박"
+                            />
+                            <div class="card-body">
+                              <div class="row">
+                                <span class="region-badge">베트남/태국</span>
+                                <p class="card-title">푸꾸옥 에메랄드 골프투어<br />빈펄리조트&스파 푸꾸옥 숙박</p>
+                              </div>
+                              <div class="row">
+                                <div class="price-row">
+                                  <span class="price">1,240,000</span>
+                                  <span class="price-unit">원~</span>
+                                </div>
+                                <div class="tag-row">
+                                  <span class="tag">특전 호텔석식 1회</span>
+                                  <span class="tag">NO옵션</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <a href="/front/product/package_detail?pno=1315&cateidx=365&saleDt=2026-09-12" class="item">
+                            <img
+                              class="card-image"
+                              src="@@webRoot/images/membership/pc-tour-02.png"
+                              alt="멜리아 리조트 풀빌라 숙박"
+                            />
+                            <div class="card-body">
+                              <div class="row">
+                                <span class="region-badge">베트남/태국</span>
+                                <p class="card-title">푸꾸옥 에메랄드 골프투어<br />모벤픽리조트 숙박</p>
+                              </div>
+                              <div class="row">
+                                <div class="price-row">
+                                  <span class="price">1,270,000</span>
+                                  <span class="price-unit">원~</span>
+                                </div>
+                                <div class="tag-row">
+                                  <span class="tag">NO옵션</span>
+                                  <span class="tag">골프 3회</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <a href="/front/product/package_detail?pno=1343&cateidx=365&saleDt=2026-09-12" class="item">
+                            <img
+                              class="card-image"
+                              src="@@webRoot/images/membership/pc-tour-03.png"
+                              alt="멜리아 리조트 풀빌라 숙박"
+                            />
+                            <div class="card-body">
+                              <div class="row">
+                                <span class="region-badge">베트남/태국</span>
+                                <p class="card-title">푸꾸옥 에메랄드 골프투어<br />크라운플라자 스타베이 숙박</p>
+                              </div>
+                              <div class="row">
+                                <div class="price-row">
+                                  <span class="price">1,290,000</span>
+                                  <span class="price-unit">원~</span>
+                                </div>
+                                <div class="tag-row">
+                                  <span class="tag">NO옵션</span>
+                                  <span class="tag">골프 3회</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          <a href="/front/product/package_detail?pno=1388&cateidx=365&saleDt=2026-09-14" class="item">
+                            <img
+                              class="card-image"
+                              src="@@webRoot/images/membership/pc-tour-04.png"
+                              alt="멜리아 리조트 풀빌라 숙박"
+                            />
+                            <div class="card-body">
+                              <div class="row">
+                                <span class="region-badge">베트남/태국</span>
+                                <p class="card-title">푸꾸옥 에메랄드 골프투어<br />멜리아 리조트 풀빌라 숙박</p>
+                              </div>
+                              <div class="row">
+                                <div class="price-row">
+                                  <span class="price">1,300,000</span>
+                                  <span class="price-unit">원~</span>
+                                </div>
+                                <div class="tag-row">
+                                  <span class="tag">NO옵션</span>
+                                  <span class="tag">골프 3회</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <a href="/front/promo/event/1117" class="btn">기획전 바로가기</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </main>
+
+        @@include('@@webRoot/_include/footer.html')
+
+        @@include('@@webRoot/_include/foot.html')
+
+        @@include('@@webRoot/_include/modal.html')
+    </div>
+    
+    <script>
+    </script>
+</body>
+</html>

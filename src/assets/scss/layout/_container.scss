@@ -40,10 +40,19 @@ body {
     min-height: 50vh;
     margin: 0 auto;
     background-color: $primary-white;
+    &.line {border-top:1px solid $grayscale-gee;}
     &.gray {
         background-color: $grayscale-gf8;
     }
     &.full {
         max-width: none;
     }
+}
+
+#area-sticky{position:sticky;top:80px;left:0;z-index:4;transition: top 0.2s; //position:relative;
+    @include mobile{
+        top:56px;
+        &.down{top:0;}
+    }
+    &.fixed{position:fixed;width:100%;left:0;z-index:4;}
 }
